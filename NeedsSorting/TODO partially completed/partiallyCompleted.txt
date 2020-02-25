@@ -1,0 +1,4 @@
+set up java in vs code
+set up pyhton
+	html css javascript
+........ on and on further

@@ -1,0 +1,950 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0019)https://dl.acm.org/ -->
+<html xmlns="//www.w3.org/1999/xhtml" lang="en" xml:lang="en"><script async="" src="./ACM Digital Library_files/gtm.js"></script><script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    if (!window.web3.currentProvider ||
+        !window.web3.currentProvider.isMetaMask) {
+      __insertDappDetected()
+    }
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>ACM Digital Library</title>
+<link rel="stylesheet" type="text/css" href="./ACM Digital Library_files/dl.css">
+<link rel="toc" href="https://www.acm.org/DL">
+<meta name="description" content="www.acm.org - The premier society in computing brings you the Computer Portal.">
+<meta name="keywords" content="computer,internet">
+<style type="text/css"><!--
+    body {margin-left: 0em; margin-top: 0}
+    a:link {text-decoration: underline; 	Color: #1d4d0f;}
+    a:visited  { color: #990033; text-decoration: underline;}
+    a:hover {color: red; text-decoration: none}
+    a.dLink1:link {color:#336699}
+    a.dLink1:visited {color:#666666}
+	a.isblack:link {text-decoration: underline; 	Color: #000000;}
+    a.isblack:visited  { color: #000000; text-decoration: underline;}
+    a.isblack:hover {color: #000000; text-decoration: none}
+    h1 {font-size: 140%; margin-bottom: 0}
+	ul {margin-top: .25em; list-style-type: disc}
+	ol {margin-top: .25em;}
+	li {padding-bottom: .25em;}
+    h2 {color: white; background-color: #069; 
+        font-size: 100%; padding-left: 1em;
+		margin: 0}
+	h3 {color: black; background-color: yellow; 
+    	font-size: 100%;
+		margin: 0}
+	 h4 {color: black; background-color: #99c5e8; 
+        font-size: 100%;
+		margin: 0}
+    hr {color: #39176d;}
+    form {margin-top: 10}
+    form.xrs {margin-top: 0}
+	
+	a {text-decoration: none; }
+	
+	input {font-size: 1em;}
+	.chevron {color: #ff0000;}
+	.light-blue {color:#336699;}
+	.black {color:#000000;}
+	
+	
+	.mono-text {font-size: 14px; font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;}
+	
+	/* ### standard text styles, smallest to largest ### */
+	
+	.footer-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .75em; line-height: 1.33em;
+		text-indent: -.75 em; margin-left: 2em; margin-right: .75em;}
+		
+	.footer-copy-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em; line-height: 1.3em;
+		margin-left: .75em; margin-right: .75em;}
+		
+	.small-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; padding-bottom : 2px;
+	  	padding-top : 2px;}
+		
+	.small-link-text2 {font-size: .83em !important; 
+	}
+
+	.smallerer-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .65em;}
+	.smaller-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .75em;}		
+	.small-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em;}
+	.small-textb {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; font-weight: bold;}
+	.medium-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em;}
+	.mediumb-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1em; font-weight: bold;}
+	.large-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 1.3em;}		
+	.instr-text {font-family: Arial, Helvetica, sans-serif;
+		color:#666666; font-size: .83em;}
+		
+	.list-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#336699; font-size: .83em; line-height: 1.3em;}
+	.list-link-btext {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: .83em; line-height: 1.3em;}
+	
+	.searchbox-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;}
+	.footer-header-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold;
+		margin-left: .75em; margin-right: .75em;}
+	.medium-link-text {font-family: Arial, Helvetica, sans-serif;
+		color:#000066; font-size: 1em; font-weight: bold; line-height: 1em;
+		text-indent: -1.25em; margin-left: 2em; margin-right: .75em;}
+	
+	.text16 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 16px;}
+		
+	.text14 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 14px;}
+	
+	.text12 {font-family: Arial, Helvetica, sans-serif;
+		color:#000000; font-size: 12px;}
+		
+	.text10 {font-family: Arial, Helvetica, sans-serif;
+	    color:#000000; font-size: 12px;}
+		
+	.text9 {font-family: Arial, Helvetica, sans-serif;
+	   color:#000000; font-size: 12px;}
+	
+	.error-text {color:red;}
+	
+	.small-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: .75em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+
+	.medium-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1em; line-height: 1.2em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-copy-text {font-family: Times, Times New Roman, serif;
+		color:#000066; font-size: 1.3em; line-height: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.medium-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1em;
+		margin-left: .75em; margin-right: .75em;}
+	
+	.large-header-text {font-family: Times, Times New Roman, serif;
+		color:#ff0000; font-size: 1.5em;
+		margin-left: .75em; margin-right: .75em;}
+
+		#side {
+			width: 10px;
+			float: left;
+			margin-left: -1px;
+			padding: 2px;
+			}
+							
+		#content {
+			padding: 2px;
+			margin-left: 25px;
+			
+		        
+		        }
+	 .fulltext_lnk {border:0px;
+	 				 margin-right: 2px;
+					 vertical-align:baseline;
+	 				}
+	 
+	  .leftcoltab { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:530px;  /* for IE5/WIN */
+		  width:520px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	  .rightcoltab {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 350px;
+    z-index: 99;
+}
+	  .centercoltab {
+		  position:absolute;
+		  padding:0 0px;
+		  }
+	  .alt {
+		background: #ece9d8;
+		margin: 0;
+		padding: 1px;
+		}
+		.leftcolc { 
+	position:relative;
+	top:5px;
+	left:5px;
+	float:left;
+	width:420px;  /* for IE5/WIN */
+	width:400px; /* actual value */
+	margin:0 0 0px 0;
+	padding:5px;
+	z-index:100;
+	}
+.rightcolc {
+	position:relative;
+	top:0px;
+	right:0px;
+	float:right;
+	margin:0 0px;
+	padding:0px;
+	width:500px;
+	z-index:99;
+	}
+.centercolc {
+	position:absolute;
+	padding:0 0px;
+	}
+	
+	.leftcoltabv { 
+		  position:relative;
+		  top:5px;
+		  left:5px;
+		  float:left;
+		  width:460px;  /* for IE5/WIN */
+		  width:350px; /* actual value */
+		  margin:0 0 0px 0;
+		  padding:5px;
+		  z-index:100;
+		  }
+	.rightcoltabv {
+		position:relative;
+		top:5px;
+		right:0px;
+		float:right;
+		margin:0 0px 0 0;
+		padding:15px;
+		width:480px;
+		z-index:99;
+		}
+		
+.x-tabs-strip-wrap {
+	overflow-y: hidden !important;
+}
+  --></style>
+<script language="javascript">
+  	function surfto(f,g) {
+		myindex=document.forms[f].elements[g].selectedIndex;
+		if (document.forms[f].elements[g].options[myindex].value != "no") {
+	    location=document.forms[f].elements[g].options[myindex].value;
+		}
+		return true;
+	}
+  </script>
+<style type="text/css"><!--  
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.fade-in {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards; 
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+	
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+-->
+</style>
+<script charset="utf-8" src="./ACM Digital Library_files/button.d941c9a422e2e3faf474b82a1f39e936.js"></script></head>
+<body bgcolor="#ffffff" onload="window.focus()"><div id="lightningjs-usabilla_live" style="display: none;"><div><iframe frameborder="0" id="lightningjs-frame-usabilla_live" src="./ACM Digital Library_files/saved_resource.html"></iframe></div></div>
+<script type="text/javascript">
+setTimeout(function(){
+document.getElementById('DLnext').style.display = "block";
+},1500);
+</script>
+<div style="width:940px; margin-left: auto; margin-right: auto; text-align:left">
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFGCMX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NFGCMX');</script>
+
+<div id="header">
+<table style="table-layout:fixed; margin-top: 5px; margin-bottom: 10px; border:0px; width:100%; border-collapse:collapse;">
+<tbody><tr id="trMessage" style="vertical-align:top">
+<td colspan="3" style="padding-top: 5px; padding-left: 10px; padding-bottom: 10px; padding-right: 10px; text-align:left; background-color:#d8e4f2; border: solid 2px #0f5ea9;" class="small-link-text2">
+<div id="cfp" style="margin-top:5px; margin-bottom:5px;">
+<div>
+<strong>Help Design Your New ACM Digital Library</strong>
+</div>
+<div style="margin-top:10px;">
+We're upgrading the ACM DL, and would like your input.&nbsp;&nbsp;Please sign up to review new features, functionality and page designs.
+</div>
+<div style="margin-top:10px;">
+<form id="cfp_form" style="display:inline" action="https://dl.acm.org/#" method="post"><label id="cfp_email" title="email address">Leave an email address: <input id="cfp_email" type="email" name="cfp_email"></label><input type="image" src="./ACM Digital Library_files/ok-button-20x20.jpg" alt="submit email address" style="vertical-align:middle; margin-left: 5px;"><span style="padding-left:10px; padding-right:10px;">or</span><div style="display:inline-block; vertical-align:middle" onmouseover="javascript: document.cookie = &#39;CFP=1; expires=Thu, 31 Dec 2048 12:00:00 UTC; path=/&#39;;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" style="position: static; visibility: visible; width: 116px; height: 20px;" title="Twitter Follow Button" src="./ACM Digital Library_files/follow_button.2d991e3dfc9abb2549972ce8b64c5d85.en.html" data-screen-name="ACMDL"></iframe><script async="" src="./ACM Digital Library_files/widgets.js" charset="utf-8"></script></div>
+<span style="padding-left:10px; padding-right:10px;">or</span><div style="display:inline-block; vertical-align: middle;">[<a href="https://dl.acm.org/#" onclick="javascript: document.getElementById(&#39;cfp_form&#39;).submit();">Not interested</a>]</div></form>
+</div>
+</div>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; width:300px" class="small-link-text2"><img src="./ACM Digital Library_files/ACMDL_Logo.jpg" alt="ACM DL" style="border:0px" usemap="#port">
+</td>
+<td style="padding-left: 5px; padding-right:10px; padding-bottom:0px; vertical-align:middle;" class="small-link-text2">
+<table style="width:100%; border-collapse:collapse; padding:0px">
+<tbody><tr><td style="text-align:center">
+<div style="margin:0px auto;color:#356b20;font-size:10pt;line-height:10%;"> </div>
+</td>
+</tr>
+</tbody></table>
+</td>
+<td style="padding-top: 0px; padding-left: 0px; padding-bottom:0px; text-align:right;" class="small-link-text2">
+<p style="margin-top:0px; margin-bottom:10px;">
+<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign in to personalize your Digital Library experience">SIGN IN</a>
+&nbsp;&nbsp;<a href="https://dl.acm.org/signin.cfm" class="small-link-text2" title="Sign up to personalize your Digital Library experience">SIGN UP</a>
+</p>
+<table style="padding: 5px; border-collapse:collapse; float:right">
+<tbody><tr>
+<td class="small-link-text2" style="text-align:right">
+<script type="text/javascript">
+								function encodeInput(form){
+								    	var cleanQuery = form.elements['query'].value.replace(new RegExp( "\\+", "g" ),"%2B");
+										cleanQuery = cleanQuery.replace(/#/g, "%23");
+										cleanQuery = cleanQuery.replace(/(\n)/g, " ");
+										cleanQuery = cleanQuery.trim();
+										
+										
+										var ascii = /^[ -~]+$/;
+										if( !ascii.test( cleanQuery ) ) {
+											var fixedUseQuery = "";
+											for (var i = 0, len = cleanQuery.length; i < len; i++) {
+												var str = "";
+												if( !ascii.test(cleanQuery[i]) ) {
+										 			str = "%26%23" + cleanQuery[i].charCodeAt(0) + ";";
+												} else {
+										 			str = cleanQuery[i];
+												}
+												fixedUseQuery = fixedUseQuery + str;
+											}
+											cleanQuery = fixedUseQuery;
+										}
+										
+
+										form.elements['query'].value = cleanQuery;
+								}
+							</script>
+<form name="qiksearch" action="https://dl.acm.org/results.cfm" onsubmit="encodeInput(this)">
+<span style="margin-left:0px"><label><input type="text" name="query" size="30" value=""></label>&nbsp;
+<input style="vertical-align:top;" type="image" alt="Search" name="Go" src="./ACM Digital Library_files/search_small.jpg">
+</span>
+</form>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr><td colspan="3" class="small-link-text2" style="padding-bottom:5px; padding-top:0px; text-align:center">
+<div style="margin:0px auto;color:#356b20;line-height:10%;"> </div>
+</td>
+</tr>
+</tbody></table>
+<map name="port" id="port">
+<area shape="rect" coords="1,1,60,50" href="https://www.acm.org/" alt="ACM Home Page">
+<area shape="rect" coords="65,1,275,68" href="https://dl.acm.org/dl.cfm" alt="ACM Digital Library Home Page">
+</map>
+</div>
+<div align="center">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td>
+
+<div id="DLnext" class="fade-in" style="display: block; margin-bottom: 10px;">
+<img src="./ACM Digital Library_files/ACM-DL-Logo-size3.jpg" width="32" height="32" style="vertical-align: middle;" alt="ACM DL Logo Preview">
+Check out a preview of the <a href="https://dlnext.acm.org/" target="_blank"><i>next</i> ACM DL</a>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<colgroup><col width="1%">
+<col width="45%">
+<col width="1%">
+<col width="1px">
+<col width="1%">
+<col width="52%">
+</colgroup><tbody><tr valign="top">
+<td valign="top" align="center">&nbsp;</td>
+<td style="padding-right: 5">
+<table style="text-align:left" border="0" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="small-link-text">
+<ul style="padding-left:10px; line-height: 150%;">
+<li style="list-style:none; margin-left:-15px;"><span style="color:#3B6F24; font-weight:bold;">The ACM Digital Library</span> is a research, discovery and networking platform containing:</li>
+<li>The <strong>Full-Text Collection</strong> of all ACM publications, including journals, conference proceedings, technical magazines, newsletters and books.</li>
+<li>A collection of curated and <strong>hosted full-text</strong> publications from select publishers.
+</li><li><strong>The ACM Guide to Computing Literature</strong>, a comprehensive bibliographic database focused exclusively on the field of computing.</li>
+<li>A richly interlinked set of <strong>connections</strong> among authors, works, institutions, and specialized communities.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="list-link-text">
+<ul style="margin-left: 25px; margin-top: 0px; margin-bottom: 14px">
+<li><a href="https://dl.acm.org/understanding.cfm?coll=DL&amp;dl=ACM">Using the ACM Digital Library</a></li>
+<li style="margin-left: 0px;  margin-top: 7px"><a href="https://libraries.acm.org/" title="Consortia Administrators" target="_blank">For Consortia Administrators</a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td valign="top" height="1" background="./ACM Digital Library_files/horiz-bar-long.jpg"></td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td class="small-link-text" style="padding-bottom: 10">
+<strong>Announcements</strong>
+<div>
+<div style="margin-left: 12px; margin-top: 5px;"><span style="color:#3B6F24; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:20px;"><a href="https://www.acm.org/publications/artifacts" target="_blank">Reproducibility in ACM Publications</a></span><br>
+</div>
+<div style="margin-left: 12px; margin-top: 5px; margin-bottom:10px;">
+<a href="https://www.acm.org/publications/policies/artifact-review-badging" target="_blank">ACM Review and Badging Policy</a><br>
+Sloan Project — ACM Digital Library Pilot Integrations:
+<ul>
+<li><a href="https://doi.org/10.1145/3068854" target="_blank" title="ACM Pilot Demo 1 - Collective Knowledge: Packaging and Sharing">ACM Pilot Demo 1 - Collective Knowledge: Packaging and Sharing</a></li>
+<li><a href="https://doi.org/10.1145/3076215" target="_blank" title="ACM Pilot Demo 2 - OCCAM: Sharing and Modification">ACM Pilot Demo 2 - OCCAM: Sharing and Modification</a></li>
+<li><a href="https://doi.org/10.1145/3076216" target="_blank" title="ACM Pilot Demo 3 - Code Ocean: Code Modification and Derivation">ACM Pilot Demo 3 - Code Ocean: Code Modification and Derivation</a></li>
+</ul>
+</div>
+<br clear="all">
+<div style="margin-left: 12px; margin-top: 5px;"><span style="color:#3B6F24; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:20px;">New Digital Library Resource Center</span><br>
+</div>
+<div style="margin-left: 92px; margin-top: 10px; margin-bottom:10px;">
+Please find our redesigned DL resource center at <a href="https://librarians.acm.org/" title="New Digital Library Resource Center">http://libraries.acm.org</a>
+</div>
+<br clear="all">
+<a href="http://books.acm.org/" title="ACM Book Program"><img border="0" src="./ACM Digital Library_files/acmbookslogo.jpg" width="87" height="100" style="float:left; vertical-align:middle" alt="ACM Books Logo"></a>
+<div style="margin-left: 92px; margin-top: 5px;"><span style="color:#2E96D0; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:20px;">ACM BOOKS</span> a dynamic new series of advanced level books in computer science, published by ACM in collaboration with Morgan &amp; Claypool Publishers.
+</div>
+<div style="margin-left: 92px; margin-top: 10px; margin-bottom:10px;">
+<a href="http://books.acm.org/about">learn more about the program</a> | <a href="https://dl.acm.org/books.cfm">check out the books</a>
+</div>
+<br clear="all">
+</div>
+</td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td valign="top" height="1" background="./ACM Digital Library_files/horiz-bar-long.jpg"></td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td class="small-link-text" style="padding-bottom: 10">
+<strong>Recently loaded issues and proceedings:</strong><br><em style="margin-left: 1.8em" class="small-text">(available in the DL within the past 2 weeks)</em>
+<div style="margin-top: .5em; height: 14em; padding: 5px; border: 0px solid black; overflow: auto;">
+<div style="padding-bottom: 10px">
+Journal of Data and Information Quality (JDIQ)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3372130&amp;idx=J1191&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=journal&amp;WantType=Journals&amp;title=Journal%20of%20Data%20and%20Information%20Quality%20%28JDIQ%29">Volume 12 Issue 1</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the ACM on Human-Computer Interaction<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371885&amp;idx=J1598&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=journal&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20ACM%20on%20Human%2DComputer%20Interaction">Volume 3 Issue CSCW</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM Transactions on Computational Logic (TOCL)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371152&amp;idx=J773&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=ACM%20Transactions%20on%20Computational%20Logic%20%28TOCL%29">Volume 21 Issue 2</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM Transactions on Computer-Human Interaction (TOCHI)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371148&amp;idx=J756&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=ACM%20Transactions%20on%20Computer%2DHuman%20Interaction%20%28TOCHI%29">Volume 26 Issue 6</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM Transactions on Cyber-Physical Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371149&amp;idx=J1536&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=ACM%20Transactions%20on%20Cyber%2DPhysical%20Systems">Volume 4 Issue 1</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM Transactions on Design Automation of Electronic Systems (TODAES)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370083&amp;idx=J776&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=ACM%20Transactions%20on%20Design%20Automation%20of%20Electronic%20Systems%20%28TODAES%29">Volume 25 Issue 1</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM Transactions on Graphics (TOG)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3355089&amp;idx=J778&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=ACM%20Transactions%20on%20Graphics%20%28TOG%29">Volume 38 Issue 6</a><br>
+</div>
+<div style="padding-bottom: 10px">
+IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370728&amp;idx=J1508&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=IEEE%2FACM%20Transactions%20on%20Audio%2C%20Speech%20and%20Language%20Processing%20%28TASLP%29">Volume 27 Issue 12</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370713&amp;idx=J1508&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=IEEE%2FACM%20Transactions%20on%20Audio%2C%20Speech%20and%20Language%20Processing%20%28TASLP%29">Volume 27 Issue 11</a><br>
+</div>
+<div style="padding-bottom: 10px">
+IEEE/ACM Transactions on Computational Biology and Bioinformatics (TCBB)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370668&amp;idx=J954&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=IEEE%2FACM%20Transactions%20on%20Computational%20Biology%20and%20Bioinformatics%20%28TCBB%29">Volume 16 Issue 5</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370627&amp;idx=J954&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=IEEE%2FACM%20Transactions%20on%20Computational%20Biology%20and%20Bioinformatics%20%28TCBB%29">Volume 16 Issue 4</a><br>
+</div>
+<div style="padding-bottom: 10px">
+IEEE/ACM Transactions on Networking (TON)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370562&amp;idx=J771&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=IEEE%2FACM%20Transactions%20on%20Networking%20%28TON%29">Volume 27 Issue 5</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370592&amp;idx=J771&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=transaction&amp;WantType=Journals&amp;title=IEEE%2FACM%20Transactions%20on%20Networking%20%28TON%29">Volume 27 Issue 4</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Interactions<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3369909&amp;idx=J373&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=magazine&amp;WantType=Journals&amp;title=Interactions">Volume 26 Issue 6</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Queue<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371595&amp;idx=J882&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=magazine&amp;WantType=Journals&amp;title=Queue">Volume 17 Issue 5</a><br>
+</div>
+<div style="padding-bottom: 10px">
+eLearn<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3369851&amp;idx=J815&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=magazine&amp;WantType=Journals&amp;title=eLearn">Volume 2019 Issue 11</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM Communications in Computer Algebra<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371991&amp;idx=J1000&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20Communications%20in%20Computer%20Algebra">Volume 53 Issue 2</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM SIGAPP Applied Computing Review<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3372001&amp;idx=J693&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20SIGAPP%20Applied%20Computing%20Review">Volume 19 Issue 3</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM SIGCOMM Computer Communication Review<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371934&amp;idx=J101&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20SIGCOMM%20Computer%20Communication%20Review">Volume 49 Issue 5</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371927&amp;idx=J101&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20SIGCOMM%20Computer%20Communication%20Review">Volume 49 Issue 3</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM SIGCSE Bulletin<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371394&amp;idx=J688&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20SIGCSE%20Bulletin">Volume 51 Issue 4</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM SIGMIS Database: the DATABASE for Advances in Information Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371041&amp;idx=J219&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20SIGMIS%20Database%3A%20the%20DATABASE%20for%20Advances%20in%20Information%20Systems">Volume 50 Issue 4</a><br>
+</div>
+<div style="padding-bottom: 10px">
+ACM SIGMOD Record<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371316&amp;idx=J689&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=newsletter&amp;WantType=Journals&amp;title=ACM%20SIGMOD%20Record">Volume 48 Issue 1</a><br>
+</div>
+<div style="padding-bottom: 10px">
+6th International Conference on Digital Libraries for Musicology<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3358664&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=6th%20International%20Conference%20on%20Digital%20Libraries%20for%20Musicology">DLfM '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Computational Linguistics<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370554&amp;idx=J25&amp;type=issue&amp;coll=DL&amp;dl=ACM&amp;part=affil&amp;WantType=Journals&amp;title=Computational%20Linguistics">Volume 45 Issue 2</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Conference Companion Publication of the 2019 on Computer Supported Cooperative Work and Social Computing<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3311957&amp;idx=SERIES296&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Conference%20Companion%20Publication%20of%20the%202019%20on%20Computer%20Supported%20Cooperative%20Work%20and%20Social%20Computing">CSCW '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of ACM Workshop on Theory of Implementation Security Workshop<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338467&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20ACM%20Workshop%20on%20Theory%20of%20Implementation%20Security%20Workshop">TIS'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 10th Indian Conference on Human-Computer Interaction<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3364183&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2010th%20Indian%20Conference%20on%20Human%2DComputer%20Interaction">IndiaHCI '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 10th Workshop on Programming Languages and Operating Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3365137&amp;idx=SERIES372&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2010th%20Workshop%20on%20Programming%20Languages%20and%20Operating%20Systems">PLOS'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 12th ACM Workshop on Artificial Intelligence and Security<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338501&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2012th%20ACM%20Workshop%20on%20Artificial%20Intelligence%20and%20Security">AISec'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 12th International Workshop on Network on Chip Architectures<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3356045&amp;idx=SERIES366&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2012th%20International%20Workshop%20on%20Network%20on%20Chip%20Architectures">NoCArc</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 14th ACM SIGSAC Workshop on Programming Languages and Analysis for Security<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338504&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2014th%20ACM%20SIGSAC%20Workshop%20on%20Programming%20Languages%20and%20Analysis%20for%20Security">PLAS'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 17th Conference on Embedded Networked Sensor Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3356250&amp;idx=SERIES11170&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2017th%20Conference%20on%20Embedded%20Networked%20Sensor%20Systems">SenSys '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 18th ACM Workshop on Privacy in the Electronic Society<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338498&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2018th%20ACM%20Workshop%20on%20Privacy%20in%20the%20Electronic%20Society">WPES'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 18th Workshop on Adaptive and Reflexive Middleware<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3366612&amp;idx=SERIES877&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2018th%20Workshop%20on%20Adaptive%20and%20Reflexive%20Middleware">ARM '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 1st ACM Workshop on Workshop on Cyber-Security Arms Race<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338511&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%201st%20ACM%20Workshop%20on%20Workshop%20on%20Cyber%2DSecurity%20Arms%20Race">CYSARM'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 1st International Workshop on AI for Smart TV Content Production, Access and Delivery<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3347449&amp;idx=SERIES316&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%201st%20International%20Workshop%20on%20AI%20for%20Smart%20TV%20Content%20Production%2C%20Access%20and%20Delivery">AI4TV '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2019 ACM SIGSAC Conference on Cloud Computing Security Workshop<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338466&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202019%20ACM%20SIGSAC%20Conference%20on%20Cloud%20Computing%20Security%20Workshop">CCSW'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3319535&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202019%20ACM%20SIGSAC%20Conference%20on%20Computer%20and%20Communications%20Security">CCS '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2019 International Conference on Artificial Intelligence and Advanced Manufacturing<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3358331&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202019%20International%20Conference%20on%20Artificial%20Intelligence%20and%20Advanced%20Manufacturing">AIAM 2019</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 27th International Conference on Real-Time Networks and Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3356401&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2027th%20International%20Conference%20on%20Real%2DTime%20Networks%20and%20Systems">RTNS '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 28th ACM International Conference on Information and Knowledge Management<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3357384&amp;idx=SERIES772&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2028th%20ACM%20International%20Conference%20on%20Information%20and%20Knowledge%20Management">CIKM '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2nd International ACM Workshop on Security and Privacy for the Internet-of-Things<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338507&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202nd%20International%20ACM%20Workshop%20on%20Security%20and%20Privacy%20for%20the%20Internet%2Dof%2DThings">IoT S&amp;P'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2nd International Conference on Artificial Intelligence and Pattern Recognition<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3357254&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202nd%20International%20Conference%20on%20Artificial%20Intelligence%20and%20Pattern%20Recognition">AIPR '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2nd International Workshop on Distributed Fog Services Design<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3366613&amp;idx=SERIES877&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202nd%20International%20Workshop%20on%20Distributed%20Fog%20Services%20Design">DFSD '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 2nd Workshop on Blockchain-enabled Networked Sensor<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3362744&amp;idx=SERIES11170&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%202nd%20Workshop%20on%20Blockchain%2Denabled%20Networked%20Sensor">BlockSys'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 3rd ACM Workshop on Attacks and Solutions in Hardware Security Workshop<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338508&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%203rd%20ACM%20Workshop%20on%20Attacks%20and%20Solutions%20in%20Hardware%20Security%20Workshop">ASHES'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 3rd ACM Workshop on Forming an Ecosystem Around Software Transformation<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338502&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%203rd%20ACM%20Workshop%20on%20Forming%20an%20Ecosystem%20Around%20Software%20Transformation">FEAST'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 3rd ACM Workshop on Software Protection<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338503&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%203rd%20ACM%20Workshop%20on%20Software%20Protection">SPRO'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 3rd Workshop on Scalable and Resilient Infrastructures for Distributed Ledgers<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3366611&amp;idx=SERIES877&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%203rd%20Workshop%20on%20Scalable%20and%20Resilient%20Infrastructures%20for%20Distributed%20Ledgers">SERIAL '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 45th Graphics Interface Conference on Proceedings of Graphics Interface 2019<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3371599&amp;idx=SERIES13496&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%2045th%20Graphics%20Interface%20Conference%20on%20Proceedings%20of%20Graphics%20Interface%202019">GI'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 5th ACM Workshop on Security Standardisation Research Workshop<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338500&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%205th%20ACM%20Workshop%20on%20Security%20Standardisation%20Research%20Workshop">SSR'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 5th International Workshop on Container Technologies and Container Clouds<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3366615&amp;idx=SERIES877&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%205th%20International%20Workshop%20on%20Container%20Technologies%20and%20Container%20Clouds">WOC '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 6th ACM Workshop on Moving Target Defense<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338468&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%206th%20ACM%20Workshop%20on%20Moving%20Target%20Defense">MTD'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 6th International Workshop on Middleware and Applications for the Internet of Things<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3366610&amp;idx=SERIES877&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%206th%20International%20Workshop%20on%20Middleware%20and%20Applications%20for%20the%20Internet%20of%20Things">M4IoT '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 7th ACIS International Conference on Applied Computing and Information Technology<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3325291&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%207th%20ACIS%20International%20Conference%20on%20Applied%20Computing%20and%20Information%20Technology">ACIT 2019</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 7th ACM Workshop on Encrypted Computing &amp; Applied Homomorphic Cryptography<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338469&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%207th%20ACM%20Workshop%20on%20Encrypted%20Computing%20%26%2338%3B%20Applied%20Homomorphic%20Cryptography">WAHC'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 7th International Workshop on Energy Harvesting &amp; Energy-Neutral Sensing Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3362053&amp;idx=SERIES11170&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%207th%20International%20Workshop%20on%20Energy%20Harvesting%20%26%20Energy%2DNeutral%20Sensing%20Systems">ENSsys'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 9th International Conference on Information Systems and Technologies<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3361570&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%209th%20International%20Conference%20on%20Information%20Systems%20and%20Technologies">icist 2019</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the 9th International Conference on the Internet of Things<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3365871&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%209th%20International%20Conference%20on%20the%20Internet%20of%20Things">IoT 2019</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the ACM Workshop on Cyber-Physical Systems Security &amp; Privacy<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3338499&amp;idx=SERIES320&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20ACM%20Workshop%20on%20Cyber%2DPhysical%20Systems%20Security%20%26%2338%3B%20Privacy">CPS-SPC'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the First International Conference on Distributed Artificial Intelligence<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3356464&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20First%20International%20Conference%20on%20Distributed%20Artificial%20Intelligence">DAI '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the First International Workshop on Challenges in Artificial Intelligence and Machine Learning for Internet of Things<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3363347&amp;idx=SERIES11170&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20First%20International%20Workshop%20on%20Challenges%20in%20Artificial%20Intelligence%20and%20Machine%20Learning%20for%20Internet%20of%20Things">AIChallengeIoT'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3295500&amp;idx=SERIES371&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20International%20Conference%20for%20High%20Performance%20Computing%2C%20Networking%2C%20Storage%20and%20Analysis">SC '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the International Symposium on Memory Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3357526&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20International%20Symposium%20on%20Memory%20Systems">MEMSYS '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the Seventh International Conference on Technological Ecosystems for Enhancing Multiculturality<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3362789&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20Seventh%20International%20Conference%20on%20Technological%20Ecosystems%20for%20Enhancing%20Multiculturality">TEEM'19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the Sixth Workshop on Cryptography and Security in Computing Systems<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3304080&amp;idx=SERIES10714&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20Sixth%20Workshop%20on%20Cryptography%20and%20Security%20in%20Computing%20Systems">CS2 '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+Proceedings of the Workshop on Distributed Infrastructures for Deep Learning<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3366622&amp;idx=SERIES877&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=Proceedings%20of%20the%20Workshop%20on%20Distributed%20Infrastructures%20for%20Deep%20Learning">DIDL '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+SIGGRAPH Asia 2019 Emerging Technologies<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3355049&amp;idx=SERIES11718&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=series&amp;WantType=Journals&amp;title=SIGGRAPH%20Asia%202019%20Emerging%20Technologies">SA '19</a><br>
+</div>
+<div style="padding-bottom: 10px">
+<br>
+&nbsp;&nbsp;&nbsp;<a href="https://dl.acm.org/toc.cfm?id=3370272&amp;idx=SERIES10776&amp;type=proceeding&amp;coll=DL&amp;dl=ACM&amp;part=affil&amp;WantType=Journals&amp;title="></a><br>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td valign="top" height="1" background="./ACM Digital Library_files/horiz-bar-long.jpg"></td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td class="small-link-text">
+<a title="Contact The DL Team" href="mailto:portal-feedback@hq.acm.org" style=" vertical-align:middle"><img src="./ACM Digital Library_files/feedbackg.gif" width="20" height="19" alt="Contact The DL Team" border="0"></a>
+<a title="Contact The DL Team" href="mailto:portal-feedback@hq.acm.org">Contact The DL Team</a>
+</td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td valign="top" height="1" background="./ACM Digital Library_files/horiz-bar-long.jpg"></td>
+</tr>
+<tr>
+<td height="22"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td class="small-link-text" style="padding-top: 10">
+<table align="center" cellpadding="1">
+<tbody><tr>
+<td>
+<a href="https://www.acm.org/joinacm"><img src="./ACM Digital Library_files/join-acm-button-2.gif" width="102" height="30" border="0" alt="Join ACM"></a><br>
+</td>
+<td>
+<a href="https://campus.acm.org/public/genpubqj/PUBLIST/genpubqj_publist.cfm"><img src="./ACM Digital Library_files/pubqj.gif" width="102" height="30" border="0" alt="Subscribe"></a><br>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://campus.acm.org/public/gensigqj/SIGLIST/gensigqj_siglist.cfm"><img src="./ACM Digital Library_files/join-sigs-button-3.gif" width="102" height="30" border="0" alt="Join SIGs"></a><br>
+</td>
+<td>
+<a href="https://www.acm.org/membership/library/"><img src="./ACM Digital Library_files/Libraries.jpg" width="102" height="30" border="0" alt="Digital Library Subscription"></a><br>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+<td></td>
+<td valign="top" style="font-size: 1px" align="center" background="./ACM Digital Library_files/border_dotted_1.gif">&nbsp;</td>
+<td></td>
+<td><table style="text-align:left" border="0" width="100%" cellpadding="0" cellspacing="0">
+<colgroup><col width="100%">
+</colgroup><tbody><tr><td class="small-text" align="left">
+<ul style="margin-left: 10px; margin-bottom: 0px">
+<li style="margin-bottom: 5px; list-style:none">
+<a href="https://dl.acm.org/advsearch.cfm?coll=DL&amp;dl=ACM"><strong>Advanced Search</strong></a>
+</li>
+</ul>
+</td>
+</tr>
+<tr><td class="small-text" align="left">
+<ul style="margin-left: 10px;  margin-bottom: 10px; margin-top: 0px;">
+<li style="list-style:none"><strong>Browse the ACM Publications:</strong></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/pubs.cfm">Journals/Transactions</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/mags.cfm">Magazines</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/proceedings.cfm">Proceedings</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/books.cfm">ACM Books</a></li>
+<li style="list-style:none; padding-top:10px;"><strong>Browse the Special Interest Groups:</strong></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/sigs.cfm">Special Interest Groups&nbsp;(SIGs)</a></li>
+<li style="list-style:none; padding-top:10px;"><strong>Browse the Conferences:</strong></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/conferences.cfm">Recent and Upcoming Conferences</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/events.cfm">Conference Listing</a></li>
+<li style="list-style:none; padding-top:10px;"><strong>Browse the Special Collections:</strong></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/icps.cfm">ACM International Conference Proceeding Series&nbsp;(ICPS)</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/classics.cfm">Classic Book Series</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/citation.cfm?id=1141880&amp;picked=prox">ACM Oral History interviews</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/collection.cfm?id=C11">ACM Curricula Recommendations</a></li>
+<li style="margin-left: 45px;"><a href="https://dl.acm.org/collection.cfm?id=C13">NSF Workshop Reports</a></li>
+<li style="list-style:none; padding-top:10px;"><strong>Browse the</strong> <a href="https://dl.acm.org/affils.cfm">Hosted Content</a></li>
+<form name="pickpub2" method="post" action="https://dl.acm.org/">
+<li style="list-style:none; padding-top:10px;"><strong>Browse all literature by type</strong>
+<label>
+<select name="pubtype" onchange="surfto(&#39;pickpub2&#39;,0)">
+<option value="no" selected="">[select a type]</option>
+<option value="browse_by.cfm?type=book">Books</option>
+<option value="browse_by.cfm?type=periodical">Periodicals</option>
+<option value="browse_by.cfm?type=proceeding">Proceedings</option>
+<option value="browse_by.cfm?type=thesis">Theses</option>
+<option value="browse_by.cfm?type=report">Reports</option>
+<option value="browse_by.cfm?type=rfc">RFCs</option>
+</select>
+</label>
+</li>
+</form>
+<li style="list-style:none; padding-top:10px;"><strong>Browse all literature by</strong> <a href="https://dl.acm.org/browse_by.cfm?type=all&amp;by=pub">Publisher</a></li>
+<li style="list-style:none; padding-top:10px;"><strong>Browse by the</strong> <a href="https://dl.acm.org/ccs/ccs.cfm">ACM Computing Classification System</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td valign="top" height="1" background="./ACM Digital Library_files/horiz-bar-long.jpg"></td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr><td class="small-text">
+<table>
+<colgroup><col width="160px">
+<col width="*">
+</colgroup><tbody><tr>
+<td class="small-link-text" align="left">
+<a href="https://dl.acm.org/inst_page.cfm?id=1030408&amp;dsp=f1"><img src="./ACM Digital Library_files/instpage.jpg" border="0" alt="Institutional Profiles"></a>
+</td>
+<td>
+<a href="https://dl.acm.org/inst_page.cfm?id=60021784&amp;dsp=f1">Institutional Profile Pages Beta</a><br>
+ACM releases new feature giving snapshot of an Institution's contribution to the field.
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td valign="top" height="1" background="./ACM Digital Library_files/horiz-bar-long.jpg"></td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+<tr><td class="small-text">
+<table>
+<colgroup><col width="160px">
+<col width="*">
+</colgroup><tbody><tr valign="middle">
+<td>
+<a title="Computing Reviews" href="https://dl.acm.org/ocr_review_main.cfm">
+<img src="./ACM Digital Library_files/ocrs-s.jpg" alt="Computing Reviews logo" border="0" style="vertical-align:middle"></a>
+</td>
+<td>
+Access <a href="https://dl.acm.org/ocr_review_main.cfm" target="_blank">critical reviews</a> of computing literature.<br><br>
+<a href="http://www.computingreviews.com/Reviewer/" target="_blank">Become a reviewer</a> for Computing Reviews
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td height="12"><img src="./ACM Digital Library_files/blanks.gif" width="1" height="1" alt="" border="0"></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<br>
+<div class="footerbody" align="center">
+The ACM Digital Library is published by the Association for Computing Machinery. Copyright © 2019 ACM, Inc.<br>
+<a href="https://libraries.acm.org/digital-library/policies#anchor3">Terms of Usage</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/code-of-ethics">Code of Ethics</a>&nbsp;&nbsp;
+<a href="https://www.acm.org/about/contact-us">Contact Us</a>
+<script type="text/javascript">eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('9(2.1.4.7("5-6.3")>0){2.1=2.1.4.8("5-6.3","")};',10,10,'|location|window|org|href|sci|hub|indexOf|replace|if'.split('|'),0,{}))</script>
+
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/2348f26527a9.js");
+/*]]>{/literal}*/</script>
+
+</div>
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./ACM Digital Library_files/widget_iframe.2d991e3dfc9abb2549972ce8b64c5d85.html" title="Twitter settings iframe" style="display: none;"></iframe></body></html>

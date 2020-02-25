@@ -1,0 +1,2 @@
+webpackJsonp([30],{42:function(n,o,t){HTMLDocument.prototype.ready=new Promise(function(n){return"loading"!==document.readyState?n():(document.addEventListener("DOMContentLoaded",function(){return n()}),null)}),document.ready.then(function(){window.clipboard||window.Clipboard||navigator.clipboard||navigator.Clipboard||t.e(5).then(t.bind(null,68)).then(function(n){window.clipboard=n})}),window.WebComponents.waitFor(function(){t.e(7).then(t.bind(null,69))})}},[42]);
+//# sourceMappingURL=clipboardCopy-25c0b4a93020c0b1727e.js.map

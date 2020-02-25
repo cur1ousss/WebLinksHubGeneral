@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://codepen.io/anon/embed/WNeyWOO?height=500&theme-id=1&slug-hash=WNeyWOO&default-tab=js,result -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - Shopping List: React Example</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="3oRz+QIB81DwZy1p1eORTakpCqBNga7KJruz9cO68822L1kvvltC0cW6xnJgCiAwgIG3TVYS4yj1r7VBHJH04Q==">
+<link rel="stylesheet" media="all" href="./embed-b838ed5684f29cfa960007cddb312fe60af2190db81baafa7d655feaca73142b.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    .embed-footer,
+    .embed-nav {
+      background: #28282a;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #ffffff;
+      background-color: #424242;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #212121;
+      color: #ffffff;
+      box-shadow: inset 0px 3px #ff8a00;
+    }
+    .embed-nav .logo-wrap a {
+      color: #a9a9a9;
+    }
+
+    .embed-nav svg {
+      stroke: #a9a9a9 !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="./highcontrast-dark-a9166d9422d2610b098ad9e69a49ae54f2cdd1fcb34e2c4613bf6d6bbe4bbd79.css">
+<link rel="stylesheet" href="./maVRwd.css">
+</head>
+<body id="the-body" style="border: 1px solid #39231b; --borderWidth: 1px;" class="codepen-embed-body split-output static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="https://codepen.io/anon/embed/WNeyWOO?height=500&amp;theme-id=1&amp;slug-hash=WNeyWOO&amp;default-tab=js,result#html-box" aria-pressed="false" role="button">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="https://codepen.io/anon/embed/WNeyWOO?height=500&amp;theme-id=1&amp;slug-hash=WNeyWOO&amp;default-tab=js,result#css-box" aria-pressed="false" role="button">
+CSS
+</a>
+</li>
+<li class="code-type">
+<a id="js-link" href="https://codepen.io/anon/embed/WNeyWOO?height=500&amp;theme-id=1&amp;slug-hash=WNeyWOO&amp;default-tab=js,result#js-box" class="active" aria-pressed="true" role="button">
+Babel
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="https://codepen.io/anon/embed/WNeyWOO?height=500&amp;theme-id=1&amp;slug-hash=WNeyWOO&amp;default-tab=js,result#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="large-logo edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/mturley/pen/WNeyWOO" title="Edit on CodePen">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"></path>
+</svg>
+</a>
+<a class="box-logo edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/mturley/pen/WNeyWOO" title="Edit on CodePen">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24"></path>
+</svg>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="thin" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre><code data-lang="htmlmixed" id="actual-html-code" data-og-lang="htmlmixed" data-alt-lang="xml" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"shopping-list"</span> <span class="cm-tag cm-bracket">/&gt;</span><br></code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre><code data-lang="css" id="actual-css-code" data-og-lang="css" data-alt-lang="css" class=" cm-s-default"><span class="cm-tag">table</span> <span class="cm-tag">tr</span><span class="cm-qualifier">.checked</span> {<br>  <span class="cm-property">text-decoration</span>: <span class="cm-atom">line-through</span>;<br>  <span class="cm-property">background-color</span>: <span class="cm-atom">#ebebeb</span>;<br>}<br><br><span class="cm-tag">table</span> <span class="cm-tag">caption</span> <span class="cm-tag">span</span> {<br>  <span class="cm-property">padding-right</span>: <span class="cm-number">10px</span>;<br>}<br><br><span class="cm-tag">table</span> <span class="cm-tag">caption</span> <span class="cm-qualifier">.pf-c-button</span> {<br>  <span class="cm-property">margin-right</span>: <span class="cm-number">4px</span>;<br>}</code></pre>
+</div>
+<div id="js-box" class="code-wrap code-box box active" role="region" aria-label="JS">
+<pre><code data-lang="jsx" id="actual-js-code" data-og-lang="jsx" data-alt-lang="javascript" class=" cm-s-default"><span class="cm-keyword">function</span> <span class="cm-def">ChecklistTable</span>({ <span class="cm-def">columns</span>, <span class="cm-def">rows</span>, <span class="cm-def">initialValues</span>, <span class="cm-meta">...</span><span class="cm-def">otherProps</span> }) {<br>  <span class="cm-keyword">const</span> [<span class="cm-def">checkboxValues</span>, <span class="cm-def">setCheckboxValues</span>] <span class="cm-operator">=</span> <span class="cm-variable">React</span>.<span class="cm-property">useState</span>(<span class="cm-variable-2">initialValues</span>);<br>  <br>  <span class="cm-keyword">function</span> <span class="cm-def">checkAllBoxes</span>() {<br>    <span class="cm-variable-2">setCheckboxValues</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Array</span>(<span class="cm-variable-2">rows</span>.<span class="cm-property">length</span>).<span class="cm-property">fill</span>(<span class="cm-atom">true</span>));<br>  }<br>  <br>  <span class="cm-keyword">function</span> <span class="cm-def">uncheckAllBoxes</span>() {<br>    <span class="cm-variable-2">setCheckboxValues</span>(<span class="cm-keyword">new</span> <span class="cm-variable">Array</span>(<span class="cm-variable-2">rows</span>.<span class="cm-property">length</span>).<span class="cm-property">fill</span>(<span class="cm-atom">false</span>));<br>  }<br>  <br>  <span class="cm-keyword">function</span> <span class="cm-def">setCheckboxValue</span>(<span class="cm-def">rowIndex</span>, <span class="cm-def">checked</span>) {<br>    <span class="cm-keyword">const</span> <span class="cm-def">newValues</span> <span class="cm-operator">=</span> <span class="cm-variable-2">checkboxValues</span>.<span class="cm-property">slice</span>();<br>    <span class="cm-variable-2">newValues</span>[<span class="cm-variable-2">rowIndex</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">checked</span>;<br>    <span class="cm-variable-2">setCheckboxValues</span>(<span class="cm-variable-2">newValues</span>);<br>  }<br>  <br>  <span class="cm-keyword">const</span> <span class="cm-def">numItems</span> <span class="cm-operator">=</span> <span class="cm-variable-2">checkboxValues</span>.<span class="cm-property">length</span>;<br>  <span class="cm-keyword">const</span> <span class="cm-def">numChecked</span> <span class="cm-operator">=</span> <span class="cm-variable-2">checkboxValues</span>.<span class="cm-property">filter</span>(<span class="cm-variable">Boolean</span>).<span class="cm-property">length</span>;<br>  <br>  <span class="cm-keyword">return</span> (<br>    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">table</span> <span class="cm-attribute">className</span>=<span class="cm-string">"pf-c-table pf-m-grid-lg"</span> <span class="cm-attribute">role</span>=<span class="cm-string">"grid"</span> {<span class="cm-meta">...</span><span class="cm-variable">otherProps</span>}<span class="cm-tag cm-bracket">&gt;</span><br>      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">caption</span><span class="cm-tag cm-bracket">&gt;</span><br>        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">numChecked</span>} of {<span class="cm-variable">numItems</span>} items checked<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">span</span><span class="cm-tag cm-bracket">&gt;</span><br>        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">button</span><br>          <span class="cm-attribute">onClick</span>={<span class="cm-variable">checkAllBoxes</span>}<br>          <span class="cm-attribute">disabled</span>={<span class="cm-variable">numChecked</span> <span class="cm-operator">===</span> <span class="cm-variable">numItems</span>}<br>          <span class="cm-attribute">className</span>=<span class="cm-string">"pf-c-button pf-m-primary"</span><br>          <span class="cm-attribute">type</span>=<span class="cm-string">"button"</span><br>        <span class="cm-tag cm-bracket">&gt;</span><br>          Check all<br>        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">button</span><span class="cm-tag cm-bracket">&gt;</span><br>        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">button</span><br>          <span class="cm-attribute">onClick</span>={<span class="cm-variable">uncheckAllBoxes</span>}<br>          <span class="cm-attribute">disabled</span>={<span class="cm-variable">numChecked</span> <span class="cm-operator">===</span> <span class="cm-number">0</span>}<br>          <span class="cm-attribute">className</span>=<span class="cm-string">"pf-c-button pf-m-secondary"</span><br>          <span class="cm-attribute">type</span>=<span class="cm-string">"button"</span><br>        <span class="cm-tag cm-bracket">&gt;</span><br>          Uncheck all<br>        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">button</span><span class="cm-tag cm-bracket">&gt;</span><br>      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">caption</span><span class="cm-tag cm-bracket">&gt;</span><br>      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">thead</span><span class="cm-tag cm-bracket">&gt;</span><br>        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span><br>          <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">td</span> <span class="cm-tag cm-bracket">/&gt;</span><br>          {<span class="cm-variable">columns</span>.<span class="cm-property">map</span>(<span class="cm-keyword">function</span>(<span class="cm-def">column</span>) {<br>            <span class="cm-keyword">return</span> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span> <span class="cm-attribute">scope</span>=<span class="cm-string">"col"</span> <span class="cm-attribute">key</span>={<span class="cm-variable">column</span>}<span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">column</span>}<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span>;<br>          })}<br>        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span><br>      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">thead</span><span class="cm-tag cm-bracket">&gt;</span><br>      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tbody</span><span class="cm-tag cm-bracket">&gt;</span><br>        {<span class="cm-variable">rows</span>.<span class="cm-property">map</span>(<span class="cm-keyword">function</span>(<span class="cm-def">row</span>, <span class="cm-def">rowIndex</span>) {<br>          <span class="cm-keyword">const</span> [<span class="cm-def">firstCell</span>, <span class="cm-meta">...</span><span class="cm-def">otherCells</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">row</span>;<br>          <span class="cm-keyword">const</span> <span class="cm-def">labelId</span> <span class="cm-operator">=</span> <span class="cm-string-2">`item-${</span><span class="cm-variable-2">rowIndex</span><span class="cm-string-2">}</span><span class="cm-string-2">-${</span><span class="cm-variable-2">firstCell</span><span class="cm-string-2">}</span><span class="cm-string-2">`</span>;<br>          <span class="cm-keyword">const</span> <span class="cm-def">isChecked</span> <span class="cm-operator">=</span> <span class="cm-variable">checkboxValues</span>[<span class="cm-variable-2">rowIndex</span>];<br>          <span class="cm-keyword">return</span> (<br>            <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">tr</span> <span class="cm-attribute">key</span>={<span class="cm-variable">firstCell</span>} <span class="cm-attribute">className</span>={<span class="cm-variable">isChecked</span> <span class="cm-operator">?</span> <span class="cm-string">'checked'</span> : <span class="cm-string">''</span>}<span class="cm-tag cm-bracket">&gt;</span><br>              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">td</span> <span class="cm-attribute">className</span>=<span class="cm-string">"pf-c-table__check"</span><span class="cm-tag cm-bracket">&gt;</span><br>                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">input</span><br>                  <span class="cm-attribute">type</span>=<span class="cm-string">"checkbox"</span><br>                  <span class="cm-attribute">name</span>={<span class="cm-variable">firstCell</span>}<br>                  <span class="cm-attribute">aria-labelledby</span>={<span class="cm-variable">labelId</span>}<br>                  <span class="cm-attribute">checked</span>={<span class="cm-variable">isChecked</span>}<br>                  <span class="cm-attribute">onChange</span>={<span class="cm-keyword">function</span>(<span class="cm-def">event</span>) {<br>                    <span class="cm-variable">setCheckboxValue</span>(<span class="cm-variable">rowIndex</span>, <span class="cm-variable-2">event</span>.<span class="cm-property">target</span>.<span class="cm-property">checked</span>);<br>                  }}<br>                <span class="cm-tag cm-bracket">/&gt;</span><br>              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">td</span><span class="cm-tag cm-bracket">&gt;</span><br>              <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">th</span> <span class="cm-attribute">data-label</span>={<span class="cm-variable">columns</span>[<span class="cm-number">0</span>]}<span class="cm-tag cm-bracket">&gt;</span><br>                <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">id</span>={<span class="cm-variable">labelId</span>}<span class="cm-tag cm-bracket">&gt;</span>{<span class="cm-variable">firstCell</span>}<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span><br>              <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">th</span><span class="cm-tag cm-bracket">&gt;</span><br>              {<span class="cm-variable">otherCells</span>.<span class="cm-property">map</span>(<span class="cm-keyword">function</span>(<span class="cm-def">cell</span>, <span class="cm-def">cellIndex</span>) {<br>                <span class="cm-keyword">return</span> (<br>                  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">td</span> <span class="cm-attribute">key</span>={<span class="cm-variable">cell</span>} <span class="cm-attribute">data-label</span>={<span class="cm-variable">columns</span>[<span class="cm-number">1</span> <span class="cm-operator">+</span> <span class="cm-variable">cellIndex</span>]}<span class="cm-tag cm-bracket">&gt;</span><br>                    {<span class="cm-variable">cell</span>}<br>                  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">td</span><span class="cm-tag cm-bracket">&gt;</span><br>                );<br>              })}<br>            <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tr</span><span class="cm-tag cm-bracket">&gt;</span><br>          );<br>        })}<br>      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">tbody</span><span class="cm-tag cm-bracket">&gt;</span><br>    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">table</span><span class="cm-tag cm-bracket">&gt;</span><br>  );<br>};<br><br><span class="cm-keyword">function</span> <span class="cm-def">ShoppingList</span>() {<br>  <span class="cm-keyword">return</span> (<br>    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ChecklistTable</span><br>      <span class="cm-attribute">aria-label</span>=<span class="cm-string">"Shopping list"</span><br>      <span class="cm-attribute">columns</span>={[<span class="cm-string">'Item'</span>, <span class="cm-string">'Quantity'</span>]}<br>      <span class="cm-attribute">rows</span>={[<br>        [<span class="cm-string">'Sugar'</span>, <span class="cm-string">'1 cup'</span>],<br>        [<span class="cm-string">'Butter'</span>, <span class="cm-string">'½ cup'</span>],<br>        [<span class="cm-string">'Eggs'</span>, <span class="cm-string">'2'</span>],<br>        [<span class="cm-string">'Milk'</span>, <span class="cm-string">'½ cup'</span>],<br>      ]}<br>      <span class="cm-attribute">initialValues</span>={[<span class="cm-atom">false</span>, <span class="cm-atom">false</span>, <span class="cm-atom">true</span>, <span class="cm-atom">false</span>]}<br>    <span class="cm-tag cm-bracket">/&gt;</span><br>  );<br>}<br><br><span class="cm-variable">ReactDOM</span>.<span class="cm-property">render</span>(<br>  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">ShoppingList</span> <span class="cm-tag cm-bracket">/&gt;</span>,<br>  <span class="cm-variable">document</span>.<span class="cm-variable">getElementById</span>(<span class="cm-string">'shopping-list'</span>)<br>);<br></code></pre>
+<a href="https://codepen.io/anon/embed/WNeyWOO?height=500&amp;theme-id=1&amp;slug-hash=WNeyWOO&amp;default-tab=js,result#0" id="view-js-compiled-button" class="action-button bottom right view-compiled-button" data-type="js">
+View Compiled
+</a>
+</div>
+<div id="result-box" class="code-box active" role="region" aria-label="Result">
+<iframe id="result-iframe" class="result-iframe " sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr" tabindex="-1" data-src="https://cdpn.io/mturley/fullembedgrid/WNeyWOO?type=embed&amp;animations=run" src="./WNeyWOO.html" allowtransparency="true" frameborder="0" scrolling="yes" allowpaymentrequest="true" allowfullscreen="true" name="CodePen Preview for Shopping List: React Example" title="CodePen Preview for Shopping List: React Example">
+      </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/mturley" target="_blank" rel="noopener" class="about-image" style="background-image: url(https://s.cdpn.io/profiles/user/1095009/512.jpg?1566938401)"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/mturley" target="_blank" rel="noopener">Mike Turley</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+It is a fork of <a href="https://cdpn.io/hramos/fullpage/LRZBEJ?default-tab=js,result&amp;height=500&amp;slug-hash=WNeyWOO&amp;theme-id=1">this Pen.</a>
+</p>
+<p>
+<a href="https://codepen.io/mturley" target="_blank" rel="noopener" class="about-user-more">
+See more by @mturley on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://unpkg.com/@patternfly/patternfly/patternfly.min.css" target="_blank">https://unpkg.com/@patternfly/patternfly/patternfly.min.css</a>
+</li>
+</ol>
+<h3>External JavaScript</h3>
+<ol class="list-of-resources">
+<li>
+<a href="https://unpkg.com/react/umd/react.development.js" target="_blank">https://unpkg.com/react/umd/react.development.js</a>
+</li>
+<li>
+<a href="https://unpkg.com/react-dom/umd/react-dom.development.js" target="_blank">https://unpkg.com/react-dom/umd/react-dom.development.js</a>
+</li>
+</ol>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button active" id="zoom-button-1">1×</button></li><li><button class="action-button" id="zoom-button-05">0.5×</button></li><li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script>
+    __editor_config = {"id":"classic","editors":[{"id":"html","type":"html","name":"HTML","settings":[{"id":"processor","name":"HTML Preprocessor","type":"select","visible":true,"values":[{"id":"none","name":"None","value":"none","default":true},{"id":"haml","name":"Haml","value":"haml"},{"id":"markdown","name":"Markdown","value":"markdown"},{"id":"slim","name":"Slim","value":"slim"},{"id":"pug","name":"Pug","value":"pug"}]},{"id":"html_classes","name":"Add Class(es) to <html>","type":"input","placeholder":"e.g. single post post-1234","visible":true},{"id":"head","name":"Stuff for <head>","type":"textarea","placeholder":"e.g. <meta>, <link>, <script>","visible":true}],"actions":[{"id":"tidy_html","type":"tidy_code","name":"Format HTML","disabled_processors":["haml","markdown","slim","pug"]},{"id":"view_compiled_html","type":"view_compiled","name":"View Compiled HTML","disabled_processors":["none"]},{"id":"analyze_html","type":"analyze","name":"Analyze HTML"},{"id":"maximize_html_editor","type":"maximize","name":"Maximize HTML Editor"},{"id":"minimize_html_editor","type":"minimize","name":"Minimize HTML Editor"},{"id":"fold_all_html","type":"fold_all","name":"Fold All"},{"id":"unfold_all_html","type":"unfold_all","name":"Unfold All"}],"processors":[{"id":"none","name":"None"},{"id":"haml","name":"Haml"},{"id":"markdown","name":"Markdown"},{"id":"slim","name":"Slim"},{"id":"pug","name":"Pug"}]},{"id":"css","type":"css","name":"CSS","actions":[{"id":"tidy_css","type":"tidy_code","name":"Format CSS","disabled_processors":["sass","stylus"]},{"id":"view_compiled_css","type":"view_compiled","name":"View Compiled CSS","disabled_processors":["none"]},{"id":"analyze_css","type":"analyze","name":"Analyze CSS"},{"id":"maximize_css_editor","type":"maximize","name":"Maximize CSS Editor"},{"id":"minimize_css_editor","type":"minimize","name":"Minimize CSS Editor"},{"id":"fold_all_css","type":"fold_all","name":"Fold All","disabled_processors":["sass"]},{"id":"unfold_all_css","type":"unfold_all","name":"Unfold All","disabled_processors":["sass"]}],"processors":[{"id":"none","name":"None"},{"id":"less","name":"Less"},{"id":"scss","name":"SCSS"},{"id":"sass","name":"Sass"},{"id":"stylus","name":"Stylus"},{"id":"postcss","name":"PostCSS"}],"parSuffixes":["less","scss","sass","styl"]},{"id":"js","type":"js","name":"JS","externalResourcesHidden":false,"actions":[{"id":"tidy_js","type":"tidy_code","name":"Format JavaScript","disabled_processors":["coffeescript, livescript"]},{"id":"view_compiled_js","type":"view_compiled","name":"View Compiled JavaScript","disabled_processors":["none"]},{"id":"analyze_js","type":"analyze","name":"Analyze JavaScript"},{"id":"maximize_js_editor","type":"maximize","name":"Maximize JavaScript Editor"},{"id":"minimize_js_editor","type":"minimize","name":"Minimize JavaScript Editor"},{"id":"fold_all_js","type":"fold_all","name":"Fold All"},{"id":"unfold_all_js","type":"unfold_all","name":"Unfold All"}],"processors":[{"id":"none","name":"None"},{"id":"babel","name":"Babel"},{"id":"typescript","name":"TypeScript"},{"id":"coffeescript","name":"CoffeeScript"},{"id":"livescript","name":"LiveScript"}]}],"formatters":[{"id":"classic","name":"Classic","runOn":[{"eventType":"demand"}],"url":"https://fi593g2v2a.execute-api.us-west-2.amazonaws.com/production/format"}],"layout":{"default":"top"},"linters":[{"id":"classic","name":"Classic","runOn":[{"eventType":"demand"}],"url":"https://fi593g2v2a.execute-api.us-west-2.amazonaws.com/production/lint"}],"preview":{"intervalMaxWaitMS":3500,"intervalMS":1200},"settings":[{"id":"details","name":"Pen Details","type":"setting"},{"id":"privacy","name":"Privacy","pro":true,"type":"setting"},{"id":"behavior","name":"Behavior","type":"setting"},{"id":"editor","name":"Editor","type":"setting"},{"id":"template","name":"Template","type":"setting"},{"id":"screenshot","name":"Screenshot","pro":true,"type":"setting"}]}
+    __processedPen = {"html":"&lt;div id=&quot;shopping-list&quot; /&gt;","css":"table tr.checked {\n  text-decoration: line-through;\n  background-color: #ebebeb;\n}\n\ntable caption span {\n  padding-right: 10px;\n}\n\ntable caption .pf-c-button {\n  margin-right: 4px;\n}","js":"function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i &lt; arguments.length; i++) {if (window.CP.shouldStopExecution(0)) break;var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}window.CP.exitedLoop(0);return target;};return _extends.apply(this, arguments);}function ChecklistTable({ columns, rows, initialValues, ...otherProps }) {\n  const [checkboxValues, setCheckboxValues] = React.useState(initialValues);\n\n  function checkAllBoxes() {\n    setCheckboxValues(new Array(rows.length).fill(true));\n  }\n\n  function uncheckAllBoxes() {\n    setCheckboxValues(new Array(rows.length).fill(false));\n  }\n\n  function setCheckboxValue(rowIndex, checked) {\n    const newValues = checkboxValues.slice();\n    newValues[rowIndex] = checked;\n    setCheckboxValues(newValues);\n  }\n\n  const numItems = checkboxValues.length;\n  const numChecked = checkboxValues.filter(Boolean).length;\n\n  return (\n    React.createElement(&quot;table&quot;, _extends({ className: &quot;pf-c-table pf-m-grid-lg&quot;, role: &quot;grid&quot; }, otherProps),\n    React.createElement(&quot;caption&quot;, null,\n    React.createElement(&quot;span&quot;, null, numChecked, &quot; of &quot;, numItems, &quot; items checked&quot;),\n    React.createElement(&quot;button&quot;, {\n      onClick: checkAllBoxes,\n      disabled: numChecked === numItems,\n      className: &quot;pf-c-button pf-m-primary&quot;,\n      type: &quot;button&quot; }, &quot;Check all&quot;),\n\n\n\n    React.createElement(&quot;button&quot;, {\n      onClick: uncheckAllBoxes,\n      disabled: numChecked === 0,\n      className: &quot;pf-c-button pf-m-secondary&quot;,\n      type: &quot;button&quot; }, &quot;Uncheck all&quot;)),\n\n\n\n\n    React.createElement(&quot;thead&quot;, null,\n    React.createElement(&quot;tr&quot;, null,\n    React.createElement(&quot;td&quot;, null),\n    columns.map(function (column) {\n      return React.createElement(&quot;th&quot;, { scope: &quot;col&quot;, key: column }, column);\n    }))),\n\n\n    React.createElement(&quot;tbody&quot;, null,\n    rows.map(function (row, rowIndex) {\n      const [firstCell, ...otherCells] = row;\n      const labelId = `item-${rowIndex}-${firstCell}`;\n      const isChecked = checkboxValues[rowIndex];\n      return (\n        React.createElement(&quot;tr&quot;, { key: firstCell, className: isChecked ? &#39;checked&#39; : &#39;&#39; },\n        React.createElement(&quot;td&quot;, { className: &quot;pf-c-table__check&quot; },\n        React.createElement(&quot;input&quot;, {\n          type: &quot;checkbox&quot;,\n          name: firstCell,\n          &quot;aria-labelledby&quot;: labelId,\n          checked: isChecked,\n          onChange: function (event) {\n            setCheckboxValue(rowIndex, event.target.checked);\n          } })),\n\n\n        React.createElement(&quot;th&quot;, { &quot;data-label&quot;: columns[0] },\n        React.createElement(&quot;div&quot;, { id: labelId }, firstCell)),\n\n        otherCells.map(function (cell, cellIndex) {\n          return (\n            React.createElement(&quot;td&quot;, { key: cell, &quot;data-label&quot;: columns[1 + cellIndex] },\n            cell));\n\n\n        })));\n\n\n    }))));\n\n\n\n};\n\nfunction ShoppingList() {\n  return (\n    React.createElement(ChecklistTable, {\n      &quot;aria-label&quot;: &quot;Shopping list&quot;,\n      columns: [&#39;Item&#39;, &#39;Quantity&#39;],\n      rows: [\n      [&#39;Sugar&#39;, &#39;1 cup&#39;],\n      [&#39;Butter&#39;, &#39;½ cup&#39;],\n      [&#39;Eggs&#39;, &#39;2&#39;],\n      [&#39;Milk&#39;, &#39;½ cup&#39;]],\n\n      initialValues: [false, false, true, false] }));\n\n\n}\n\nReactDOM.render(\nReact.createElement(ShoppingList, null),\ndocument.getElementById(&#39;shopping-list&#39;));"};
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "Babel"
+    };
+    __pageType = "embed";
+    __editable = false;
+    __embed_prefill = false;
+    __env = "production";
+  </script>
+<script src="./embed-6df5042283b6107cdf6cfe4125efc1911e92ab842fd3c87a17ea17c1ce8e76b3.js"></script>
+
+
+</body></html>

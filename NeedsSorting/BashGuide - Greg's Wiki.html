@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0036)http://mywiki.wooledge.org/BashGuide -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="index,nofollow">
+
+<title>BashGuide - Greg's Wiki</title>
+<script type="text/javascript" src="./BashGuide - Greg&#39;s Wiki_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="./BashGuide - Greg&#39;s Wiki_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./BashGuide - Greg&#39;s Wiki_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="./BashGuide - Greg&#39;s Wiki_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="./BashGuide - Greg&#39;s Wiki_files/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static198/modernized/css/msie.css">
+<![endif]-->
+
+
+<link rel="alternate" title="Greg&#39;s Wiki: BashGuide" href="http://mywiki.wooledge.org/BashGuide?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=BashGuide&amp;ddiffs=1" type="application/rss+xml">
+
+
+<link rel="Start" href="http://mywiki.wooledge.org/EnglishFrontPage">
+<link rel="Alternate" title="Wiki Markup" href="http://mywiki.wooledge.org/BashGuide?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://mywiki.wooledge.org/BashGuide?action=print">
+<link rel="Search" href="http://mywiki.wooledge.org/FindPage">
+<link rel="Index" href="http://mywiki.wooledge.org/TitleIndex">
+<link rel="Glossary" href="http://mywiki.wooledge.org/WordIndex">
+<link rel="Help" href="http://mywiki.wooledge.org/HelpOnFormatting">
+</head>
+
+<body lang="en" dir="ltr">
+
+<div id="header">
+
+<form id="searchform" method="get" action="http://mywiki.wooledge.org/BashGuide">
+<div>
+<input type="hidden" name="action" value="fullsearch">
+<input type="hidden" name="context" value="180">
+<label for="searchinput" style="display: none;">Search:</label>
+<input id="searchinput" type="text" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" class="disabled">
+<input id="titlesearch" name="titlesearch" type="submit" value="Titles" alt="Search Titles" disabled="">
+<input id="fullsearch" name="fullsearch" type="submit" value="Text" alt="Search Full Text" disabled="">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<div id="logo"><a href="http://mywiki.wooledge.org/EnglishFrontPage"><img src="./BashGuide - Greg&#39;s Wiki_files/moinmoin.png" alt="MoinMoin Logo"></a></div>
+<div id="username"><a href="http://mywiki.wooledge.org/BashGuide?action=login" id="login" rel="nofollow">Login</a></div>
+<h1 id="locationline">
+
+<span id="pagelocation"><a href="http://mywiki.wooledge.org/BashGuide">BashGuide</a></span>
+</h1>
+
+
+<ul id="navibar">
+<li class="wikilink current"><a href="http://mywiki.wooledge.org/BashGuide">BashGuide</a></li><li class="wikilink"><a href="http://mywiki.wooledge.org/BashFAQ">BashFAQ</a></li><li class="wikilink"><a href="http://mywiki.wooledge.org/RecentChanges">RecentChanges</a></li><li class="wikilink"><a href="http://mywiki.wooledge.org/FindPage">FindPage</a></li><li class="wikilink"><a href="http://mywiki.wooledge.org/HelpContents">HelpContents</a></li>
+</ul>
+
+<div id="pageline"><hr style="display:none;"></div>
+
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="http://mywiki.wooledge.org/BashGuide#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://mywiki.wooledge.org/BashGuide?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://mywiki.wooledge.org/BashGuide?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="http://mywiki.wooledge.org/BashGuide">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="" class="disabled">Delete Page</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Subscribe User</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Remove Spam</option>
+<option value="show" disabled="" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" lang="en" dir="ltr">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><p class="line867"><a href="http://mywiki.wooledge.org/BashGuide/CommandsAndArguments">Commands and Arguments -&gt;</a> <span class="anchor" id="line-3"></span></p><hr><p class="line874"> <span class="anchor" id="line-4"></span>
+</p><h1 id="Introduction">Introduction</h1>
+<span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><p class="line867"><strong>You are invited to make additions or modifications so long as you can keep them accurate.  Please test any code samples you write.</strong> <span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span></p><p class="line874">All the information here is presented without any warranty or guarantee of accuracy.  Use it at your own risk.  When in doubt, please consult the man pages or the GNU info pages as the authoritative references. <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span></p><p class="line867"></p><hr class="hr4"><p class="line874"> <span class="anchor" id="line-11"></span><span class="anchor" id="About"></span> <span class="anchor" id="line-12"></span>
+</p><h1 id="About_This_Guide">About This Guide</h1>
+<span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><p class="line862">A <a class="http" href="http://guide.bash.academy/">new version of this guide</a> is currently being drafted.  For now, this guide is still the most complete and best reviewed.  Any contributions to the new guide are welcome <a class="https" href="https://github.com/lhunath/bash.academy">via GitHub forks</a>. <span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span></p><p class="line862">This guide aims to aid people interested in learning to work with <a href="http://mywiki.wooledge.org/BASH">BASH</a>.  It aspires to teach good practice techniques for using BASH, and writing simple scripts. <span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span></p><p class="line874">This guide is targeted at beginning users.  It assumes no advanced knowledge -- just the ability to login to a Unix-like system and open a command-line (terminal) interface.  It will help if you know how to use a text editor; we will not be covering editors, nor do we endorse any particular editor choice.  Familiarity with the fundamental Unix tool set, or with other programming languages or programming concepts, is not required, but those who have such knowledge may understand some of the examples more quickly. <span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span></p><p class="line862">If something is unclear to you, you are invited to report this (use <a href="http://mywiki.wooledge.org/BashGuideFeedback">BashGuideFeedback</a>, or the <tt class="backtick">#bash</tt> channel on <tt class="backtick">irc.freenode.org</tt>) so that it may be clarified in this document for future readers. <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span></p><p class="line874">You are invited to contribute to the development of this document by extending it or correcting invalid or incomplete information. <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span></p><p class="line874">The primary maintainer(s) of this document: <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span></p><ul><li><p class="line862">-- <a href="http://mywiki.wooledge.org/Lhunath">Lhunath</a> (primary author) <span class="anchor" id="line-27"></span></p></li><li><p class="line862">-- <a href="http://mywiki.wooledge.org/GreyCat">GreyCat</a> <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span></p></li></ul><p class="line862">The guide is also available in <a class="http" href="http://s.ntnu.no/bashguide.pdf">PDF format</a>. <span class="anchor" id="line-30"></span>Alternatively, you can just hit print after going to <a href="http://mywiki.wooledge.org/FullBashGuide">FullBashGuide</a>.  That guarantees you'll be printing the latest version of this document. <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span></p><p class="line867"></p><hr class="hr4"><p class="line874"> <span class="anchor" id="line-33"></span><span class="anchor" id="Definition"></span> <span class="anchor" id="line-34"></span>
+</p><h1 id="A_Definition">A Definition</h1>
+<span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><p class="line862">BASH is an acronym for <em><strong>B</strong>ourne <strong>A</strong>gain <strong>Sh</strong>ell</em>.  It is based on the <em>Bourne</em> shell and is mostly compatible with its features. <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p><p class="line874">Shells are command interpreters.  They are applications that provide users with the ability to give commands to their operating system interactively, or to execute batches of commands quickly.  In no way are they required for the execution of programs; they are merely a layer between system function calls and the user. <span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span></p><p class="line874">Think of a shell as a way for you to speak to your system.  Your system doesn't need it for most of its work, but it is an excellent interface between you and what your system can offer.  It allows you to perform basic math, run basic tests and execute applications.  More importantly, it allows you to combine these operations and connect applications to each other to perform complex and automated tasks. <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span></p><p class="line862">BASH is <strong>not</strong> your operating system.  It is not your window manager.  It is not your terminal (but it oftens runs <em>inside</em> your terminal).  It does not control your mouse or keyboard.  It does not configure your system, activate your screensaver, or open your files when you double-click them.  It is generally not involved in launching applications from your window manager or desktop environment.  It's important to understand that BASH is only an interface for you to execute statements (using BASH syntax), either at the interactive BASH prompt or via BASH scripts. <span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></p><p class="line867"></p><hr class="hr4"><p class="line874"> <span class="anchor" id="line-46"></span></p><ul><li style="list-style-type:none"><p class="line891"><strong>In The Manual: <a class="http" href="http://www.gnu.org/software/bash/manual/bashref.html#Introduction">Introduction</a></strong> <span class="anchor" id="line-47"></span></p></li></ul><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-48"></span></p><ul><li style="list-style-type:none"><p class="line891"><em>Shell</em>: A (possibly interactive) command interpreter, acting as a layer between the user and the system. <br>
+ <em>Bash</em>: The Bourne Again Shell, a <em>Bourne</em> compatible shell. <span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span></p></li></ul><p class="line867"></p><hr class="hr4"><p class="line874"> <span class="anchor" id="line-51"></span><span class="anchor" id="Using_Bash"></span> <span class="anchor" id="line-52"></span>
+</p><h1 id="Using_Bash-1">Using Bash</h1>
+<span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><p class="line862">Most users that think of BASH think of it as a prompt and a command line.  That is BASH in <em>interactive mode</em>.  BASH can also run in <em>non-interactive mode</em>, as when executing scripts.  We can use scripts to automate certain logic.  Scripts are basically lists of commands (just like the ones you can type on the command line), but stored in a file.  When a script is executed, all these commands are (generally) executed sequentially, one after another. <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span></p><p class="line862">We'll start with the basics in an <em>interactive shell</em>. Once you're familiar with those, you can put them together in scripts. <span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span></p><p class="line867"><strong>Important! <br>
+ You should make yourself familiar with the <tt class="backtick">man</tt> and <tt class="backtick">apropos</tt> commands on the shell.  They will be vital to your self-tutoring.</strong> <span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span></p><p class="line867"><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span></p><pre><span class="anchor" id="line-1"></span>$ man man
+<span class="anchor" id="line-2"></span>$ man apropos</pre><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><p class="line862">In this guide, the <tt class="backtick">$</tt> at the beginning of a line represents your BASH prompt.  Traditionally, a shell prompt either ends with <tt class="backtick">$</tt>, <tt class="backtick">%</tt> or <tt class="backtick">#</tt>.  If it ends with <tt class="backtick">$</tt>, this indicates a shell that's compatible with the Bourne shell (such as a POSIX shell, or a Korn shell, or Bash).  If it ends with <tt class="backtick">%</tt>, this indicates a <em>C shell</em> (csh or tcsh); this guide does not cover C shell.  If it ends with <tt class="backtick">#</tt>, this indicates that the shell is running as the system's superuser account (<tt class="backtick">root</tt>), and that you should be extra careful. <span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span></p><p class="line862">Your actual BASH prompt will probably be much longer than <tt class="backtick">$</tt>.  Prompts are often highly individualized. <span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span></p><p class="line862">The <tt class="backtick">man</tt> command stands for "manual"; it opens documentation (so-called "man pages") on various topics.  You use it by running the command <tt class="backtick">man&nbsp;[topic]</tt> at the BASH prompt, where <tt class="backtick">[topic]</tt> is the name of the "page" you wish to read.  Note that many of these "pages" are considerably longer than one printed page; nevertheless, the name persists.  Each command (application) on your system is likely to have a man page.  There are pages for other things too, such as system calls or specific configuration files.  In this guide, we will only be covering commands. <span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span></p><p class="line862">Note that if you're looking for information on BASH built-ins (commands provided by BASH, not by external applications) you should look in <tt class="backtick">man&nbsp;bash</tt> instead.  BASH's manual is extensive and detailed.  It is an excellent reference, albeit more technical than this guide. <span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span></p><p class="line862">Bash also offers a <tt class="backtick">help</tt> command which contains brief summaries of its built-in commands (which we'll discuss in depth later on). <span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span></p><p class="line867"><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span></p><pre><span class="anchor" id="line-1-1"></span>$ help
+<span class="anchor" id="line-2-1"></span>$ help read</pre><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><p class="line867"></p><hr class="hr4"><p class="line874"> <span class="anchor" id="line-81"></span></p><ul><li style="list-style-type:none"><p class="line891"><strong>In the FAQ: <br>
+ <a href="http://mywiki.wooledge.org/BashFAQ/061">Is there a list of which features were added to specific releases (versions) of Bash?</a></strong> <span class="anchor" id="line-82"></span></p></li></ul><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-83"></span></p><ul><li style="list-style-type:none"><p class="line891"><em>Interactive mode</em>: A mode of operation where a prompt asks you for one command at a time. <span class="anchor" id="line-84"></span></p></li><li style="list-style-type:none"><p class="line891"><em>Script</em>: A file that contains a sequence of commands to execute one after the other. <span class="anchor" id="line-85"></span></p></li></ul><p class="line867"></p><hr class="hr4"><p class="line874"> <span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span></p><p class="line867">
+</p><h1 id="Contents">Contents</h1>
+<span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><p class="line874">The guide has been divided into sections, which are intended to be read roughly in the order presented.  If you skip ahead to a specific section, you might find yourself missing some background information from previous sections.  (Links to relevant sections are not always provided when a topic is mentioned.) <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span></p><ul><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/CommandsAndArguments">Commands and Arguments</a> <span class="anchor" id="line-92"></span></p><ul><li>Types of commands; argument splitting; writing scripts. <span class="anchor" id="line-93"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/SpecialCharacters">Special Characters</a> <span class="anchor" id="line-94"></span></p></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/Parameters">Parameters</a> <span class="anchor" id="line-95"></span></p><ul><li>Variables; special parameters; parameter types; parameter expansion. <span class="anchor" id="line-96"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/Patterns">Patterns</a> <span class="anchor" id="line-97"></span></p><ul><li>Globs; filename matching; extended globs; brace expansion; regular expressions. <span class="anchor" id="line-98"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/TestsAndConditionals">Tests and Conditionals</a> <span class="anchor" id="line-99"></span></p><ul><li><p class="line862">Exit status; <tt>&amp;&amp;</tt> and <tt>||</tt>; if, test and <tt>[[</tt>; while, until and for; case and select. <span class="anchor" id="line-100"></span></p></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/Arrays">Arrays</a> <span class="anchor" id="line-101"></span></p><ul><li>Arrays; associative arrays. <span class="anchor" id="line-102"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/InputAndOutput">Input and Output</a> <span class="anchor" id="line-103"></span></p><ul><li>Redirection; here documents; here strings; pipes; process substitution. <span class="anchor" id="line-104"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/CompoundCommands">Compound Commands</a> <span class="anchor" id="line-105"></span></p><ul><li>Subshells; command grouping; arithmetic evaluation; functions; aliases. <span class="anchor" id="line-106"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/Sourcing">Sourcing</a> <span class="anchor" id="line-107"></span></p><ul><li>Reading commands from other files. <span class="anchor" id="line-108"></span></li></ul></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/JobControl">Job Control</a> <span class="anchor" id="line-109"></span></p></li><li><p class="line891"><a href="http://mywiki.wooledge.org/BashGuide/Practices">Practices</a> <span class="anchor" id="line-110"></span></p><ul><li>Choosing your shell; quoting; readability; debugging. <span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span></li></ul></li></ul><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-113"></span><a href="http://mywiki.wooledge.org/BashGuide/CommandsAndArguments">Commands and Arguments -&gt;</a> <span class="anchor" id="line-114"></span></p><hr><p class="line874"> <span class="anchor" id="line-115"></span><a href="http://mywiki.wooledge.org/CategoryShell">CategoryShell</a> <span class="anchor" id="line-116"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" lang="en" dir="ltr">BashGuide  (last edited 2015-04-10 20:29:39 by <span title="GreyCat @ 139.137.128.43[139.137.128.43]"><a href="http://mywiki.wooledge.org/GreyCat" title="GreyCat @ 139.137.128.43[139.137.128.43]">GreyCat</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="http://mywiki.wooledge.org/BashGuide#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://mywiki.wooledge.org/BashGuide?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://mywiki.wooledge.org/BashGuide?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="http://mywiki.wooledge.org/BashGuide">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="" class="disabled">Rename Page</option>
+<option value="DeletePage" disabled="" class="disabled">Delete Page</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Subscribe User</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="show" disabled="" class="disabled">Remove Spam</option>
+<option value="show" disabled="" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+
+
+
+</body></html>

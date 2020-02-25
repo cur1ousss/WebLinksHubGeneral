@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://jvns.ca/blog/2018/04/28/debugging-a-segfault-on-linux/ -->
+<html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to get a core dump for a segfault on Linux - Julia Evans</title>
+<meta name="author" content="Julia Evans">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="description" content="How to get a core dump for a segfault on Linux">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async="" src="./How to get a core dump for a segfault on Linux - Julia Evans_files/analytics.js"></script><script src="./How to get a core dump for a segfault on Linux - Julia Evans_files/oapzv4Qy0hieZShO2HklPk9FrHI.js"></script><link rel="canonical" href="https://jvns.ca/blog/2018/04/28/debugging-a-segfault-on-linux/">
+<link href="https://jvns.ca/favicon.ico" rel="icon">
+<link href="./How to get a core dump for a segfault on Linux - Julia Evans_files/screen.css" rel="preload" type="text/css" as="style">
+<link href="./How to get a core dump for a segfault on Linux - Julia Evans_files/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+<link href="https://jvns.ca/atom.xml" rel="alternate" title="Julia Evans" type="application/atom+xml">
+</head>
+<body>
+<div id="wrap">
+<header role="banner">
+<hgroup>
+<h1><a href="https://jvns.ca/">Julia Evans</a></h1>
+</hgroup>
+<ul class="header-links">
+<li><a href="https://jvns.ca/about">About</a></li>
+<li><a href="https://jvns.ca/talks">Talks</a></li>
+<li><a href="https://jvns.ca/projects/">Projects</a></li>
+<li><a href="https://twitter.com/b0rk">Twitter</a></li>
+<li><a href="https://github.com/jvns">Github</a></li>
+</ul>
+</header>
+<nav role="navigation" class="header-nav"><ul class="main-navigation">
+<li><a href="https://jvns.ca/categories/favorite/">Favorites</a></li>
+<li><a href="https://wizardzines.com/">Zines</a></li>
+<li class="subscription" data-subscription="rss"><a href="https://jvns.ca/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+</ul>
+</nav>
+<div id="main">
+<div id="content">
+<div>
+<article class="hentry" role="article">
+<header>
+<h1 class="entry-title">How to get a core dump for a segfault on Linux</h1>
+<div class="post-tags">
+</div>
+<p class="meta">
+<time datetime="2018-04-28T13:18:30" pubdate="" data-updated="true"></time>
+</p>
+</header>
+<div class="entry-content">
+<p>This week at work I spent all week trying to debug a segfault. I’d never done this before, and some
+of the basic things involved (get a core dump! find the line number that segfaulted!) took me a long
+time to figure out. So here’s a blog post explaining how to do those things!</p>
+<p>At the end of this blog post, you should know how to go from “oh no my program is segfaulting and I
+have no idea what is happening” to “well I know what its stack / line number was when it segfaulted
+at at least!“.</p>
+<h3 id="what-s-a-segfault">what’s a segfault?</h3>
+<p>A “segmentation fault” is when your program tries to access memory that it’s not allowed to access,
+or tries to .
+This can be caused by:</p>
+<ul>
+<li>trying to dereference a null pointer (you’re not allowed to access the memory address <code>0</code>)</li>
+<li>trying to dereference some other pointer that isn’t in your memory</li>
+<li>a C++ vtable pointer that got corrupted and is pointing to the wrong place, which causes the
+program to try to execute some memory that isn’t executable</li>
+<li>some other things that I don’t understand, like I think misaligned memory accesses can also
+segfault</li>
+</ul>
+<p>This “C++ vtable pointer” thing is what was happening to my segfaulting program. I might explain that
+in a future blog post because I didn’t know any C++ at the beginning of this week and this vtable
+lookup thing was a new way for a program to segfault that I didn’t know about.</p>
+<p>But! This blog post isn’t about C++ bugs. Let’s talk about the basics, like, how do we even get a
+core dump?</p>
+<h3 id="step-1-run-valgrind">step 1: run valgrind</h3>
+<p>I found the easiest way to figure out why my program is segfaulting was to use valgrind: I ran</p>
+<pre><code>valgrind -v your-program
+</code></pre>
+<p>and this gave me a stack trace of what happened. Neat!</p>
+<p>But I also wanted to do a more in-depth investigation and find out more than just what
+valgrind was telling me! So I wanted to get a core dump and explore it.</p>
+<h3 id="how-to-get-a-core-dump">How to get a core dump</h3>
+<p>A <strong>core dump</strong> is a copy of your program’s memory, and it’s useful when you’re trying to debug what
+went wrong with your problematic program.</p>
+<p>When your program segfaults, the Linux kernel will sometimes write a core dump to disk. When I
+originally tried to get a core dump, I was pretty frustrated for a long time because – Linux wasn’t
+writing a core dump!! Where was my core dump????</p>
+<p>Here’s what I ended up doing:</p>
+<ol>
+<li>Run <code>ulimit -c unlimited</code> before starting my program</li>
+<li>Run <code>sudo sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t</code></li>
+</ol>
+<h3 id="ulimit-set-the-max-size-of-a-core-dump">ulimit: set the max size of a core dump</h3>
+<p><code>ulimit -c</code> sets the <strong>maximum size of a core dump</strong>. It’s often set to 0, which means that the
+kernel won’t write core dumps at all. It’s in kilobytes. ulimits are <strong>per process</strong> – you can see
+a process’s limits by running <code>cat /proc/PID/limit</code></p>
+<p>For example these are the limits for a random Firefox process on my system:</p>
+<pre><code>$ cat /proc/6309/limits 
+Limit                     Soft Limit           Hard Limit           Units     
+Max cpu time              unlimited            unlimited            seconds   
+Max file size             unlimited            unlimited            bytes     
+Max data size             unlimited            unlimited            bytes     
+Max stack size            8388608              unlimited            bytes     
+Max core file size        0                    unlimited            bytes     
+Max resident set          unlimited            unlimited            bytes     
+Max processes             30571                30571                processes 
+Max open files            1024                 1048576              files     
+Max locked memory         65536                65536                bytes     
+Max address space         unlimited            unlimited            bytes     
+Max file locks            unlimited            unlimited            locks     
+Max pending signals       30571                30571                signals   
+Max msgqueue size         819200               819200               bytes     
+Max nice priority         0                    0                    
+Max realtime priority     0                    0                    
+Max realtime timeout      unlimited            unlimited            us   
+</code></pre>
+<p>The kernel uses the <strong>soft limit</strong> (in this case, “max core file size = 0”) when deciding how big of
+a core file to write. You can increase the soft limit up to the hard limit using the <code>ulimit</code> shell
+builtin (<code>ulimit -c unlimited</code>!)</p>
+<h3 id="kernel-core-pattern-where-core-dumps-are-written">kernel.core_pattern: where core dumps are written</h3>
+<p><code>kernel.core_pattern</code> is a kernel parameter or a “sysctl setting” that controls where the Linux
+kernel writes core dumps to disk.</p>
+<p>Kernel parameters are a way to set <strong>global</strong> settings on your system. You can get a list of every
+kernel parameter by running <code>sysctl -a</code>, or use <code>sysctl kernel.core_pattern</code> to look at the
+<code>kernel.core_pattern</code> setting specifically.</p>
+<p>So <code>sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t</code> will write core dumps to <code>/tmp/core-&lt;a bunch of stuff identifying the process&gt;</code></p>
+<p>If you want to know more about what these <code>%e</code>, <code>%p</code> parameters read, see <a href="http://man7.org/linux/man-pages/man5/core.5.html">man core</a>.</p>
+<p>It’s important to know that <code>kernel.core_pattern</code> is a global settings – it’s good to be a little
+careful about changing it because it’s possible that other systems depend on it being set a certain
+way.</p>
+<h3 id="kernel-core-pattern-ubuntu">kernel.core_pattern &amp; Ubuntu</h3>
+<p>By default on Ubuntu systems, this is what <code>kernel.core_pattern</code> is set to</p>
+<pre><code>$ sysctl kernel.core_pattern
+kernel.core_pattern = |/usr/share/apport/apport %p %s %c %d %P
+</code></pre>
+<p>This caused me a lot of confusion (what is this apport thing and what is it doing with my core
+dumps??) so here’s what I learned about this:</p>
+<ul>
+<li>Ubuntu uses a system called “apport” to report crashes in apt packages</li>
+<li>Setting <code>kernel.core_pattern=|/usr/share/apport/apport %p %s %c %d %P</code> means that core dumps will
+be piped to <code>apport</code></li>
+<li>apport has logs in /var/log/apport.log</li>
+<li>apport by default will ignore crashes from binaries that aren’t part of an Ubuntu packages</li>
+</ul>
+<p>I ended up just overriding this Apport business and setting <code>kernel.core_pattern</code> to <code>sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t</code> because I was on a dev machine, I didn’t care whether Apport was working on not, and I didn’t feel like trying to convince Apport to give me my core dumps.</p>
+<h3 id="so-you-have-a-core-dump-now-what">So you have a core dump. Now what?</h3>
+<p>Okay, now we know about ulimits and <code>kernel.core_pattern</code> and you have actually have a core dump
+file on disk in <code>/tmp</code>. Amazing! Now what??? We still don’t know why the program segfaulted!</p>
+<p>The next step is to open the core file with <code>gdb</code> and get a backtrace.</p>
+<h3 id="getting-a-backtrace-from-gdb">Getting a backtrace from gdb</h3>
+<p>You can open a core file with gdb like this:</p>
+<pre><code>$ gdb -c my_core_file
+</code></pre>
+<p>Next, we want to know what the stack was when the program crashed. Running <code>bt</code> at
+the gdb prompt will give you a backtrace. In my case gdb hadn’t loaded symbols for the binary, so it
+was just like <code>??????</code>. Luckily, loading symbols fixed it.</p>
+<p>Here’s how to load debugging symbols.</p>
+<pre><code>symbol-file /path/to/my/binary
+sharedlibrary
+</code></pre>
+<p>This loads symbols from the binary and from any shared libraries the binary uses. Once I did that,
+gdb gave me a beautiful stack trace with line numbers when I ran <code>bt</code>!!!</p>
+<p>If you want this to work, the binary should be compiled with debugging symbols. Having line numbers
+in your stack traces is extremely helpful when trying to figure out why a program crashed :)</p>
+<h3 id="look-at-the-stack-for-every-thread">look at the stack for every thread</h3>
+<p>Here’s how to get the stack for every thread in gdb!</p>
+<pre><code>thread apply all bt full
+</code></pre>
+<h3 id="gdb-core-dumps-amazing">gdb + core dumps = amazing</h3>
+<p>If you have a core dump &amp; debugging symbols and gdb, you are in an amazing situation!! You can go up
+and down the call stack, print out variables, and poke around in memory to see what happened. It’s
+the best.</p>
+<p>If you are still working on being a gdb wizard, you can also just print out the stack trace with
+<code>bt</code> and that’s okay :)</p>
+<h3 id="asan">ASAN</h3>
+<p>Another path to figuring out your segfault is to do one compile the program with AddressSanitizer
+(“ASAN”) (<code>$CC -fsanitize=address</code>) and run it. I’m not going to discuss that in this post because
+this is already pretty long and anyway in my case the segfault disappeared with ASAN turned on for
+some reason, possibly because the ASAN build used a different memory allocator (system malloc
+instead of tcmalloc).</p>
+<p>I might write about ASAN more in the future if I ever get it to work :)</p>
+<h3 id="getting-a-stack-trace-from-a-core-dump-is-pretty-approachable">getting a stack trace from a core dump is pretty approachable!</h3>
+<p>This blog post sounds like a lot and I was pretty confused when I was doing it but really there
+aren’t all that many steps to getting a stack trace out of a segfaulting program:</p>
+<ol>
+<li>try valgrind</li>
+</ol>
+<p>if that doesn’t work, or if you want to have a core dump to investigate:</p>
+<ol>
+<li>make sure the binary is compiled with debugging symbols</li>
+<li>set <code>ulimit</code> and <code>kernel.core_pattern</code> correctly</li>
+<li>run the program</li>
+<li>open your core dump with <code>gdb</code>, load the symbols, and run <code>bt</code></li>
+<li>try to figure out what happened!!</li>
+</ol>
+<p>I was able using gdb to figure out that there was a C++ vtable entry that is pointing to some
+corrupt memory, which was somewhat helpful and helped me feel like I understood C++ a bit better.
+Maybe we’ll talk more about how to use gdb to figure things out another day!</p>
+</div>
+<footer>
+<style type="text/css">
+  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; display: inline;}
+  #mc_embed_signup  {
+    display: inline;
+  }
+  #mc_embed_signup input.button {
+    background: #ff5e00;
+    display: inline;
+    color: white;
+    padding: 6px 12px;
+  }
+</style>
+<div class="sharing">
+<style>
+    .form-inline {
+        display:flex; flex-flow: row wrap; justify-content: center;
+    }
+    .form-inline input,span {
+        padding: 10px;
+    }
+    .form-inline input {
+        display:inline;
+        max-width:30%; 
+        margin: 0 10px 0 0; 
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    button {
+        background-color: #f50;
+        box-shadow: none;
+        border: 0;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+    }
+    @media (max-width: 800px) {
+        .form-inline input {
+            margin: 10px 0;
+            max-width:100% !important;
+        }
+        .form-inline {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+</style>
+<div align="center">
+<form class="form-inline" action="https://app.convertkit.com/forms/1052396/subscriptions" method="post" data-uid="8884355abb" data-format="inline" data-version="5">
+<span> Want a weekly digest of this blog?</span>
+<input name="email_address" type="text" placeholder="Email address">
+<button type="submit" data-element="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<p class="meta">
+<a class="basic-alignment left" href="https://jvns.ca/blog/2018/04/16/new-perf-zine/" title="Previous Post: New zine: Profiling &amp; tracing with perf!!">New zine: Profiling &amp; tracing with perf!!</a>
+<a class="basic-alignment right" href="https://jvns.ca/blog/2018/05/11/batch-editing-files-with-ed/" title="Next Post: Batch editing files with ed">Batch editing files with ed</a>
+</p>
+</footer>
+</article>
+</div>
+</div>
+</div>
+<nav role="navigation" class="footer-nav"> <a href="https://jvns.ca/">Archives</a>
+</nav>
+<footer role="contentinfo"><span class="credit">© Julia Evans. </span>
+<span>If you like this, you may like <a href="https://web.archive.org/web/20181228051203/http://www.uliaea.ca/">Ulia Ea</a>. <br>
+<p class="rc-scout__text"><i class="rc-scout__logo"></i>
+You might also like the <a class="rc-scout__link" href="https://www.recurse.com/scout/click?t=546ea46360584b522270b8c3e5d830f8">Recurse Center</a>, my very favorite programming community <a href="https://jvns.ca/categories/hackerschool/">(my posts about it)</a></p>
+</span>
+<style class="rc-scout__style" type="text/css">.rc-scout{display:block;padding:0;border:0;margin:0;}.rc-scout__text{display:block;padding:0;border:0;margin:0;height:100%;font-size:100%;}.rc-scout__logo{display:inline-block;padding:0;border:0;margin:0;width:0.85em;height:0.85em;background:no-repeat center url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2012%2015%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2212%22%20height%3D%2210%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%2210%22%20height%3D%228%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%228%22%20height%3D%226%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%222%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%2361ae24%22%3E%3C%2Frect%3E%3Crect%20x%3D%224%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%2361ae24%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%2361ae24%22%3E%3C%2Frect%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%2361ae24%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%225%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%2361ae24%22%3E%3C%2Frect%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%224%22%20height%3D%223%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%224%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%2212%22%20height%3D%223%22%20fill%3D%22%23000%22%3E%3C%2Frect%3E%3Crect%20x%3D%222%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%223%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%224%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%225%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%227%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%228%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3Crect%20x%3D%229%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23fff%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');}.rc-scout__link:link,.rc-scout__link:visited{color:#61ae24;text-decoration:underline;}.rc-scout__link:hover,.rc-scout__link:active{color:#4e8b1d;}</style>
+</footer>
+<script type="text/rocketscript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+</div>
+
+
+</body></html>

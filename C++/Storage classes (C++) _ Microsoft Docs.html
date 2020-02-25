@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019 -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Storage classes (C++)">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp">
+			<meta property="og:description" content="In C++, the static, extern and thread_local keywords specify the lifetime, linkage, and memory location of a variable or function.">
+		<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+		<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+
+		<meta name="audience" content="developer">
+<meta name="author" content="corob-msft">
+<meta name="breadcrumb_path" content="../_breadcrumb/toc.json?view=vs-2019">
+<meta name="depot_name" content="VS.vcppdocs">
+<meta name="description" content="In C++, the static, extern and thread_local keywords specify the lifetime, linkage, and memory location of a variable or function.">
+<meta name="document_id" content="66737d90-dbf1-88c9-3fa1-dcb00c335467">
+<meta name="document_version_independent_id" content="7292bb09-ee1a-1ae6-1985-631cdf24a27d">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/5650a4cc9187875ae10587951735cece18314d3f/docs/cpp/storage-classes-cpp.md">
+<meta name="locale" content="en-us">
+<meta name="manager" content="markl">
+<meta name="monikers" content="vs-2015">
+<meta name="monikers" content="vs-2017">
+<meta name="monikers" content="vs-2019">
+<meta name="ms.assetid" content="f10e1c56-6249-4eb6-b08f-09ab1eef1992">
+<meta name="ms.author" content="corob">
+<meta name="ms.date" content="12/11/2019">
+<meta name="ms.prod" content="visual-cpp">
+<meta name="ms.technology" content="cpp-language">
+<meta name="ms.tgt_pltfrm" content="">
+<meta name="ms.topic" content="language-reference">
+<meta name="ms.workload" content="cplusplus">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/cpp/storage-classes-cpp.md">
+<meta name="ROBOTS" content="INDEX,FOLLOW">
+<meta name="search.ms_docsetname" content="vcppdocs">
+<meta name="search.ms_product" content="VS">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="site_name" content="Docs">
+<meta name="updated_at" content="2019-12-16 06:35 PM">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../toc.json?view=vs-2019">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/VS.vcppdocs/{branchName}{pdfName}">
+<meta name="search.mshattr.devlang" content="c++">
+<meta name="word_count" content="1578">
+
+	<meta name="scope" content="C++">
+<link href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp" rel="canonical">
+	<title>Storage classes (C++) | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./Storage classes (C++) _ Microsoft Docs_files/f61444e.site-ltr.css">
+
+	<link rel="stylesheet" href="./Storage classes (C++) _ Microsoft Docs_files/2488a4dd.conceptual.css">
+
+
+	<script async="" defer="" crossorigin="anonymous" src="./Storage classes (C++) _ Microsoft Docs_files/lux.js"></script><script async="" src="./Storage classes (C++) _ Microsoft Docs_files/analytics.js"></script><script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			showFeedbackReport: false,
+			binaryRatingUpdate : false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/cpp-docs',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/spaces/62/index.html',
+			contentGitUrl: 'https://github.com/Microsoft/cpp-docs/blob/master/docs/cpp/storage-classes-cpp.md',
+			extendBreadcrumb: true,
+		},
+		functions:{}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/3.0.0/fetch.umd.min.js" integrity="sha384-EQIXrC5K2+7X8nGgLkB995I0/6jfAvvyG1ieZ+WYGxgJHFMD/alsG9fSDWvzb5Y1" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="./Storage classes (C++) _ Microsoft Docs_files/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="./Storage classes (C++) _ Microsoft Docs_files/9f071252.index-docs.js"></script><style>
+		[data-moniker]:not([data-moniker~='vs-2019']) {
+			display: none !important;
+		}
+	</style><script src="./Storage classes (C++) _ Microsoft Docs_files/jsll-4.js" async="" defer=""></script>
+
+</head>
+
+<body lang="en-us" dir="ltr"><div style="display: none;" id="lightningjs-usabilla_live"><div><iframe frameborder="0" id="lightningjs-frame-usabilla_live" src="./Storage classes (C++) _ Microsoft Docs_files/saved_resource.html"></iframe></div></div>
+<div class="header-holder has-default-focus">
+	<a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Skip to main content</a>
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----><!----><div class="nav-bar"><!---->
+		
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+			<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+		</a>
+		
+			
+		<button class="nav-bar-burger" title="Global navigation" aria-controls="ax-73" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span class="is-visually-hidden"><!---->Global navigation<!----></span>
+		</button>
+		<nav class="nav-bar-mobile-nav" role="navigation" id="ax-73" aria-label="Global" hidden="">
+			<ul class="nav-bar-mobile-nav-list">
+				
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/"><!---->Docs<!----></a>
+		</li>
+				<!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/windows/"><!---->Windows<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/azure/"><!---->Azure<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/visualstudio/products/"><!---->Visual Studio<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/office/"><!---->Office<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/microsoft-365/"><!---->Microsoft 365<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/dotnet/"><!---->.NET<!----></a>
+		</li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<button class="nav-bar-button" aria-controls="ax-74" aria-expanded="false">
+				<span><!---->More<!----></span>
+				<span class="nav-bar-button-chevron" aria-hidden="true">
+					<span class="docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<ul class="nav-bar-mobile-nav-list" id="ax-74" aria-label="More" hidden="">
+				<!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/aspnet/"><!---->ASP.NET<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/sql/"><!---->SQL Server<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/enterprise-mobility-security/"><!---->Enterprise Mobility + Security<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/surface/"><!---->Microsoft Surface<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/dynamics365/"><!---->Dynamics 365<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/xamarin/"><!---->Xamarin<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/azure/devops/"><!---->Azure DevOps<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/system-center/"><!---->System Center<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/powershell/"><!---->PowerShell<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/graph/"><!---->Microsoft Graph<!----></a>
+		</li><!----></li><!----><li><!---->
+		<li class="nav-bar-mobile-nav-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/education/"><!---->Microsoft Education<!----></a>
+		</li><!----></li><!---->
+			</ul>
+		</li><!---->
+				
+			</ul>
+		</nav>
+			
+			
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category has-spacing">
+			<a class="nav-bar-button title has-hover-underline is-4" itemprop="url" href="https://docs.microsoft.com/en-us/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+	
+				<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/windows/">
+				<span><!---->Windows<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/azure/">
+				<span><!---->Azure<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/visualstudio/products/">
+				<span><!---->Visual Studio<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/office/">
+				<span><!---->Office<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/microsoft-365/">
+				<span><!---->Microsoft 365<!----></span>
+			</a>
+		</li><!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button has-hover-underline" href="https://docs.microsoft.com/en-us/dotnet/">
+				<span><!---->.NET<!----></span>
+			</a>
+		</li><!---->
+		<li class="dropdown nav-bar-item">
+			<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-75">
+				<span><!---->More<!----></span>
+				<span class="nav-bar-button-chevron" aria-hidden="true">
+					<span class="docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="ax-75" aria-label="More">
+				<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/aspnet/"><!---->ASP.NET<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/sql/"><!---->SQL Server<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/enterprise-mobility-security/"><!---->Enterprise Mobility + Security<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/surface/"><!---->Microsoft Surface<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/dynamics365/"><!---->Dynamics 365<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/xamarin/"><!---->Xamarin<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/azure/devops/"><!---->Azure DevOps<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/system-center/"><!---->System Center<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/powershell/"><!---->PowerShell<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/graph/"><!---->Microsoft Graph<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/education/"><!---->Microsoft Education<!----></a>
+		</li>
+	<!---->
+			</ul>
+		</li><!---->
+		<li class="dropdown nav-bar-item" hidden="">
+			<button aria-expanded="false" class="dropdown-trigger nav-bar-button has-hover-underline" aria-controls="ax-76">
+				<span><!---->More<!----></span>
+				<span class="nav-bar-button-chevron" aria-hidden="true">
+					<span class="docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="ax-76" aria-label="More">
+				<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/windows/"><!---->Windows<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/azure/"><!---->Azure<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/visualstudio/products/"><!---->Visual Studio<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/office/"><!---->Office<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/microsoft-365/"><!---->Microsoft 365<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item" hidden="">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/dotnet/"><!---->.NET<!----></a>
+		</li>
+	<!---->
+		<li class="dropdown nav-bar-item" hidden="">
+			<button aria-expanded="false" class="dropdown-trigger nav-bar-button " aria-controls="ax-77">
+				<span><!---->More<!----></span>
+				<span class="nav-bar-button-chevron" aria-hidden="true">
+					<span class="docon docon-chevron-right-light "></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="ax-77" aria-label="More">
+				<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/aspnet/"><!---->ASP.NET<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/sql/"><!---->SQL Server<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/enterprise-mobility-security/"><!---->Enterprise Mobility + Security<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/surface/"><!---->Microsoft Surface<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/dynamics365/"><!---->Dynamics 365<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/xamarin/"><!---->Xamarin<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/azure/devops/"><!---->Azure DevOps<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/system-center/"><!---->System Center<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/powershell/"><!---->PowerShell<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/graph/"><!---->Microsoft Graph<!----></a>
+		</li>
+	<!---->
+		<li class="nav-bar-item">
+			<a class="nav-bar-button" href="https://docs.microsoft.com/en-us/education/"><!---->Microsoft Education<!----></a>
+		</li>
+	<!---->
+			</ul>
+		</li><!---->
+			</ul>
+		</li><!---->
+				
+			</ul>
+		</nav>
+	
+			<span class="nav-bar-spacer is-hidden-mobile"></span>
+			
+			<div class="nav-bar-item nav-bar-search-form-item" id="ax-78" hidden="">
+				
+			<form class="is-flex" method="GET" id="searchForm" name="searchForm" role="search" aria-label="Search" aria-expanded="false" action="https://docs.microsoft.com/en-us/search/">
+					
+							<button class="nav-bar-button has-margin-extra-small tag" type="button" aria-label="Search filter is &quot;C++&quot;. Tap to remove.">
+								<span class="is-inline-truncated"><!---->C++<!----></span>
+								<span class="icon">
+									<span class="docon docon-navigate-close" aria-hidden="true"></span>
+								</span>
+							</button>
+					<div class="autocomplete" data-bi-name="autocomplete"><!---->
+		<div class="control ">
+			<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input   is-full-width" type="search" name="search" aria-expanded="false" aria-owns="ax-79-listbox" aria-activedescendant="" placeholder="Search">
+
+			<span class="icon is-small is-left" aria-hidden="true" hidden="">
+				<span class="has-text-primary docon docon-undefined"></span>
+			</span>
+
+			<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+		</div>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-79-listbox" hidden="">
+			
+		</ul><!----></div>
+					<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+					<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+					<input name="category" hidden="" value="All">
+					<input name="scope" hidden="" value="C++">
+					
+			</form>
+		
+			</div>
+			<div class="nav-bar-item ">
+				<button id="form-expander" class="nav-bar-button has-hover-underline has-margin-left-extra-small" title="Search" aria-expanded="false" aria-controls="ax-78">
+						
+					<span class="is-visually-hidden-mobile"><!---->Search<!----></span>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-search"></span>
+					</span>
+	
+				</button>
+			</div>
+		
+		
+	<!----></div></header>		</div>
+		<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+			<nav class="has-padding-none-mobile has-flex-grow" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+				<ul id="page-breadcrumbs" class="breadcrumbs"><!---->
+		<!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/?view=vs-2019">
+				<span itemprop="name">
+					Docs
+				</span>
+			</a>
+			<meta itemprop="position" content="1">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp?view=vs-2019">
+				<span itemprop="name">
+					Visual C++
+				</span>
+			</a>
+			<meta itemprop="position" content="2">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp/overview/visual-cpp-in-visual-studio?view=vs-2019">
+				<span itemprop="name">
+					Documentation
+				</span>
+			</a>
+			<meta itemprop="position" content="3">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019">
+				<span itemprop="name">
+					C++ Language
+				</span>
+			</a>
+			<meta itemprop="position" content="4">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp/cpp/c-cpp-language-and-standard-libraries?view=vs-2019">
+				<span itemprop="name">
+					Reference
+				</span>
+			</a>
+			<meta itemprop="position" content="5">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp/overview/languages-cpp?view=vs-2019">
+				<span itemprop="name">
+					Languages reference
+				</span>
+			</a>
+			<meta itemprop="position" content="6">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019">
+				<span itemprop="name">
+					C++ language reference
+				</span>
+			</a>
+			<meta itemprop="position" content="7">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<a itemprop="item" href="https://docs.microsoft.com/en-us/cpp/cpp/declarations-and-definitions-cpp?view=vs-2019">
+				<span itemprop="name">
+					Declarations and definitions
+				</span>
+			</a>
+			<meta itemprop="position" content="8">
+		</li><!---->
+		<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+			
+			<span itemprop="name">
+				Storage classes
+			</span>
+			<meta itemprop="position" content="9">
+		</li><!---->
+	<!----></ul>
+			</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+		</div>
+		<div class="is-size-7 is-flex-touch has-flex-justify-content-space-between-touch has-flex-grow has-padding-none has-padding-none-mobile">
+			<ul class="action-list has-flex-justify-content-start has-flex-justify-content-end-tablet is-flex is-flex-row has-flex-wrap has-flex-grow is-unstyled">
+				<li>
+					<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch" data-list-type="bookmarks" data-bi-name="bookmark" title="Add bookmark for Storage classes (C++) | Microsoft Docs" aria-pressed="false">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-single-bookmark"></span>
+						</span>
+						<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait">Bookmark</span>
+					</button>
+				</li>
+						<li>
+							<a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#feedback" class="button is-text has-inner-focus is-small is-icon-only-touch" data-bi-name="comments" title="Send feedback about this page">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="is-visually-hidden-touch is-hidden-portrait">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/Microsoft/cpp-docs/blob/master/docs/cpp/storage-classes-cpp.md" class="button is-text has-inner-focus is-icon-only-touch is-small" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/cpp-docs-pr/blob/live/docs/cpp/storage-classes-cpp.md" data-original_content_git_url_template="{repo}/blob/{branch}/docs/cpp/storage-classes-cpp.md" data-pr_repo="" data-pr_branch="">
+									<span class="icon">
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="is-visually-hidden-touch is-hidden-portrait">Edit</span>
+								</a>
+							</li>
+				<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Share</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019%26WT.mc_id%3Dtwitter&amp;text=Storage%20classes%20(C%2B%2B)%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019%26WT.mc_id%3Dtwitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019%26WT.mc_id%3Dlinkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019%26WT.mc_id%3Dfacebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Storage%20classes%20(C%2B%2B)%20%7C%20Microsoft%20Docs&amp;body=Storage%20classes%20(C%2B%2B)%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019%26WT.mc_id%3Demail">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Email</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+<div class="dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light has-margin-right-small">
+						<span class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Light					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-inner-focus has-text-primary is-small" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#">Sign in</a>
+					<div class="dropdown has-caret auth-status-determined authenticated">
+						<button class="dropdown-trigger button is-text has-inner-focus is-small is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarThumbnailUrl">
+								</span>
+							</span>
+							<span class="is-inline-truncated has-margin-left-small" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title">
+										<span class="is-inline-truncated has-max-width-200" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle has-margin-bottom-none">
+										<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+									</p>
+									<ul class="is-unstyled has-margin-none has-margin-top-small">
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="bookmarksUrl">Bookmarks</a></li>
+										<li><a href="https://docs.microsoft.com/profile" data-profile-property="collectionsUrl">Collections</a></li>
+										<li><a class="docs-sign-out" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#">Sign out</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button button is-small is-text is-hidden-tablet has-inner-focus is-hidden-tablet" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="icon">
+					<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+				</span>
+				<span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+	<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+	</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primary" data-bi-name="left toc" style="width: 206.875px; top: 24px; bottom: 95.4px;"><div class="moniker-picker2" data-bi-name="moniker-picker"><!---->
+		<span class="label has-margin-bottom-extra-small"><!---->Version<!----></span>
+		<div class="dropdown has-margin-bottom-small">
+			<button class="dropdown-trigger has-flex-justify-content-start is-full-width button is-small has-border has-inner-focus" aria-expanded="false" aria-controls="ax-72" disabled="">
+				<span class="visually-hidden"><!---->Select Version<!----></span>
+				<span class="has-text-overflow-ellipsis"><!---->vs-2019<!----></span>
+				<span class="dropdown-button-chevron" aria-hidden="true">
+					<span class="icon docon docon-chevron-down-light expanded-indicator"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu is-full-width is-vertically-scrollable" id="ax-72" aria-label="vs-2019">
+						<!----><!---->
+		<li>
+			<a class="preserve-view button is-small has-border-none has-inner-focus has-flex-justify-content-start is-full-width has-text-wrap is-text-left" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019"><!---->vs-2019<!----></a>
+		</li>
+	<!----><!---->
+						
+					</ul>
+		</div>
+	<!----></div><form action="javascript:" role="search" aria-label="Search" class="is-full-width has-margin-bottom-small"><label class="visually-hidden" for="ax-69">Search</label><div class="autocomplete is-block" data-bi-name="autocomplete"><!---->
+		<div class="control has-icons-left">
+			<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-69" class="autocomplete-input input control has-icons-left is-small is-full-width" type="text" aria-expanded="false" aria-owns="ax-70-listbox" aria-activedescendant="" placeholder="Filter by title">
+
+			<span class="icon is-small is-left" aria-hidden="true">
+				<span class="has-text-primary docon docon-filter"></span>
+			</span>
+
+			<span class="autocomplete-loader loader has-text-primary" aria-hidden="true" hidden=""></span>
+		</div>
+
+		<ul class="autocomplete-suggestions is-vertically-scrollable" role="listbox" id="ax-70-listbox" hidden="">
+			
+		</ul><!----></div></form><ul class="tree is-vertically-scrollable has-flex-grow has-flex-shrink" role="tree" aria-label="Table of contents" data-bi-name="tree"><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>C++ in Visual Studio</span></li><li class="tree-item is-expanded" aria-setsize="14" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Visual Studio C++ Tutorials</span><ul class="tree-group" role="group"><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="7" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=vs-2019">Install C++ support in Visual Studio</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="7" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/get-started/tutorial-console-cpp?view=vs-2019">Create your first C++ app</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="7" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/build/vscpp-step-1-create?view=vs-2019">Create a C++ console app project</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="7" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/build/vscpp-step-2-build?view=vs-2019">Build and run a C++ console app project</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/get-started?view=vs-2019">Create a UWP app</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/windows/desktop/learnwin32/learn-to-program-for-windows?view=vs-2019">Create a Windows Desktop application</a></li><li role="none"><a aria-setsize="7" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game?view=vs-2019">Create a DirectX game</a></li></ul></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Projects and build systems</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Read and write code</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Windows desktop development</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>UWP development</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="14" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/overview/game-development-cpp?view=vs-2019">Game development</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="14" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/linux/?view=vs-2019">Linux development</a></li><li role="none"><a aria-setsize="14" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/visualstudio/cross-platform/visual-cpp-for-cross-platform-mobile-development?view=vs-2019">Cross-platform mobile development</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>.NET development with C++/CLI</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="14" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cloud/cloud-and-web-programming-in-visual-cpp?view=vs-2019">Cloud and Web programming</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="12" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Port and upgrade C++ code</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="14" aria-level="1" aria-posinset="13" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Security best practices for C++</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item is-expanded" aria-setsize="14" aria-level="1" aria-posinset="14" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Reference</span><ul class="tree-group" role="group"><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="3" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/c-cpp-language-and-standard-libraries?view=vs-2019">C/C++ language and standard libraries</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item is-expanded" aria-setsize="3" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Languages reference</span><ul class="tree-group" role="group"><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="11" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/overview/languages-cpp?view=vs-2019">Languages</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>C language reference</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item is-expanded" aria-setsize="11" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>C++ language reference</span><ul class="tree-group" role="group"><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019">C++ language reference</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=vs-2019">Welcome back to C++ (Modern C++)</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Lexical conventions</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="4" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Basic concepts</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="5" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Built-in types</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item is-expanded" aria-setsize="29" aria-level="4" aria-posinset="6" role="treeitem" tabindex="-1" aria-expanded="true"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Declarations and definitions</span><ul class="tree-group" role="group"><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/declarations-and-definitions-cpp?view=vs-2019">Declarations and definitions</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="2" role="treeitem" tabindex="0" class="tree-item is-leaf is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019" aria-current="page">Storage classes</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/auto-cpp?view=vs-2019">auto</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/const-cpp?view=vs-2019">const</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/constexpr-cpp?view=vs-2019">constexpr</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/extern-cpp?view=vs-2019">extern</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/initializers?view=vs-2019">Initializers</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/aliases-and-typedefs-cpp?view=vs-2019">Aliases and typedefs</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/using-declaration?view=vs-2019">using declaration</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/volatile-cpp?view=vs-2019">volatile</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/decltype-cpp?view=vs-2019">decltype</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="12" aria-level="5" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/attributes?view=vs-2019">Attributes</a></li></ul></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="7" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Built-in operators, precedence, and associativity</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="8" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Expressions</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="9" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Statements</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/namespaces-cpp?view=vs-2019">Namespaces</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/enumerations-cpp?view=vs-2019">Enumerations</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/unions?view=vs-2019">Unions</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="13" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Functions</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="14" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Operator overloading</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="15" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Classes and structs</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="16" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Lambda expressions in C++</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="17" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/arrays-cpp?view=vs-2019">Arrays</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="18" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>References</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="19" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Pointers</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="20" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Exception handling in C++</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="21" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Assertion and user-supplied messages</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="22" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Modules</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="23" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Templates</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="24" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Event handling</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="25" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Microsoft-specific modifiers</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="29" aria-level="4" aria-posinset="26" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Compiler COM support</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="27" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/microsoft-extensions?view=vs-2019">Microsoft extensions</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="28" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/nonstandard-behavior?view=vs-2019">Nonstandard behavior</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="29" aria-level="4" aria-posinset="29" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/cpp/compiler-limits?view=vs-2019">Compiler limits</a></li></ul></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>C/C++ preprocessor reference</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" role="none"><a aria-setsize="11" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf" data-bi-name="tree-leaf" href="https://docs.microsoft.com/en-us/cpp/intrinsics/compiler-intrinsics-and-assembly-language?view=vs-2019">Compiler intrinsics and assembly language</a></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="6" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Compiler intrinsics</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="7" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>ARM Assembler reference</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="8" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Inline assembly in MSVC</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="9" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Microsoft Macro Assembler (MASM) reference</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="10" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Component extensions for .NET and UWP</span></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="11" aria-level="3" aria-posinset="11" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>C++ Attributes for COM and .NET</span></li></ul></li><li data-moniker="vs-2015 vs-2017 vs-2019" class="tree-item" aria-setsize="3" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" aria-expanded="false"><span class="tree-expander" data-bi-name="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Libraries reference</span></li></ul></li></ul><a class="button is-small is-text has-flex-justify-content-start has-inner-focus has-margin-top-small has-border-top has-border-bottom has-flex-shrink-none" href="https://docs.microsoft.com/en-us/cpp/opbuildpdf/8d846aa6/toc.pdf?branch=live&amp;view=vs-2019" data-bi-name="downloadPdf"><!---->
+		<span class="icon is-size-8 has-text-subtle">
+			<span aria-hidden="true" class="docon docon-arrow-down"></span>
+		</span>
+		<span><!---->Download PDF<!----></span><!----></a></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="en-us" dir="ltr">
+
+
+
+						<h1 id="storage-classes">Storage classes</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+							<li class="displayDate">
+								<time role="presentation" datetime="2019-12-11T00:00:00.000Z" data-article-date-source="ms.date">12/11/2019</time>
+							</li>
+								<li class="readingTime">7 minutes to read</li>
+							<li class="contributors-holder">
+								<a class="has-inner-focus" href="https://github.com/Microsoft/cpp-docs/blob/master/docs/cpp/storage-classes-cpp.md" title="7 Contributors" aria-label="7 Contributors">
+									<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+												<li><img src="./Storage classes (C++) _ Microsoft Docs_files/corob-msft.png" data-src="https://github.com/corob-msft.png?size=32" role="presentation"></li>
+												<li><img src="./Storage classes (C++) _ Microsoft Docs_files/mikeblome.png" data-src="https://github.com/mikeblome.png?size=32" role="presentation"></li>
+												<li><img src="./Storage classes (C++) _ Microsoft Docs_files/contributor.svg" data-src="https://github.com/msebolt.png?size=32" role="presentation"></li>
+												<li><img src="./Storage classes (C++) _ Microsoft Docs_files/contributor.svg" data-src="https://github.com/Mikejo5000.png?size=32" role="presentation"></li>
+												<li><img src="./Storage classes (C++) _ Microsoft Docs_files/contributor.svg" data-src="https://github.com/ghogen.png?size=32" role="presentation"></li>
+										<li><span class="is-size-8 has-text-subtle">+2</span></li>
+									</ul>
+								</a>
+							</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+							<h3>In this article</h3>
+						<ol><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#static">static</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#extern">extern</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#thread_local">thread_local (C++11)</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#register">register</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#example-automatic-vs-static-initialization">Example: automatic vs. static initialization</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#see-also">See also</a></li></ol></nav>
+
+
+						<!-- <content> -->
+							
+<p>A <em>storage class</em> in the context of C++ variable declarations is a type specifier that governs the lifetime, linkage, and memory location of objects. A given object can have only one storage class. Variables defined within a block have automatic storage unless otherwise specified using the <strong>extern</strong>, <strong>static</strong>, or <strong>thread_local</strong> specifiers. Automatic objects and variables have no linkage; they are not visible to code outside the block. Memory is allocated for them automatically when execution enters the block and de-allocated when the block is exited.</p>
+<p><strong>Notes</strong></p>
+<ol>
+<li><p>The <a href="https://docs.microsoft.com/en-us/cpp/cpp/mutable-data-members-cpp?view=vs-2019" data-linktype="relative-path">mutable</a> keyword may be considered a storage class specifier. However, it is only available in the member list of a class definition.</p>
+</li>
+<li><p><strong>Visual Studio 2010 and later:</strong> The <strong>auto</strong> keyword is no longer a C++ storage-class specifier, and the <strong>register</strong> keyword is deprecated. <strong>Visual Studio 2017 version 15.7 and later:</strong> (available with <a href="https://docs.microsoft.com/en-us/cpp/build/reference/std-specify-language-standard-version?view=vs-2019" data-linktype="relative-path">/std:c++17</a>): The <strong>register</strong> keyword is removed from the C++ language.</p>
+</li>
+</ol>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="   register int val; // warning C5033: &#39;register&#39; is no longer a supported storage class
+"><span>   <span class="hljs-keyword">register</span> <span class="hljs-keyword">int</span> val; <span class="hljs-comment">// warning C5033: 'register' is no longer a supported storage class</span>
+</span></code></pre>
+<h2 id="static"> static<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#static" aria-labelledby="static"></a></h2>
+<p>The <strong>static</strong> keyword can be used to declare variables and functions at global scope, namespace scope, and class scope. Static variables can also be declared at local scope.</p>
+<p>Static duration means that the object or variable is allocated when the program starts and is deallocated when the program ends. External linkage means that the name of the variable is visible from outside the file in which the variable is declared. Conversely, internal linkage means that the name is not visible outside the file in which the variable is declared. By default, an object or variable that is defined in the global namespace has static duration and external linkage. The <strong>static</strong> keyword can be used in the following situations.</p>
+<ol>
+<li><p>When you declare a variable or function at file scope (global and/or namespace scope), the <strong>static</strong> keyword specifies that the variable or function has internal linkage. When you declare a variable, the variable has static duration and the compiler initializes it to 0 unless you specify another value.</p>
+</li>
+<li><p>When you declare a variable in a function, the <strong>static</strong> keyword specifies that the variable retains its state between calls to that function.</p>
+</li>
+<li><p>When you declare a data member in a class declaration, the <strong>static</strong> keyword specifies that one copy of the member is shared by all instances of the class. A static data member must be defined at file scope. An integral data member that you declare as <strong>const static</strong> can have an initializer.</p>
+</li>
+<li><p>When you declare a member function in a class declaration, the <strong>static</strong> keyword specifies that the function is shared by all instances of the class. A static member function cannot access an instance member because the function does not have an implicit <strong>this</strong> pointer. To access an instance member, declare the function with a parameter that is an instance pointer or reference.</p>
+</li>
+<li><p>You cannot declare the members of a union as static. However, a globally declared anonymous union must be explicitly declared <strong>static</strong>.</p>
+</li>
+</ol>
+<p>This example shows how a variable declared <strong>static</strong> in a function retains its state between calls to that function.</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="// static1.cpp
+// compile with: /EHsc
+#include &lt;iostream&gt;
+
+using namespace std;
+void showstat( int curr ) {
+   static int nStatic;    // Value of nStatic is retained
+                          // between each function call
+   nStatic += curr;
+   cout &lt;&lt; &quot;nStatic is &quot; &lt;&lt; nStatic &lt;&lt; endl;
+}
+
+int main() {
+   for ( int i = 0; i &lt; 5; i++ )
+      showstat( i );
+}
+"><span><span class="hljs-comment">// static1.cpp</span>
+<span class="hljs-comment">// compile with: /EHsc</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showstat</span><span class="hljs-params">( <span class="hljs-keyword">int</span> curr )</span> </span>{
+   <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> nStatic;    <span class="hljs-comment">// Value of nStatic is retained</span>
+                          <span class="hljs-comment">// between each function call</span>
+   nStatic += curr;
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"nStatic is "</span> &lt;&lt; nStatic &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++ )
+      showstat( i );
+}
+</span></code></pre>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">Output</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-Output" data-author-content="nStatic is 0
+nStatic is 1
+nStatic is 3
+nStatic is 6
+nStatic is 10
+">nStatic is 0
+nStatic is 1
+nStatic is 3
+nStatic is 6
+nStatic is 10
+</code></pre>
+<p>This example shows the use of <strong>static</strong> in a class.</p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="// static2.cpp
+// compile with: /EHsc
+#include &lt;iostream&gt;
+
+using namespace std;
+class CMyClass {
+public:
+   static int m_i;
+};
+
+int CMyClass::m_i = 0;
+CMyClass myObject1;
+CMyClass myObject2;
+
+int main() {
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl;
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl;
+
+   myObject1.m_i = 1;
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl;
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl;
+
+   myObject2.m_i = 2;
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl;
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl;
+
+   CMyClass::m_i = 3;
+   cout &lt;&lt; myObject1.m_i &lt;&lt; endl;
+   cout &lt;&lt; myObject2.m_i &lt;&lt; endl;
+}
+"><span><span class="hljs-comment">// static2.cpp</span>
+<span class="hljs-comment">// compile with: /EHsc</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CMyClass</span> {</span>
+<span class="hljs-keyword">public</span>:
+   <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> m_i;
+};
+
+<span class="hljs-keyword">int</span> CMyClass::m_i = <span class="hljs-number">0</span>;
+CMyClass myObject1;
+CMyClass myObject2;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject1.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject2.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+   myObject1.m_i = <span class="hljs-number">1</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject1.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject2.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+   myObject2.m_i = <span class="hljs-number">2</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject1.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject2.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+   CMyClass::m_i = <span class="hljs-number">3</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject1.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; myObject2.m_i &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</span></code></pre>
+<div class="codeHeader" id="code-try-4" data-bi-name="code-header"><span class="language">Output</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-Output" data-author-content="0
+0
+1
+1
+2
+2
+3
+3
+">0
+0
+1
+1
+2
+2
+3
+3
+</code></pre>
+<p>This example shows a local variable declared <strong>static</strong> in a member function. The static variable is available to the whole program; all instances of the type share the same copy of the static variable.</p>
+<div class="codeHeader" id="code-try-5" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="// static3.cpp
+// compile with: /EHsc
+#include &lt;iostream&gt;
+using namespace std;
+struct C {
+   void Test(int value) {
+      static int var = 0;
+      if (var == value)
+         cout &lt;&lt; &quot;var == value&quot; &lt;&lt; endl;
+      else
+         cout &lt;&lt; &quot;var != value&quot; &lt;&lt; endl;
+
+      var = value;
+   }
+};
+
+int main() {
+   C c1;
+   C c2;
+   c1.Test(100);
+   c2.Test(100);
+}
+"><span><span class="hljs-comment">// static3.cpp</span>
+<span class="hljs-comment">// compile with: /EHsc</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">C</span> {</span>
+   <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Test</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+      <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> var = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">if</span> (var == value)
+         <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"var == value"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+      <span class="hljs-keyword">else</span>
+         <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"var != value"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+      var = value;
+   }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+   C c1;
+   C c2;
+   c1.Test(<span class="hljs-number">100</span>);
+   c2.Test(<span class="hljs-number">100</span>);
+}
+</span></code></pre>
+<div class="codeHeader" id="code-try-6" data-bi-name="code-header"><span class="language">Output</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-Output" data-author-content="var != value
+var == value
+">var != value
+var == value
+</code></pre>
+<p>Starting in C++11, a static local variable initialization is guaranteed to be thread-safe. This feature is sometimes called <em>magic statics</em>. However, in a multithreaded application all subsequent assignments must be synchronized. The thread-safe static initialization feature can be disabled by using the <a href="https://docs.microsoft.com/en-us/cpp/build/reference/zc-threadsafeinit-thread-safe-local-static-initialization?view=vs-2019" data-linktype="relative-path">/Zc:threadSafeInit-</a> flag to avoid taking a dependency on the CRT.</p>
+<h2 id="extern"> extern<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#extern" aria-labelledby="extern"></a></h2>
+<p>Objects and variables declared as <strong>extern</strong> declare an object that is defined in another translation unit or in an enclosing scope as having external linkage. For more information, see <a href="https://docs.microsoft.com/en-us/cpp/cpp/extern-cpp?view=vs-2019" data-linktype="relative-path">extern</a> and <a href="https://docs.microsoft.com/en-us/cpp/cpp/program-and-linkage-cpp?view=vs-2019" data-linktype="relative-path">Translation units and linkage</a>.</p>
+<h2 id="thread_local"> thread_local (C++11)<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#thread_local" aria-labelledby="thread_local"></a></h2>
+<p>A variable declared with the <strong>thread_local</strong> specifier is accessible only on the thread on which it is created. The variable is created when the thread is created, and destroyed when the thread is destroyed. Each thread has its own copy of the variable. On Windows, <strong>thread_local</strong> is functionally equivalent to the Microsoft-specific <a href="https://docs.microsoft.com/en-us/cpp/cpp/thread?view=vs-2019" data-linktype="relative-path">__declspec( thread )</a> attribute.</p>
+<div class="codeHeader" id="code-try-7" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="thread_local float f = 42.0; // Global namespace. Not implicitly static.
+
+struct S // cannot be applied to type definition
+{
+    thread_local int i; // Illegal. The member must be static.
+    thread_local static char buf[10]; // OK
+};
+
+void DoSomething()
+{
+    // Apply thread_local to a local variable.
+    // Implicitly &quot;thread_local static S my_struct&quot;.
+    thread_local S my_struct;
+}
+"><span><span class="hljs-keyword">thread_local</span> <span class="hljs-keyword">float</span> f = <span class="hljs-number">42.0</span>; <span class="hljs-comment">// Global namespace. Not implicitly static.</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">S</span> // <span class="hljs-title">cannot</span> <span class="hljs-title">be</span> <span class="hljs-title">applied</span> <span class="hljs-title">to</span> <span class="hljs-title">type</span> <span class="hljs-title">definition</span>
+{</span>
+    <span class="hljs-keyword">thread_local</span> <span class="hljs-keyword">int</span> i; <span class="hljs-comment">// Illegal. The member must be static.</span>
+    <span class="hljs-keyword">thread_local</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[<span class="hljs-number">10</span>]; <span class="hljs-comment">// OK</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DoSomething</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// Apply thread_local to a local variable.</span>
+    <span class="hljs-comment">// Implicitly "thread_local static S my_struct".</span>
+    <span class="hljs-keyword">thread_local</span> S my_struct;
+}
+</span></code></pre>
+<p>Things to note about the <strong>thread_local</strong> specifier:</p>
+<ul>
+<li><p>Dynamically initialized thread-local variables in DLLs may not be correctly initialized on all calling threads. For more information, see <a href="https://docs.microsoft.com/en-us/cpp/cpp/thread?view=vs-2019" data-linktype="relative-path">thread</a>.</p>
+</li>
+<li><p>The <strong>thread_local</strong> specifier may be combined with <strong>static</strong> or <strong>extern</strong>.</p>
+</li>
+<li><p>You can apply <strong>thread_local</strong> only to data declarations and definitions; <strong>thread_local</strong> cannot be used on function declarations or definitions.</p>
+</li>
+<li><p>You can specify <strong>thread_local</strong> only on data items with static storage duration. This includes global data objects (both <strong>static</strong> and <strong>extern</strong>), local static objects, and static data members of classes. Any local variable declared <strong>thread_local</strong> is implicitly static if no other storage class is provided; in other words, at block scope <strong>thread_local</strong> is equivalent to <code>thread_local static</code>.</p>
+</li>
+<li><p>You must specify <strong>thread_local</strong> for both the declaration and the definition of a thread local object, whether the declaration and definition occur in the same file or separate files.</p>
+</li>
+</ul>
+<p>On Windows, <strong>thread_local</strong> is functionally equivalent to  <a href="https://docs.microsoft.com/en-us/cpp/cpp/thread?view=vs-2019" data-linktype="relative-path">__declspec(thread)</a> except that <strong>__declspec(thread)</strong> can be applied to a type definition and is valid in C code. Whenever possible, use <strong>thread_local</strong> because it is part of the C++ standard and is therefore more portable.</p>
+<h2 id="register">  register<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#register" aria-labelledby="register"></a></h2>
+<p><strong>Visual Studio 2017 version 15.3 and later</strong> (available with <a href="https://docs.microsoft.com/en-us/cpp/build/reference/std-specify-language-standard-version?view=vs-2019" data-linktype="relative-path">/std:c++17</a>): The <strong>register</strong> keyword is no longer a supported storage class. The keyword is still reserved in the standard for future use.</p>
+<div class="codeHeader" id="code-try-8" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="   register int val; // warning C5033: &#39;register&#39; is no longer a supported storage class
+"><span>   <span class="hljs-keyword">register</span> <span class="hljs-keyword">int</span> val; <span class="hljs-comment">// warning C5033: 'register' is no longer a supported storage class</span>
+</span></code></pre>
+<h2 id="example-automatic-vs-static-initialization">Example: automatic vs. static initialization<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#example-automatic-vs-static-initialization" aria-labelledby="example-automatic-vs-static-initialization"></a></h2>
+<p>A local automatic object or variable is initialized every time the flow of control reaches its definition. A local static object or variable is initialized the first time the flow of control reaches its definition.</p>
+<p>Consider the following example, which defines a class that logs initialization and destruction of objects and then defines three objects, <code>I1</code>, <code>I2</code>, and <code>I3</code>:</p>
+<div class="codeHeader" id="code-try-9" data-bi-name="code-header"><span class="language">C++</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-cpp" data-author-content="// initialization_of_objects.cpp
+// compile with: /EHsc
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+// Define a class that logs initializations and destructions.
+class InitDemo {
+public:
+    InitDemo( const char *szWhat );
+    ~InitDemo();
+
+private:
+    char *szObjName;
+    size_t sizeofObjName;
+};
+
+// Constructor for class InitDemo
+InitDemo::InitDemo( const char *szWhat ) :
+    szObjName(NULL), sizeofObjName(0) {
+    if ( szWhat != 0 &amp;&amp; strlen( szWhat ) &gt; 0 ) {
+        // Allocate storage for szObjName, then copy
+        // initializer szWhat into szObjName, using
+        // secured CRT functions.
+        sizeofObjName = strlen( szWhat ) + 1;
+
+        szObjName = new char[ sizeofObjName ];
+        strcpy_s( szObjName, sizeofObjName, szWhat );
+
+        cout &lt;&lt; &quot;Initializing: &quot; &lt;&lt; szObjName &lt;&lt; &quot;\n&quot;;
+    }
+    else {
+        szObjName = 0;
+    }
+}
+
+// Destructor for InitDemo
+InitDemo::~InitDemo() {
+    if( szObjName != 0 ) {
+        cout &lt;&lt; &quot;Destroying: &quot; &lt;&lt; szObjName &lt;&lt; &quot;\n&quot;;
+        delete szObjName;
+    }
+}
+
+// Enter main function
+int main() {
+    InitDemo I1( &quot;Auto I1&quot; ); {
+        cout &lt;&lt; &quot;In block.\n&quot;;
+        InitDemo I2( &quot;Auto I2&quot; );
+        static InitDemo I3( &quot;Static I3&quot; );
+    }
+    cout &lt;&lt; &quot;Exited block.\n&quot;;
+}
+"><span><span class="hljs-comment">// initialization_of_objects.cpp</span>
+<span class="hljs-comment">// compile with: /EHsc</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// Define a class that logs initializations and destructions.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InitDemo</span> {</span>
+<span class="hljs-keyword">public</span>:
+    InitDemo( <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *szWhat );
+    ~InitDemo();
+
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">char</span> *szObjName;
+    <span class="hljs-keyword">size_t</span> sizeofObjName;
+};
+
+<span class="hljs-comment">// Constructor for class InitDemo</span>
+InitDemo::InitDemo( <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *szWhat ) :
+    szObjName(<span class="hljs-literal">NULL</span>), sizeofObjName(<span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">if</span> ( szWhat != <span class="hljs-number">0</span> &amp;&amp; <span class="hljs-built_in">strlen</span>( szWhat ) &gt; <span class="hljs-number">0</span> ) {
+        <span class="hljs-comment">// Allocate storage for szObjName, then copy</span>
+        <span class="hljs-comment">// initializer szWhat into szObjName, using</span>
+        <span class="hljs-comment">// secured CRT functions.</span>
+        sizeofObjName = <span class="hljs-built_in">strlen</span>( szWhat ) + <span class="hljs-number">1</span>;
+
+        szObjName = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[ sizeofObjName ];
+        strcpy_s( szObjName, sizeofObjName, szWhat );
+
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Initializing: "</span> &lt;&lt; szObjName &lt;&lt; <span class="hljs-string">"\n"</span>;
+    }
+    <span class="hljs-keyword">else</span> {
+        szObjName = <span class="hljs-number">0</span>;
+    }
+}
+
+<span class="hljs-comment">// Destructor for InitDemo</span>
+InitDemo::~InitDemo() {
+    <span class="hljs-keyword">if</span>( szObjName != <span class="hljs-number">0</span> ) {
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Destroying: "</span> &lt;&lt; szObjName &lt;&lt; <span class="hljs-string">"\n"</span>;
+        <span class="hljs-keyword">delete</span> szObjName;
+    }
+}
+
+<span class="hljs-comment">// Enter main function</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-function">InitDemo <span class="hljs-title">I1</span><span class="hljs-params">( <span class="hljs-string">"Auto I1"</span> )</span></span>; {
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"In block.\n"</span>;
+        <span class="hljs-function">InitDemo <span class="hljs-title">I2</span><span class="hljs-params">( <span class="hljs-string">"Auto I2"</span> )</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">static</span> InitDemo <span class="hljs-title">I3</span><span class="hljs-params">( <span class="hljs-string">"Static I3"</span> )</span></span>;
+    }
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Exited block.\n"</span>;
+}
+</span></code></pre>
+<div class="codeHeader" id="code-try-10" data-bi-name="code-header"><span class="language">Output</span><button type="button" class="action is-relative" data-bi-name="copy" aria-label="Copy code">
+				<span class="icon">
+					<span class="docon docon-edit-copy" role="presentation"></span>
+				</span>
+				<span>Copy</span>
+				<div class="successful-copy-alert is-absolute has-right-zero has-top-zero has-left-zero has-bottom-zero is-flex has-flex-align-items-center has-flex-justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+					<span class="icon is-size-4">
+						<span class="docon docon-check-mark" role="presentation"></span>
+					</span>
+				</div>
+			</button></div><pre tabindex="0" class="has-inner-focus"><code class="lang-Output" data-author-content="Initializing: Auto I1
+In block.
+Initializing: Auto I2
+Initializing: Static I3
+Destroying: Auto I2
+Exited block.
+Destroying: Auto I1
+Destroying: Static I3
+">Initializing: Auto I1
+In block.
+Initializing: Auto I2
+Initializing: Static I3
+Destroying: Auto I2
+Exited block.
+Destroying: Auto I1
+Destroying: Static I3
+</code></pre>
+<p>This example demonstrates how and when the objects <code>I1</code>, <code>I2</code>, and <code>I3</code> are initialized and when they are destroyed.</p>
+<p>There are several points to note about the program:</p>
+<ul>
+<li><p>First, <code>I1</code> and <code>I2</code> are automatically destroyed when the flow of control exits the block in which they are defined.</p>
+</li>
+<li><p>Second, in C++, it is not necessary to declare objects or variables at the beginning of a block. Furthermore, these objects are initialized only when the flow of control reaches their definitions. (<code>I2</code> and <code>I3</code> are examples of such definitions.) The output shows exactly when they are initialized.</p>
+</li>
+<li><p>Finally, static local variables such as <code>I3</code> retain their values for the duration of the program, but are destroyed as the program terminates.</p>
+</li>
+</ul>
+<h2 id="see-also">See also<a class="docon docon-link heading-anchor" href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#see-also" aria-labelledby="see-also"></a></h2>
+<p><a href="https://docs.microsoft.com/en-us/cpp/cpp/declarations-and-definitions-cpp?view=vs-2019" data-linktype="relative-path">Declarations and Definitions</a></p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- recommended content page section -->
+
+							<nav data-bi-name="recommendation-bottom" hidden="" id="recommended-content-center" class="is-hidden-desktop" aria-labelledby="recommended-content-center-title">
+								<h3 id="recommended-content-center-title" class="is-size-2 has-margin-top-large has-margin-bottom-small">Related Articles</h3>
+							</nav>
+
+						<!-- end recommended content page section -->
+
+						<!-- rating mobile section -->
+								<div class="is-hidden-desktop has-border-top has-margin-top-large has-padding-top-small">
+									
+<div data-bi-name="rating" class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small">
+	<div class="binary-rating">
+		<div class="binary-rating-buttons">
+			<h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Is this page helpful?</h3>
+			<div>
+				<button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" data-bi-sat="1">
+					<span class="icon docon docon-like" aria-hidden="true"></span><span>Yes</span>
+				</button>
+				<button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-haspopup="true" aria-controls="rating-feedback">
+					<span class="icon docon docon-dislike" aria-hidden="true"></span><span>No</span>
+				</button>
+			</div>
+		</div>
+		<form class="feedback-verbatim-form is-hidden">
+			<div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+				<label for="rating-textarea-mobile" class="visually-hidden">Any additional feedback?</label>
+				<textarea id="rating-textarea-mobile" rows="4" maxlength="999" placeholder="Any additional feedback?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+				<button class="skip-rating button is-text is-link is-small" type="button">Skip</button>
+				<button disabled="" class="submit-rating button is-primary is-small" type="submit" data-bi-name="rating-verbatim">Submit</button>
+			</div>
+		</form>
+	</div>
+	<div class="thankyou-rating is-hidden">
+		<p>Thank you.</p>
+	</div>
+</div>								</div>
+						<!-- end rating mobile section -->
+
+						<!-- feedback section -->
+
+
+
+<section class="feedback-section" data-bi-name="feedback-section">
+
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p id="send-feedback-about" aria-hidden="true">Send feedback about</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" aria-label="Send feedback about this product" href="https://developercommunity.visualstudio.com/spaces/62/index.html" data-bi-name="product-feedback">
+				<span>This product</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" aria-label="Send feedback about this page" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>This page</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none">
+					<button class="button dropdown-trigger is-full-height" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm0" aria-label="Additional feedback options" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm0" class="dropdown-menu documentation-feedback-menu">
+						You may also leave feedback directly on <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/cpp-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%2066737d90-dbf1-88c9-3fa1-dcb00c335467%0A*%20Version%20Independent%20ID%3A%207292bb09-ee1a-1ae6-1985-631cdf24a27d%0A*%20Content%3A%20%5BStorage%20classes%20(C%2B%2B)%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019)%0A*%20Content%20Source%3A%20%5Bdocs%2Fcpp%2Fstorage-classes-cpp.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoft%2Fcpp-docs%2Fblob%2Fmaster%2Fdocs%2Fcpp%2Fstorage-classes-cpp.md)%0A*%20Product%3A%20**visual-cpp**%0A*%20Technology%3A%20**cpp-language**%0A*%20GitHub%20Login%3A%20%40corob-msft%0A*%20Microsoft%20Alias%3A%20**corob**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+This page					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none">
+					<button class="button dropdown-trigger" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm1" aria-label="Additional feedback options" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm1" class="dropdown-menu documentation-feedback-menu">
+						You may also leave feedback directly on <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/cpp-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%2066737d90-dbf1-88c9-3fa1-dcb00c335467%0A*%20Version%20Independent%20ID%3A%207292bb09-ee1a-1ae6-1985-631cdf24a27d%0A*%20Content%3A%20%5BStorage%20classes%20(C%2B%2B)%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fcpp%2Fcpp%2Fstorage-classes-cpp%3Fview%3Dvs-2019)%0A*%20Content%20Source%3A%20%5Bdocs%2Fcpp%2Fstorage-classes-cpp.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoft%2Fcpp-docs%2Fblob%2Fmaster%2Fdocs%2Fcpp%2Fstorage-classes-cpp.md)%0A*%20Product%3A%20**visual-cpp**%0A*%20Technology%3A%20**cpp-language**%0A*%20GitHub%20Login%3A%20%40corob-msft%0A*%20Microsoft%20Alias%3A%20**corob**">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" width="36" height="36" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Send feedback about this page</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Title</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" type="text" placeholder="Title" required="" pattern=".*[^\s]+.*">
+		</label>
+		<label>
+			<span class="visually-hidden">Leave a comment</span>
+			<textarea name="body" placeholder="Leave a comment" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Submit feedback</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-warning" role="alert"><p>Error loading feedback.</p></div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" hidden="" data-bi-name="tab-group">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">There are no open issues</div>
+			<ul class="github-issues-list" aria-label="Open Issues"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" hidden="hidden" aria-hidden="true">
+			<div class="no-issues-placeholder">There are no closed issues</div>
+			<ul class="github-issues-list" aria-label="Closed Issues"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/MicrosoftDocs/cpp-docs/issues?utf8=%E2%9C%93&amp;q=%227292bb09-ee1a-1ae6-1985-631cdf24a27d%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>View on GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text has-inner-focus">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div class="is-size-7 right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+						<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable" style="width: 104.925px; top: 24px; bottom: 95.4px;">
+								
+<div data-bi-name="rating" class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small">
+	<div class="binary-rating">
+		<div class="binary-rating-buttons">
+			<h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Is this page helpful?</h3>
+			<div>
+				<button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Yes" data-bi-name="rating-yes" data-bi-sat="1">
+					<span class="icon docon docon-like" aria-hidden="true"></span><span>Yes</span>
+				</button>
+				<button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="No" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-haspopup="true" aria-controls="rating-feedback">
+					<span class="icon docon docon-dislike" aria-hidden="true"></span><span>No</span>
+				</button>
+			</div>
+		</div>
+		<form class="feedback-verbatim-form is-hidden">
+			<div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+				<label for="rating-textarea-desktop" class="visually-hidden">Any additional feedback?</label>
+				<textarea id="rating-textarea-desktop" rows="4" maxlength="999" placeholder="Any additional feedback?" required="" class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+				<button class="skip-rating button is-text is-link is-small" type="button">Skip</button>
+				<button disabled="" class="submit-rating button is-primary is-small" type="submit" data-bi-name="rating-verbatim">Submit</button>
+			</div>
+		</form>
+	</div>
+	<div class="thankyou-rating is-hidden">
+		<p>Thank you.</p>
+	</div>
+</div>								<nav data-bi-name="recommendation-sidebar" hidden="" id="recommended-content-nav" role="navigation" aria-labelledby="recommended-content-nav-title">
+									<h3 id="recommended-content-nav-title">Related Articles</h3>
+								</nav>
+							<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline">
+								<h3>In this article</h3>
+							<ol><li class=""><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#static">static</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#extern">extern</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#thread_local">thread_local (C++11)</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#register">register</a></li><li class="selected"><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#example-automatic-vs-static-initialization">Example: automatic vs. static initialization</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019#see-also">See also</a></li></ol></nav>
+						</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/cpp/cpp/storage-classes-cpp?view=vs-2019" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>

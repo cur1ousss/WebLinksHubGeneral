@@ -1,0 +1,3866 @@
+<!DOCTYPE html>
+<!-- saved from url=(0019)https://man.cx/bash -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Linux Manpages Online - man.cx manual pages</title>
+    <meta name="robots" content="index,follow">
+    <meta name="verify-v1" content="c4FN8RTU/IsvamiZtYSUOfRl4+hibnML0HgCPDrvLuc=">
+    <link rel="shortcut icon" type="image/png" href="https://man.cx/___/book.png">
+
+    <link rel="stylesheet" type="text/css" href="./Linux Manpages Online - man.cx manual pagesBash_files/layout.css">
+    <link rel="stylesheet" type="text/css" href="./Linux Manpages Online - man.cx manual pagesBash_files/styles.css">
+
+
+    <script language="JavaScript" type="text/javascript">
+        function niceurl(base, tform) {
+            window.location.href = base + tform.elements.page.value;
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="ad_header">
+        <!-- adsense -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5892664235245840" data-ad-slot="5467404526" data-ad-format="auto"></ins>
+    </div>
+
+
+    <h1><a name="top" href="https://man.cx/">Manpages</a></h1>
+    <form method="get" accept-charset="utf-8" action="https://man.cx/" onsubmit="return niceurl(&#39;/&#39;,this)">
+        <label for="lookup">Manpage:</label>
+        <input name="page" id="lookup" type="text">
+        <input type="submit" value="go" name="do[go]">
+        <!-- input type="submit" value="search" name="do[search]" /-->
+    </form>
+</header>
+
+<div class="main">
+    <main>
+        
+
+
+
+
+
+
+
+<h2><a href="https://man.cx/bash#heading1" name="heading1">NAME
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">bash −
+GNU Bourne-Again SHell</p>
+
+<h2><a href="https://man.cx/bash#heading2" name="heading2">SYNOPSIS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>bash</b>
+[options] [command_string | file]</p>
+
+<h2><a href="https://man.cx/bash#heading3" name="heading3">COPYRIGHT
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Bash is
+Copyright (C) 1989-2018 by the Free Software Foundation,
+Inc.</p>
+
+<h2><a href="https://man.cx/bash#heading4" name="heading4">DESCRIPTION
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Bash</b> is
+an <b>sh</b>-compatible command language interpreter that
+executes commands read from the standard input or from a
+file. <b>Bash</b> also incorporates useful features from the
+<i>Korn</i> and <i>C</i> shells (<b>ksh</b> and
+<b>csh</b>).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Bash</b> is
+intended to be a conformant implementation of the Shell and
+Utilities portion of the IEEE POSIX specification (IEEE
+Standard 1003.1). <b>Bash</b> can be configured to be
+POSIX-conformant by default.</p>
+
+<h2><a href="https://man.cx/bash#heading5" name="heading5">OPTIONS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">All of the
+single-character shell options documented in the description
+of the <b>set</b> builtin command, including
+<b>−o</b>, can be used as options when the shell is
+invoked. In addition, <b>bash</b> interprets the following
+options when it is invoked:</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−c</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>If the <b>−c</b> option is present, then commands
+are read from the first non-option argument
+<i>command_string</i>. If there are arguments after the
+<i>command_string</i>, the first argument is assigned to
+<b>$0</b> and any remaining arguments are assigned to the
+positional parameters. The assignment to <b>$0</b> sets the
+name of the shell, which is used in warning and error
+messages.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−i</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>If the <b>−i</b> option is present, the shell is
+<i>interactive</i>.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−l</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>Make <b>bash</b> act as if it had been invoked as a
+login shell (see <b><small>INVOCATION</small></b>
+below).</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−r</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>If the <b>−r</b> option is present, the shell
+becomes <i>restricted</i> (see <b><small>RESTRICTED
+SHELL</small></b> below).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−s</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>If the <b>−s</b> option is present, or if no
+arguments remain after option processing, then commands are
+read from the standard input. This option allows the
+positional parameters to be set when invoking an interactive
+shell or when reading input through a pipe.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−v</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>Print shell input lines as they are read.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−x</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>Print commands and their arguments as they are
+executed.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−D</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>A list of all double-quoted strings preceded by <b>$</b>
+is printed on the standard output. These are the strings
+that are subject to language translation when the current
+locale is not <b>C</b> or <b>POSIX</b>. This implies the
+<b>−n</b> option; no commands will be executed.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>[−+]O
+[</b><i>shopt_option</i><b>]</b></p>
+
+<p style="margin-left:26%;"><i>shopt_option</i> is one of
+the shell options accepted by the <b>shopt</b> builtin (see
+<b><small>SHELL BUILTIN COMMANDS</small></b> below). If
+<i>shopt_option</i> is present, <b>−O</b> sets the
+value of that option; <b>+O</b> unsets it. If
+<i>shopt_option</i> is not supplied, the names and values of
+the shell options accepted by <b>shopt</b> are printed on
+the standard output. If the invocation option is <b>+O</b>,
+the output is displayed in a format that may be reused as
+input.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="3%">
+
+
+<p><b>−−</b></p></td>
+<td width="12%"></td>
+<td width="74%">
+
+
+<p>A <b>−−</b> signals the end of options and
+disables further option processing. Any arguments after the
+<b>−−</b> are treated as filenames and
+arguments. An argument of <b>−</b> is equivalent to
+<b>−−</b>.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Bash</b>
+also interprets a number of multi-character options. These
+options must appear on the command line before the
+single-character options to be recognized. <b><br>
+−−debugger</b></p>
+
+<p style="margin-left:22%;">Arrange for the debugger
+profile to be executed before the shell starts. Turns on
+extended debugging mode (see the description of the
+<b>extdebug</b> option to the <b>shopt</b> builtin
+below).</p>
+
+
+<p style="margin-left:11%;"><b>−−dump−po−strings</b></p>
+
+<p style="margin-left:22%;">Equivalent to <b>−D</b>,
+but the output is in the GNU <i>gettext</i> <b>po</b>
+(portable object) file format.</p>
+
+
+<p style="margin-left:11%;"><b>−−dump−strings</b></p>
+
+<p style="margin-left:22%;">Equivalent to
+<b>−D</b>.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>−−help</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>Display a usage message on standard output and exit
+successfully.</p> </td></tr>
+</tbody></table>
+
+
+<p style="margin-left:11%;"><b>−−init−file</b>
+<i>file</i> <b><br>
+−−rcfile</b> <i>file</i></p>
+
+<p style="margin-left:22%;">Execute commands from
+<i>file</i> instead of the system wide initialization file
+<i>/etc/bash.bashrc</i> and the standard personal
+initialization file <i>~/.bashrc</i> if the shell is
+interactive (see <b><small>INVOCATION</small></b>
+below).</p>
+
+<p style="margin-left:11%;"><b>−−login</b></p>
+
+<p style="margin-left:22%;">Equivalent to
+<b>−l</b>.</p>
+
+
+<p style="margin-left:11%;"><b>−−noediting</b></p>
+
+<p style="margin-left:22%;">Do not use the GNU
+<b>readline</b> library to read command lines when the shell
+is interactive.</p>
+
+
+<p style="margin-left:11%;"><b>−−noprofile</b></p>
+
+<p style="margin-left:22%;">Do not read either the
+system-wide startup file <i>/etc/profile</i> or any of the
+personal initialization files <i>~/.bash_profile</i>,
+<i>~/.bash_login</i>, or <i>~/.profile</i>. By default,
+<b>bash</b> reads these files when it is invoked as a login
+shell (see <b><small>INVOCATION</small></b> below).</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>−−norc</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>Do not read and execute the system wide initialization
+file <i>/etc/bash.bashrc</i> and the personal initialization
+file <i>~/.bashrc</i> if the shell is interactive. This
+option is on by default if the shell is invoked as
+<b>sh</b>.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>−−posix</b></p>
+
+<p style="margin-left:22%;">Change the behavior of
+<b>bash</b> where the default operation differs from the
+POSIX standard to match the standard (<i>posix mode</i>).
+See <b><small>SEE ALSO</small></b> below for a reference to
+a document that details how posix mode affects bash’s
+behavior.</p>
+
+
+<p style="margin-left:11%;"><b>−−restricted</b></p>
+
+<p style="margin-left:22%;">The shell becomes restricted
+(see <b><small>RESTRICTED SHELL</small></b> below).</p>
+
+
+<p style="margin-left:11%;"><b>−−verbose</b></p>
+
+<p style="margin-left:22%;">Equivalent to
+<b>−v</b>.</p>
+
+
+<p style="margin-left:11%;"><b>−−version</b></p>
+
+<p style="margin-left:22%;">Show version information for
+this instance of <b>bash</b> on the standard output and exit
+successfully.</p>
+
+<h2><a href="https://man.cx/bash#heading6" name="heading6">ARGUMENTS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">If arguments
+remain after option processing, and neither the
+<b>−c</b> nor the <b>−s</b> option has been
+supplied, the first argument is assumed to be the name of a
+file containing shell commands. If <b>bash</b> is invoked in
+this fashion, <b>$0</b> is set to the name of the file, and
+the positional parameters are set to the remaining
+arguments. <b>Bash</b> reads and executes commands from this
+file, then exits. <b>Bash</b>’s exit status is the
+exit status of the last command executed in the script. If
+no commands are executed, the exit status is 0. An attempt
+is first made to open the file in the current directory,
+and, if no file is found, then the shell searches the
+directories in <b><small>PATH</small></b> for the
+script.</p>
+
+<h2><a href="https://man.cx/bash#heading7" name="heading7">INVOCATION
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">A <i>login
+shell</i> is one whose first character of argument zero is a
+<b>−</b>, or one started with the
+<b>−−login</b> option.</p>
+
+<p style="margin-left:11%; margin-top: 1em">An
+<i>interactive</i> shell is one started without non-option
+arguments (unless <b>−s</b> is specified) and without
+the <b>−c</b> option whose standard input and error
+are both connected to terminals (as determined by
+<a href="https://man.cx/isatty(3)">isatty(3)</a>), or one started with the <b>−i</b>
+option. <b><small>PS1</small></b> is set and <b>$−</b>
+includes <b>i</b> if <b>bash</b> is interactive, allowing a
+shell script or a startup file to test this state.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The following
+paragraphs describe how <b>bash</b> executes its startup
+files. If any of the files exist but cannot be read,
+<b>bash</b> reports an error. Tildes are expanded in
+filenames as described below under <b>Tilde Expansion</b> in
+the <b><small>EXPANSION</small></b> section.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When
+<b>bash</b> is invoked as an interactive login shell, or as
+a non-interactive shell with the <b>−−login</b>
+option, it first reads and executes commands from the file
+<i>/etc/profile</i>, if that file exists. After reading that
+file, it looks for <i>~/.bash_profile</i>,
+<i>~/.bash_login</i>, and <i>~/.profile</i>, in that order,
+and reads and executes commands from the first one that
+exists and is readable. The <b>−−noprofile</b>
+option may be used when the shell is started to inhibit this
+behavior.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When an
+interactive login shell exits, or a non-interactive login
+shell executes the <b>exit</b> builtin command, <b>bash</b>
+reads and executes commands from the file
+<i>~/.bash_logout</i>, if it exists.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When an
+interactive shell that is not a login shell is started,
+<b>bash</b> reads and executes commands from
+<i>/etc/bash.bashrc</i> and <i>~/.bashrc</i>, if these files
+exist. This may be inhibited by using the
+<b>−−norc</b> option. The
+<b>−−rcfile</b> <i>file</i> option will force
+<b>bash</b> to read and execute commands from <i>file</i>
+instead of <i>/etc/bash.bashrc</i> and <i>~/.bashrc</i>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When
+<b>bash</b> is started non-interactively, to run a shell
+script, for example, it looks for the variable
+<b><small>BASH_ENV</small></b> in the environment, expands
+its value if it appears there, and uses the expanded value
+as the name of a file to read and execute. <b>Bash</b>
+behaves as if the following command were executed:</p>
+
+<p style="margin-left:22%;">if [ −n
+"$BASH_ENV" ]; then . "$BASH_ENV";
+fi</p>
+
+<p style="margin-left:11%;">but the value of the
+<b><small>PATH</small></b> variable is not used to search
+for the filename.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If <b>bash</b>
+is invoked with the name <b>sh</b>, it tries to mimic the
+startup behavior of historical versions of <b>sh</b> as
+closely as possible, while conforming to the POSIX standard
+as well. When invoked as an interactive login shell, or a
+non-interactive shell with the <b>−−login</b>
+option, it first attempts to read and execute commands from
+<i>/etc/profile</i> and <i>~/.profile</i>, in that order.
+The <b>−−noprofile</b> option may be used to
+inhibit this behavior. When invoked as an interactive shell
+with the name <b>sh</b>, <b>bash</b> looks for the variable
+<b><small>ENV</small></b><small>,</small> expands its value
+if it is defined, and uses the expanded value as the name of
+a file to read and execute. Since a shell invoked as
+<b>sh</b> does not attempt to read and execute commands from
+any other startup files, the <b>−−rcfile</b>
+option has no effect. A non-interactive shell invoked with
+the name <b>sh</b> does not attempt to read any other
+startup files. When invoked as <b>sh</b>, <b>bash</b> enters
+<i>posix</i> mode after the startup files are read.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When
+<b>bash</b> is started in <i>posix</i> mode, as with the
+<b>−−posix</b> command line option, it follows
+the POSIX standard for startup files. In this mode,
+interactive shells expand the <b><small>ENV</small></b>
+variable and commands are read and executed from the file
+whose name is the expanded value. No other startup files are
+read.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Bash</b>
+attempts to determine when it is being run with its standard
+input connected to a network connection, as when executed by
+the remote shell daemon, usually <i>rshd</i>, or the secure
+shell daemon <i>sshd</i>. If <b>bash</b> determines it is
+being run in this fashion, it reads and executes commands
+from <i>~/.bashrc</i> and <i>~/.bashrc</i>, if these files
+exist and are readable. It will not do this if invoked as
+<b>sh</b>. The <b>−−norc</b> option may be used
+to inhibit this behavior, and the
+<b>−−rcfile</b> option may be used to force
+another file to be read, but neither <i>rshd</i> nor
+<i>sshd</i> generally invoke the shell with those options or
+allow them to be specified.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If the shell is
+started with the effective user (group) id not equal to the
+real user (group) id, and the <b>−p</b> option is not
+supplied, no startup files are read, shell functions are not
+inherited from the environment, the
+<b><small>SHELLOPTS</small></b><small>, <b>BASHOPTS</b>,
+<b>CDPATH</b>,</small> and <b><small>GLOBIGNORE</small></b>
+variables, if they appear in the environment, are ignored,
+and the effective user id is set to the real user id. If the
+<b>−p</b> option is supplied at invocation, the
+startup behavior is the same, but the effective user id is
+not reset.</p>
+
+<h2><a href="https://man.cx/bash#heading8" name="heading8">DEFINITIONS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">The following
+definitions are used throughout the rest of this
+document.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>blank</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>A space or tab.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>word</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>A sequence of characters considered as a single unit by
+the shell. Also known as a <b>token</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>name</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>A <i>word</i> consisting only of alphanumeric characters
+and underscores, and beginning with an alphabetic character
+or an underscore. Also referred to as an
+<b>identifier</b>.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>metacharacter</b></p>
+
+<p style="margin-left:22%;">A character that, when
+unquoted, separates words. One of the following: <b><br>
+| &amp; ; ( ) &lt; &gt; space tab newline</b></p>
+
+<p style="margin-left:11%;"><b>control operator</b></p>
+
+<p style="margin-left:22%;">A <i>token</i> that performs a
+control function. It is one of the following symbols:
+<b><br>
+|| &amp; &amp;&amp; ; ;; ;&amp; ;;&amp; ( ) | |&amp;
+&lt;newline&gt;</b></p>
+
+<h2><a href="https://man.cx/bash#heading9" name="heading9">RESERVED WORDS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b><i>Reserved
+words</i></b> are words that have a special meaning to the
+shell. The following words are recognized as reserved when
+unquoted and either the first word of a simple command (see
+<b><small>SHELL GRAMMAR</small></b> below) or the third word
+of a <b>case</b> or <b>for</b> command:</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>! case
+coproc do done elif else esac fi for function if in select
+then until while { } time [[ ]]</b></p>
+
+<h2><a href="https://man.cx/bash#heading10" name="heading10">SHELL GRAMMAR
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Simple
+Commands</b> <br>
+A <i>simple command</i> is a sequence of optional variable
+assignments followed by <b>blank</b>-separated words and
+redirections, and terminated by a <i>control operator</i>.
+The first word specifies the command to be executed, and is
+passed as argument zero. The remaining words are passed as
+arguments to the invoked command.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The return
+value of a <i>simple command</i> is its exit status, or
+128+<i>n</i> if the command is terminated by signal
+<i>n</i>.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Pipelines</b>
+<br>
+A <i>pipeline</i> is a sequence of one or more commands
+separated by one of the control operators <b>|</b> or
+<b>|&amp;</b>. The format for a pipeline is:</p>
+
+<p style="margin-left:22%; margin-top: 1em">[<b>time</b>
+[<b>−p</b>]] [ ! ] <i>command</i> [
+[<b>|</b>⎪<b>|&amp;</b>] <i>command2</i> ... ]</p>
+
+<p style="margin-left:11%; margin-top: 1em">The standard
+output of <i>command</i> is connected via a pipe to the
+standard input of <i>command2</i>. This connection is
+performed before any redirections specified by the command
+(see <b><small>REDIRECTION</small></b> below). If
+<b>|&amp;</b> is used, <i>command</i>’s standard
+error, in addition to its standard output, is connected to
+<i>command2</i>’s standard input through the pipe; it
+is shorthand for <b>2&gt;&amp;1 |</b>. This implicit
+redirection of the standard error to the standard output is
+performed after any redirections specified by the
+command.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The return
+status of a pipeline is the exit status of the last command,
+unless the <b>pipefail</b> option is enabled. If
+<b>pipefail</b> is enabled, the pipeline’s return
+status is the value of the last (rightmost) command to exit
+with a non-zero status, or zero if all commands exit
+successfully. If the reserved word <b>!</b> precedes a
+pipeline, the exit status of that pipeline is the logical
+negation of the exit status as described above. The shell
+waits for all commands in the pipeline to terminate before
+returning a value.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If the
+<b>time</b> reserved word precedes a pipeline, the elapsed
+as well as user and system time consumed by its execution
+are reported when the pipeline terminates. The
+<b>−p</b> option changes the output format to that
+specified by POSIX. When the shell is in <i>posix mode</i>,
+it does not recognize <b>time</b> as a reserved word if the
+next token begins with a ’-’. The
+<b><small>TIMEFORMAT</small></b> variable may be set to a
+format string that specifies how the timing information
+should be displayed; see the description of
+<b><small>TIMEFORMAT</small></b> under <b>Shell
+Variables</b> below.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When the shell
+is in <i>posix mode</i>, <b>time</b> may be followed by a
+newline. In this case, the shell displays the total user and
+system time consumed by the shell and its children. The
+<b><small>TIMEFORMAT</small></b> variable may be used to
+specify the format of the time information.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Each command in
+a pipeline is executed as a separate process (i.e., in a
+subshell). See <b><small>COMMAND EXECUTION
+ENVIRONMENT</small></b> for a description of a subshell
+environment. If the <b>lastpipe</b> option is enabled using
+the <b>shopt</b> builtin (see the description of
+<b>shopt</b> below), the last element of a pipeline may be
+run by the shell process.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Lists</b>
+<br>
+A <i>list</i> is a sequence of one or more pipelines
+separated by one of the operators <b>;</b>, <b>&amp;</b>,
+<b>&amp;&amp;</b>, or <b>||</b>, and optionally terminated
+by one of <b>;</b>, <b>&amp;</b>, or
+<b>&lt;newline&gt;</b>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Of these list
+operators, <b>&amp;&amp;</b> and <b>||</b> have equal
+precedence, followed by <b>;</b> and <b>&amp;</b>, which
+have equal precedence.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A sequence of
+one or more newlines may appear in a <i>list</i> instead of
+a semicolon to delimit commands.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If a command is
+terminated by the control operator <b>&amp;</b>, the shell
+executes the command in the <i>background</i> in a subshell.
+The shell does not wait for the command to finish, and the
+return status is 0. These are referred to as
+<i>asynchronous</i> commands. Commands separated by a
+<b>;</b> are executed sequentially; the shell waits for each
+command to terminate in turn. The return status is the exit
+status of the last command executed.</p>
+
+<p style="margin-left:11%; margin-top: 1em">AND and OR
+lists are sequences of one or more pipelines separated by
+the <b>&amp;&amp;</b> and <b>||</b> control operators,
+respectively. AND and OR lists are executed with left
+associativity. An AND list has the form</p>
+
+
+<p style="margin-left:22%; margin-top: 1em"><i>command1</i>
+<b>&amp;&amp;</b> <i>command2</i></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>command2</i>
+is executed if, and only if, <i>command1</i> returns an exit
+status of zero (success).</p>
+
+<p style="margin-left:11%; margin-top: 1em">An OR list has
+the form</p>
+
+
+<p style="margin-left:22%; margin-top: 1em"><i>command1</i>
+<b>||</b> <i>command2</i></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>command2</i>
+is executed if, and only if, <i>command1</i> returns a
+non-zero exit status. The return status of AND and OR lists
+is the exit status of the last command executed in the
+list.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Compound
+Commands</b> <br>
+A <i>compound command</i> is one of the following. In most
+cases a <i>list</i> in a command’s description may be
+separated from the rest of the command by one or more
+newlines, and may be followed by a newline in place of a
+semicolon.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p>(<i>list</i>)</p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p><i>list</i> is executed in a subshell environment (see
+<b><small>COMMAND EXECUTION ENVIRONMENT</small></b> below).
+Variable assignments and builtin commands that affect the
+shell’s environment do not remain in effect after the
+command completes. The return status is the exit status of
+<i>list</i>.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;">{ <i>list</i>; }</p>
+
+<p style="margin-left:22%;"><i>list</i> is simply executed
+in the current shell environment. <i>list</i> must be
+terminated with a newline or semicolon. This is known as a
+<i>group command</i>. The return status is the exit status
+of <i>list</i>. Note that unlike the metacharacters <b>(</b>
+and <b>)</b>, <b>{</b> and <b>}</b> are <i>reserved
+words</i> and must occur where a reserved word is permitted
+to be recognized. Since they do not cause a word break, they
+must be separated from <i>list</i> by whitespace or another
+shell metacharacter.</p>
+
+<p style="margin-left:11%;">((<i>expression</i>))</p>
+
+<p style="margin-left:22%;">The <i>expression</i> is
+evaluated according to the rules described below under
+<b><small>ARITHMETIC EVALUATION</small></b><small>.</small>
+If the value of the expression is non-zero, the return
+status is 0; otherwise the return status is 1. This is
+exactly equivalent to <b>let
+"</b><i>expression</i><b>"</b>.</p>
+
+<p style="margin-left:11%;"><b>[[</b> <i>expression</i>
+<b>]]</b></p>
+
+<p style="margin-left:22%;">Return a status of 0 or 1
+depending on the evaluation of the conditional expression
+<i>expression</i>. Expressions are composed of the primaries
+described below under <b><small>CONDITIONAL
+EXPRESSIONS</small></b><small>.</small> Word splitting and
+pathname expansion are not performed on the words between
+the <b>[[</b> and <b>]]</b>; tilde expansion, parameter and
+variable expansion, arithmetic expansion, command
+substitution, process substitution, and quote removal are
+performed. Conditional operators such as <b>−f</b>
+must be unquoted to be recognized as primaries.</p>
+
+<p style="margin-left:22%; margin-top: 1em">When used with
+<b>[[</b>, the <b>&lt;</b> and <b>&gt;</b> operators sort
+lexicographically using the current locale.</p>
+
+<p style="margin-left:11%; margin-top: 1em">See the
+description of the <i>test</i> builtin command (section
+SHELL BUILTIN COMMANDS below) for the handling of parameters
+(i.e. missing parameters).</p>
+
+<p style="margin-left:11%; margin-top: 1em">When the
+<b>==</b> and <b>!=</b> operators are used, the string to
+the right of the operator is considered a pattern and
+matched according to the rules described below under
+<b>Pattern Matching</b>, as if the <b>extglob</b> shell
+option were enabled. The <b>=</b> operator is equivalent to
+<b>==</b>. If the <b>nocasematch</b> shell option is
+enabled, the match is performed without regard to the case
+of alphabetic characters. The return value is 0 if the
+string matches (<b>==</b>) or does not match (<b>!=</b>) the
+pattern, and 1 otherwise. Any part of the pattern may be
+quoted to force the quoted portion to be matched as a
+string.</p>
+
+<p style="margin-left:11%; margin-top: 1em">An additional
+binary operator, <b>=~</b>, is available, with the same
+precedence as <b>==</b> and <b>!=</b>. When it is used, the
+string to the right of the operator is considered a POSIX
+extended regular expression and matched accordingly (as in
+<a href="https://man.cx/regex(3)">regex(3)</a>). The return value is 0 if the string
+matches the pattern, and 1 otherwise. If the regular
+expression is syntactically incorrect, the conditional
+expression’s return value is 2. If the
+<b>nocasematch</b> shell option is enabled, the match is
+performed without regard to the case of alphabetic
+characters. Any part of the pattern may be quoted to force
+the quoted portion to be matched as a string. Bracket
+expressions in regular expressions must be treated
+carefully, since normal quoting characters lose their
+meanings between brackets. If the pattern is stored in a
+shell variable, quoting the variable expansion forces the
+entire pattern to be matched as a string. Substrings matched
+by parenthesized subexpressions within the regular
+expression are saved in the array variable
+<b><small>BASH_REMATCH</small></b><small>.</small> The
+element of <b><small>BASH_REMATCH</small></b> with index 0
+is the portion of the string matching the entire regular
+expression. The element of
+<b><small>BASH_REMATCH</small></b> with index <i>n</i> is
+the portion of the string matching the <i>n</i>th
+parenthesized subexpression.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Expressions may
+be combined using the following operators, listed in
+decreasing order of precedence:</p>
+
+<p style="margin-left:22%;"><b>(</b> <i>expression</i>
+<b>)</b></p>
+
+<p style="margin-left:32%;">Returns the value of
+<i>expression</i>. This may be used to override the normal
+precedence of operators.</p>
+
+<p style="margin-left:22%;"><b>!</b> <i>expression</i></p>
+
+<p style="margin-left:32%;">True if <i>expression</i> is
+false.</p>
+
+<p style="margin-left:22%;"><i>expression1</i>
+<b>&amp;&amp;</b> <i>expression2</i></p>
+
+<p style="margin-left:32%;">True if both <i>expression1</i>
+and <i>expression2</i> are true.</p>
+
+<p style="margin-left:22%;"><i>expression1</i> <b>||</b>
+<i>expression2</i></p>
+
+<p style="margin-left:32%;">True if either
+<i>expression1</i> or <i>expression2</i> is true.</p>
+
+<p style="margin-left:22%; margin-top: 1em">The
+<b>&amp;&amp;</b> and <b>||</b> operators do not evaluate
+<i>expression2</i> if the value of <i>expression1</i> is
+sufficient to determine the return value of the entire
+conditional expression.</p>
+
+<p style="margin-left:11%;"><b>for</b> <i>name</i> [ [
+<b>in</b> [ <i>word ...</i> ] ] ; ] <b>do</b> <i>list</i> ;
+<b>done</b></p>
+
+<p style="margin-left:22%;">The list of words following
+<b>in</b> is expanded, generating a list of items. The
+variable <i>name</i> is set to each element of this list in
+turn, and <i>list</i> is executed each time. If the
+<b>in</b> <i>word</i> is omitted, the <b>for</b> command
+executes <i>list</i> once for each positional parameter that
+is set (see <b><small>PARAMETERS</small></b> below). The
+return status is the exit status of the last command that
+executes. If the expansion of the items following <b>in</b>
+results in an empty list, no commands are executed, and the
+return status is 0.</p>
+
+<p style="margin-left:11%;"><b>for</b> (( <i>expr1</i> ;
+<i>expr2</i> ; <i>expr3</i> )) ; <b>do</b> <i>list</i> ;
+<b>done</b></p>
+
+<p style="margin-left:22%;">First, the arithmetic
+expression <i>expr1</i> is evaluated according to the rules
+described below under <b><small>ARITHMETIC
+EVALUATION</small></b><small>.</small> The arithmetic
+expression <i>expr2</i> is then evaluated repeatedly until
+it evaluates to zero. Each time <i>expr2</i> evaluates to a
+non-zero value, <i>list</i> is executed and the arithmetic
+expression <i>expr3</i> is evaluated. If any expression is
+omitted, it behaves as if it evaluates to 1. The return
+value is the exit status of the last command in <i>list</i>
+that is executed, or false if any of the expressions is
+invalid.</p>
+
+<p style="margin-left:11%;"><b>select</b> <i>name</i> [
+<b>in</b> <i>word</i> ] ; <b>do</b> <i>list</i> ;
+<b>done</b></p>
+
+<p style="margin-left:22%;">The list of words following
+<b>in</b> is expanded, generating a list of items. The set
+of expanded words is printed on the standard error, each
+preceded by a number. If the <b>in</b> <i>word</i> is
+omitted, the positional parameters are printed (see
+<b><small>PARAMETERS</small></b> below). The
+<b><small>PS3</small></b> prompt is then displayed and a
+line read from the standard input. If the line consists of a
+number corresponding to one of the displayed words, then the
+value of <i>name</i> is set to that word. If the line is
+empty, the words and prompt are displayed again. If EOF is
+read, the command completes. Any other value read causes
+<i>name</i> to be set to null. The line read is saved in the
+variable <b><small>REPLY</small></b><small>.</small> The
+<i>list</i> is executed after each selection until a
+<b>break</b> command is executed. The exit status of
+<b>select</b> is the exit status of the last command
+executed in <i>list</i>, or zero if no commands were
+executed.</p>
+
+<p style="margin-left:11%;"><b>case</b> <i>word</i>
+<b>in</b> [ [(] <i>pattern</i> [ <b>|</b> <i>pattern</i> ]
+... ) <i>list</i> ;; ] ... <b>esac</b></p>
+
+<p style="margin-left:22%;">A <b>case</b> command first
+expands <i>word</i>, and tries to match it against each
+<i>pattern</i> in turn, using the matching rules described
+under <b>Pattern Matching</b> below. The <i>word</i> is
+expanded using tilde expansion, parameter and variable
+expansion, arithmetic expansion, command substitution,
+process substitution and quote removal. Each <i>pattern</i>
+examined is expanded using tilde expansion, parameter and
+variable expansion, arithmetic expansion, command
+substitution, and process substitution. If the
+<b>nocasematch</b> shell option is enabled, the match is
+performed without regard to the case of alphabetic
+characters. When a match is found, the corresponding
+<i>list</i> is executed. If the <b>;;</b> operator is used,
+no subsequent matches are attempted after the first pattern
+match. Using <b>;&amp;</b> in place of <b>;;</b> causes
+execution to continue with the <i>list</i> associated with
+the next set of patterns. Using <b>;;&amp;</b> in place of
+<b>;;</b> causes the shell to test the next pattern list in
+the statement, if any, and execute any associated
+<i>list</i> on a successful match. The exit status is zero
+if no pattern matches. Otherwise, it is the exit status of
+the last command executed in <i>list</i>.</p>
+
+<p style="margin-left:11%;"><b>if</b> <i>list</i>;
+<b>then</b> <i>list</i>; [ <b>elif</b> <i>list</i>;
+<b>then</b> <i>list</i>; ] ... [ <b>else</b> <i>list</i>; ]
+<b>fi</b></p>
+
+<p style="margin-left:22%;">The <b>if</b> <i>list</i> is
+executed. If its exit status is zero, the <b>then</b>
+<i>list</i> is executed. Otherwise, each <b>elif</b>
+<i>list</i> is executed in turn, and if its exit status is
+zero, the corresponding <b>then</b> <i>list</i> is executed
+and the command completes. Otherwise, the <b>else</b>
+<i>list</i> is executed, if present. The exit status is the
+exit status of the last command executed, or zero if no
+condition tested true.</p>
+
+<p style="margin-left:11%;"><b>while</b> <i>list-1</i>;
+<b>do</b> <i>list-2</i>; <b>done <br>
+until</b> <i>list-1</i>; <b>do</b> <i>list-2</i>;
+<b>done</b></p>
+
+<p style="margin-left:22%;">The <b>while</b> command
+continuously executes the list <i>list-2</i> as long as the
+last command in the list <i>list-1</i> returns an exit
+status of zero. The <b>until</b> command is identical to the
+<b>while</b> command, except that the test is negated:
+<i>list-2</i> is executed as long as the last command in
+<i>list-1</i> returns a non-zero exit status. The exit
+status of the <b>while</b> and <b>until</b> commands is the
+exit status of the last command executed in <i>list-2</i>,
+or zero if none was executed.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Coprocesses</b>
+<br>
+A <i>coprocess</i> is a shell command preceded by the
+<b>coproc</b> reserved word. A coprocess is executed
+asynchronously in a subshell, as if the command had been
+terminated with the <b>&amp;</b> control operator, with a
+two-way pipe established between the executing shell and the
+coprocess.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The format for
+a coprocess is:</p>
+
+<p style="margin-left:22%; margin-top: 1em"><b>coproc</b>
+[<i>NAME</i>] <i>command</i> [<i>redirections</i>]</p>
+
+<p style="margin-left:11%; margin-top: 1em">This creates a
+coprocess named <i>NAME</i>. If <i>NAME</i> is not supplied,
+the default name is <b>COPROC</b>. <i>NAME</i> must not be
+supplied if <i>command</i> is a <i>simple command</i> (see
+above); otherwise, it is interpreted as the first word of
+the simple command. When the coprocess is executed, the
+shell creates an array variable (see <b>Arrays</b> below)
+named <i>NAME</i> in the context of the executing shell. The
+standard output of <i>command</i> is connected via a pipe to
+a file descriptor in the executing shell, and that file
+descriptor is assigned to <i>NAME</i>[0]. The standard input
+of <i>command</i> is connected via a pipe to a file
+descriptor in the executing shell, and that file descriptor
+is assigned to <i>NAME</i>[1]. This pipe is established
+before any redirections specified by the command (see
+<b><small>REDIRECTION</small></b> below). The file
+descriptors can be utilized as arguments to shell commands
+and redirections using standard word expansions. Other than
+those created to execute command and process substitutions,
+the file descriptors are not available in subshells. The
+process ID of the shell spawned to execute the coprocess is
+available as the value of the variable <i>NAME</i>_PID. The
+<b>wait</b> builtin command may be used to wait for the
+coprocess to terminate.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Since the
+coprocess is created as an asynchronous command, the
+<b>coproc</b> command always returns success. The return
+status of a coprocess is the exit status of
+<i>command</i>.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Shell
+Function Definitions</b> <br>
+A shell function is an object that is called like a simple
+command and executes a compound command with a new set of
+positional parameters. Shell functions are declared as
+follows: <i><br>
+name</i> () <i>compound−command</i>
+[<i>redirection</i>] <b><br>
+function</b> <i>name</i> [()] <i>compound−command</i>
+[<i>redirection</i>]</p>
+
+<p style="margin-left:22%;">This defines a function named
+<i>name</i>. The reserved word <b>function</b> is optional.
+If the <b>function</b> reserved word is supplied, the
+parentheses are optional. The <i>body</i> of the function is
+the compound command <i>compound−command</i> (see
+<b>Compound Commands</b> above). That command is usually a
+<i>list</i> of commands between { and }, but may be any
+command listed under <b>Compound Commands</b> above, with
+one exception: If the <b>function</b> reserved word is used,
+but the parentheses are not supplied, the braces are
+required. <i>compound−command</i> is executed whenever
+<i>name</i> is specified as the name of a simple command.
+When in <i>posix mode</i>, <i>name</i> may not be the name
+of one of the POSIX <i>special builtins</i>. Any
+redirections (see <b><small>REDIRECTION</small></b> below)
+specified when a function is defined are performed when the
+function is executed. The exit status of a function
+definition is zero unless a syntax error occurs or a
+readonly function with the same name already exists. When
+executed, the exit status of a function is the exit status
+of the last command executed in the body. (See
+<b><small>FUNCTIONS</small></b> below.)</p>
+
+<h2><a href="https://man.cx/bash#heading11" name="heading11">COMMENTS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">In a
+non-interactive shell, or an interactive shell in which the
+<b>interactive_comments</b> option to the <b>shopt</b>
+builtin is enabled (see <b><small>SHELL BUILTIN
+COMMANDS</small></b> below), a word beginning with <b>#</b>
+causes that word and all remaining characters on that line
+to be ignored. An interactive shell without the
+<b>interactive_comments</b> option enabled does not allow
+comments. The <b>interactive_comments</b> option is on by
+default in interactive shells.</p>
+
+<h2><a href="https://man.cx/bash#heading12" name="heading12">QUOTING
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>Quoting</i>
+is used to remove the special meaning of certain characters
+or words to the shell. Quoting can be used to disable
+special treatment for special characters, to prevent
+reserved words from being recognized as such, and to prevent
+parameter expansion.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Each of the
+<i>metacharacters</i> listed above under
+<b><small>DEFINITIONS</small></b> has special meaning to the
+shell and must be quoted if it is to represent itself.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When the
+command history expansion facilities are being used (see
+<b><small>HISTORY EXPANSION</small></b> below), the
+<i>history expansion</i> character, usually <b>!</b>, must
+be quoted to prevent history expansion.</p>
+
+<p style="margin-left:11%; margin-top: 1em">There are three
+quoting mechanisms: the <i>escape character</i>, single
+quotes, and double quotes.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A non-quoted
+backslash (<b>\</b>) is the <i>escape character</i>. It
+preserves the literal value of the next character that
+follows, with the exception of &lt;newline&gt;. If a
+<b>\</b>&lt;newline&gt; pair appears, and the backslash is
+not itself quoted, the <b>\</b>&lt;newline&gt; is treated as
+a line continuation (that is, it is removed from the input
+stream and effectively ignored).</p>
+
+<p style="margin-left:11%; margin-top: 1em">Enclosing
+characters in single quotes preserves the literal value of
+each character within the quotes. A single quote may not
+occur between single quotes, even when preceded by a
+backslash.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Enclosing
+characters in double quotes preserves the literal value of
+all characters within the quotes, with the exception of
+<b>$</b>, <b>`</b>, <b>\</b>, and, when history expansion is
+enabled, <b>!</b>. When the shell is in <i>posix mode</i>,
+the <b>!</b> has no special meaning within double quotes,
+even when history expansion is enabled. The characters
+<b>$</b> and <b>`</b> retain their special meaning within
+double quotes. The backslash retains its special meaning
+only when followed by one of the following characters:
+<b>$</b>, <b>`</b>, <b>"</b>, <b>\</b>, or
+<b>&lt;newline&gt;</b>. A double quote may be quoted within
+double quotes by preceding it with a backslash. If enabled,
+history expansion will be performed unless an <b>!</b>
+appearing in double quotes is escaped using a backslash. The
+backslash preceding the <b>!</b> is not removed.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The special
+parameters <b>*</b> and <b>@</b> have special meaning when
+in double quotes (see <b><small>PARAMETERS</small></b>
+below).</p>
+
+<p style="margin-left:11%; margin-top: 1em">Words of the
+form <b>$</b>'<i>string</i>' are treated specially. The word
+expands to <i>string</i>, with backslash-escaped characters
+replaced as specified by the ANSI C standard. Backslash
+escape sequences, if present, are decoded as follows:</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\a</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>alert (bell)</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\b</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>backspace</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\e</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\E</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>an escape character</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\f</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>form feed</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\n</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>new line</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\r</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>carriage return</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\t</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>horizontal tab</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\v</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>vertical tab</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\\</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>backslash</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\'</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>single quote</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\"</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>double quote</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\?</b></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>question mark</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\</b><i>nnn</i></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>the eight-bit character whose value is the octal value
+<i>nnn</i> (one to three octal digits)</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\x</b><i>HH</i></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>the eight-bit character whose value is the hexadecimal
+value <i>HH</i> (one or two hex digits)</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="9%">
+
+
+<p><b>\u</b><i>HHHH</i></p></td>
+<td width="1%"></td>
+<td width="68%">
+
+
+<p>the Unicode (ISO/IEC 10646) character whose value is the
+hexadecimal value <i>HHHH</i> (one to four hex digits)</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:22%;"><b>\U</b><i>HHHHHHHH</i></p>
+
+<p style="margin-left:32%;">the Unicode (ISO/IEC 10646)
+character whose value is the hexadecimal value
+<i>HHHHHHHH</i> (one to eight hex digits)</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="22%"></td>
+<td width="4%">
+
+
+<p><b>\c</b><i>x</i></p></td>
+<td width="6%"></td>
+<td width="33%">
+
+
+<p>a control-<i>x</i> character</p></td>
+<td width="35%">
+</td></tr>
+</tbody></table>
+
+<p style="margin-left:11%; margin-top: 1em">The expanded
+result is single-quoted, as if the dollar sign had not been
+present.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A double-quoted
+string preceded by a dollar sign
+(<b>$</b>"<i>string</i>") will cause the string to
+be translated according to the current locale. If the
+current locale is <b>C</b> or <b>POSIX</b>, the dollar sign
+is ignored. If the string is translated and replaced, the
+replacement is double-quoted.</p>
+
+<h2><a href="https://man.cx/bash#heading13" name="heading13">PARAMETERS
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">A
+<i>parameter</i> is an entity that stores values. It can be
+a <i>name</i>, a number, or one of the special characters
+listed below under <b>Special Parameters</b>. A
+<i>variable</i> is a parameter denoted by a <i>name</i>. A
+variable has a <i>value</i> and zero or more
+<i>attributes</i>. Attributes are assigned using the
+<b>declare</b> builtin command (see <b>declare</b> below in
+<b><small>SHELL BUILTIN
+COMMANDS</small></b><small>).</small></p>
+
+<p style="margin-left:11%; margin-top: 1em">A parameter is
+set if it has been assigned a value. The null string is a
+valid value. Once a variable is set, it may be unset only by
+using the <b>unset</b> builtin command (see <b><small>SHELL
+BUILTIN COMMANDS</small></b> below).</p>
+
+<p style="margin-left:11%; margin-top: 1em">A
+<i>variable</i> may be assigned to by a statement of the
+form</p>
+
+
+<p style="margin-left:22%; margin-top: 1em"><i>name</i>=[<i>value</i>]</p>
+
+<p style="margin-left:11%; margin-top: 1em">If <i>value</i>
+is not given, the variable is assigned the null string. All
+<i>values</i> undergo tilde expansion, parameter and
+variable expansion, command substitution, arithmetic
+expansion, and quote removal (see
+<b><small>EXPANSION</small></b> below). If the variable has
+its <b>integer</b> attribute set, then <i>value</i> is
+evaluated as an arithmetic expression even if the $((...))
+expansion is not used (see <b>Arithmetic Expansion</b>
+below). Word splitting is not performed, with the exception
+of <b>"$@"</b> as explained below under <b>Special
+Parameters</b>. Pathname expansion is not performed.
+Assignment statements may also appear as arguments to the
+<b>alias</b>, <b>declare</b>, <b>typeset</b>, <b>export</b>,
+<b>readonly</b>, and <b>local</b> builtin commands
+(<i>declaration</i> commands). When in <i>posix mode</i>,
+these builtins may appear in a command after one or more
+instances of the <b>command</b> builtin and retain these
+assignment statement properties.</p>
+
+<p style="margin-left:11%; margin-top: 1em">In the context
+where an assignment statement is assigning a value to a
+shell variable or array index, the += operator can be used
+to append to or add to the variable’s previous value.
+This includes arguments to builtin commands such as
+<b>declare</b> that accept assignment statements
+(<i>declaration</i> commands). When += is applied to a
+variable for which the <i>integer</i> attribute has been
+set, <i>value</i> is evaluated as an arithmetic expression
+and added to the variable’s current value, which is
+also evaluated. When += is applied to an array variable
+using compound assignment (see <b>Arrays</b> below), the
+variable’s value is not unset (as it is when using =),
+and new values are appended to the array beginning at one
+greater than the array’s maximum index (for indexed
+arrays) or added as additional key−value pairs in an
+associative array. When applied to a string-valued variable,
+<i>value</i> is expanded and appended to the
+variable’s value.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A variable can
+be assigned the <i>nameref</i> attribute using the
+<b>−n</b> option to the <b>declare</b> or <b>local</b>
+builtin commands (see the descriptions of <b>declare</b> and
+<b>local</b> below) to create a <i>nameref</i>, or a
+reference to another variable. This allows variables to be
+manipulated indirectly. Whenever the nameref variable is
+referenced, assigned to, unset, or has its attributes
+modified (other than using or changing the <i>nameref</i>
+attribute itself), the operation is actually performed on
+the variable specified by the nameref variable’s
+value. A nameref is commonly used within shell functions to
+refer to a variable whose name is passed as an argument to
+the function. For instance, if a variable name is passed to
+a shell function as its first argument, running</p>
+
+<p style="margin-left:22%;">declare -n ref=$1</p>
+
+<p style="margin-left:11%;">inside the function creates a
+nameref variable <b>ref</b> whose value is the variable name
+passed as the first argument. References and assignments to
+<b>ref</b>, and changes to its attributes, are treated as
+references, assignments, and attribute modifications to the
+variable whose name was passed as <b>$1</b>. If the control
+variable in a <b>for</b> loop has the nameref attribute, the
+list of words can be a list of shell variables, and a name
+reference will be established for each word in the list, in
+turn, when the loop is executed. Array variables cannot be
+given the <b>nameref</b> attribute. However, nameref
+variables can reference array variables and subscripted
+array variables. Namerefs can be unset using the
+<b>−n</b> option to the <b>unset</b> builtin.
+Otherwise, if <b>unset</b> is executed with the name of a
+nameref variable as an argument, the variable referenced by
+the nameref variable will be unset.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Positional
+Parameters</b> <br>
+A <i>positional parameter</i> is a parameter denoted by one
+or more digits, other than the single digit 0. Positional
+parameters are assigned from the shell’s arguments
+when it is invoked, and may be reassigned using the
+<b>set</b> builtin command. Positional parameters may not be
+assigned to with assignment statements. The positional
+parameters are temporarily replaced when a shell function is
+executed (see <b><small>FUNCTIONS</small></b> below).</p>
+
+<p style="margin-left:11%; margin-top: 1em">When a
+positional parameter consisting of more than a single digit
+is expanded, it must be enclosed in braces (see
+<b><small>EXPANSION</small></b> below).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Special
+Parameters</b> <br>
+The shell treats several parameters specially. These
+parameters may only be referenced; assignment to them is not
+allowed.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em"><b>*</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em">Expands to the positional
+parameters, starting from one. When the expansion is not
+within double quotes, each positional parameter expands to a
+separate word. In contexts where it is performed, those
+words are subject to further word splitting and pathname
+expansion. When the expansion occurs within double quotes,
+it expands to a single word with the value of each parameter
+separated by the first character of the
+<b><small>IFS</small></b> special variable. That is,
+"<b>$*</b>" is equivalent to
+"<b>$1</b><i>c</i><b>$2</b><i>c</i><b>...</b>",
+where <i>c</i> is the first character of the value of the
+<b><small>IFS</small></b> variable. If
+<b><small>IFS</small></b> is unset, the parameters are
+separated by spaces. If <b><small>IFS</small></b> is null,
+the parameters are joined without intervening
+separators.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>@</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the positional parameters, starting from one.
+In contexts where word splitting is performed, this expands
+each positional parameter to a separate word; if not within
+double quotes, these words are subject to word splitting. In
+contexts where word splitting is not performed, this expands
+to a single word with each positional parameter separated by
+a space. When the expansion occurs within double quotes,
+each parameter expands to a separate word. That is,
+"<b>$@</b>" is equivalent to "<b>$1</b>"
+"<b>$2</b>" ... If the double-quoted expansion
+occurs within a word, the expansion of the first parameter
+is joined with the beginning part of the original word, and
+the expansion of the last parameter is joined with the last
+part of the original word. When there are no positional
+parameters, "<b>$@</b>" and <b>$@</b> expand to
+nothing (i.e., they are removed).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>#</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the number of positional parameters in
+decimal.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>?</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the exit status of the most recently executed
+foreground pipeline.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>−</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the current option flags as specified upon
+invocation, by the <b>set</b> builtin command, or those set
+by the shell itself (such as the <b>−i</b>
+option).</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>$</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the process ID of the shell. In a ()
+subshell, it expands to the process ID of the current shell,
+not the subshell.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>!</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the process ID of the job most recently
+placed into the background, whether executed as an
+asynchronous command or using the <b>bg</b> builtin (see
+<b><small>JOB CONTROL</small></b> below).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>0</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Expands to the name of the shell or shell script. This
+is set at shell initialization. If <b>bash</b> is invoked
+with a file of commands, <b>$0</b> is set to the name of
+that file. If <b>bash</b> is started with the
+<b>−c</b> option, then <b>$0</b> is set to the first
+argument after the string to be executed, if one is present.
+Otherwise, it is set to the filename used to invoke
+<b>bash</b>, as given by argument zero.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>_</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>At shell startup, set to the absolute pathname used to
+invoke the shell or shell script being executed as passed in
+the environment or argument list. Subsequently, expands to
+the last argument to the previous simple command executed in
+the foreground, after expansion. Also set to the full
+pathname used to invoke each command executed and placed in
+the environment exported to that command. When checking
+mail, this parameter holds the name of the mail file
+currently being checked.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Shell
+Variables</b> <br>
+The following variables are set by the shell:</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="6%">
+
+
+<p style="margin-top: 1em"><b>BASH</b></p></td>
+<td width="5%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em">Expands to the full filename
+used to invoke this instance of <b>bash</b>.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>BASHOPTS</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+enabled shell options. Each word in the list is a valid
+argument for the <b>−s</b> option to the <b>shopt</b>
+builtin command (see <b><small>SHELL BUILTIN
+COMMANDS</small></b> below). The options appearing in
+<b><small>BASHOPTS</small></b> are those reported as
+<i>on</i> by <b>shopt</b>. If this variable is in the
+environment when <b>bash</b> starts up, each shell option in
+the list will be enabled before reading any startup files.
+This variable is read-only.</p>
+
+<p style="margin-left:11%;"><b>BASHPID</b></p>
+
+<p style="margin-left:22%;">Expands to the process ID of
+the current <b>bash</b> process. This differs from <b>$$</b>
+under certain circumstances, such as subshells that do not
+require <b>bash</b> to be re-initialized. Assignments to
+<b><small>BASHPID</small></b> have no effect. If
+<b>BASHPID</b> is unset, it loses its special properties,
+even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>BASH_ALIASES</b></p>
+
+<p style="margin-left:22%;">An associative array variable
+whose members correspond to the internal list of aliases as
+maintained by the <b>alias</b> builtin. Elements added to
+this array appear in the alias list; however, unsetting
+array elements currently does not cause aliases to be
+removed from the alias list. If <b>BASH_ALIASES</b> is
+unset, it loses its special properties, even if it is
+subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>BASH_ARGC</b></p>
+
+<p style="margin-left:22%;">An array variable whose values
+are the number of parameters in each frame of the current
+<b>bash</b> execution call stack. The number of parameters
+to the current subroutine (shell function or script executed
+with <b>.</b> or <b>source</b>) is at the top of the stack.
+When a subroutine is executed, the number of parameters
+passed is pushed onto
+<b><small>BASH_ARGC</small></b><small>.</small> The shell
+sets <b><small>BASH_ARGC</small></b> only when in extended
+debugging mode (see the description of the <b>extdebug</b>
+option to the <b>shopt</b> builtin below). Setting
+<b>extdebug</b> after the shell has started to execute a
+script, or referencing this variable when <b>extdebug</b> is
+not set, may result in inconsistent values.</p>
+
+<p style="margin-left:11%;"><b>BASH_ARGV</b></p>
+
+<p style="margin-left:22%;">An array variable containing
+all of the parameters in the current <b>bash</b> execution
+call stack. The final parameter of the last subroutine call
+is at the top of the stack; the first parameter of the
+initial call is at the bottom. When a subroutine is
+executed, the parameters supplied are pushed onto
+<b><small>BASH_ARGV</small></b><small>.</small> The shell
+sets <b><small>BASH_ARGV</small></b> only when in extended
+debugging mode (see the description of the <b>extdebug</b>
+option to the <b>shopt</b> builtin below). Setting
+<b>extdebug</b> after the shell has started to execute a
+script, or referencing this variable when <b>extdebug</b> is
+not set, may result in inconsistent values.</p>
+
+<p style="margin-left:11%;"><b>BASH_ARGV0</b></p>
+
+<p style="margin-left:22%;">When referenced, this variable
+expands to the name of the shell or shell script (identical
+to <b>$0</b>; see the description of special parameter 0
+above). Assignment to <b>BASH_ARGV0</b> causes the value
+assigned to also be assigned to <b>$0</b>. If
+<b>BASH_ARGV0</b> is unset, it loses its special properties,
+even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>BASH_CMDS</b></p>
+
+<p style="margin-left:22%;">An associative array variable
+whose members correspond to the internal hash table of
+commands as maintained by the <b>hash</b> builtin. Elements
+added to this array appear in the hash table; however,
+unsetting array elements currently does not cause command
+names to be removed from the hash table. If <b>BASH_CMDS</b>
+is unset, it loses its special properties, even if it is
+subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>BASH_COMMAND</b></p>
+
+<p style="margin-left:22%;">The command currently being
+executed or about to be executed, unless the shell is
+executing a command as the result of a trap, in which case
+it is the command executing at the time of the trap.</p>
+
+
+<p style="margin-left:11%;"><b>BASH_EXECUTION_STRING</b></p>
+
+<p style="margin-left:22%;">The command argument to the
+<b>−c</b> invocation option.</p>
+
+<p style="margin-left:11%;"><b>BASH_LINENO</b></p>
+
+<p style="margin-left:22%;">An array variable whose members
+are the line numbers in source files where each
+corresponding member of <b><small>FUNCNAME</small></b> was
+invoked. <b>${BASH_LINENO[</b><i>$i</i><b>]}</b> is the line
+number in the source file
+(<b>${BASH_SOURCE[</b><i>$i+1</i><b>]}</b>) where
+<b>${FUNCNAME[</b><i>$i</i><b>]}</b> was called (or
+<b>${BASH_LINENO[</b><i>$i-1</i><b>]}</b> if referenced
+within another shell function). Use
+<b><small>LINENO</small></b> to obtain the current line
+number.</p>
+
+<p style="margin-left:11%;"><b>BASH_LOADABLES_PATH</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+directories in which the shell looks for dynamically
+loadable builtins specified by the <b>enable</b>
+command.</p>
+
+<p style="margin-left:11%;"><b>BASH_REMATCH</b></p>
+
+<p style="margin-left:22%;">An array variable whose members
+are assigned by the <b>=~</b> binary operator to the
+<b>[[</b> conditional command. The element with index 0 is
+the portion of the string matching the entire regular
+expression. The element with index <i>n</i> is the portion
+of the string matching the <i>n</i>th parenthesized
+subexpression. This variable is read-only.</p>
+
+<p style="margin-left:11%;"><b>BASH_SOURCE</b></p>
+
+<p style="margin-left:22%;">An array variable whose members
+are the source filenames where the corresponding shell
+function names in the <b><small>FUNCNAME</small></b> array
+variable are defined. The shell function
+<b>${FUNCNAME[</b><i>$i</i><b>]}</b> is defined in the file
+<b>${BASH_SOURCE[</b><i>$i</i><b>]}</b> and called from
+<b>${BASH_SOURCE[</b><i>$i+1</i><b>]}</b>.</p>
+
+<p style="margin-left:11%;"><b>BASH_SUBSHELL</b></p>
+
+<p style="margin-left:22%;">Incremented by one within each
+subshell or subshell environment when the shell begins
+executing in that environment. The initial value is 0.</p>
+
+<p style="margin-left:11%;"><b>BASH_VERSINFO</b></p>
+
+<p style="margin-left:22%;">A readonly array variable whose
+members hold version information for this instance of
+<b>bash</b>. The values assigned to the array members are as
+follows:</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="22%"></td>
+<td width="24%">
+
+
+<p><b>BASH_VERSINFO[</b>0<b>]</b></p></td>
+<td width="12%"></td>
+<td width="42%">
+
+
+<p>The major version number (the <i>release</i>).</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="24%">
+
+
+<p><b>BASH_VERSINFO[</b>1<b>]</b></p></td>
+<td width="12%"></td>
+<td width="42%">
+
+
+<p>The minor version number (the <i>version</i>).</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="24%">
+
+
+<p><b>BASH_VERSINFO[</b>2<b>]</b></p></td>
+<td width="12%"></td>
+<td width="42%">
+
+
+<p>The patch level.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="24%">
+
+
+<p><b>BASH_VERSINFO[</b>3<b>]</b></p></td>
+<td width="12%"></td>
+<td width="42%">
+
+
+<p>The build version.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="24%">
+
+
+<p><b>BASH_VERSINFO[</b>4<b>]</b></p></td>
+<td width="12%"></td>
+<td width="42%">
+
+
+<p>The release status (e.g., <i>beta1</i>).</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="24%">
+
+
+<p><b>BASH_VERSINFO[</b>5<b>]</b></p></td>
+<td width="12%"></td>
+<td width="42%">
+
+
+<p>The value of
+<b><small>MACHTYPE</small></b><small>.</small></p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>BASH_VERSION</b></p>
+
+<p style="margin-left:22%;">Expands to a string describing
+the version of this instance of <b>bash</b>.</p>
+
+<p style="margin-left:11%;"><b>COMP_CWORD</b></p>
+
+<p style="margin-left:22%;">An index into
+<b>${COMP_WORDS}</b> of the word containing the current
+cursor position. This variable is available only in shell
+functions invoked by the programmable completion facilities
+(see <b>Programmable Completion</b> below).</p>
+
+<p style="margin-left:11%;"><b>COMP_KEY</b></p>
+
+<p style="margin-left:22%;">The key (or final key of a key
+sequence) used to invoke the current completion
+function.</p>
+
+<p style="margin-left:11%;"><b>COMP_LINE</b></p>
+
+<p style="margin-left:22%;">The current command line. This
+variable is available only in shell functions and external
+commands invoked by the programmable completion facilities
+(see <b>Programmable Completion</b> below).</p>
+
+<p style="margin-left:11%;"><b>COMP_POINT</b></p>
+
+<p style="margin-left:22%;">The index of the current cursor
+position relative to the beginning of the current command.
+If the current cursor position is at the end of the current
+command, the value of this variable is equal to
+<b>${#COMP_LINE}</b>. This variable is available only in
+shell functions and external commands invoked by the
+programmable completion facilities (see <b>Programmable
+Completion</b> below).</p>
+
+<p style="margin-left:11%;"><b>COMP_TYPE</b></p>
+
+<p style="margin-left:22%;">Set to an integer value
+corresponding to the type of completion attempted that
+caused a completion function to be called: <i>TAB</i>, for
+normal completion, <i>?</i>, for listing completions after
+successive tabs, <i>!</i>, for listing alternatives on
+partial word completion, <i>@</i>, to list completions if
+the word is not unmodified, or <i>%</i>, for menu
+completion. This variable is available only in shell
+functions and external commands invoked by the programmable
+completion facilities (see <b>Programmable Completion</b>
+below).</p>
+
+<p style="margin-left:11%;"><b>COMP_WORDBREAKS</b></p>
+
+<p style="margin-left:22%;">The set of characters that the
+<b>readline</b> library treats as word separators when
+performing word completion. If
+<b><small>COMP_WORDBREAKS</small></b> is unset, it loses its
+special properties, even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>COMP_WORDS</b></p>
+
+<p style="margin-left:22%;">An array variable (see
+<b>Arrays</b> below) consisting of the individual words in
+the current command line. The line is split into words as
+<b>readline</b> would split it, using
+<b><small>COMP_WORDBREAKS</small></b> as described above.
+This variable is available only in shell functions invoked
+by the programmable completion facilities (see
+<b>Programmable Completion</b> below).</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>COPROC</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>An array variable (see <b>Arrays</b> below) created to
+hold the file descriptors for output from and input to an
+unnamed coprocess (see <b>Coprocesses</b> above).</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>DIRSTACK</b></p>
+
+<p style="margin-left:22%;">An array variable (see
+<b>Arrays</b> below) containing the current contents of the
+directory stack. Directories appear in the stack in the
+order they are displayed by the <b>dirs</b> builtin.
+Assigning to members of this array variable may be used to
+modify directories already in the stack, but the
+<b>pushd</b> and <b>popd</b> builtins must be used to add
+and remove directories. Assignment to this variable will not
+change the current directory. If
+<b><small>DIRSTACK</small></b> is unset, it loses its
+special properties, even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>EPOCHREALTIME</b></p>
+
+<p style="margin-left:22%;">Each time this parameter is
+referenced, it expands to the number of seconds since the
+Unix Epoch (see <a href="https://man.cx/time(3)">time(3)</a>) as a floating point value
+with micro-second granularity. Assignments to
+<b><small>EPOCHREALTIME</small></b> are ignored. If
+<b><small>EPOCHREALTIME</small></b> is unset, it loses its
+special properties, even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>EPOCHSECONDS</b></p>
+
+<p style="margin-left:22%;">Each time this parameter is
+referenced, it expands to the number of seconds since the
+Unix Epoch (see <a href="https://man.cx/time(3)">time(3)</a>). Assignments to
+<b><small>EPOCHSECONDS</small></b> are ignored. If
+<b><small>EPOCHSECONDS</small></b> is unset, it loses its
+special properties, even if it is subsequently reset.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="6%">
+
+
+<p><b>EUID</b></p></td>
+<td width="5%"></td>
+<td width="78%">
+
+
+<p>Expands to the effective user ID of the current user,
+initialized at shell startup. This variable is readonly.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>FUNCNAME</b></p>
+
+<p style="margin-left:22%;">An array variable containing
+the names of all shell functions currently in the execution
+call stack. The element with index 0 is the name of any
+currently-executing shell function. The bottom-most element
+(the one with the highest index) is "main". This
+variable exists only when a shell function is executing.
+Assignments to <b><small>FUNCNAME</small></b> have no
+effect. If <b><small>FUNCNAME</small></b> is unset, it loses
+its special properties, even if it is subsequently
+reset.</p>
+
+<p style="margin-left:22%; margin-top: 1em">This variable
+can be used with <b>BASH_LINENO</b> and <b>BASH_SOURCE</b>.
+Each element of <b>FUNCNAME</b> has corresponding elements
+in <b>BASH_LINENO</b> and <b>BASH_SOURCE</b> to describe the
+call stack. For instance,
+<b>${FUNCNAME[</b><i>$i</i><b>]}</b> was called from the
+file <b>${BASH_SOURCE[</b><i>$i+1</i><b>]}</b> at line
+number <b>${BASH_LINENO[</b><i>$i</i><b>]}</b>. The
+<b>caller</b> builtin displays the current call stack using
+this information.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>GROUPS</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>An array variable containing the list of groups of which
+the current user is a member. Assignments to
+<b><small>GROUPS</small></b> have no effect. If
+<b><small>GROUPS</small></b> is unset, it loses its special
+properties, even if it is subsequently reset.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>HISTCMD</b></p>
+
+<p style="margin-left:22%;">The history number, or index in
+the history list, of the current command. If
+<b><small>HISTCMD</small></b> is unset, it loses its special
+properties, even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>HOSTNAME</b></p>
+
+<p style="margin-left:22%;">Automatically set to the name
+of the current host.</p>
+
+<p style="margin-left:11%;"><b>HOSTTYPE</b></p>
+
+<p style="margin-left:22%;">Automatically set to a string
+that uniquely describes the type of machine on which
+<b>bash</b> is executing. The default is
+system-dependent.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>LINENO</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>Each time this parameter is referenced, the shell
+substitutes a decimal number representing the current
+sequential line number (starting with 1) within a script or
+function. When not in a script or function, the value
+substituted is not guaranteed to be meaningful. If
+<b><small>LINENO</small></b> is unset, it loses its special
+properties, even if it is subsequently reset.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>MACHTYPE</b></p>
+
+<p style="margin-left:22%;">Automatically set to a string
+that fully describes the system type on which <b>bash</b> is
+executing, in the standard GNU <i>cpu-company-system</i>
+format. The default is system-dependent.</p>
+
+<p style="margin-left:11%;"><b>MAPFILE</b></p>
+
+<p style="margin-left:22%;">An array variable (see
+<b>Arrays</b> below) created to hold the text read by the
+<b>mapfile</b> builtin when no variable name is
+supplied.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>OLDPWD</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The previous working directory as set by the <b>cd</b>
+command.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>OPTARG</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The value of the last option argument processed by the
+<b>getopts</b> builtin command (see <b><small>SHELL BUILTIN
+COMMANDS</small></b> below).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>OPTIND</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The index of the next argument to be processed by the
+<b>getopts</b> builtin command (see <b><small>SHELL BUILTIN
+COMMANDS</small></b> below).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>OSTYPE</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>Automatically set to a string that describes the
+operating system on which <b>bash</b> is executing. The
+default is system-dependent.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>PIPESTATUS</b></p>
+
+<p style="margin-left:22%;">An array variable (see
+<b>Arrays</b> below) containing a list of exit status values
+from the processes in the most-recently-executed foreground
+pipeline (which may contain only a single command).</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>PPID</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The process ID of the shell’s parent. This
+variable is readonly.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>PWD</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The current working directory as set by the <b>cd</b>
+command.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>RANDOM</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>Each time this parameter is referenced, a random integer
+between 0 and 32767 is generated. The sequence of random
+numbers may be initialized by assigning a value to
+<b><small>RANDOM</small></b><small>.</small> If
+<b><small>RANDOM</small></b> is unset, it loses its special
+properties, even if it is subsequently reset.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>READLINE_LINE</b></p>
+
+<p style="margin-left:22%;">The contents of the
+<b>readline</b> line buffer, for use with "bind
+-x" (see <b><small>SHELL BUILTIN COMMANDS</small></b>
+below).</p>
+
+<p style="margin-left:11%;"><b>READLINE_POINT</b></p>
+
+<p style="margin-left:22%;">The position of the insertion
+point in the <b>readline</b> line buffer, for use with
+"bind -x" (see <b><small>SHELL BUILTIN
+COMMANDS</small></b> below).</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>REPLY</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>Set to the line of input read by the <b>read</b> builtin
+command when no arguments are supplied.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>SECONDS</b></p>
+
+<p style="margin-left:22%;">Each time this parameter is
+referenced, the number of seconds since shell invocation is
+returned. If a value is assigned to
+<b><small>SECONDS</small></b><small>,</small> the value
+returned upon subsequent references is the number of seconds
+since the assignment plus the value assigned. If
+<b><small>SECONDS</small></b> is unset, it loses its special
+properties, even if it is subsequently reset.</p>
+
+<p style="margin-left:11%;"><b>SHELLOPTS</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+enabled shell options. Each word in the list is a valid
+argument for the <b>−o</b> option to the <b>set</b>
+builtin command (see <b><small>SHELL BUILTIN
+COMMANDS</small></b> below). The options appearing in
+<b><small>SHELLOPTS</small></b> are those reported as
+<i>on</i> by <b>set −o</b>. If this variable is in the
+environment when <b>bash</b> starts up, each shell option in
+the list will be enabled before reading any startup files.
+This variable is read-only.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>SHLVL</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>Incremented by one each time an instance of <b>bash</b>
+is started.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>UID</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>Expands to the user ID of the current user, initialized
+at shell startup. This variable is readonly.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%; margin-top: 1em">The following
+variables are used by the shell. In some cases, <b>bash</b>
+assigns a default value to a variable; these cases are noted
+below. <b><br>
+BASH_COMPAT</b></p>
+
+<p style="margin-left:22%;">The value is used to set the
+shell’s compatibility level. See the description of
+the <b>shopt</b> builtin below under <b>SHELL BUILTIN
+COMMANDS</b> for a description of the various compatibility
+levels and their effects. The value may be a decimal number
+(e.g., 4.2) or an integer (e.g., 42) corresponding to the
+desired compatibility level. If <b>BASH_COMPAT</b> is unset
+or set to the empty string, the compatibility level is set
+to the default for the current version. If
+<b>BASH_COMPAT</b> is set to a value that is not one of the
+valid compatibility levels, the shell prints an error
+message and sets the compatibility level to the default for
+the current version. The valid compatibility levels
+correspond to the compatibility options accepted by the
+<b>shopt</b> builtin described below (for example,
+<b>compat42</b> means that 4.2 and 42 are valid values). The
+current version is also a valid value.</p>
+
+<p style="margin-left:11%;"><b>BASH_ENV</b></p>
+
+<p style="margin-left:22%;">If this parameter is set when
+<b>bash</b> is executing a shell script, its value is
+interpreted as a filename containing commands to initialize
+the shell, as in <i>~/.bashrc</i>. The value of
+<b><small>BASH_ENV</small></b> is subjected to parameter
+expansion, command substitution, and arithmetic expansion
+before being interpreted as a filename.
+<b><small>PATH</small></b> is not used to search for the
+resultant filename.</p>
+
+<p style="margin-left:11%;"><b>BASH_XTRACEFD</b></p>
+
+<p style="margin-left:22%;">If set to an integer
+corresponding to a valid file descriptor, <b>bash</b> will
+write the trace output generated when <i>set -x</i> is
+enabled to that file descriptor. The file descriptor is
+closed when <b><small>BASH_XTRACEFD</small></b> is unset or
+assigned a new value. Unsetting
+<b><small>BASH_XTRACEFD</small></b> or assigning it the
+empty string causes the trace output to be sent to the
+standard error. Note that setting
+<b><small>BASH_XTRACEFD</small></b> to 2 (the standard error
+file descriptor) and then unsetting it will result in the
+standard error being closed.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>CDPATH</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The search path for the <b>cd</b> command. This is a
+colon-separated list of directories in which the shell looks
+for destination directories specified by the <b>cd</b>
+command. A sample value is ".:~:/usr".</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>CHILD_MAX</b></p>
+
+<p style="margin-left:22%;">Set the number of exited child
+status values for the shell to remember. Bash will not allow
+this value to be decreased below a POSIX-mandated minimum,
+and there is a maximum value (currently 8192) that this may
+not exceed. The minimum value is system-dependent.</p>
+
+<p style="margin-left:11%;"><b>COLUMNS</b></p>
+
+<p style="margin-left:22%;">Used by the <b>select</b>
+compound command to determine the terminal width when
+printing selection lists. Automatically set if the
+<b>checkwinsize</b> option is enabled or in an interactive
+shell upon receipt of a
+<b><small>SIGWINCH</small></b><small>.</small></p>
+
+<p style="margin-left:11%;"><b>COMPREPLY</b></p>
+
+<p style="margin-left:22%;">An array variable from which
+<b>bash</b> reads the possible completions generated by a
+shell function invoked by the programmable completion
+facility (see <b>Programmable Completion</b> below). Each
+array element contains one possible completion.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>EMACS</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>If <b>bash</b> finds this variable in the environment
+when the shell starts with value "t", it assumes
+that the shell is running in an Emacs shell buffer and
+disables line editing.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>ENV</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>Similar to
+<b><small>BASH_ENV</small></b><small>;</small> used when the
+shell is invoked in <i>posix mode</i>.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>EXECIGNORE</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of shell
+patterns (see <b>Pattern Matching</b>) defining the list of
+filenames to be ignored by command search using <b>PATH</b>.
+Files whose full pathnames match one of these patterns are
+not considered executable files for the purposes of
+completion and command execution via <b>PATH</b> lookup.
+This does not affect the behavior of the <b>[</b>,
+<b>test</b>, and <b>[[</b> commands. Full pathnames in the
+command hash table are not subject to <b>EXECIGNORE</b>. Use
+this variable to ignore shared library files that have the
+executable bit set, but are not executable files. The
+pattern matching honors the setting of the <b>extglob</b>
+shell option.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>FCEDIT</b></p></td>
+<td width="2%"></td>
+<td width="70%">
+
+
+<p>The default editor for the <b>fc</b> builtin
+command.</p> </td>
+<td width="8%">
+</td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>FIGNORE</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+suffixes to ignore when performing filename completion (see
+<b><small>READLINE</small></b> below). A filename whose
+suffix matches one of the entries in
+<b><small>FIGNORE</small></b> is excluded from the list of
+matched filenames. A sample value is ".o:~"
+(Quoting is needed when assigning a value to this variable,
+which contains tildes).</p>
+
+<p style="margin-left:11%;"><b>FUNCNEST</b></p>
+
+<p style="margin-left:22%;">If set to a numeric value
+greater than 0, defines a maximum function nesting level.
+Function invocations that exceed this nesting level will
+cause the current command to abort.</p>
+
+<p style="margin-left:11%;"><b>GLOBIGNORE</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+patterns defining the set of file names to be ignored by
+pathname expansion. If a file name matched by a pathname
+expansion pattern also matches one of the patterns in
+<b><small>GLOBIGNORE</small></b><small>,</small> it is
+removed from the list of matches.</p>
+
+<p style="margin-left:11%;"><b>HISTCONTROL</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+values controlling how commands are saved on the history
+list. If the list of values includes <i>ignorespace</i>,
+lines which begin with a <b>space</b> character are not
+saved in the history list. A value of <i>ignoredups</i>
+causes lines matching the previous history entry to not be
+saved. A value of <i>ignoreboth</i> is shorthand for
+<i>ignorespace</i> and <i>ignoredups</i>. A value of
+<i>erasedups</i> causes all previous lines matching the
+current line to be removed from the history list before that
+line is saved. Any value not in the above list is ignored.
+If <b><small>HISTCONTROL</small></b> is unset, or does not
+include a valid value, all lines read by the shell parser
+are saved on the history list, subject to the value of
+<b><small>HISTIGNORE</small></b><small>.</small> The second
+and subsequent lines of a multi-line compound command are
+not tested, and are added to the history regardless of the
+value of
+<b><small>HISTCONTROL</small></b><small>.</small></p>
+
+<p style="margin-left:11%;"><b>HISTFILE</b></p>
+
+<p style="margin-left:22%;">The name of the file in which
+command history is saved (see <b><small>HISTORY</small></b>
+below). The default value is <i>~/.bash_history</i>. If
+unset, the command history is not saved when a shell
+exits.</p>
+
+<p style="margin-left:11%;"><b>HISTFILESIZE</b></p>
+
+<p style="margin-left:22%;">The maximum number of lines
+contained in the history file. When this variable is
+assigned a value, the history file is truncated, if
+necessary, to contain no more than that number of lines by
+removing the oldest entries. The history file is also
+truncated to this size after writing it when a shell exits.
+If the value is 0, the history file is truncated to zero
+size. Non-numeric values and numeric values less than zero
+inhibit truncation. The shell sets the default value to the
+value of <b>HISTSIZE</b> after reading any startup
+files.</p>
+
+<p style="margin-left:11%;"><b>HISTIGNORE</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+patterns used to decide which command lines should be saved
+on the history list. Each pattern is anchored at the
+beginning of the line and must match the complete line (no
+implicit ’<b>*</b>’ is appended). Each pattern
+is tested against the line after the checks specified by
+<b><small>HISTCONTROL</small></b> are applied. In addition
+to the normal shell pattern matching characters,
+’<b>&amp;</b>’ matches the previous history
+line. ’<b>&amp;</b>’ may be escaped using a
+backslash; the backslash is removed before attempting a
+match. The second and subsequent lines of a multi-line
+compound command are not tested, and are added to the
+history regardless of the value of
+<b><small>HISTIGNORE</small></b><small>.</small> The pattern
+matching honors the setting of the <b>extglob</b> shell
+option.</p>
+
+<p style="margin-left:11%;"><b>HISTSIZE</b></p>
+
+<p style="margin-left:22%;">The number of commands to
+remember in the command history (see
+<b><small>HISTORY</small></b> below). If the value is 0,
+commands are not saved in the history list. Numeric values
+less than zero result in every command being saved on the
+history list (there is no limit). The shell sets the default
+value to 500 after reading any startup files.</p>
+
+<p style="margin-left:11%;"><b>HISTTIMEFORMAT</b></p>
+
+<p style="margin-left:22%;">If this variable is set and not
+null, its value is used as a format string for
+<a href="https://man.cx/strftime(3)">strftime(3)</a> to print the time stamp associated with
+each history entry displayed by the <b>history</b> builtin.
+If this variable is set, time stamps are written to the
+history file so they may be preserved across shell sessions.
+This uses the history comment character to distinguish
+timestamps from other history lines.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="6%">
+
+
+<p><b>HOME</b></p></td>
+<td width="5%"></td>
+<td width="78%">
+
+
+<p>The home directory of the current user; the default
+argument for the <b>cd</b> builtin command. The value of
+this variable is also used when performing tilde
+expansion.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>HOSTFILE</b></p>
+
+<p style="margin-left:22%;">Contains the name of a file in
+the same format as <i>/etc/hosts</i> that should be read
+when the shell needs to complete a hostname. The list of
+possible hostname completions may be changed while the shell
+is running; the next time hostname completion is attempted
+after the value is changed, <b>bash</b> adds the contents of
+the new file to the existing list. If
+<b><small>HOSTFILE</small></b> is set, but has no value, or
+does not name a readable file, <b>bash</b> attempts to read
+<i>/etc/hosts</i> to obtain the list of possible hostname
+completions. When <b><small>HOSTFILE</small></b> is unset,
+the hostname list is cleared.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="4%">
+
+
+<p><b>IFS</b></p></td>
+<td width="7%"></td>
+<td width="78%">
+
+
+<p>The <i>Internal Field Separator</i> that is used for
+word splitting after expansion and to split lines into words
+with the <b>read</b> builtin command. The default value is
+’’&lt;space&gt;&lt;tab&gt;&lt;newline&gt;’’.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>IGNOREEOF</b></p>
+
+<p style="margin-left:22%;">Controls the action of an
+interactive shell on receipt of an <b><small>EOF</small></b>
+character as the sole input. If set, the value is the number
+of consecutive <b><small>EOF</small></b> characters which
+must be typed as the first characters on an input line
+before <b>bash</b> exits. If the variable exists but does
+not have a numeric value, or has no value, the default value
+is 10. If it does not exist, <b><small>EOF</small></b>
+signifies the end of input to the shell.</p>
+
+<p style="margin-left:11%;"><b>INPUTRC</b></p>
+
+<p style="margin-left:22%;">The filename for the
+<b>readline</b> startup file, overriding the default of
+<i>~/.inputrc</i> (see <b><small>READLINE</small></b>
+below).</p>
+
+<p style="margin-left:11%;"><b>INSIDE_EMACS</b></p>
+
+<p style="margin-left:22%;">If this variable appears in the
+environment when the shell starts, <b>bash</b> assumes that
+it is running inside an Emacs shell buffer and may disable
+line editing, depending on the value of <b>TERM</b>.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>LANG</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>Used to determine the locale category for any category
+not specifically selected with a variable starting with
+<b>LC_</b>.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>LC_ALL</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>This variable overrides the value of
+<b><small>LANG</small></b> and any other <b>LC_</b> variable
+specifying a locale category.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>LC_COLLATE</b></p>
+
+<p style="margin-left:22%;">This variable determines the
+collation order used when sorting the results of pathname
+expansion, and determines the behavior of range expressions,
+equivalence classes, and collating sequences within pathname
+expansion and pattern matching.</p>
+
+<p style="margin-left:11%;"><b>LC_CTYPE</b></p>
+
+<p style="margin-left:22%;">This variable determines the
+interpretation of characters and the behavior of character
+classes within pathname expansion and pattern matching.</p>
+
+<p style="margin-left:11%;"><b>LC_MESSAGES</b></p>
+
+<p style="margin-left:22%;">This variable determines the
+locale used to translate double-quoted strings preceded by a
+<b>$</b>.</p>
+
+<p style="margin-left:11%;"><b>LC_NUMERIC</b></p>
+
+<p style="margin-left:22%;">This variable determines the
+locale category used for number formatting.</p>
+
+<p style="margin-left:11%;"><b>LC_TIME</b></p>
+
+<p style="margin-left:22%;">This variable determines the
+locale category used for data and time formatting.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>LINES</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>Used by the <b>select</b> compound command to determine
+the column length for printing selection lists.
+Automatically set if the <b>checkwinsize</b> option is
+enabled or in an interactive shell upon receipt of a
+<b><small>SIGWINCH</small></b><small>.</small></p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>MAIL</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>If this parameter is set to a file or directory name and
+the <b><small>MAILPATH</small></b> variable is not set,
+<b>bash</b> informs the user of the arrival of mail in the
+specified file or Maildir-format directory.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>MAILCHECK</b></p>
+
+<p style="margin-left:22%;">Specifies how often (in
+seconds) <b>bash</b> checks for mail. The default is 60
+seconds. When it is time to check for mail, the shell does
+so before displaying the primary prompt. If this variable is
+unset, or set to a value that is not a number greater than
+or equal to zero, the shell disables mail checking.</p>
+
+<p style="margin-left:11%;"><b>MAILPATH</b></p>
+
+<p style="margin-left:22%;">A colon-separated list of
+filenames to be checked for mail. The message to be printed
+when mail arrives in a particular file may be specified by
+separating the filename from the message with a
+’?’. When used in the text of the message,
+<b>$_</b> expands to the name of the current mailfile.
+Example: <b><br>
+MAILPATH</b>='/var/mail/bfox?"You have
+mail":~/shell−mail?"$_ has mail!"'
+<b><br>
+Bash</b> can be configured to supply a default value for
+this variable (there is no value by default), but the
+location of the user mail files that it uses is system
+dependent (e.g., /var/mail/<b>$USER</b>).</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>OPTERR</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>If set to the value 1, <b>bash</b> displays error
+messages generated by the <b>getopts</b> builtin command
+(see <b><small>SHELL BUILTIN COMMANDS</small></b> below).
+<b><small>OPTERR</small></b> is initialized to 1 each time
+the shell is invoked or a shell script is executed.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>PATH</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>The search path for commands. It is a colon-separated
+list of directories in which the shell looks for commands
+(see <b><small>COMMAND EXECUTION</small></b> below). A
+zero-length (null) directory name in the value of
+<b><small>PATH</small></b> indicates the current directory.
+A null directory name may appear as two adjacent colons, or
+as an initial or trailing colon. The default path is
+system-dependent, and is set by the administrator who
+installs <b>bash</b>. A common value is
+’’/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:
+/sbin’’.</p> </td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>POSIXLY_CORRECT</b></p>
+
+<p style="margin-left:22%;">If this variable is in the
+environment when <b>bash</b> starts, the shell enters
+<i>posix mode</i> before reading the startup files, as if
+the <b>−−posix</b> invocation option had been
+supplied. If it is set while the shell is running,
+<b>bash</b> enables <i>posix mode</i>, as if the command
+<i>set -o posix</i> had been executed. When the shell enters
+<i>posix mode</i>, it sets this variable if it was not
+already set.</p>
+
+<p style="margin-left:11%;"><b>PROMPT_COMMAND</b></p>
+
+<p style="margin-left:22%;">If set, the value is executed
+as a command prior to issuing each primary prompt.</p>
+
+<p style="margin-left:11%;"><b>PROMPT_DIRTRIM</b></p>
+
+<p style="margin-left:22%;">If set to a number greater than
+zero, the value is used as the number of trailing directory
+components to retain when expanding the <b>\w</b> and
+<b>\W</b> prompt string escapes (see
+<b><small>PROMPTING</small></b> below). Characters removed
+are replaced with an ellipsis.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>PS0</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>The value of this parameter is expanded (see
+<b><small>PROMPTING</small></b> below) and displayed by
+interactive shells after reading a command and before the
+command is executed.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>PS1</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>The value of this parameter is expanded (see
+<b><small>PROMPTING</small></b> below) and used as the
+primary prompt string. The default value is
+’’<b>\s−\v\$</b> ’’.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>PS2</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>The value of this parameter is expanded as with
+<b><small>PS1</small></b> and used as the secondary prompt
+string. The default is ’’<b>&gt;</b>
+’’.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>PS3</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>The value of this parameter is used as the prompt for
+the <b>select</b> command (see <b><small>SHELL
+GRAMMAR</small></b> above).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>PS4</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>The value of this parameter is expanded as with
+<b><small>PS1</small></b> and the value is printed before
+each command <b>bash</b> displays during an execution trace.
+The first character of the expanded value of
+<b><small>PS4</small></b> is replicated multiple times, as
+necessary, to indicate multiple levels of indirection. The
+default is ’’<b>+</b> ’’.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>SHELL</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>The full pathname to the shell is kept in this
+environment variable. If it is not set when the shell
+starts, <b>bash</b> assigns to it the full pathname of the
+current user’s login shell.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>TIMEFORMAT</b></p>
+
+<p style="margin-left:22%;">The value of this parameter is
+used as a format string specifying how the timing
+information for pipelines prefixed with the <b>time</b>
+reserved word should be displayed. The <b>%</b> character
+introduces an escape sequence that is expanded to a time
+value or other information. The escape sequences and their
+meanings are as follows; the braces denote optional
+portions.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="22%"></td>
+<td width="12%">
+
+
+<p><b>%%</b></p></td>
+<td width="3%"></td>
+<td width="63%">
+
+
+<p>A literal <b>%</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="12%">
+
+
+<p><b>%[</b><i>p</i><b>][l]R</b></p></td>
+<td width="3%"></td>
+<td width="63%">
+
+
+<p>The elapsed time in seconds.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="12%">
+
+
+<p><b>%[</b><i>p</i><b>][l]U</b></p></td>
+<td width="3%"></td>
+<td width="63%">
+
+
+<p>The number of CPU seconds spent in user mode.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="12%">
+
+
+<p><b>%[</b><i>p</i><b>][l]S</b></p></td>
+<td width="3%"></td>
+<td width="63%">
+
+
+<p>The number of CPU seconds spent in system mode.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="12%">
+
+
+<p><b>%P</b></p></td>
+<td width="3%"></td>
+<td width="63%">
+
+
+<p>The CPU percentage, computed as (%U + %S) / %R.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:22%; margin-top: 1em">The optional
+<i>p</i> is a digit specifying the <i>precision</i>, the
+number of fractional digits after a decimal point. A value
+of 0 causes no decimal point or fraction to be output. At
+most three places after the decimal point may be specified;
+values of <i>p</i> greater than 3 are changed to 3. If
+<i>p</i> is not specified, the value 3 is used.</p>
+
+<p style="margin-left:22%; margin-top: 1em">The optional
+<b>l</b> specifies a longer format, including minutes, of
+the form <i>MM</i>m<i>SS</i>.<i>FF</i>s. The value of
+<i>p</i> determines whether or not the fraction is
+included.</p>
+
+<p style="margin-left:22%; margin-top: 1em">If this
+variable is not set, <b>bash</b> acts as if it had the value
+<b>$'\nreal\t%3lR\nuser\t%3lU\nsys\t%3lS'</b>. If the value
+is null, no timing information is displayed. A trailing
+newline is added when the format string is displayed.</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p style="margin-top: 1em"><b>TMOUT</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p style="margin-top: 1em">If set to a value greater than
+zero, <b><small>TMOUT</small></b> is treated as the default
+timeout for the <b>read</b> builtin. The <b>select</b>
+command terminates if input does not arrive after
+<b><small>TMOUT</small></b> seconds when input is coming
+from a terminal. In an interactive shell, the value is
+interpreted as the number of seconds to wait for a line of
+input after issuing the primary prompt. <b>Bash</b>
+terminates after waiting for that number of seconds if a
+complete line of input does not arrive.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>TMPDIR</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>If set, <b>bash</b> uses its value as the name of a
+directory in which <b>bash</b> creates temporary files for
+the shell’s use.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:11%;"><b>auto_resume</b></p>
+
+<p style="margin-left:22%;">This variable controls how the
+shell interacts with the user and job control. If this
+variable is set, single word simple commands without
+redirections are treated as candidates for resumption of an
+existing stopped job. There is no ambiguity allowed; if
+there is more than one job beginning with the string typed,
+the job most recently accessed is selected. The <i>name</i>
+of a stopped job, in this context, is the command line used
+to start it. If set to the value <i>exact</i>, the string
+supplied must match the name of a stopped job exactly; if
+set to <i>substring</i>, the string supplied needs to match
+a substring of the name of a stopped job. The
+<i>substring</i> value provides functionality analogous to
+the <b>%?</b> job identifier (see <b><small>JOB
+CONTROL</small></b> below). If set to any other value, the
+supplied string must be a prefix of a stopped job’s
+name; this provides functionality analogous to the
+<b>%</b><i>string</i> job identifier.</p>
+
+<p style="margin-left:11%;"><b>histchars</b></p>
+
+<p style="margin-left:22%;">The two or three characters
+which control history expansion and tokenization (see
+<b><small>HISTORY EXPANSION</small></b> below). The first
+character is the <i>history expansion</i> character, the
+character which signals the start of a history expansion,
+normally ’<b>!</b>’. The second character is the
+<i>quick substitution</i> character, which is used as
+shorthand for re-running the previous command entered,
+substituting one string for another in the command. The
+default is ’<b>^</b>’. The optional third
+character is the character which indicates that the
+remainder of the line is a comment when found as the first
+character of a word, normally ’<b>#</b>’. The
+history comment character causes history substitution to be
+skipped for the remaining words on the line. It does not
+necessarily cause the shell parser to treat the rest of the
+line as a comment.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Arrays <br>
+Bash</b> provides one-dimensional indexed and associative
+array variables. Any variable may be used as an indexed
+array; the <b>declare</b> builtin will explicitly declare an
+array. There is no maximum limit on the size of an array,
+nor any requirement that members be indexed or assigned
+contiguously. Indexed arrays are referenced using integers
+(including arithmetic expressions) and are zero-based;
+associative arrays are referenced using arbitrary strings.
+Unless otherwise noted, indexed array indices must be
+non-negative integers.</p>
+
+<p style="margin-left:11%; margin-top: 1em">An indexed
+array is created automatically if any variable is assigned
+to using the syntax
+<i>name</i>[<i>subscript</i>]=<i>value</i>. The
+<i>subscript</i> is treated as an arithmetic expression that
+must evaluate to a number. To explicitly declare an indexed
+array, use <b>declare −a</b> <i>name</i> (see
+<b><small>SHELL BUILTIN COMMANDS</small></b> below).
+<b>declare −a</b>
+<i>name</i><b>[</b><i>subscript</i><b>]</b> is also
+accepted; the <i>subscript</i> is ignored.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Associative
+arrays are created using <b>declare −A</b>
+<i>name</i>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Attributes may
+be specified for an array variable using the <b>declare</b>
+and <b>readonly</b> builtins. Each attribute applies to all
+members of an array.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Arrays are
+assigned to using compound assignments of the form
+<i>name</i>=<b>(</b>value<i>1</i> ... value<i>n</i><b>)</b>,
+where each <i>value</i> is of the form
+[<i>subscript</i>]=<i>string</i>. Indexed array assignments
+do not require anything but <i>string</i>. When assigning to
+indexed arrays, if the optional brackets and subscript are
+supplied, that index is assigned to; otherwise the index of
+the element assigned is the last index assigned to by the
+statement plus one. Indexing starts at zero.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When assigning
+to an associative array, the subscript is required.</p>
+
+<p style="margin-left:11%; margin-top: 1em">This syntax is
+also accepted by the <b>declare</b> builtin. Individual
+array elements may be assigned to using the
+<i>name</i>[<i>subscript</i>]=<i>value</i> syntax introduced
+above. When assigning to an indexed array, if <i>name</i> is
+subscripted by a negative number, that number is interpreted
+as relative to one greater than the maximum index of
+<i>name</i>, so negative indices count back from the end of
+the array, and an index of −1 references the last
+element.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Any element of
+an array may be referenced using
+${<i>name</i>[<i>subscript</i>]}. The braces are required to
+avoid conflicts with pathname expansion. If <i>subscript</i>
+is <b>@</b> or <b>*</b>, the word expands to all members of
+<i>name</i>. These subscripts differ only when the word
+appears within double quotes. If the word is double-quoted,
+${<i>name</i>[*]} expands to a single word with the value of
+each array member separated by the first character of the
+<b><small>IFS</small></b> special variable, and
+${<i>name</i>[@]} expands each element of <i>name</i> to a
+separate word. When there are no array members,
+${<i>name</i>[@]} expands to nothing. If the double-quoted
+expansion occurs within a word, the expansion of the first
+parameter is joined with the beginning part of the original
+word, and the expansion of the last parameter is joined with
+the last part of the original word. This is analogous to the
+expansion of the special parameters <b>*</b> and <b>@</b>
+(see <b>Special Parameters</b> above).
+${#<i>name</i>[<i>subscript</i>]} expands to the length of
+${<i>name</i>[<i>subscript</i>]}. If <i>subscript</i> is
+<b>*</b> or <b>@</b>, the expansion is the number of
+elements in the array. If the <i>subscript</i> used to
+reference an element of an indexed array evaluates to a
+number less than zero, it is interpreted as relative to one
+greater than the maximum index of the array, so negative
+indices count back from the end of the array, and an index
+of −1 references the last element.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Referencing an
+array variable without a subscript is equivalent to
+referencing the array with a subscript of 0. Any reference
+to a variable using a valid subscript is legal, and
+<b>bash</b> will create an array if necessary.</p>
+
+<p style="margin-left:11%; margin-top: 1em">An array
+variable is considered set if a subscript has been assigned
+a value. The null string is a valid value.</p>
+
+<p style="margin-left:11%; margin-top: 1em">It is possible
+to obtain the keys (indices) of an array as well as the
+values. ${<b>!</b><i>name</i>[<i>@</i>]} and
+${<b>!</b><i>name</i>[<i>*</i>]} expand to the indices
+assigned in array variable <i>name</i>. The treatment when
+in double quotes is similar to the expansion of the special
+parameters <i>@</i> and <i>*</i> within double quotes.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The
+<b>unset</b> builtin is used to destroy arrays. <b>unset</b>
+<i>name</i>[<i>subscript</i>] destroys the array element at
+index <i>subscript</i>, for both indexed and associative
+arrays. Negative subscripts to indexed arrays are
+interpreted as described above. Unsetting the last element
+of an array variable does not unset the variable.
+<b>unset</b> <i>name</i>, where <i>name</i> is an array, or
+<b>unset</b> <i>name</i>[<i>subscript</i>], where
+<i>subscript</i> is <b>*</b> or <b>@</b>, removes the entire
+array.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When using a
+variable name with a subscript as an argument to a command,
+such as with <b>unset</b>, without using the word expansion
+syntax described above, the argument is subject to pathname
+expansion. If pathname expansion is not desired, the
+argument should be quoted.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The
+<b>declare</b>, <b>local</b>, and <b>readonly</b> builtins
+each accept a <b>−a</b> option to specify an indexed
+array and a <b>−A</b> option to specify an associative
+array. If both options are supplied, <b>−A</b> takes
+precedence. The <b>read</b> builtin accepts a
+<b>−a</b> option to assign a list of words read from
+the standard input to an array. The <b>set</b> and
+<b>declare</b> builtins display array values in a way that
+allows them to be reused as assignments.</p>
+
+<h2><a href="https://man.cx/bash#heading14" name="heading14">EXPANSION
+</a></h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Expansion is
+performed on the command line after it has been split into
+words. There are seven kinds of expansion performed:
+<i>brace expansion</i>, <i>tilde expansion</i>, <i>parameter
+and variable expansion</i>, <i>command substitution</i>,
+<i>arithmetic expansion</i>, <i>word splitting</i>, and
+<i>pathname expansion</i>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The order of
+expansions is: brace expansion; tilde expansion, parameter
+and variable expansion, arithmetic expansion, and command
+substitution (done in a left-to-right fashion); word
+splitting; and pathname expansion.</p>
+
+<p style="margin-left:11%; margin-top: 1em">On systems that
+can support it, there is an additional expansion available:
+<i>process substitution</i>. This is performed at the same
+time as tilde, parameter, variable, and arithmetic expansion
+and command substitution.</p>
+
+<p style="margin-left:11%; margin-top: 1em">After these
+expansions are performed, quote characters present in the
+original word are removed unless they have been quoted
+themselves (<i>quote removal</i>).</p>
+
+<p style="margin-left:11%; margin-top: 1em">Only brace
+expansion, word splitting, and pathname expansion can
+increase the number of words of the expansion; other
+expansions expand a single word to a single word. The only
+exceptions to this are the expansions of
+"<b>$@</b>" and
+"<b>${</b><i>name</i><b>[@]}</b>", and, in most
+cases, <b>$*</b> and <b>${</b><i>name</i><b>[*]}</b> as
+explained above (see
+<b><small>PARAMETERS</small></b><small>).</small></p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Brace
+Expansion</b> <i><br>
+Brace expansion</i> is a mechanism by which arbitrary
+strings may be generated. This mechanism is similar to
+<i>pathname expansion</i>, but the filenames generated need
+not exist. Patterns to be brace expanded take the form of an
+optional <i>preamble</i>, followed by either a series of
+comma-separated strings or a sequence expression between a
+pair of braces, followed by an optional <i>postscript</i>.
+The preamble is prefixed to each string contained within the
+braces, and the postscript is then appended to each
+resulting string, expanding left to right.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Brace
+expansions may be nested. The results of each expanded
+string are not sorted; left to right order is preserved. For
+example, a<b>{</b>d,c,b<b>}</b>e expands into ’ade ace
+abe’.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A sequence
+expression takes the form
+<b>{</b><i>x</i><b>..</b><i>y</i><b>[..</b><i>incr</i><b>]}</b>,
+where <i>x</i> and <i>y</i> are either integers or single
+characters, and <i>incr</i>, an optional increment, is an
+integer. When integers are supplied, the expression expands
+to each number between <i>x</i> and <i>y</i>, inclusive.
+Supplied integers may be prefixed with <i>0</i> to force
+each term to have the same width. When either <i>x</i> or
+<i>y</i> begins with a zero, the shell attempts to force all
+generated terms to contain the same number of digits,
+zero-padding where necessary. When characters are supplied,
+the expression expands to each character lexicographically
+between <i>x</i> and <i>y</i>, inclusive, using the default
+C locale. Note that both <i>x</i> and <i>y</i> must be of
+the same type. When the increment is supplied, it is used as
+the difference between each term. The default increment is 1
+or −1 as appropriate.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Brace expansion
+is performed before any other expansions, and any characters
+special to other expansions are preserved in the result. It
+is strictly textual. <b>Bash</b> does not apply any
+syntactic interpretation to the context of the expansion or
+the text between the braces.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A
+correctly-formed brace expansion must contain unquoted
+opening and closing braces, and at least one unquoted comma
+or a valid sequence expression. Any incorrectly formed brace
+expansion is left unchanged. A <b>{</b> or <b>,</b> may be
+quoted with a backslash to prevent its being considered part
+of a brace expression. To avoid conflicts with parameter
+expansion, the string <b>${</b> is not considered eligible
+for brace expansion, and inhibits brace expansion until the
+closing <b>}</b>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">This construct
+is typically used as shorthand when the common prefix of the
+strings to be generated is longer than in the above
+example:</p>
+
+<p style="margin-left:22%; margin-top: 1em">mkdir
+/usr/local/src/bash/{old,new,dist,bugs}</p>
+
+<p style="margin-left:11%;">or</p>
+
+<p style="margin-left:22%;">chown root
+/usr/{ucb/{ex,edit},lib/{ex?.?*,how_ex}}</p>
+
+<p style="margin-left:11%; margin-top: 1em">Brace expansion
+introduces a slight incompatibility with historical versions
+of <b>sh</b>. <b>sh</b> does not treat opening or closing
+braces specially when they appear as part of a word, and
+preserves them in the output. <b>Bash</b> removes braces
+from words as a consequence of brace expansion. For example,
+a word entered to <b>sh</b> as <i>file{1,2}</i> appears
+identically in the output. The same word is output as
+<i>file1 file2</i> after expansion by <b>bash</b>. If strict
+compatibility with <b>sh</b> is desired, start <b>bash</b>
+with the <b>+B</b> option or disable brace expansion with
+the <b>+B</b> option to the <b>set</b> command (see
+<b><small>SHELL BUILTIN COMMANDS</small></b> below).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Tilde
+Expansion</b> <br>
+If a word begins with an unquoted tilde character
+(’<b>~</b>’), all of the characters preceding
+the first unquoted slash (or all characters, if there is no
+unquoted slash) are considered a <i>tilde-prefix</i>. If
+none of the characters in the tilde-prefix are quoted, the
+characters in the tilde-prefix following the tilde are
+treated as a possible <i>login name</i>. If this login name
+is the null string, the tilde is replaced with the value of
+the shell parameter
+<b><small>HOME</small></b><small>.</small> If
+<b><small>HOME</small></b> is unset, the home directory of
+the user executing the shell is substituted instead.
+Otherwise, the tilde-prefix is replaced with the home
+directory associated with the specified login name.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If the
+tilde-prefix is a ’~+’, the value of the shell
+variable <b><small>PWD</small></b> replaces the
+tilde-prefix. If the tilde-prefix is a
+’~−’, the value of the shell variable
+<b><small>OLDPWD</small></b><small>,</small> if it is set,
+is substituted. If the characters following the tilde in the
+tilde-prefix consist of a number <i>N</i>, optionally
+prefixed by a ’+’ or a ’−’,
+the tilde-prefix is replaced with the corresponding element
+from the directory stack, as it would be displayed by the
+<b>dirs</b> builtin invoked with the tilde-prefix as an
+argument. If the characters following the tilde in the
+tilde-prefix consist of a number without a leading
+’+’ or ’−’, ’+’ is
+assumed.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If the login
+name is invalid, or the tilde expansion fails, the word is
+unchanged.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Each variable
+assignment is checked for unquoted tilde-prefixes
+immediately following a <b>:</b> or the first <b>=</b>. In
+these cases, tilde expansion is also performed.
+Consequently, one may use filenames with tildes in
+assignments to <b><small>PATH</small></b><small>,
+<b>MAILPATH</b>,</small> and
+<b><small>CDPATH</small></b><small>,</small> and the shell
+assigns the expanded value.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Bash also
+performs tilde expansion on words satisfying the conditions
+of variable assignments (as described above under
+<b><small>PARAMETERS</small></b><small>)</small> when they
+appear as arguments to simple commands. Bash does not do
+this, except for the <i>declaration</i> commands listed
+above, when in <i>posix mode</i>.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Parameter
+Expansion</b> <br>
+The ’<b>$</b>’ character introduces parameter
+expansion, command substitution, or arithmetic expansion.
+The parameter name or symbol to be expanded may be enclosed
+in braces, which are optional but serve to protect the
+variable to be expanded from characters immediately
+following it which could be interpreted as part of the
+name.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When braces are
+used, the matching ending brace is the first
+’<b>}</b>’ not escaped by a backslash or within
+a quoted string, and not within an embedded arithmetic
+expansion, command substitution, or parameter expansion.
+<br>
+${<i>parameter</i>}</p>
+
+<p style="margin-left:22%;">The value of <i>parameter</i>
+is substituted. The braces are required when
+<i>parameter</i> is a positional parameter with more than
+one digit, or when <i>parameter</i> is followed by a
+character which is not to be interpreted as part of its
+name. The <i>parameter</i> is a shell parameter as described
+above <b>PARAMETERS</b>) or an array reference
+(<b>Arrays</b>).</p>
+
+<p style="margin-left:11%; margin-top: 1em">If the first
+character of <i>parameter</i> is an exclamation point
+(<b>!</b>), and <i>parameter</i> is not a <i>nameref</i>, it
+introduces a level of indirection. <b>Bash</b> uses the
+value formed by expanding the rest of <i>parameter</i> as
+the new <i>parameter</i>; this is then expanded and that
+value is used in the rest of the expansion, rather than the
+expansion of the original <i>parameter</i>. This is known as
+<i>indirect expansion</i>. The value is subject to tilde
+expansion, parameter expansion, command substitution, and
+arithmetic expansion. If <i>parameter</i> is a nameref, this
+expands to the name of the parameter referenced by
+<i>parameter</i> instead of performing the complete indirect
+expansion. The exceptions to this are the expansions of
+${<b>!</b><i>prefix</i><b>*</b>} and
+${<b>!</b><i>name</i>[<i>@</i>]} described below. The
+exclamation point must immediately follow the left brace in
+order to introduce indirection.</p>
+
+<p style="margin-left:11%; margin-top: 1em">In each of the
+cases below, <i>word</i> is subject to tilde expansion,
+parameter expansion, command substitution, and arithmetic
+expansion.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When not
+performing substring expansion, using the forms documented
+below (e.g., <b>:-</b>), <b>bash</b> tests for a parameter
+that is unset or null. Omitting the colon results in a test
+only for a parameter that is unset. <br>
+${<i>parameter</i><b>:−</b><i>word</i>}</p>
+
+<p style="margin-left:22%;"><b>Use Default Values</b>. If
+<i>parameter</i> is unset or null, the expansion of
+<i>word</i> is substituted. Otherwise, the value of
+<i>parameter</i> is substituted.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>:=</b><i>word</i>}</p>
+
+<p style="margin-left:22%;"><b>Assign Default Values</b>.
+If <i>parameter</i> is unset or null, the expansion of
+<i>word</i> is assigned to <i>parameter</i>. The value of
+<i>parameter</i> is then substituted. Positional parameters
+and special parameters may not be assigned to in this
+way.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>:?</b><i>word</i>}</p>
+
+<p style="margin-left:22%;"><b>Display Error if Null or
+Unset</b>. If <i>parameter</i> is null or unset, the
+expansion of <i>word</i> (or a message to that effect if
+<i>word</i> is not present) is written to the standard error
+and the shell, if it is not interactive, exits. Otherwise,
+the value of <i>parameter</i> is substituted.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>:+</b><i>word</i>}</p>
+
+<p style="margin-left:22%;"><b>Use Alternate Value</b>. If
+<i>parameter</i> is null or unset, nothing is substituted,
+otherwise the expansion of <i>word</i> is substituted.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>:</b><i>offset</i>}
+<br>
+
+${<i>parameter</i><b>:</b><i>offset</i><b>:</b><i>length</i>}</p>
+
+<p style="margin-left:22%;"><b>Substring Expansion</b>.
+Expands to up to <i>length</i> characters of the value of
+<i>parameter</i> starting at the character specified by
+<i>offset</i>. If <i>parameter</i> is <b>@</b>, an indexed
+array subscripted by <b>@</b> or <b>*</b>, or an associative
+array name, the results differ as described below. If
+<i>length</i> is omitted, expands to the substring of the
+value of <i>parameter</i> starting at the character
+specified by <i>offset</i> and extending to the end of the
+value. <i>length</i> and <i>offset</i> are arithmetic
+expressions (see <b><small>ARITHMETIC EVALUATION</small></b>
+below).</p>
+
+<p style="margin-left:22%; margin-top: 1em">If
+<i>offset</i> evaluates to a number less than zero, the
+value is used as an offset in characters from the end of the
+value of <i>parameter</i>. If <i>length</i> evaluates to a
+number less than zero, it is interpreted as an offset in
+characters from the end of the value of <i>parameter</i>
+rather than a number of characters, and the expansion is the
+characters between <i>offset</i> and that result. Note that
+a negative offset must be separated from the colon by at
+least one space to avoid being confused with the <b>:-</b>
+expansion.</p>
+
+<p style="margin-left:22%; margin-top: 1em">If
+<i>parameter</i> is <b>@</b>, the result is <i>length</i>
+positional parameters beginning at <i>offset</i>. A negative
+<i>offset</i> is taken relative to one greater than the
+greatest positional parameter, so an offset of −1
+evaluates to the last positional parameter. It is an
+expansion error if <i>length</i> evaluates to a number less
+than zero.</p>
+
+<p style="margin-left:22%; margin-top: 1em">If
+<i>parameter</i> is an indexed array name subscripted by @
+or *, the result is the <i>length</i> members of the array
+beginning with ${<i>parameter</i>[<i>offset</i>]}. A
+negative <i>offset</i> is taken relative to one greater than
+the maximum index of the specified array. It is an expansion
+error if <i>length</i> evaluates to a number less than
+zero.</p>
+
+<p style="margin-left:22%; margin-top: 1em">Substring
+expansion applied to an associative array produces undefined
+results.</p>
+
+<p style="margin-left:22%; margin-top: 1em">Substring
+indexing is zero-based unless the positional parameters are
+used, in which case the indexing starts at 1 by default. If
+<i>offset</i> is 0, and the positional parameters are used,
+<b>$0</b> is prefixed to the list.</p>
+
+
+<p style="margin-left:11%;">${<b>!</b><i>prefix</i><b>*</b>}
+<br>
+${<b>!</b><i>prefix</i><b>@</b>}</p>
+
+<p style="margin-left:22%;"><b>Names matching prefix</b>.
+Expands to the names of variables whose names begin with
+<i>prefix</i>, separated by the first character of the
+<b><small>IFS</small></b> special variable. When <i>@</i> is
+used and the expansion appears within double quotes, each
+variable name expands to a separate word.</p>
+
+
+<p style="margin-left:11%;">${<b>!</b><i>name</i>[<i>@</i>]}
+<br>
+${<b>!</b><i>name</i>[<i>*</i>]}</p>
+
+<p style="margin-left:22%;"><b>List of array keys</b>. If
+<i>name</i> is an array variable, expands to the list of
+array indices (keys) assigned in <i>name</i>. If <i>name</i>
+is not an array, expands to 0 if <i>name</i> is set and null
+otherwise. When <i>@</i> is used and the expansion appears
+within double quotes, each key expands to a separate
+word.</p>
+
+
+<p style="margin-left:11%;">${<b>#</b><i>parameter</i>}</p>
+
+<p style="margin-left:22%;"><b>Parameter length</b>. The
+length in characters of the value of <i>parameter</i> is
+substituted. If <i>parameter</i> is <b>*</b> or <b>@</b>,
+the value substituted is the number of positional
+parameters. If <i>parameter</i> is an array name subscripted
+by <b>*</b> or <b>@</b>, the value substituted is the number
+of elements in the array. If <i>parameter</i> is an indexed
+array name subscripted by a negative number, that number is
+interpreted as relative to one greater than the maximum
+index of <i>parameter</i>, so negative indices count back
+from the end of the array, and an index of −1
+references the last element.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>#</b><i>word</i>}
+<br>
+${<i>parameter</i><b>##</b><i>word</i>}</p>
+
+<p style="margin-left:22%;"><b>Remove matching prefix
+pattern</b>. The <i>word</i> is expanded to produce a
+pattern just as in pathname expansion, and matched against
+the expanded value of <i>parameter</i> using the rules
+described under <b>Pattern Matching</b> below. If the
+pattern matches the beginning of the value of
+<i>parameter</i>, then the result of the expansion is the
+expanded value of <i>parameter</i> with the shortest
+matching pattern (the ’’<b>#</b>’’
+case) or the longest matching pattern (the
+’’<b>##</b>’’ case) deleted. If
+<i>parameter</i> is <b>@</b> or <b>*</b>, the pattern
+removal operation is applied to each positional parameter in
+turn, and the expansion is the resultant list. If
+<i>parameter</i> is an array variable subscripted with
+<b>@</b> or <b>*</b>, the pattern removal operation is
+applied to each member of the array in turn, and the
+expansion is the resultant list.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>%</b><i>word</i>}
+<br>
+${<i>parameter</i><b>%%</b><i>word</i>}</p>
+
+<p style="margin-left:22%;"><b>Remove matching suffix
+pattern</b>. The <i>word</i> is expanded to produce a
+pattern just as in pathname expansion, and matched against
+the expanded value of <i>parameter</i> using the rules
+described under <b>Pattern Matching</b> below. If the
+pattern matches a trailing portion of the expanded value of
+<i>parameter</i>, then the result of the expansion is the
+expanded value of <i>parameter</i> with the shortest
+matching pattern (the ’’<b>%</b>’’
+case) or the longest matching pattern (the
+’’<b>%%</b>’’ case) deleted. If
+<i>parameter</i> is <b>@</b> or <b>*</b>, the pattern
+removal operation is applied to each positional parameter in
+turn, and the expansion is the resultant list. If
+<i>parameter</i> is an array variable subscripted with
+<b>@</b> or <b>*</b>, the pattern removal operation is
+applied to each member of the array in turn, and the
+expansion is the resultant list.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>/</b><i>pattern</i><b>/</b><i>string</i>}</p>
+
+<p style="margin-left:22%;"><b>Pattern substitution</b>.
+The <i>pattern</i> is expanded to produce a pattern just as
+in pathname expansion, <i>Parameter</i> is expanded and the
+longest match of <i>pattern</i> against its value is
+replaced with <i>string</i>. The match is performed using
+the rules described under <b>Pattern Matching</b> below. If
+<i>pattern</i> begins with <b>/</b>, all matches of
+<i>pattern</i> are replaced with <i>string</i>. Normally
+only the first match is replaced. If <i>pattern</i> begins
+with <b>#</b>, it must match at the beginning of the
+expanded value of <i>parameter</i>. If <i>pattern</i> begins
+with <b>%</b>, it must match at the end of the expanded
+value of <i>parameter</i>. If <i>string</i> is null, matches
+of <i>pattern</i> are deleted and the <b>/</b> following
+<i>pattern</i> may be omitted. If the <b>nocasematch</b>
+shell option is enabled, the match is performed without
+regard to the case of alphabetic characters. If
+<i>parameter</i> is <b>@</b> or <b>*</b>, the substitution
+operation is applied to each positional parameter in turn,
+and the expansion is the resultant list. If <i>parameter</i>
+is an array variable subscripted with <b>@</b> or <b>*</b>,
+the substitution operation is applied to each member of the
+array in turn, and the expansion is the resultant list.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>^</b><i>pattern</i>}
+<br>
+${<i>parameter</i><b>^^</b><i>pattern</i>} <br>
+${<i>parameter</i><b>,</b><i>pattern</i>} <br>
+${<i>parameter</i><b>,,</b><i>pattern</i>}</p>
+
+<p style="margin-left:22%;"><b>Case modification</b>. This
+expansion modifies the case of alphabetic characters in
+<i>parameter</i>. The <i>pattern</i> is expanded to produce
+a pattern just as in pathname expansion. Each character in
+the expanded value of <i>parameter</i> is tested against
+<i>pattern</i>, and, if it matches the pattern, its case is
+converted. The pattern should not attempt to match more than
+one character. The <b>^</b> operator converts lowercase
+letters matching <i>pattern</i> to uppercase; the <b>,</b>
+operator converts matching uppercase letters to lowercase.
+The <b>^^</b> and <b>,,</b> expansions convert each matched
+character in the expanded value; the <b>^</b> and <b>,</b>
+expansions match and convert only the first character in the
+expanded value. If <i>pattern</i> is omitted, it is treated
+like a <b>?</b>, which matches every character. If
+<i>parameter</i> is <b>@</b> or <b>*</b>, the case
+modification operation is applied to each positional
+parameter in turn, and the expansion is the resultant list.
+If <i>parameter</i> is an array variable subscripted with
+<b>@</b> or <b>*</b>, the case modification operation is
+applied to each member of the array in turn, and the
+expansion is the resultant list.</p>
+
+
+<p style="margin-left:11%;">${<i>parameter</i><b>@</b><i>operator</i>}</p>
+
+<p style="margin-left:22%;"><b>Parameter
+transformation</b>. The expansion is either a transformation
+of the value of <i>parameter</i> or information about
+<i>parameter</i> itself, depending on the value of
+<i>operator</i>. Each <i>operator</i> is a single
+letter:</p>
+
+<table width="100%" border="0" rules="none" frame="void" cellspacing="0" cellpadding="0">
+<tbody><tr valign="top" align="left">
+<td width="22%"></td>
+<td width="1%">
+
+
+<p><b>Q</b></p></td>
+<td width="9%"></td>
+<td width="68%">
+
+
+<p>The expansion is a string that is the value of
+<i>parameter</i> quoted in a format that can be reused as
+input.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="1%">
+
+
+<p><b>E</b></p></td>
+<td width="9%"></td>
+<td width="68%">
+
+
+<p>The expansion is a string that is the value of
+<i>parameter</i> with backslash escape sequences expanded as
+with the <b>$’...’</b> quoting mechanism.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="1%">
+
+
+<p><b>P</b></p></td>
+<td width="9%"></td>
+<td width="68%">
+
+
+<p>The expansion is a string that is the result of
+expanding the value of <i>parameter</i> as if it were a
+prompt string (see <b>PROMPTING</b> below).</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="1%">
+
+
+<p><b>A</b></p></td>
+<td width="9%"></td>
+<td width="68%">
+
+
+<p>The expansion is a string in the form of an assignment
+statement or <b>declare</b> command that, if evaluated, will
+recreate <i>parameter</i> with its attributes and value.</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="1%">
+
+
+<p><b>a</b></p></td>
+<td width="9%"></td>
+<td width="68%">
+
+
+<p>The expansion is a string consisting of flag values
+representing <i>parameter</i>’s attributes.</p></td></tr>
+</tbody></table>
+
+<p style="margin-left:22%; margin-top: 1em">If
+<i>parameter</i> is <b>@</b> or <b>*</b>, the operation is
+applied to each positional parameter in turn, and the
+expansion is the resultant list. If <i>parameter</i> is an
+array variable subscripted with <b>@</b> or <b>*</b>, the
+operation is applied to each member of the array in turn,
+and the expansion is the resultant list.</p>
+
+<p style="margin-left:22%; margin-top: 1em">The result of
+the expansion is subject to word splitting and pathname
+expansion as described below.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Command
+Substitution</b> <i><br>
+Command substitution</i> allows the output of a command to
+replace the command name. There are two forms:</p>
+
+
+<p style="margin-left:22%; margin-top: 1em"><b>$(</b><i>command</i><b>)</b></p>
+
+<p style="margin-left:11%;">or</p>
+
+
+<p style="margin-left:22%;"><b>`</b><i>command</i><b>`</b></p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Bash</b>
+performs the expansion by executing <i>command</i> in a
+subshell environment and replacing the command substitution
+with the standard output of the command, with any trailing
+newlines deleted. Embedded newlines are not deleted, but
+they may be removed during word splitting. The command
+substitution <b>$(cat</b> <i>file</i><b>)</b> can be
+replaced by the equivalent but faster <b>$(&lt;</b>
+<i>file</i><b>)</b>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When the
+old-style backquote form of substitution is used, backslash
+retains its literal meaning except when followed by
+<b>$</b>, <b>`</b>, or <b>\</b>. The first backquote not
+preceded by a backslash terminates the command substitution.
+When using the $(<i>command</i>) form, all characters
+between the parentheses make up the command; none are
+treated specially.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Command
+substitutions may be nested. To nest when using the
+backquoted form, escape the inner backquotes with
+backslashes.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If the
+substitution appears within double quotes, word splitting
+and pathname expansion are not performed on the results.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Arithmetic
+Expansion</b> <br>
+Arithmetic expansion allows the evaluation of an arithmetic
+expression and the substitution of the result. The format
+for arithmetic expansion is:</p>
+
+
+<p style="margin-left:22%; margin-top: 1em"><b>$((</b><i>expression</i><b>))</b></p>
+
+<p style="margin-left:11%; margin-top: 1em">The old format
+<b>$[</b><i>expression</i><b>]</b> is deprecated and will be
+removed in upcoming versions of bash.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The
+<i>expression</i> is treated as if it were within double
+quotes, but a double quote inside the parentheses is not
+treated specially. All tokens in the expression undergo
+parameter and variable expansion, command substitution, and
+quote removal. The result is treated as the arithmetic
+expression to be evaluated. Arithmetic expansions may be
+nested.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The evaluation
+is performed according to the rules listed below under
+<b><small>ARITHMETIC EVALUATION</small></b><small>.</small>
+If <i>expression</i> is invalid, <b>bash</b> prints a
+message indicating failure and no substitution occurs.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Process
+Substitution</b> <i><br>
+Process substitution</i> allows a process’s input or
+output to be referred to using a filename. It takes the form
+of <b>&lt;(</b><i>list</i><b>)</b> or
+<b>&gt;(</b><i>list</i><b>)</b>. The p</p></main></div></body></html>

@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html dir="ltr" class="" lang="en"><head prefix="og: http://ogp.me/ns#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script async="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/analytics.js"></script><script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  <title>Firefox Developer Tools | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+
+  
+<link rel="preload" href="https://developer.mozilla.org/static/fonts/locales/ZillaSlab-Bold.subset.e96c15f68c68.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="home" href="https://developer.mozilla.org/en-US/">
+    <link rel="license" href="#license">
+  
+
+  
+    
+    
+
+    <link href="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/mdn.css" rel="stylesheet" type="text/css">
+
+    
+  
+    <link href="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/wiki.css" rel="stylesheet" type="text/css">
+
+
+    
+      <link href="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/banners.css" rel="stylesheet" type="text/css">
+    
+
+  <link href="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/locale-en-US.css" rel="stylesheet" type="text/css">
+
+  
+    <script>
+    // Mozilla DNT Helper
+    /* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/. */ if(typeof Mozilla==='undefined'){var Mozilla={}}Mozilla.dntEnabled=function(dnt,ua){'use strict';var dntStatus=dnt||navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack;var userAgent=ua||navigator.userAgent;var anomalousWinVersions=['Windows NT 6.1','Windows NT 6.2','Windows NT 6.3'];var fxMatch=userAgent.match(/Firefox\/(\d+)/);var ieRegEx=/MSIE|Trident/i;var isIE=ieRegEx.test(userAgent);var platform=userAgent.match(/Windows.+?(?=;)/g);if(isIE&&typeof Array.prototype.indexOf!=='function'){return false}else if(fxMatch&&parseInt(fxMatch[1],10)<32){dntStatus='Unspecified'}else if(isIE&&platform&&anomalousWinVersions.indexOf(platform.toString())!==-1){dntStatus='Unspecified'}else{dntStatus={'0':'Disabled','1':'Enabled'}[dntStatus]||'Unspecified'}return dntStatus==='Enabled'?true:false};
+    // only load GA if DNT is not enabled
+    if (Mozilla && !Mozilla.dntEnabled()) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36116321-5', 'mozilla.org');
+        ga('set', 'anonymizeIp', true);
+
+        
+
+        // dimension9 == "Section editing"
+        
+            // dimension12 == 'Page Revision'
+            ga('set', 'dimension12', '1562153');
+            // dimension17 == 'English Slug'
+            ga('set', 'dimension17', 'Tools');
+
+        (function() {
+            // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+            var win = window;
+            var removeUtms = function(){
+                var location = win.location;
+                if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                    win.history.replaceState({}, '', location.pathname);
+                }
+            };
+
+            ga('send', 'pageview', {'hitCallback': removeUtms});
+        })();
+    }
+</script>
+  
+
+  
+    <script>
+LUX=(function(){var a=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMarks)?LUX.gaMarks:[]);var d=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMeasures)?LUX.gaMeasures:[]);var j="LUX_start";var k=window.performance;var l=("undefined"!==typeof(LUX)&&LUX.ns?LUX.ns:(Date.now?Date.now():+(new Date())));if(k&&k.timing&&k.timing.navigationStart){l=k.timing.navigationStart}function f(){if(k&&k.now){return k.now()}var o=Date.now?Date.now():+(new Date());return o-l}function b(n){if(k){if(k.mark){return k.mark(n)}else{if(k.webkitMark){return k.webkitMark(n)}}}a.push({name:n,entryType:"mark",startTime:f(),duration:0});return}function m(p,t,n){if("undefined"===typeof(t)&&h(j)){t=j}if(k){if(k.measure){if(t){if(n){return k.measure(p,t,n)}else{return k.measure(p,t)}}else{return k.measure(p)}}else{if(k.webkitMeasure){return k.webkitMeasure(p,t,n)}}}var r=0,o=f();if(t){var s=h(t);if(s){r=s.startTime}else{if(k&&k.timing&&k.timing[t]){r=k.timing[t]-k.timing.navigationStart}else{return}}}if(n){var q=h(n);if(q){o=q.startTime}else{if(k&&k.timing&&k.timing[n]){o=k.timing[n]-k.timing.navigationStart}else{return}}}d.push({name:p,entryType:"measure",startTime:r,duration:(o-r)});return}function h(n){return c(n,g())}function c(p,o){for(i=o.length-1;i>=0;i--){var n=o[i];if(p===n.name){return n}}return undefined}function g(){if(k){if(k.getEntriesByType){return k.getEntriesByType("mark")}else{if(k.webkitGetEntriesByType){return k.webkitGetEntriesByType("mark")}}}return a}return{mark:b,measure:m,gaMarks:a,gaMeasures:d}})();LUX.ns=(Date.now?Date.now():+(new Date()));LUX.ac=[];LUX.cmd=function(a){LUX.ac.push(a)};LUX.init=function(){LUX.cmd(["init"])};LUX.send=function(){LUX.cmd(["send"])};LUX.addData=function(a,b){LUX.cmd(["addData",a,b])};LUX_ae=[];window.addEventListener("error",function(a){LUX_ae.push(a)});LUX_al=[];if("function"===typeof(PerformanceObserver)){var LongTaskObserver=new PerformanceObserver(function(c){var b=c.getEntries();for(var a=0;a<b.length;a++){var d=b[a];LUX_al.push(d)}});try{LongTaskObserver.observe({entryTypes:["longtask"],buffered:true})}catch(e){}};
+</script>
+<script src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/lux.js" async="" defer="defer" crossorigin="anonymous"></script>
+  
+
+  
+    <script async="" type="text/javascript" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/perf.js" charset="utf-8"></script>
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="MDN Web Docs">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="MDN Web Docs">
+    
+  
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.mozilla.org/static/img/favicon114.d526f38b09c5.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.mozilla.org/static/img/favicon72.cc65d1d762a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.mozilla.org/static/img/favicon57.de33179910ae.png">
+  <!-- basic favicon -->
+  <link rel="shortcut icon" href="https://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.mozilla.org/static/build/js/html5shiv.ae1ac46eaf58.js" charset="utf-8"></script>
+  <![endif]-->
+
+  
+  <link rel="dns-prefetch" href="https://interactive-examples.mdn.mozilla.net/" pr="0.75">
+  <link rel="preconnect" href="https://interactive-examples.mdn.mozilla.net/" pr="0.75">
+
+  <link rel="alternate" type="application/json" href="https://developer.mozilla.org/en-US/docs/Tools$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Tools">
+
+  
+  <link rel="alternate" hreflang="en" href="https://developer.mozilla.org/en-US/docs/Tools" title="Firefox Developer Tools">
+  
+    
+      <link rel="alternate" hreflang="ar" href="https://developer.mozilla.org/ar/docs/Tools" title="أدوات مطور فايرفوكس">
+    
+      <link rel="alternate" hreflang="bn" href="https://developer.mozilla.org/bn-BD/docs/Tools" title="ফায়ারফক্স ডেভেলপার টুল">
+    
+      <link rel="alternate" hreflang="bn-IN" href="https://developer.mozilla.org/bn-IN/docs/Tools" title="ফায়ারফক্স উন্নতিকারক যন্ত্রপাতি">
+    
+      <link rel="alternate" hreflang="ca" href="https://developer.mozilla.org/ca/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="cs" href="https://developer.mozilla.org/cs/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="de" href="https://developer.mozilla.org/de/docs/Tools" title="Firefox Tools für Webentwickler">
+    
+      <link rel="alternate" hreflang="el" href="https://developer.mozilla.org/el/docs/%CE%95%CF%81%CE%B3%CE%B1%CE%BB%CE%B5%CE%AF%CE%B1" title="Εργαλεία Προγραμματισμού του Firefox">
+    
+      <link rel="alternate" hreflang="es" href="https://developer.mozilla.org/es/docs/Tools" title="Herramientas">
+    
+      <link rel="alternate" hreflang="fa" href="https://developer.mozilla.org/fa/docs/Tools" title="ابزارهای توسعه فایرفاکس">
+    
+      <link rel="alternate" hreflang="fi" href="https://developer.mozilla.org/fi/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/Outils" title="Outils de développement Firefox">
+    
+      <link rel="alternate" hreflang="he" href="https://developer.mozilla.org/he/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="hi" href="https://developer.mozilla.org/hi-IN/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="hr" href="https://developer.mozilla.org/hr/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="hu" href="https://developer.mozilla.org/hu/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="id" href="https://developer.mozilla.org/id/docs/Tools" title="Alat">
+    
+      <link rel="alternate" hreflang="it" href="https://developer.mozilla.org/it/docs/Tools" title="Strumenti di Sviluppo di Firefox">
+    
+      <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/Tools" title="開発ツール">
+    
+      <link rel="alternate" hreflang="ka" href="https://developer.mozilla.org/ka/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="kab" href="https://developer.mozilla.org/kab/docs/Tools" title="Ifecka n tneflit n Firefox">
+    
+      <link rel="alternate" hreflang="ko" href="https://developer.mozilla.org/ko/docs/%EB%8F%84%EA%B5%AC%EB%93%A4" title="Firefox 개발자 도구">
+    
+      <link rel="alternate" hreflang="ml" href="https://developer.mozilla.org/ml/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="ms" href="https://developer.mozilla.org/ms/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="my" href="https://developer.mozilla.org/my/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="nl" href="https://developer.mozilla.org/nl/docs/Tools" title="Developer Tools">
+    
+      <link rel="alternate" hreflang="pl" href="https://developer.mozilla.org/pl/docs/Narz%C4%99dzia" title="Narzędzia dla programistów Firefox">
+    
+      <link rel="alternate" hreflang="pt-BR" href="https://developer.mozilla.org/pt-BR/docs/Tools" title="Ferramentas do Firefox para desenvolvedores">
+    
+      <link rel="alternate" hreflang="pt" href="https://developer.mozilla.org/pt-PT/docs/Tools" title="Ferramentas de Desenvolvimento do Firefox">
+    
+      <link rel="alternate" hreflang="ro" href="https://developer.mozilla.org/ro/docs/Tools" title="Unelte pentru dezvoltatori Firefox">
+    
+      <link rel="alternate" hreflang="ru" href="https://developer.mozilla.org/ru/docs/Tools" title="Инструменты разработчика Firefox">
+    
+      <link rel="alternate" hreflang="son" href="https://developer.mozilla.org/son/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="sq" href="https://developer.mozilla.org/sq/docs/Mjetet" title="Mjetet e Zhvilluesve Firefox">
+    
+      <link rel="alternate" hreflang="sr" href="https://developer.mozilla.org/sr/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="sv" href="https://developer.mozilla.org/sv-SE/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="ta" href="https://developer.mozilla.org/ta/docs/Tools" title="Firefox Developer Tools">
+    
+      <link rel="alternate" hreflang="th" href="https://developer.mozilla.org/th/docs/Tools" title="เครื่องมือสำหรับนักพัฒนา Firefox">
+    
+      <link rel="alternate" hreflang="tr" href="https://developer.mozilla.org/tr/docs/Araclar" title="Firefox Geliştirici Araçları">
+    
+      <link rel="alternate" hreflang="uk" href="https://developer.mozilla.org/uk/docs/%D0%86%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8" title="Firefox інструменти для розробників">
+    
+      <link rel="alternate" hreflang="vi" href="https://developer.mozilla.org/vi/docs/Tools" title="Công cụ">
+    
+      <link rel="alternate" hreflang="zh" href="https://developer.mozilla.org/zh-CN/docs/Tools" title="Firefox 开发者工具">
+    
+      <link rel="alternate" hreflang="zh-TW" href="https://developer.mozilla.org/zh-TW/docs/Tools" title="Firefox 開發者工具">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Firefox Developer Tools">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Tools">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Tools">
+  <meta name="twitter:title" content="Firefox Developer Tools">
+  
+  <meta property="og:description" content="Examine, edit, and debug HTML, CSS, and JavaScript on the desktop and on mobile.">
+  <meta name="description" content="Examine, edit, and debug HTML, CSS, and JavaScript on the desktop and on mobile.">
+  <meta name="twitter:description" content="Examine, edit, and debug HTML, CSS, and JavaScript on the desktop and on mobile.">
+  
+
+</head>
+<body data-slug="Tools" contextmenu="edit-history-menu" data-search-url="" class="document">
+
+  <script>
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+            (function(){
+  var FLAGS = {
+    'kumaediting': false,'page_move': false,'section_edit': false,'spam_checks_enabled': true,'spam_submissions_enabled': false,'spam_admin_override': false,'spam_spammer_override': false,'spam_testing_mode': false,'sg_task_completion': false,'contrib_beta': false,'recurring_payment_beta': false,'developer_needs': true,'bc-signals': false
+    },
+    SWITCHES = {
+    'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'foundation_callout': false,'helpful-survey-2': true,'wiki_spam_training': true,'registration_disabled': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+
+            // This needs to be set before ckeditor.js loads
+            window.CKEDITOR_BASEPATH = 'https://developer.mozilla.org/static/js/libs/ckeditor4/build/ckeditor/';
+
+            // Site configuration
+            win.mdn.ckeditor = {};
+
+        win.mdn.features = {};
+        win.mdn.siteUrl = 'https://developer.mozilla.org';
+        win.mdn.wikiSiteUrl = 'https://wiki.developer.mozilla.org';
+        win.mdn.staticPath = 'https://developer.mozilla.org/static/';
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.mozilla.org/static/build/styles/editor-content.6b7d809d4915.css','https://developer.mozilla.org/static/build/styles/editor-locale-en-US.8a949c5d9bc2.css',
+                ],
+
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/styles/wiki-compat-tables.1d3c442ac0f3.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.mozilla.org/static/build/js/syntax-prism.f016806edde4.js',],
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/js/wiki-compat-tables.3a4ab2cc8ca1.js',],
+                'wiki-compat-signal': ['https://developer.mozilla.org/static/build/js/wiki-compat-signal.f03a10d93ede.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+        win.mdn.langCookieName = "django_language";
+
+    })(this);
+</script>
+    
+    <ul id="nav-access">
+  <li><a href="#content" id="skip-main">Skip to main content</a></li>
+  <li><a id="skip-language" href="#language">Select language</a></li>
+  <li><a href="#q" id="skip-search">Skip to search</a></li>
+</ul>
+
+    
+    
+    
+
+
+    <!-- Header -->
+    <header id="main-header" class="header-main">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">MDN Web Docs</a>
+      <div class="nav-toolbox-wrapper">
+        <nav id="main-nav" class="nav-main" role="navigation">
+    <ul>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/Web">Technologies
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"></path></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-tech-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions">Browser Extensions</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/Learn">References &amp; Guides
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"></path></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-learn-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn web development</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Games">Game development</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"></path></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-contact-submenu">
+              <div class="submenu-column">
+                <ul>
+                  <li>
+                      <a href="https://support.mozilla.org/">Get Firefox help
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path></svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://stackoverflow.com/">Get web development help
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path></svg>
+                      </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                      <a href="https://developer.mozilla.org/en-US/docs/MDN/Community">Join the MDN community</a>
+                  </li>
+                  <li>
+                      <a target="_blank" rel="noopener" href="https://github.com/mdn/sprints/issues/new?template=issue-template.md&amp;projects=mdn/sprints/2&amp;labels=user-report&amp;title=https%3A//developer.mozilla.org/en-US/docs/Tools">Report a content problem
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path></svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a target="_blank" rel="noopener" href="https://bugzilla.mozilla.org/form.mdn">Report a bug
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path></svg>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      </li>
+  </ul>
+</nav>
+        <div id="toolbox" class="toolbox">
+  <ul>
+    
+    <li class="nav-login"><div class="login">
+    
+        
+        <a href="https://developer.mozilla.org/users/github/login/?next=%2Fen-US%2Fdocs%2FTools" class="login-link js-login-link" data-service="GitHub" rel="nofollow">
+            Sign in<svg class="icon icon-github" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-label="GitHub" role="img" focusable="false">
+    <title>Github</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"></path>
+</svg>
+        </a>
+    
+</div></li>
+  </ul>
+</div>
+      </div>
+      <form id="nav-main-search" action="/en-US/search" method="get" role="search" class="nav-main-search">
+  <div class="search-wrap">
+    <label for="main-q" class="offscreen">Search</label>
+    <input type="search" id="main-q" name="q" placeholder="Search" data-value="" aria-hidden="true">
+    <span class="search-trigger">
+        <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28" aria-hidden="true">
+    <path d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 7-3.141 7-7zm8 13c0 1.094-.906 2-2 2a1.96 1.96 0 0 1-1.406-.594l-5.359-5.344a10.971 10.971 0 0 1-6.234 1.937c-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-.672 4.406-1.937 6.234l5.359 5.359c.359.359.578.875.578 1.406z"></path>
+</svg>
+    </span>
+    <button type="submit" class="offscreen">Search</button>
+    <button type="button" id="close-header-search" class="close-header-search transparent">
+        <span class="offscreen">Close search</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true" role="img"><title></title><path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"></path></svg>
+    </button>
+  </div>
+</form>
+    </header>  
+
+  <!-- Content will go here -->
+  <main id="content" role="main">
+      
+  <!-- heading -->
+  <div id="wiki-document-head" class="document-head">
+    <div class="center">
+      <div class="document-title">
+        <h1>Firefox Developer Tools</h1>
+      </div>
+
+      <!-- action buttons -->
+      <div class="document-actions">
+        
+
+  
+    
+  
+
+  
+    
+    
+        
+    
+  
+
+  
+
+  <ul class="page-buttons">
+      <li>
+          <button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false">
+              <svg class="icon icon-language" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M10.219 16.844c-.031.109-.797-.25-1-.328-.203-.094-1.125-.609-1.359-.766s-1.125-.891-1.234-.938a28.275 28.275 0 0 1-2.094 2.828c-.281.328-1.125 1.391-1.641 1.719-.078.047-.531.094-.594.063.25-.187.969-1.078 1.281-1.437.391-.453 2.25-3.047 2.562-3.641.328-.594 1.312-2.562 1.359-2.75-.156-.016-1.391.406-1.719.516-.313.094-1.172.297-1.234.344-.063.063-.016.25-.047.313s-.313.203-.484.234a1.647 1.647 0 0 1-.734 0c-.203-.047-.391-.25-.438-.328 0 0-.063-.094-.078-.359.187-.063.5-.078.844-.172s1.188-.344 1.641-.5 1.328-.484 1.594-.547c.281-.047.984-.516 1.359-.641s.641-.281.656-.203 0 .422-.016.516c-.016.078-.766 1.547-.875 1.781-.063.125-.5.953-1.203 2.047.25.109.781.328 1 .438.266.125 2.125.906 2.219.938s.266.75.234.875zM7.016 9.25c.047.266-.031.375-.063.438-.156.297-.547.5-.781.594s-.625.187-.938.187c-.141-.016-.422-.063-.766-.406-.187-.203-.328-.75-.266-.688s.516.125.719.078.688-.187.906-.25c.234-.078.703-.203.859-.219.156 0 .281.063.328.266zm10.906 2.016l.984 3.547-2.172-.656zM.609 23.766l10.844-3.625V4.016L.609 7.657v16.109zM20 18.813l1.594.484-2.828-10.266-1.563-.484-3.375 8.375 1.594.484.703-1.719 3.297 1.016zM12.141 3.781l8.953 2.875V.718zM17 24.453l2.469.203-.844 2.5L18 26.125c-1.266.812-2.828 1.437-4.312 1.687-.453.094-.969.187-1.422.187h-1.313c-1.656 0-4.672-.984-5.984-1.937-.094-.078-.125-.141-.125-.25 0-.172.125-.297.281-.297.141 0 .875.453 1.078.547 1.406.703 3.375 1.344 4.953 1.344 1.953 0 3.281-.25 5.063-1.016.516-.234.969-.531 1.453-.797zm7-16.859v16.859c-12.078-3.844-12.094-3.844-12.094-3.844C11.656 20.718.453 24.5.297 24.5a.3.3 0 0 1-.281-.203c0-.016-.016-.031-.016-.047V7.406c.016-.047.031-.125.063-.156.094-.109.219-.141.313-.172.047-.016 1-.328 2.328-.781v-6l8.719 3.094C11.532 3.36 21.251 0 21.392 0c.172 0 .313.125.313.328v6.531z"></path>
+</svg>
+              <span>Languages</span>
+          </button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li lang="ar"><bdi><a rel="internal" href="https://developer.mozilla.org/ar/docs/Tools" data-locale="ar" title="Arabic">عربي (ar)</a></bdi></li>
+                
+                  <li lang="bn-BD"><bdi><a rel="internal" href="https://developer.mozilla.org/bn-BD/docs/Tools" data-locale="bn-BD" title="Bengali (Bangladesh)">বাংলা (বাংলাদেশ) (bn-BD)</a></bdi></li>
+                
+                  <li lang="bn-IN"><bdi><a rel="internal" href="https://developer.mozilla.org/bn-IN/docs/Tools" data-locale="bn-IN" title="Bengali (India)">বাংলা (ভারত) (bn-IN)</a></bdi></li>
+                
+                  <li lang="ca"><bdi><a rel="internal" href="https://developer.mozilla.org/ca/docs/Tools" data-locale="ca" title="Catalan">Català (ca)</a></bdi></li>
+                
+                  <li lang="cs"><bdi><a rel="internal" href="https://developer.mozilla.org/cs/docs/Tools" data-locale="cs" title="Czech">Čeština (cs)</a></bdi></li>
+                
+                  <li lang="de"><bdi><a rel="internal" href="https://developer.mozilla.org/de/docs/Tools" data-locale="de" title="German">Deutsch (de)</a></bdi></li>
+                
+                  <li lang="el"><bdi><a rel="internal" href="https://developer.mozilla.org/el/docs/%CE%95%CF%81%CE%B3%CE%B1%CE%BB%CE%B5%CE%AF%CE%B1" data-locale="el" title="Greek">Ελληνικά (el)</a></bdi></li>
+                
+                  <li lang="es"><bdi><a rel="internal" href="https://developer.mozilla.org/es/docs/Tools" data-locale="es" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li lang="fa"><bdi><a rel="internal" href="https://developer.mozilla.org/fa/docs/Tools" data-locale="fa" title="Persian">فارسی (fa)</a></bdi></li>
+                
+                  <li lang="fi"><bdi><a rel="internal" href="https://developer.mozilla.org/fi/docs/Tools" data-locale="fi" title="Finnish">suomi (fi)</a></bdi></li>
+                
+                  <li lang="fr"><bdi><a rel="internal" href="https://developer.mozilla.org/fr/docs/Outils" data-locale="fr" title="French">Français (fr)</a></bdi></li>
+                
+                  <li lang="he"><bdi><a rel="internal" href="https://developer.mozilla.org/he/docs/Tools" data-locale="he" title="Hebrew">עברית (he)</a></bdi></li>
+                
+                  <li lang="hi-IN"><bdi><a rel="internal" href="https://developer.mozilla.org/hi-IN/docs/Tools" data-locale="hi-IN" title="Hindi (India)">हिन्दी (भारत) (hi-IN)</a></bdi></li>
+                
+                  <li lang="hr"><bdi><a rel="internal" href="https://developer.mozilla.org/hr/docs/Tools" data-locale="hr" title="Croatian">Hrvatski (hr)</a></bdi></li>
+                
+                  <li lang="hu"><bdi><a rel="internal" href="https://developer.mozilla.org/hu/docs/Tools" data-locale="hu" title="Hungarian">magyar (hu)</a></bdi></li>
+                
+                  <li lang="id"><bdi><a rel="internal" href="https://developer.mozilla.org/id/docs/Tools" data-locale="id" title="Indonesian">Bahasa Indonesia (id)</a></bdi></li>
+                
+                  <li lang="it"><bdi><a rel="internal" href="https://developer.mozilla.org/it/docs/Tools" data-locale="it" title="Italian">Italiano (it)</a></bdi></li>
+                
+                  <li lang="ja"><bdi><a rel="internal" href="https://developer.mozilla.org/ja/docs/Tools" data-locale="ja" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li lang="ka"><bdi><a rel="internal" href="https://developer.mozilla.org/ka/docs/Tools" data-locale="ka" title="Georgian">ქართული (ka)</a></bdi></li>
+                
+                  <li lang="kab"><bdi><a rel="internal" href="https://developer.mozilla.org/kab/docs/Tools" data-locale="kab" title="Kabyle">Taqbaylit (kab)</a></bdi></li>
+                
+                  <li lang="ko"><bdi><a rel="internal" href="https://developer.mozilla.org/ko/docs/%EB%8F%84%EA%B5%AC%EB%93%A4" data-locale="ko" title="Korean">한국어 (ko)</a></bdi></li>
+                
+                  <li lang="ml"><bdi><a rel="internal" href="https://developer.mozilla.org/ml/docs/Tools" data-locale="ml" title="Malayalam">മലയാളം (ml)</a></bdi></li>
+                
+                  <li lang="ms"><bdi><a rel="internal" href="https://developer.mozilla.org/ms/docs/Tools" data-locale="ms" title="Malay">Melayu (ms)</a></bdi></li>
+                
+                  <li lang="my"><bdi><a rel="internal" href="https://developer.mozilla.org/my/docs/Tools" data-locale="my" title="Burmese">မြန်မာဘာသာ (my)</a></bdi></li>
+                
+                  <li lang="nl"><bdi><a rel="internal" href="https://developer.mozilla.org/nl/docs/Tools" data-locale="nl" title="Dutch">Nederlands (nl)</a></bdi></li>
+                
+                  <li lang="pl"><bdi><a rel="internal" href="https://developer.mozilla.org/pl/docs/Narz%C4%99dzia" data-locale="pl" title="Polish">Polski (pl)</a></bdi></li>
+                
+                  <li lang="pt-BR"><bdi><a rel="internal" href="https://developer.mozilla.org/pt-BR/docs/Tools" data-locale="pt-BR" title="Portuguese (Brazilian)">Português (do&nbsp;Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li lang="pt-PT"><bdi><a rel="internal" href="https://developer.mozilla.org/pt-PT/docs/Tools" data-locale="pt-PT" title="Portuguese (Portugal)">Português (Europeu) (pt-PT)</a></bdi></li>
+                
+                  <li lang="ro"><bdi><a rel="internal" href="https://developer.mozilla.org/ro/docs/Tools" data-locale="ro" title="Romanian">Română (ro)</a></bdi></li>
+                
+                  <li lang="ru"><bdi><a rel="internal" href="https://developer.mozilla.org/ru/docs/Tools" data-locale="ru" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li lang="son"><bdi><a rel="internal" href="https://developer.mozilla.org/son/docs/Tools" data-locale="son" title="Songhai">Soŋay (son)</a></bdi></li>
+                
+                  <li lang="sq"><bdi><a rel="internal" href="https://developer.mozilla.org/sq/docs/Mjetet" data-locale="sq" title="Albanian">Shqip (sq)</a></bdi></li>
+                
+                  <li lang="sr"><bdi><a rel="internal" href="https://developer.mozilla.org/sr/docs/Tools" data-locale="sr" title="Serbian">Српски (sr)</a></bdi></li>
+                
+                  <li lang="sv-SE"><bdi><a rel="internal" href="https://developer.mozilla.org/sv-SE/docs/Tools" data-locale="sv-SE" title="Swedish">Svenska (sv-SE)</a></bdi></li>
+                
+                  <li lang="ta"><bdi><a rel="internal" href="https://developer.mozilla.org/ta/docs/Tools" data-locale="ta" title="Tamil">தமிழ் (ta)</a></bdi></li>
+                
+                  <li lang="th"><bdi><a rel="internal" href="https://developer.mozilla.org/th/docs/Tools" data-locale="th" title="Thai">ไทย (th)</a></bdi></li>
+                
+                  <li lang="tr"><bdi><a rel="internal" href="https://developer.mozilla.org/tr/docs/Araclar" data-locale="tr" title="Turkish">Türkçe (tr)</a></bdi></li>
+                
+                  <li lang="uk"><bdi><a rel="internal" href="https://developer.mozilla.org/uk/docs/%D0%86%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8" data-locale="uk" title="Ukrainian">Українська (uk)</a></bdi></li>
+                
+                  <li lang="vi"><bdi><a rel="internal" href="https://developer.mozilla.org/vi/docs/Tools" data-locale="vi" title="Vietnamese">Tiếng Việt (vi)</a></bdi></li>
+                
+                  <li lang="zh-CN"><bdi><a rel="internal" href="https://developer.mozilla.org/zh-CN/docs/Tools" data-locale="zh-CN" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+                  <li lang="zh-TW"><bdi><a rel="internal" href="https://developer.mozilla.org/zh-TW/docs/Tools" data-locale="zh-TW" title="Chinese (Traditional)">正體中文 (繁體) (zh-TW)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="https://developer.mozilla.org/en-US/docs/Tools$locales" rel="nofollow" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page-buttons-edit">
+          <a href="https://developer.mozilla.org/en-US/users/signin?next=/en-US/docs/Tools%24edit" class="button neutral" id="edit-button" rel="nofollow">
+              <svg class="icon icon-pencil" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M5.672 24l1.422-1.422-3.672-3.672L2 20.328V22h2v2h1.672zm8.172-14.5a.329.329 0 0 0-.344-.344.368.368 0 0 0-.266.109l-8.469 8.469a.366.366 0 0 0-.109.266c0 .203.141.344.344.344a.368.368 0 0 0 .266-.109l8.469-8.469a.366.366 0 0 0 .109-.266zM13 6.5l6.5 6.5-13 13H0v-6.5zM23.672 8c0 .531-.219 1.047-.578 1.406L20.5 12 14 5.5l2.594-2.578c.359-.375.875-.594 1.406-.594s1.047.219 1.422.594l3.672 3.656c.359.375.578.891.578 1.422z"></path>
+</svg>
+              Edit
+          </a>
+      </li>
+      
+
+        
+
+        <li class="page-buttons-advanced">
+            <button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false">
+                <svg class="icon icon-gear" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm8-1.703v3.469c0 .234-.187.516-.438.562l-2.891.438a8.86 8.86 0 0 1-.609 1.422c.531.766 1.094 1.453 1.672 2.156.094.109.156.25.156.391s-.047.25-.141.359c-.375.5-2.484 2.797-3.016 2.797a.795.795 0 0 1-.406-.141l-2.156-1.687a9.449 9.449 0 0 1-1.422.594c-.109.953-.203 1.969-.453 2.906a.573.573 0 0 1-.562.438h-3.469c-.281 0-.531-.203-.562-.469l-.438-2.875a9.194 9.194 0 0 1-1.406-.578l-2.203 1.672c-.109.094-.25.141-.391.141s-.281-.063-.391-.172c-.828-.75-1.922-1.719-2.578-2.625a.607.607 0 0 1 .016-.718c.531-.719 1.109-1.406 1.641-2.141a8.324 8.324 0 0 1-.641-1.547l-2.859-.422A.57.57 0 0 1 0 15.705v-3.469c0-.234.187-.516.422-.562l2.906-.438c.156-.5.359-.969.609-1.437a37.64 37.64 0 0 0-1.672-2.156c-.094-.109-.156-.234-.156-.375s.063-.25.141-.359c.375-.516 2.484-2.797 3.016-2.797.141 0 .281.063.406.156L7.828 5.94a9.449 9.449 0 0 1 1.422-.594c.109-.953.203-1.969.453-2.906a.573.573 0 0 1 .562-.438h3.469c.281 0 .531.203.562.469l.438 2.875c.484.156.953.344 1.406.578l2.219-1.672c.094-.094.234-.141.375-.141s.281.063.391.156c.828.766 1.922 1.734 2.578 2.656a.534.534 0 0 1 .109.344c0 .141-.047.25-.125.359-.531.719-1.109 1.406-1.641 2.141.266.5.484 1.016.641 1.531l2.859.438a.57.57 0 0 1 .453.562z"></path>
+</svg>
+                <span>Advanced</span>
+            </button>
+            <div class="submenu js-submenu" id="advanced-menu-submenu">
+                <!-- this page -->
+                <div class="submenu-column">
+                    <div class="title">Advanced</div>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Tools$history" rel="nofollow">History</a></li>
+                        
+                        
+                        
+
+
+                
+
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+      </div>
+    </div>
+  </div>
+  
+
+      <div class="center clear">
+      
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+
+              
+              
+
+              
+
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div></div>
+
+<p class="summary">Examine, edit, and debug HTML, CSS, and JavaScript on the desktop and on mobile.</p>
+
+<p>If you are looking for information on using the web developer tools 
+available in Firefox, you've come to the right place — this page 
+provides links to detailed information on all of the core tools and 
+additional tools, and further information such as how to connect to and 
+debug Firefox for Android, how to extend the devtools, and how to debug 
+the browser as a whole.</p>
+
+<p>Please explore the links found in the sidebar, and further down the 
+page. If you have any feedback or questions about the devtools, send us 
+messages on our mailing list or IRC channel (see the <a href="https://developer.mozilla.org/en-US/docs/Tools#Join_the_Developer_tools_community">community links near the bottom of the page</a>). If you have any feedback or questions specifically about the documentation, the <a class="external external-icon" href="https://discourse.mozilla.org/c/mdn" rel="noopener">MDN discourse</a> is a good place to post.</p>
+
+<div class="note">
+<p><strong>Note</strong>: If you are just getting started with web development and using developer tools, our <a href="https://developer.mozilla.org/en-US/docs/Learn">learning web development</a> docs will help you — see <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">Getting started with the Web</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools?</a> for good starting points.</p>
+</div>
+
+<h2 id="The_Core_Tools">The Core Tools<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#The_Core_Tools" data-heading-id="The_Core_Tools"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>You can open the Firefox Developer Tools from the menu by selecting <em>Tools</em> &gt; <em>Web Developer</em> &gt; <em>Toggle Tools</em> or use the keyboard shortcut&nbsp; <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> or <kbd>F12</kbd> on Windows and Linux, or <kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>I</kbd> on macOS.</p>
+
+<p>The ellipsis menu on the right-hand side of Developer Tools, contains
+ several commands that let you perform actions or change tool settings.</p>
+
+<p><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/DevTools_LayoutMenu.png" style="display: block; height: 290px; margin: 0 auto; width: 225px;"></p>
+
+<table class="standard-table" style="height: 178px; width: 840px;">
+ <tbody>
+  <tr>
+   <td><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/iframe_button.png" style="height: 69px; width: 69px;"></td>
+   <td>This button only appears when there are multiple iframes on a 
+page. Click it to display a list of the iframes on the current page and 
+select the one with which you want to work.</td>
+  </tr>
+  <tr>
+   <td><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/camera_button.png" style="height: 69px; width: 69px;"></td>
+   <td>Click this button to take a screenshot of the current page. (<strong>Note:</strong> This feature is not turned on by default and must be enabled in settings before the icon will appear.)</td>
+  </tr>
+  <tr>
+   <td><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/responsive_button.png" style="height: 69px; width: 69px;"></td>
+   <td>Toggles Responsive Design Mode.</td>
+  </tr>
+  <tr>
+   <td><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/menu_button.png" style="height: 69px; width: 69px;"></td>
+   <td>Opens the menu that includes docking options, the ability to show
+ or hide the split console, and Developer Tools settings. The menu also 
+includes links to the documentation for Firefox Web Tools and the 
+Mozilla Community.</td>
+  </tr>
+  <tr>
+   <td><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/close_button.png" style="height: 69px; width: 69px;"></td>
+   <td>Closes the Developer Tools</td>
+  </tr>
+ </tbody>
+</table>
+
+<div class="column-container">
+<div class="column-half">
+<h3 id="Page_Inspector" class="highlight-spanned"><span class="highlight-span">Page Inspector</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Page_Inspector" data-heading-id="Page_Inspector"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector"><img alt="The all-new Inspector panel in Firefox 57." src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_PageInspector.png" style="border: 1px solid black; display: block; height: 171px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>View and edit page content and layout. Visualise many aspects of the page including the box model, animations, and grid layouts.</p>
+</div>
+
+<div class="column-half">
+<h3 id="Web_Console" class="highlight-spanned"><span class="highlight-span">Web Console</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Web_Console" data-heading-id="Web_Console"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console"><img alt="The all-new Console in Firefox 57." src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_Console.png" style="border: 1px solid black; display: block; height: 403px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>See messages logged by a web page and interact with the page using JavaScript.</p>
+</div>
+</div>
+
+<div class="column-container">
+<div class="column-half">
+<h3 id="JavaScript_Debugger" class="highlight-spanned"><span class="highlight-span">JavaScript Debugger</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#JavaScript_Debugger" data-heading-id="JavaScript_Debugger"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger"><img alt="The all-new Firefox 57 Debugger.html" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_Debugger.png" style="border: 1px solid black; display: block; height: 403px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>Stop, step through, examine, and modify the JavaScript running in a page.</p>
+</div>
+
+<div class="column-half">
+<h3 id="Network_Monitor" class="highlight-spanned"><span class="highlight-span">Network Monitor</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Network_Monitor" data-heading-id="Network_Monitor"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor"><img alt="The Network panel in Firefox 57 DevTools." src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_Network.png" style="border: 1px solid black; display: block; height: 403px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>See the network requests made when a page is loaded.</p>
+</div>
+</div>
+
+<div class="column-container">
+<div class="column-half">
+<h3 id="Performance_Tools" class="highlight-spanned"><span class="highlight-span">Performance Tools</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Performance_Tools" data-heading-id="Performance_Tools"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Performance"><img alt="Performance Tools in Firefox 57 Developer Tools" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_Performance.png" style="border: 1px solid black; display: block; height: 403px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>Analyze your site's general responsiveness, JavaScript, and layout performance.</p>
+</div>
+
+<div class="column-half">
+<h3 id="Responsive_Design_Mode" class="highlight-spanned"><span class="highlight-span">Responsive Design Mode</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Responsive_Design_Mode" data-heading-id="Responsive_Design_Mode"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode"><img alt="Responsive Design mode in Firefox 57." src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_ResponsiveDesign.png" style="border-style: solid; border-width: 1px; display: block; height: 865px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>See how your website or app will look and behave on different devices and network types.</p>
+</div>
+</div>
+
+<div class="column-container">
+<div class="column-half">
+<h3 id="Accessibility_inspector" class="highlight-spanned"><span class="highlight-span">Accessibility inspector</span><a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Accessibility_inspector" data-heading-id="Accessibility_inspector"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector"><img alt="Performance Tools in Firefox 57 Developer Tools" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/landingPage_Accessibility.png" style="border-style: solid; border-width: 1px; border: 1px solid black; display: block; height: 403px; margin-left: auto; margin-right: auto; width: 425px;"></a></p>
+
+<p>Provides a means to access the page's accessibility tree, allowing you to check what's missing or otherwise needs attention.</p>
+</div>
+
+<div class="column-half">
+
+</div>
+</div>
+
+<div class="note">
+<p><strong>Note</strong>: The collective term for the UI inside which the DevTools all live is the <a href="https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox">Toolbox</a>.</p>
+</div>
+
+<h2 id="More_Tools">More Tools<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#More_Tools" data-heading-id="More_Tools"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>These developer tools are also built into Firefox. Unlike the "Core Tools" above, you might not use them every day.</p>
+
+<div class="twocolumns">
+
+
+<dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Memory">Memory</a></dt>
+ <dd>Figure out which objects are keeping memory in use.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector">Storage Inspector</a></dt>
+ <dd>Inspect cookies, local storage, indexedDB, and session storage present in a page.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/DOM_Property_Viewer">DOM Property Viewer</a></dt>
+ <dd>Inspect the page's DOM properties, functions, etc.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Eyedropper">Eyedropper</a></dt>
+ <dd>Select a color from the page.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Scratchpad">Scratchpad</a></dt>
+ <dd>A text editor built into Firefox that lets you write and execute JavaScript.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Style_Editor">Style Editor</a></dt>
+ <dd>View and edit CSS styles for the current page.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Screenshot_tool">Taking screenshots</a></dt>
+ <dd>Take a screenshot of the entire page or of a single element.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Measure_a_portion_of_the_page">Measure a portion of the page</a></dt>
+ <dd>Measure a specific area of a web page.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Rulers">Rulers</a></dt>
+ <dd>Overlay horizontal and vertical rulers on a web page</dd>
+</dl>
+</div>
+
+
+
+<div class="column-container">
+<div class="column-third">
+<p><img alt="" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/logo-developer-quantum.png" style="display: block; margin: 0px auto;"></p>
+
+<p style="text-align: center;">For the latest developer tools and features, try Firefox Developer Edition.</p>
+
+<p><a class="external external-icon" href="https://www.mozilla.org/en-US/firefox/developer/" rel="noopener" style="width: 300px; display: block; margin-left: auto; margin-right: auto; padding: 10px; text-align: center; border-radius: 4px; background-color: #81BC2E; white-space: nowrap; color: white; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25); box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2), 0px -1px 0px 0px rgba(0, 0, 0, 0.3) inset;">Download Firefox Developer Edition</a></p>
+</div>
+
+<div class="column-third"></div>
+</div>
+
+<h2 id="Connecting_the_Developer_Tools">Connecting the Developer Tools<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Connecting_the_Developer_Tools" data-heading-id="Connecting_the_Developer_Tools"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>If you open the developer tools using <a href="https://developer.mozilla.org/en-US/docs/Tools/Keyboard_shortcuts#Opening_and_closing_tools">keyboard shortcuts</a>
+ or the equivalent menu items, they'll target the document hosted by the
+ currently active tab. But you can attach the tools to a variety of 
+other targets, too, both within the current browser and in different 
+browsers or even different devices.</p>
+
+<div class="twocolumns">
+<dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/about:debugging">about:debugging</a></dt>
+ <dd>Debug add-ons, content tabs, and workers running in the browser.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_for_Android_over_Wifi">Connecting to Firefox for Android</a></dt>
+ <dd>Connect the developer tools to an instance of Firefox running on an Android device.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Working_with_iframes">Connecting to iframes</a></dt>
+ <dd>Connect the developer tools to a specific iframe in the current page.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Valence">Connecting to other browsers</a></dt>
+ <dd>Connect the developer tools to Chrome on Android and Safari on iOS.</dd>
+</dl>
+</div>
+
+<h2 id="Debugging_the_browser">Debugging the browser<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Debugging_the_browser" data-heading-id="Debugging_the_browser"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>By default, the developer tools are attached to a web page or web 
+app. But you can also connect them to the browser as a whole. This is 
+useful for browser and add-on development.</p>
+
+<div class="twocolumns">
+<dl>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console">Browser Console</a></dt>
+ <dd>See messages logged by the browser itself and by add-ons, and run JavaScript code in the browser's scope.</dd>
+ <dt><a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox">Browser Toolbox</a></dt>
+ <dd>Attach the Developer Tools to the browser itself.</dd>
+</dl>
+</div>
+
+<h2 id="Extending_the_devtools">Extending the devtools<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Extending_the_devtools" data-heading-id="Extending_the_devtools"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>For information on extending the Firefox DevTools, see <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools">Extending the developer tools</a> over in the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions">Browser Extensions</a> section of MDN.</p>
+
+<h2 id="Migrating_from_Firebug">Migrating from Firebug<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Migrating_from_Firebug" data-heading-id="Migrating_from_Firebug"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>Firebug has come to the end of its lifespan (see&nbsp;<a class="external external-icon" href="https://hacks.mozilla.org/2016/12/firebug-lives-on-in-firefox-devtools/" rel="noopener">Firebug lives on in Firefox DevTools</a>
+ for details of why), and we appreciate that some people will find 
+migrating to another less familiar set of DevTools to be challenging. To
+ ease a transition from Firebug to the Firefox developer tools, we have 
+written a handy guide — <a href="https://developer.mozilla.org/en-US/docs/Tools/Migrating_from_Firebug">Migrating from Firebug</a>.</p>
+
+<h2 id="Contribute">Contribute<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Contribute" data-heading-id="Contribute"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+
+<p>If you want to help improve the developer tools, these resources will get you started.</p>
+
+<div class="twocolumns">
+<dl>
+ <dt><a class="external external-icon" href="https://docs.firefox-dev.tools/" rel="noopener">Get Involved</a></dt>
+ <dd>Our developer documentation explains how to get involved.</dd>
+ <dt><a class="external external-icon" href="http://bugs.firefox-dev.tools/" rel="noopener">bugs.firefox-dev.tools</a></dt>
+ <dd>A tool helping to find bugs to work on.</dd>
+</dl>
+</div>
+
+<div><div class="blockIndicator communitybox" dir="ltr">
+
+    <div class="column-container">
+        <h2 id="Join_the_Developer_tools_community">Join the Developer tools community<a class="local-anchor" href="https://developer.mozilla.org/en-US/docs/Tools#Join_the_Developer_tools_community" data-heading-id="Join_the_Developer_tools_community"><svg class="icon icon-link" version="1.1" width="24" height="28" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><span>Section</span></a></h2>
+        <div class="column-half">
+            <div class="communitysubhead">Choose your preferred method for joining the discussion:</div>
+            <ul class="communitymailinglist">
+  <li><a class="external external-icon" href="https://lists.mozilla.org/listinfo/dev-developer-tools" rel="noopener">Mailing list</a></li>
+  <li><a class="external external-icon" href="https://twitter.com/FirefoxDevTools" rel="noopener"> Twitter</a></li>
+  <li><a class="external external-icon" href="http://stackoverflow.com/questions/tagged/firefox-developer-tools" rel="noopener"> Stack Overflow</a></li>
+  <li><a class="external external-icon" href="http://groups.google.com/group/mozilla.dev.developer-tools" rel="noopener">Newsgroup</a></li>
+  <li><a class="external external-icon" href="http://groups.google.com/group/mozilla.dev.developer-tools/feeds" rel="noopener">RSS feed</a></li>
+</ul>
+        </div>
+        <div class="column-half">
+            <ul class="communitycontact"><li><strong>IRC: </strong><a href="irc://irc.mozilla.org/devtools">#devtools</a> <span class="smaller">(<a class="external external-icon" href="https://wiki.mozilla.org/IRC" rel="noopener">learn more</a>)</span></li><li><strong>Team info: </strong><a class="external external-icon" href="https://wiki.mozilla.org/DevTools" rel="noopener" title="Designs and plans for the dev tools">Dev tools wiki</a></li><li><strong>Blog: </strong><a class="external external-icon" href="https://hacks.mozilla.org/" rel="noopener" title="Hacks blog">Hacks blog</a></li></ul>
+        </div>
+    </div>
+</div></div>
+                  
+                
+              </article>
+
+              <!-- contributors -->
+              <div class="wiki-block contributors">
+                <h2 class="offscreen">Document Tags and Contributors</h2>
+                
+                
+  <div class="tag-attach-list contributors-sub">
+    <svg class="icon icon-tags" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" aria-hidden="true">
+    <path d="M7 7c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm16.672 9c0 .531-.219 1.047-.578 1.406l-7.672 7.688c-.375.359-.891.578-1.422.578s-1.047-.219-1.406-.578L1.422 13.906C.625 13.125 0 11.609 0 10.5V4c0-1.094.906-2 2-2h6.5c1.109 0 2.625.625 3.422 1.422l11.172 11.156c.359.375.578.891.578 1.422zm6 0c0 .531-.219 1.047-.578 1.406l-7.672 7.688a2.08 2.08 0 0 1-1.422.578c-.812 0-1.219-.375-1.75-.922l7.344-7.344c.359-.359.578-.875.578-1.406s-.219-1.047-.578-1.422L14.422 3.422C13.625 2.625 12.11 2 11 2h3.5c1.109 0 2.625.625 3.422 1.422l11.172 11.156c.359.375.578.891.578 1.422z"></path>
+</svg>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Developing%20Mozilla" rel="nofollow">Developing Mozilla</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Guide" rel="nofollow">Guide</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/l10n:priority" rel="nofollow">l10n:priority</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Tools" rel="nofollow">Tools</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Web%20Development" rel="nofollow">Web Development</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Web%20Development:Tools" rel="nofollow">Web Development:Tools</a></li>
+      
+    </ul>
+  </div>
+
+
+                
+                  <div class="contributors-sub">
+                    <svg class="icon icon-group" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" aria-hidden="true">
+    <path d="M9.266 14a5.532 5.532 0 0 0-4.141 2H3.031C1.468 16 0 15.25 0 13.516 0 12.25-.047 8 1.937 8c.328 0 1.953 1.328 4.062 1.328.719 0 1.406-.125 2.078-.359A7.624 7.624 0 0 0 7.999 10c0 1.422.453 2.828 1.266 4zM26 23.953C26 26.484 24.328 28 21.828 28H8.172C5.672 28 4 26.484 4 23.953 4 20.422 4.828 15 9.406 15c.531 0 2.469 2.172 5.594 2.172S20.063 15 20.594 15C25.172 15 26 20.422 26 23.953zM10 4c0 2.203-1.797 4-4 4S2 6.203 2 4s1.797-4 4-4 4 1.797 4 4zm11 6c0 3.313-2.688 6-6 6s-6-2.688-6-6 2.688-6 6-6 6 2.688 6 6zm9 3.516C30 15.25 28.531 16 26.969 16h-2.094a5.532 5.532 0 0 0-4.141-2A7.066 7.066 0 0 0 22 10a7.6 7.6 0 0 0-.078-1.031A6.258 6.258 0 0 0 24 9.328C26.109 9.328 27.734 8 28.062 8c1.984 0 1.937 4.25 1.937 5.516zM28 4c0 2.203-1.797 4-4 4s-4-1.797-4-4 1.797-4 4-4 4 1.797 4 4z"></path>
+</svg>
+                    <strong>Contributors to this page:</strong>
+                    
+        <a href="https://developer.mozilla.org/en-US/profiles/irenesmith" rel="nofollow">irenesmith</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/kenj115188" rel="nofollow">kenj115188</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/AHNayeem" rel="nofollow">AHNayeem</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/sudeshana" rel="nofollow">sudeshana</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/SphinxKnight" rel="nofollow">SphinxKnight</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ahmadfahmi111" rel="nofollow">ahmadfahmi111</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sarayutppr" rel="nofollow">Sarayutppr</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/mdnwebdocs-bot" rel="nofollow">mdnwebdocs-bot</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/chrisdavidmills" rel="nofollow">chrisdavidmills</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/pbrosset" rel="nofollow">pbrosset</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/anonhack92" rel="nofollow">anonhack92</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/alifaftalildaho" rel="nofollow">alifaftalildaho</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/cognish" rel="nofollow">cognish</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/gcjuan" rel="nofollow">gcjuan</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/sembunk" rel="nofollow">sembunk</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/zylstra" rel="nofollow">zylstra</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/wbamberg" rel="nofollow">wbamberg</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/chang9260" rel="nofollow">chang9260</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ashleywilson" rel="nofollow">ashleywilson</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/violasong" rel="nofollow">violasong</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/schalkneethling" rel="nofollow">schalkneethling</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jryans" rel="nofollow">jryans</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/hamed_sh" rel="nofollow">hamed_sh</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/dustindriver" rel="nofollow">dustindriver</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ismayil007" rel="nofollow">ismayil007</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sunil.BN" rel="nofollow">Sunil.BN</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sebastianz" rel="nofollow">Sebastianz</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/1987bkh" rel="nofollow">1987bkh</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jpetto" rel="nofollow">jpetto</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/saidkocdemir" rel="nofollow">saidkocdemir</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/warpcoil" rel="nofollow">warpcoil</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/saiT56" rel="nofollow">saiT56</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/pk.prog" rel="nofollow">pk.prog</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jnachtigall" rel="nofollow">jnachtigall</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/sangramrajekakade" rel="nofollow">sangramrajekakade</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Nagendra7" rel="nofollow">Nagendra7</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/bekti" rel="nofollow">bekti</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ntim" rel="nofollow">ntim</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/mshoutx" rel="nofollow">mshoutx</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/candiigurl2go" rel="nofollow">candiigurl2go</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/KCKC" rel="nofollow">KCKC</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jswisher" rel="nofollow">jswisher</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/nindevep" rel="nofollow">nindevep</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/_GabrielDuque" rel="nofollow">_GabrielDuque</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/stanly-johnson" rel="nofollow">stanly-johnson</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/bo_lai_mei" rel="nofollow">bo_lai_mei</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jayda474" rel="nofollow">jayda474</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/znmeb" rel="nofollow">znmeb</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Aleksej" rel="nofollow">Aleksej</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/djfahim" rel="nofollow">djfahim</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/hatekate" rel="nofollow">hatekate</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Daskalov53" rel="nofollow">Daskalov53</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/cocozasuwa" rel="nofollow">cocozasuwa</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/moleather" rel="nofollow">moleather</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/mohmed1500" rel="nofollow">mohmed1500</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/zabeva" rel="nofollow">zabeva</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sheppy" rel="nofollow">Sheppy</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Canuckistani" rel="nofollow">Canuckistani</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/chrismore" rel="nofollow">chrismore</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/charansai184" rel="nofollow">charansai184</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/teoli" rel="nofollow">teoli</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/monforfait" rel="nofollow">monforfait</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/grssam" rel="nofollow">grssam</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Mingun" rel="nofollow">Mingun</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Mayzajabanfram@gmail.com" rel="nofollow">Mayzajabanfram@gmail.com</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/drlud" rel="nofollow">drlud</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/EmilyG" rel="nofollow">EmilyG</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/robnyman" rel="nofollow">robnyman</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Zzvdk" rel="nofollow">Zzvdk</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/DemitrSpb" rel="nofollow">DemitrSpb</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/boa03321" rel="nofollow">boa03321</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Melmar" rel="nofollow">Melmar</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/adeelimtiaz90" rel="nofollow">adeelimtiaz90</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/SCPD" rel="nofollow">SCPD</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/dionlar" rel="nofollow">dionlar</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/FSA" rel="nofollow">FSA</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ziyunfei" rel="nofollow">ziyunfei</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/taywebmedia" rel="nofollow">taywebmedia</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/fscholz" rel="nofollow">fscholz</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jimblandy" rel="nofollow">jimblandy</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/paulbits" rel="nofollow">paulbits</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Alfonsejo" rel="nofollow">Alfonsejo</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/mynalgaleslie" rel="nofollow">mynalgaleslie</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/CliffDweller" rel="nofollow">CliffDweller</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/silviabishop" rel="nofollow">silviabishop</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/powderpuffs" rel="nofollow">powderpuffs</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/friedl_jason" rel="nofollow">friedl_jason</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Petre" rel="nofollow">Petre</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/mjacksonis" rel="nofollow">mjacksonis</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ryuwatanabe" rel="nofollow">ryuwatanabe</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/anupkumarnag" rel="nofollow">anupkumarnag</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/pinkgothgirldee" rel="nofollow">pinkgothgirldee</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/dmon2013" rel="nofollow">dmon2013</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/kamryn12" rel="nofollow">kamryn12</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/prayas1337" rel="nofollow">prayas1337</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Hraeth" rel="nofollow">Hraeth</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Nycole" rel="nofollow">Nycole</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/da13" rel="nofollow">da13</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Timmi" rel="nofollow">Timmi</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/kscarfone" rel="nofollow">kscarfone</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Gangadhar" rel="nofollow">Gangadhar</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/RobbyGenius" rel="nofollow">RobbyGenius</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/rikobo" rel="nofollow">rikobo</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ronaldleslie" rel="nofollow">ronaldleslie</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/katesuwan" rel="nofollow">katesuwan</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/kunal_dhir" rel="nofollow">kunal_dhir</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/trevorh" rel="nofollow">trevorh</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/n1tr0g3n" rel="nofollow">n1tr0g3n</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/willbamberg" rel="nofollow">willbamberg</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Rcampbell" rel="nofollow">Rcampbell</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/sriharsha" rel="nofollow">sriharsha</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/al_man" rel="nofollow">al_man</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Geni" rel="nofollow">Geni</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/liuche" rel="nofollow">liuche</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jjangsuhyun" rel="nofollow">jjangsuhyun</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Qmralzman" rel="nofollow">Qmralzman</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/protim" rel="nofollow">protim</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sameer" rel="nofollow">Sameer</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/dinoop.p1" rel="nofollow">dinoop.p1</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/anton" rel="nofollow">anton</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/dangoor" rel="nofollow">dangoor</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ThePrisoner" rel="nofollow">ThePrisoner</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/tw2113" rel="nofollow">tw2113</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jhammel" rel="nofollow">jhammel</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/int3" rel="nofollow">int3</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/jgriffin" rel="nofollow">jgriffin</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/kohei.yoshino" rel="nofollow">kohei.yoshino</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Mgjbot" rel="nofollow">Mgjbot</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Andreas%20Wuest" rel="nofollow">Andreas Wuest</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Ptak82" rel="nofollow">Ptak82</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/BenoitL" rel="nofollow">BenoitL</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Bzbarsky" rel="nofollow">Bzbarsky</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Dria" rel="nofollow">Dria</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Listek" rel="nofollow">Listek</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Gonik" rel="nofollow">Gonik</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Jlefkowitz" rel="nofollow">Jlefkowitz</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Nickolay" rel="nofollow">Nickolay</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Mathieu%20Deaudelin" rel="nofollow">Mathieu Deaudelin</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Anonymous" rel="nofollow">Anonymous</a>
+    
+                  </div>
+                
+
+                
+                  <div class="contributors-sub">
+                    <svg class="icon icon-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M14 8.5v7c0 .281-.219.5-.5.5h-5a.494.494 0 0 1-.5-.5v-1c0-.281.219-.5.5-.5H12V8.5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zm6.5 5.5c0-4.688-3.813-8.5-8.5-8.5S3.5 9.313 3.5 14s3.813 8.5 8.5 8.5 8.5-3.813 8.5-8.5zm3.5 0c0 6.625-5.375 12-12 12S0 20.625 0 14 5.375 2 12 2s12 5.375 12 12z"></path>
+</svg>
+                    <strong>Last updated by:</strong>
+                    <a href="https://developer.mozilla.org/en-US/profiles/irenesmith" rel="nofollow">irenesmith</a>,
+                    <time datetime="2019-07-05T04:08:59.535725-07:00">Jul 5, 2019, 4:08:59 AM</time>
+                  </div>
+                
+              </div>
+            </div>
+
+            
+              <!-- quick links and approvals strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+                <!-- crumbs -->
+                
+  
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="quick-links-head">Related Topics</div>
+    
+  <ol>
+    <li class="toggle">
+      <details>
+        <summary>Core Tools</summary>
+        <ol>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector">Page Inspector</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console">Web Console</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger">JavaScript Debugger</a></li>
+          <li class="toggle">
+            <details>
+              <summary>Network Monitor</summary>
+              <ol>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Toolbar">Toolbar</a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/request_list">Network request list</a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/request_details">Network request details</a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/recording">Network traffic recording</a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Performance_Analysis">Performance analysis</a></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor/Throttling">Throttling</a></li>
+              </ol>
+            </details>
+          </li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Performance">Performance</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode">Responsive Design Mode</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector">Accessibility Inspector</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Tips">Tips</a></li>
+        </ol>
+      </details>
+    </li>
+    <li class="toggle">
+      <details>
+        <summary>More Tools</summary>
+        <ol>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Memory">Memory</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector">Storage Inspector</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/DOM_Property_Viewer">DOM Property Viewer</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector">Accessibility inspector</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Eyedropper">Eyedropper</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Taking_screenshots">Screenshot</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Scratchpad">Scratchpad</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Style_Editor">Style Editor</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Rulers">Rulers</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Measure_a_portion_of_the_page">Measure a portion of the page</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/View_source">View Source</a></li>
+        </ol>
+      </details>
+    </li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Deprecated_tools">Deprecated tools</a></li>
+    <li class="toggle">
+      <details>
+        <summary>Connecting the devtools</summary>
+        <ol>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/about:debugging">about:debugging</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_for_Android_over_Wifi">Connecting to Firefox for Android</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Working_with_iframes">Connecting to iframes</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Valence">Connecting to other browsers</a></li>
+        </ol>
+      </details>
+    </li>
+    <li class="toggle">
+      <details>
+        <summary>Debugging the browser</summary>
+        <ol>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console">Browser Console</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox">Browser Toolbox</a></li>
+        </ol>
+      </details>
+    </li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Extending_the_developer_tools">Extending the devtools</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Settings">Settings</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Release_notes">Release notes</a></li>
+  </ol>
+
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+    
+      <div class="newsletter-box">
+        <div class="newsletter">
+    <form id="newsletterForm" class="newsletter-form nodisable" name="newsletter-form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <div class="newsletter-head">
+            <h2 class="newsletter-teaser">Learn the best of web development</h2>
+            <p class="newsletter-description">Get the latest and greatest from MDN delivered straight to your inbox.</p>
+            
+        </div>
+
+        <div class="newsletter-fields">
+            <input type="hidden" id="fmt" name="fmt" value="H">
+            <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev">
+            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+            <div id="newsletterEmail" class="form-group newsletter-group-email">
+                <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+                <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required="" placeholder="you@example.com" size="30">
+            </div>
+
+            <div id="newsletterPrivacy" class="form-group form-group-agree newsletter-group-privacy hidden">
+                <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required="">
+                <label for="newsletterPrivacyInput">
+                I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+                </label>
+            </div>
+            <div id="newsletterSubmit" class="newsletter-group-submit">
+                <button id="newsletter-submit" type="submit" class="button neutral newsletter-submit">
+                    Sign up now<svg class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg" width="23" height="28" viewBox="0 0 23 28" aria-hidden="true">
+    <path d="M23 15a2.01 2.01 0 0 1-.578 1.422L12.25 26.594c-.375.359-.891.578-1.422.578s-1.031-.219-1.406-.578L8.25 25.422c-.375-.375-.594-.891-.594-1.422s.219-1.047.594-1.422L12.828 18h-11C.703 18 0 17.062 0 16v-2c0-1.062.703-2 1.828-2h11L8.25 7.406a1.96 1.96 0 0 1 0-2.812l1.172-1.172c.375-.375.875-.594 1.406-.594s1.047.219 1.422.594l10.172 10.172c.375.359.578.875.578 1.406z"></path>
+</svg>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a 
+Mozilla-related newsletter you may have to do so. Please check your 
+inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide">
+        <span>Hide Newsletter Sign-up</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true" role="img"><title></title><path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"></path></svg>
+    </button>
+</div>
+      </div>
+    
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/users/signin?next=/en-US/docs/Tools%24edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Tools$history" label="View page history"></menuitem>
+  </menu>
+
+      </div>
+  </main>
+        <div id="developer_needs" class="mdn-cta-container" aria-expanded="false" aria-hidden="true" data-banner="developer_needs">
+    <div id="mdn-cta-content" class="mdn-cta-content cta-background-linear"><div id="developer-needs" class="mdn-cta-content-container">
+    <h2 class="mdn-cta-title slab-text">
+        MDN Survey
+    </h2>
+    <p class="mdn-cta-copy">
+        Help us understand the top 10 needs of Web developers and
+        designers.
+    </p>
+</div>
+<p class="mdn-cta-button-container">
+    <a href="https://qsurvey.mozilla.com/s3/Developer-Needs-Assessment-2019" class="mdn-cta-button" target="_blank" rel="noopener">Take the survey</a>
+</p>
+    </div>
+    <div class="mdn-cta-controls">
+        <button type="button" id="mdn-cta-collapse" class="mdn-cta-collapse hide-collapse" aria-labelledby="mdn-cta-minimize-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-chevron-down" width="26" height="26" aria-hidden="true"><title id="mdn-cta-minimize-icon">Minimize
+            banner</title><g fill-rule="nonzero" fill="none"><circle fill="#222" cx="13" cy="13" r="13"></circle><path d="M13.544 17.31l6.23-6.16c.301-.297.301-.778 0-1.075l-.726-.719a.776.776 0 0 0-1.087-.001L13 14.237 8.039 9.355a.776.776 0 0 0-1.087.001l-.727.719c-.3.297-.3.778 0 1.075l6.23 6.16c.301.298.789.298 1.09 0z" fill="#FFF"></path></g></svg>
+        </button>
+        <button type="button" id="mdn-cta-close" class="mdn-cta-close" aria-labelledby="mdn-cta-close-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-close" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true" role="img"><title id="mdn-cta-close-icon">Close
+            banner</title><path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"></path></svg>
+        </button>
+    </div>
+</div>
+    
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="https://developer.mozilla.org/en-US/" class="nav-footer-logo">MDN Web Docs</a>
+<div class="footer-group footer-group-mdn">
+  <h2 class="footer-title">MDN</h2>
+  <ul class="footer-list">
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Technologies</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn Web Development</a></li>
+    <li><a href="https://developer.mozilla.org/docs/MDN/About">About MDN</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozdevnet">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://github.com/mdn/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-github" width="24" height="28" viewBox="0 0 24 28" aria-label="GitHub" role="img" focusable="false">
+    <title>GitHub</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          <a href="https://mozilla.org/" class="nav-footer-mozilla">Mozilla</a>
+<div class="footer-group footer-group-mozilla">
+  <h2 class="footer-title">Mozilla</h2>
+  <ul class="footer-list">
+    <li><a href="https://www.mozilla.org/about/">About</a></li>
+    <li><a href="https://www.mozilla.org/contact/">Contact Us</a></li>
+    <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&amp;utm_campaign=footer&amp;utm_medium=referral">Firefox</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.instagram.com/mozillagram/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-instagram" width="24" height="28" viewBox="0 0 24 28" aria-label="Instagram" role="img" focusable="false">
+    <title>Instagram</title>
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm2.156 0c0 3.406-2.75 6.156-6.156 6.156S5.844 17.406 5.844 14 8.594 7.844 12 7.844s6.156 2.75 6.156 6.156zm1.688-6.406c0 .797-.641 1.437-1.437 1.437S16.97 8.39 16.97 7.594s.641-1.437 1.437-1.437 1.437.641 1.437 1.437zM12 4.156c-1.75 0-5.5-.141-7.078.484-.547.219-.953.484-1.375.906s-.688.828-.906 1.375c-.625 1.578-.484 5.328-.484 7.078s-.141 5.5.484 7.078c.219.547.484.953.906 1.375s.828.688 1.375.906c1.578.625 5.328.484 7.078.484s5.5.141 7.078-.484c.547-.219.953-.484 1.375-.906s.688-.828.906-1.375c.625-1.578.484-5.328.484-7.078s.141-5.5-.484-7.078c-.219-.547-.484-.953-.906-1.375s-.828-.688-1.375-.906C17.5 4.015 13.75 4.156 12 4.156zM24 14c0 1.656.016 3.297-.078 4.953-.094 1.922-.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656.094-3.297.078-4.953.078s-3.297.016-4.953-.078c-1.922-.094-3.625-.531-5.031-1.937S.173 20.875.08 18.953C-.014 17.297.002 15.656.002 14s-.016-3.297.078-4.953c.094-1.922.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-.094 3.297-.078 4.953-.078s3.297-.016 4.953.078c1.922.094 3.625.531 5.031 1.937s1.844 3.109 1.937 5.031C24.016 10.703 24 12.344 24 14z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" data-locale="en-US" value="/en-US/docs/Tools" selected="selected">
+          English (US) (en-US)
+        </option>
+        
+          <option title="Arabic" data-locale="en-US" value="/ar/docs/Tools">
+            عربي (ar)
+          </option>
+          <option title="Bengali (Bangladesh)" data-locale="en-US" value="/bn-BD/docs/Tools">
+            বাংলা (বাংলাদেশ) (bn-BD)
+          </option>
+          <option title="Bengali (India)" data-locale="en-US" value="/bn-IN/docs/Tools">
+            বাংলা (ভারত) (bn-IN)
+          </option>
+          <option title="Catalan" data-locale="en-US" value="/ca/docs/Tools">
+            Català (ca)
+          </option>
+          <option title="Czech" data-locale="en-US" value="/cs/docs/Tools">
+            Čeština (cs)
+          </option>
+          <option title="German" data-locale="en-US" value="/de/docs/Tools">
+            Deutsch (de)
+          </option>
+          <option title="Greek" data-locale="en-US" value="/el/docs/%CE%95%CF%81%CE%B3%CE%B1%CE%BB%CE%B5%CE%AF%CE%B1">
+            Ελληνικά (el)
+          </option>
+          <option title="Spanish" data-locale="en-US" value="/es/docs/Tools">
+            Español (es)
+          </option>
+          <option title="Persian" data-locale="en-US" value="/fa/docs/Tools">
+            فارسی (fa)
+          </option>
+          <option title="Finnish" data-locale="en-US" value="/fi/docs/Tools">
+            suomi (fi)
+          </option>
+          <option title="French" data-locale="en-US" value="/fr/docs/Outils">
+            Français (fr)
+          </option>
+          <option title="Hebrew" data-locale="en-US" value="/he/docs/Tools">
+            עברית (he)
+          </option>
+          <option title="Hindi (India)" data-locale="en-US" value="/hi-IN/docs/Tools">
+            हिन्दी (भारत) (hi-IN)
+          </option>
+          <option title="Croatian" data-locale="en-US" value="/hr/docs/Tools">
+            Hrvatski (hr)
+          </option>
+          <option title="Hungarian" data-locale="en-US" value="/hu/docs/Tools">
+            magyar (hu)
+          </option>
+          <option title="Indonesian" data-locale="en-US" value="/id/docs/Tools">
+            Bahasa Indonesia (id)
+          </option>
+          <option title="Italian" data-locale="en-US" value="/it/docs/Tools">
+            Italiano (it)
+          </option>
+          <option title="Japanese" data-locale="en-US" value="/ja/docs/Tools">
+            日本語 (ja)
+          </option>
+          <option title="Georgian" data-locale="en-US" value="/ka/docs/Tools">
+            ქართული (ka)
+          </option>
+          <option title="Kabyle" data-locale="en-US" value="/kab/docs/Tools">
+            Taqbaylit (kab)
+          </option>
+          <option title="Korean" data-locale="en-US" value="/ko/docs/%EB%8F%84%EA%B5%AC%EB%93%A4">
+            한국어 (ko)
+          </option>
+          <option title="Malayalam" data-locale="en-US" value="/ml/docs/Tools">
+            മലയാളം (ml)
+          </option>
+          <option title="Malay" data-locale="en-US" value="/ms/docs/Tools">
+            Melayu (ms)
+          </option>
+          <option title="Burmese" data-locale="en-US" value="/my/docs/Tools">
+            မြန်မာဘာသာ (my)
+          </option>
+          <option title="Dutch" data-locale="en-US" value="/nl/docs/Tools">
+            Nederlands (nl)
+          </option>
+          <option title="Polish" data-locale="en-US" value="/pl/docs/Narz%C4%99dzia">
+            Polski (pl)
+          </option>
+          <option title="Portuguese (Brazilian)" data-locale="en-US" value="/pt-BR/docs/Tools">
+            Português (do&nbsp;Brasil) (pt-BR)
+          </option>
+          <option title="Portuguese (Portugal)" data-locale="en-US" value="/pt-PT/docs/Tools">
+            Português (Europeu) (pt-PT)
+          </option>
+          <option title="Romanian" data-locale="en-US" value="/ro/docs/Tools">
+            Română (ro)
+          </option>
+          <option title="Russian" data-locale="en-US" value="/ru/docs/Tools">
+            Русский (ru)
+          </option>
+          <option title="Songhai" data-locale="en-US" value="/son/docs/Tools">
+            Soŋay (son)
+          </option>
+          <option title="Albanian" data-locale="en-US" value="/sq/docs/Mjetet">
+            Shqip (sq)
+          </option>
+          <option title="Serbian" data-locale="en-US" value="/sr/docs/Tools">
+            Српски (sr)
+          </option>
+          <option title="Swedish" data-locale="en-US" value="/sv-SE/docs/Tools">
+            Svenska (sv-SE)
+          </option>
+          <option title="Tamil" data-locale="en-US" value="/ta/docs/Tools">
+            தமிழ் (ta)
+          </option>
+          <option title="Thai" data-locale="en-US" value="/th/docs/Tools">
+            ไทย (th)
+          </option>
+          <option title="Turkish" data-locale="en-US" value="/tr/docs/Araclar">
+            Türkçe (tr)
+          </option>
+          <option title="Ukrainian" data-locale="en-US" value="/uk/docs/%D0%86%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8">
+            Українська (uk)
+          </option>
+          <option title="Vietnamese" data-locale="en-US" value="/vi/docs/Tools">
+            Tiếng Việt (vi)
+          </option>
+          <option title="Chinese (Simplified)" data-locale="en-US" value="/zh-CN/docs/Tools">
+            中文 (简体) (zh-CN)
+          </option>
+          <option title="Chinese (Traditional)" data-locale="en-US" value="/zh-TW/docs/Tools">
+            正體中文 (繁體) (zh-TW)
+          </option>
+      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+  
+
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Privacy</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div id="license" class="contentinfo">
+              <p>© 2005-2019 Mozilla and individual contributors.</p> <p>Content is available under <a href="https://developer.mozilla.org/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.mozilla.org/static/build/js/selectivizr.8bb9e662e963.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/javascript.js"></script>
+    <script type="text/javascript" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/main.js" charset="utf-8"></script>
+    <script>
+    if (window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+  </script>
+    
+  
+    <script async="" type="text/javascript" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/wiki.js" charset="utf-8"></script>
+
+
+  
+
+  
+
+  
+
+  
+    <script async="" type="text/javascript" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/newsletter.js" charset="utf-8"></script>
+  
+
+  
+    <script async="" type="text/javascript" src="ctrl%20shift%20i%20Firefox%20Developer%20Tools%20|%20MDN_files/banners.js" charset="utf-8"></script>
+  
+
+
+</body></html>

@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://css-tricks.com/why-javascript-is-eating-html/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>
+    Why JavaScript is Eating HTML | CSS-Tricks  </title>
+<link rel="apple-touch-icon" href="https://css-tricks.com/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta property="fb:pages" content="124436167285">
+<meta name="monetization" content="$pay.stronghold.co/1a1b91b23306ab547228c43af27ac0f2411">
+<link rel="search" type="application/opensearchdescription+xml" href="https://css-tricks.com/opensearch.xml" title="CSS-Tricks Search">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://css-tricks.com/feed/">
+<link rel="stylesheet" type="text/css" href="./Why JavaScript is Eating HTML _ CSS-Tricks_files/fonts.css">
+<link rel="stylesheet" href="./Why JavaScript is Eating HTML _ CSS-Tricks_files/style.css">
+<link rel="preconnect" href="https://s3.buysellads.com/">
+<link rel="dns-prefetch" href="https://s3.buysellads.com/">
+<link rel="preconnect" href="https://srv.buysellads.com/">
+<link rel="dns-prefetch" href="https://srv.buysellads.com/">
+<link rel="preconnect" href="https://res.cloudinary.com/">
+<link rel="dns-prefetch" href="https://res.cloudinary.com/">
+<link rel="preconnect" href="https://static.codepen.io/">
+<link rel="dns-prefetch" href="https://static.codepen.io/">
+
+<meta name="description" content="Web development is always changing. One trend in particular has become very popular lately, and it fundamentally goes against the conventional wisdom">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://css-tricks.com/why-javascript-is-eating-html/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why JavaScript is Eating HTML | CSS-Tricks">
+<meta property="og:description" content="Web development is always changing. One trend in particular has become very popular lately, and it fundamentally goes against the conventional wisdom">
+<meta property="og:url" content="https://css-tricks.com/why-javascript-is-eating-html/">
+<meta property="og:site_name" content="CSS-Tricks">
+<meta property="article:publisher" content="https://www.facebook.com/CSSTricks">
+<meta property="article:tag" content="html-in-js">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="syntax">
+<meta property="article:section" content="Article">
+<meta property="article:published_time" content="2020-02-13T15:13:56+00:00">
+<meta property="article:modified_time" content="2020-02-14T22:28:44+00:00">
+<meta property="og:updated_time" content="2020-02-14T22:28:44+00:00">
+<meta property="og:image" content="https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/02/js-pattern.png?fit=1200%2C600&amp;ssl=1">
+<meta property="og:image:secure_url" content="https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/02/js-pattern.png?fit=1200%2C600&amp;ssl=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Web development is always changing. One trend in particular has become very popular lately, and it fundamentally goes against the conventional wisdom">
+<meta name="twitter:title" content="Why JavaScript is Eating HTML | CSS-Tricks">
+<meta name="twitter:site" content="@CSS">
+<meta name="twitter:image" content="https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/02/js-pattern.png?fit=1200%2C600&amp;ssl=1">
+<meta name="twitter:creator" content="@mundanedetail">
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://css-tricks.com/#organization","name":"CSS-Tricks","url":"https://css-tricks.com/","sameAs":["https://www.facebook.com/CSSTricks","https://twitter.com/CSS"],"logo":{"@type":"ImageObject","@id":"https://css-tricks.com/#logo","url":"https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/06/akqRGyta_400x400.jpg?fit=400%2C400&ssl=1","width":400,"height":400,"caption":"CSS-Tricks"},"image":{"@id":"https://css-tricks.com/#logo"}},{"@type":"WebSite","@id":"https://css-tricks.com/#website","url":"https://css-tricks.com/","name":"CSS-Tricks","description":"Tips, Tricks, and Techniques on using Cascading Style Sheets.","publisher":{"@id":"https://css-tricks.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://css-tricks.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://css-tricks.com/why-javascript-is-eating-html/#primaryimage","url":"https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/02/js-pattern.png?fit=1200%2C600&ssl=1","width":1200,"height":600},{"@type":"WebPage","@id":"https://css-tricks.com/why-javascript-is-eating-html/#webpage","url":"https://css-tricks.com/why-javascript-is-eating-html/","inLanguage":"en-US","name":"Why JavaScript is Eating HTML | CSS-Tricks","isPartOf":{"@id":"https://css-tricks.com/#website"},"primaryImageOfPage":{"@id":"https://css-tricks.com/why-javascript-is-eating-html/#primaryimage"},"datePublished":"2020-02-13T15:13:56+00:00","dateModified":"2020-02-14T22:28:44+00:00","description":"Web development is always changing. One trend in particular has become very popular lately, and it fundamentally goes against the conventional wisdom","breadcrumb":{"@id":"https://css-tricks.com/why-javascript-is-eating-html/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://css-tricks.com/why-javascript-is-eating-html/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://css-tricks.com/","url":"https://css-tricks.com/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://css-tricks.com/why-javascript-is-eating-html/","url":"https://css-tricks.com/why-javascript-is-eating-html/","name":"Why JavaScript is Eating HTML"}}]},{"@type":"Article","@id":"https://css-tricks.com/why-javascript-is-eating-html/#article","isPartOf":{"@id":"https://css-tricks.com/why-javascript-is-eating-html/#webpage"},"author":{"@id":"https://css-tricks.com/#/schema/person/dd80fce1b65b8bf6ced0f7d39db20c43"},"headline":"Why JavaScript is Eating HTML","datePublished":"2020-02-13T15:13:56+00:00","dateModified":"2020-02-14T22:28:44+00:00","commentCount":"55","mainEntityOfPage":{"@id":"https://css-tricks.com/why-javascript-is-eating-html/#webpage"},"publisher":{"@id":"https://css-tricks.com/#organization"},"image":{"@id":"https://css-tricks.com/why-javascript-is-eating-html/#primaryimage"},"keywords":"html-in-js,react,syntax","articleSection":"Article"},{"@type":["Person"],"@id":"https://css-tricks.com/#/schema/person/dd80fce1b65b8bf6ced0f7d39db20c43","name":"Mike Turley","image":{"@type":"ImageObject","@id":"https://css-tricks.com/#authorlogo","url":"https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=96&d=retro&r=pg","caption":"Mike Turley"},"description":"Tinkerer, web developer, bassist, gamer, skier. Developer at @RedHatUXD, core contributor to patternfly.org.","sameAs":["https://twitter.com/mundanedetail"]}]}</script>
+
+<link rel="alternate" type="application/rss+xml" title="CSS-Tricks » Why JavaScript is Eating HTML Comments Feed" href="https://css-tricks.com/why-javascript-is-eating-html/feed/">
+<link rel="stylesheet" id="jetpack-search-widget-css" href="./Why JavaScript is Eating HTML _ CSS-Tricks_files/search-widget-frontend.css" type="text/css" media="all">
+<!--<script src="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/js/min/jquery-3.4.1.min.js" type="text/javascript"></script>-->
+<!--<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>-->
+<!--<script src="https://c0.wp.com/p/jetpack/8.2.3/_inc/build/related-posts/related-posts.min.js" type="text/javascript"></script>-->
+<link rel="https://api.w.org/" href="https://css-tricks.com/wp-json/">
+<link rel="shortlink" href="https://css-tricks.com/?p=302876">
+<link rel="alternate" type="application/json+oembed" href="https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Fwhy-javascript-is-eating-html%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://css-tricks.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcss-tricks.com%2Fwhy-javascript-is-eating-html%2F&amp;format=xml">
+
+<meta name="generator" content="Site Kit by Google 1.3.1">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<link rel="dns-prefetch" href="https://c0.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style> <style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+<!--<script type="text/javascript">
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>-->
+<link rel="preload" as="script" href="https://static.codepen.io/assets/embed/ei.js"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/js/min/global-concat.min.js?cache_bust=1580242691266"><link rel="preload" as="script" href="https://stats.wp.com/e-202008.js"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.3"><link rel="preload" as="script" href="https://c0.wp.com/p/jetpack/8.2.3/_inc/build/lazy-images/js/lazy-images.min.js"><link rel="preload" as="script" href="https://c0.wp.com/p/jetpack/8.2.3/modules/widgets/search/js/search-widget.js"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/js/min/comment-reply.min.js?ver=1.1"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/plugins/jetpack-markdown-live-preview-comments/js/markdownify.js?ver=1"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/plugins/wp-polls/polls-js.js?ver=2.75.4"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/plugins/anti-spam-pro/js/anti-spam-pro-4.1.js"><link rel="preload" as="script" href="https://c0.wp.com/p/jetpack/8.2.3/_inc/build/photon/photon.min.js"><link rel="preload" as="script" href="https://c0.wp.com/p/jetpack/8.2.3/_inc/build/related-posts/related-posts.min.js"><link rel="preload" as="script" href="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/js/min/jquery-3.4.1.min.js"></head>
+<body class="post-template-default single single-post postid-302876 single-format-standard category-article" id="top">
+<a id="skip-nav" class="skip-nav screen-reader-text" href="https://css-tricks.com/why-javascript-is-eating-html/#maincontent">Skip to main content</a>
+<div id="top-of-site-pixel-anchor"></div>
+<header class="site-header" id="site-header">
+<div class="logo">
+<a href="https://css-tricks.com/">
+<div class="screen-reader-text">CSS-Tricks</div>
+<svg class="icon-logo-star" width="35px" height="35px">
+<use xlink:href="#icon-logo-star"></use>
+</svg>
+
+<svg class="icon-logo-text" width="214px" height="35px">
+<use xlink:href="#logo"></use>
+</svg>
+</a>
+</div>
+<div class="header-middle-area">
+<nav class="main-nav" id="main-nav">
+<ul class="main-sections">
+<li class="articles">
+<a href="https://css-tricks.com/archives/">
+<svg class="icon-nav-articles" width="26px" height="26px">
+<use xlink:href="#icon-nav-articles"></use>
+</svg>
+<span>Articles</span>
+</a>
+</li>
+<li class="videos">
+<a href="https://css-tricks.com/video-screencasts/">
+<svg class="icon-nav-video" width="26px" height="26px">
+<use xlink:href="#icon-nav-videos"></use>
+</svg>
+<span>Videos</span>
+</a>
+</li>
+<li class="almanac">
+<a href="https://css-tricks.com/almanac/">
+<svg class="icon-nav-almanac" width="26px" height="26px">
+<use xlink:href="#icon-nav-almanac"></use>
+</svg>
+<span>Almanac</span>
+</a>
+</li>
+<li class="snippets">
+<a href="https://css-tricks.com/snippets/">
+<svg class="icon-nav-snippets" width="26px" height="26px">
+<use xlink:href="#icon-nav-snippets"></use>
+</svg>
+<span>Snippets</span>
+</a>
+</li>
+<li class="newsletter">
+<a href="https://css-tricks.com/newsletters/">
+<svg class="icon-nav-newsletter" width="26px" height="26px">
+<use xlink:href="#icon-nav-newsletter"></use>
+</svg>
+<span>Newsletter</span>
+</a>
+</li>
+<li class="jobs">
+<a href="https://css-tricks.com/jobs/">
+<svg class="icon-nav-jobs" width="26px" height="26px">
+<use xlink:href="#icon-nav-jobs"></use>
+</svg>
+<span>Jobs</span>
+</a>
+</li>
+<li class="guides">
+<a href="https://css-tricks.com/guides/">
+<svg class="icon-nav-guides" width="26px" height="26px">
+<use xlink:href="#icon-nav-guides"></use>
+</svg>
+<span>Guides</span>
+</a>
+</li>
+</ul>
+<hr class="squiggle">
+<div class="mobile-other-nav">
+<a href="https://css-tricks.com/why-javascript-is-eating-html/#top">Back to Top</a>
+<a href="https://css-tricks.com/contact/">Contact</a>
+<a href="https://css-tricks.com/about/">About</a>
+<a href="https://css-tricks.com/archives/">Archives</a>
+<a href="https://css-tricks.com/advertising/">Advertise</a>
+<a href="https://css-tricks.com/jobs/">Jobs</a>
+<a href="https://css-tricks.com/license/">License</a>
+<a href="https://css-tricks.com/subscription-options/">Subscribe</a>
+<a href="https://css-tricks.com/forums/">Forums</a>
+<a href="https://css-tricks.com/guest-posting/">Guest Posting</a>
+</div>
+<div class="mobile-social">
+<a href="https://www.facebook.com/CSSTricks/" class="social-link-facebook">
+<span class="screen-reader-text">Facebook</span>
+<svg class="logo-facebook" width="20px" height="20px">
+<use xlink:href="#logo-facebook"></use>
+</svg>
+</a>
+<a href="https://twitter.com/css" class="social-link-twitter">
+<span class="screen-reader-text">Twitter</span>
+<svg class="logo-twitter" width="20px" height="20px">
+<use xlink:href="#logo-twitter"></use>
+</svg>
+</a>
+<a href="https://www.youtube.com/user/realcsstricks" class="social-link-youtube">
+<span class="screen-reader-text">YouTube</span>
+<svg class="logo-youtube" width="20px" height="20px">
+<use xlink:href="#logo-youtube"></use>
+</svg>
+</a>
+<a href="https://www.instagram.com/real_css_tricks/" class="social-link-instagram">
+<span class="screen-reader-text">Instagram</span>
+<svg class="logo-instagram" width="20px" height="20px">
+<use xlink:href="#logo-instagram"></use>
+</svg>
+</a>
+<a href="https://css-tricks.com/feed/" class="social-link-rss">
+<span class="screen-reader-text">RSS</span>
+<svg class="logo-rss" width="20px" height="20px">
+<use xlink:href="#logo-rss"></use>
+</svg>
+</a>
+</div>
+</nav>
+</div>
+<div class="search" role="search" id="search-area">
+<div class="chw-widget"><form role="search" method="get" id="searchform" class="search-form" action="https://css-tricks.com/">
+<label class="screen-reader-text" id="search-label" for="search-input">Search for:</label>
+<input type="search" required="" name="s" id="search-input" class="search-field" placeholder="e.g. flexbox" value="">
+<input type="hidden" name="orderby" value="relevance">
+<input type="hidden" name="post_type" value="post,page,guide">
+<button type="submit" class="button-search">
+<span class="screen-reader-text">Search</span>
+<svg class="icon-search" width="26px" height="26px">
+<use xlink:href="#icon-search"></use>
+</svg>
+</button>
+</form></div> </div>
+<div class="mobile-actions" id="mobile-actions">
+<button class="search-opener" id="search-opener">
+<span class="screen-reader-text">Open Search</span>
+<svg class="icon-search" width="26px" height="26px">
+<use xlink:href="#icon-search"></use>
+</svg>
+<svg class="icon-search-close" width="26px" height="26px">
+<use xlink:href="#icon-close"></use>
+</svg>
+</button>
+<button id="mobile-nav-button" class="mobile-nav-button">
+<span class="screen-reader-text">Open Navigation</span>
+<svg class="icon-burger" width="28px" height="28px">
+<use xlink:href="#icon-burger"></use>
+</svg>
+<svg class="icon-close" width="28px" height="28px">
+<use xlink:href="#icon-close"></use>
+</svg>
+</button>
+</div>
+</header>
+<div class="all-site-wrap" id="all-site-wrap">
+<!--<script type="text/javascript">
+  var articleYear = 2020;
+  var articleAuthor = "274682";
+  var articleType = "post";
+</script>-->
+<main id="post-302876" class="instapaper_body h-entry e-content">
+<article>
+<header class="mega-header mega-header-article header-with-bottom-gradient header-breadcrumbs" id="maincontent">
+<style>
+    .mega-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 75%;
+      height: 90%;
+              background-image:
+          radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.5), #100e17),
+          url(https://res.cloudinary.com/css-tricks/image/fetch/w_1200,q_auto,f_auto/https://css-tricks.com/wp-content/uploads/2019/02/js-pattern.png);
+            background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.75;
+    }
+  </style>
+<div class="mega-header-inside">
+<div class="mega-header-header">
+<span>
+<a href="https://css-tricks.com/">Home</a> <span class="breadcrumb-separator">/</span>
+<span>
+<a href="https://css-tricks.com/archives/">Articles</a> <span class="breadcrumb-separator">/</span>
+</span>
+</span>
+<h1>
+Why JavaScript is Eating&nbsp;HTML </h1>
+<div class="article-content-meta">
+<div class="author-avatar">
+<a href="https://css-tricks.com/author/miketurley/">
+<img alt="Avatar of Mike Turley" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/77e77ed902add30318fbdf97f95111a1.jpeg" srcset="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg 2x" class="avatar avatar-80 photo skip-lazy" height="80" width="80"><noscript><img alt='Avatar of Mike Turley' src='https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=80&#038;d=retro&#038;r=pg' srcset='https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&#038;d=retro&#038;r=pg 2x' class='avatar avatar-80 photo skip-lazy' height='80' width='80' /></noscript> </a>
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="author-name-area">
+<div class="author-name-prefix">
+Author
+</div>
+<a class="author-name" href="https://css-tricks.com/author/miketurley/">
+Mike Turley </a>
+</div>
+<div class="article-comments-meta">
+<div class="comments-prefix">
+55 Comments </div>
+<a class="comments-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comments">
+Join Conversation
+<svg viewBox="0 0 24 24" class="icon-arrow-right" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 12.5L23 12.5" stroke="url(#paint0_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M1 12.5H2" stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M17.5 7L23 12.5L17.5 18" stroke="url(#paint2_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+<defs>
+<lineargradient id="paint0_linear" x1="10.7498" y1="12.5" x2="11.3447" y2="9.73465" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8A00"></stop>
+<stop offset="1" stop-color="#DA1B60"></stop>
+</lineargradient>
+<lineargradient id="paint1_linear" x1="1.23436" y1="12.5" x2="2.00945" y2="12.2748" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8A00"></stop>
+<stop offset="1" stop-color="#DA1B60"></stop>
+</lineargradient>
+<lineargradient id="paint2_linear" x1="18.789" y1="17.9995" x2="23.3162" y2="17.3419" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8A00"></stop>
+<stop offset="1" stop-color="#DA1B60"></stop>
+</lineargradient>
+</defs>
+</svg>
+</a>
+</div>
+<div class="date">
+<div class="date-prefix">
+Last Updated
+</div>
+<time title="Originally published Feb 13, 2020" datetime="">
+Feb 14, 2020 </time>
+</div>
+</div>
+<div class="tags">
+<a href="https://css-tricks.com/tag/html-in-js/" rel="tag">html-in-js</a> <a href="https://css-tricks.com/tag/react/" rel="tag">react</a> <a href="https://css-tricks.com/tag/syntax/" rel="tag">syntax</a> </div>
+</div>
+<div class="hero-article-ad" id="hero-article-ad">
+</div>
+</div>
+</header>
+<div class="header-gradient-after">
+<div class="header-gradient-content">
+<div class="header-gradient-content-inside">
+<div class="bold-underline-links header-gradient-sponsor">
+<p>
+Learn Development at <a href="https://synd.co/36GY7hS">Frontend Masters</a>
+</p> </div>
+</div>
+</div>
+</div>
+<div class="page-wrap page-wrap-single">
+<div class="article-and-sidebar on-light">
+<div class="article-content">
+<p>Web development is always changing. One trend in particular has become very popular lately, and it fundamentally goes against the conventional wisdom about how a web page should be made. It is exciting for some but frustrating for others, and the reasons for both are difficult to explain.</p>
+<p>A web page is traditionally made up of three separate parts with separate responsibilities: <strong>HTML code</strong> defines the structure and meaning of the content on a page, <strong>CSS code</strong> defines its appearance, and <strong>JavaScript code</strong> defines its behavior. On teams with dedicated designers, HTML/CSS developers and JavaScript developers, this <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> aligns nicely with job roles: Designers determine the visuals and user interactions on a page, HTML and CSS developers reproduce those visuals in a web browser, and JavaScript developers add the user interaction to tie it all together and “make it work.” People can work on one piece without getting involved with all three.</p>
+<p>In recent years, JavaScript developers have realized that by defining a page’s structure in JavaScript instead of in HTML (using frameworks such as <a href="https://reactjs.org/">React</a>), they can simplify the development and maintenance of user interaction code that is otherwise much more complex to build. Of course, when you tell someone that the HTML they wrote needs to be chopped up and mixed in with JavaScript they don’t know anything about, they can (understandably) become frustrated and start asking what the heck we’re getting out of this.</p>
+<p>As a JavaScript developer on a cross-functional team, I get this question occasionally and I often have trouble answering it. All of the materials I’ve found on this topic are written for an audience that is already familiar with JavaScript — which is not terribly useful to those who focus on HTML and CSS. But this <strong>HTML-in-JS</strong> pattern (or something else that provides the same benefits) will likely be around for a while, so I think it’s an important thing that everyone involved in web development should understand.</p>
+<span id="more-302876"></span>
+<p>This article will include code examples for those interested, but my goal is to explain this concept in a way that can be understood without them.</p>
+<h3>Background: HTML, CSS, and JavaScript</h3>
+<p>To broaden the audience of this article as much as possible, I want to give a quick background on the types of code involved in creating a web page and their traditional roles. If you have experience with these, you can skip ahead.</p>
+<h4>HTML is for structure and semantic meaning</h4>
+<p>HTML (HyperText Markup Language) code defines the structure and meaning of the content on a page. For example, this article's HTML contains the text you're reading right now, the fact that it is in a paragraph, and the fact that it comes after a heading and before a CodePen.</p>
+<p>Let’s say we want to build a simple shopping list app. We might start with some HTML like this:</p>
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_ExaoyRG" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/ExaoyRG.html" height="350" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed ExaoyRG" title="CodePen Embed ExaoyRG" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+<p>We can save this code in a file, open it in a web browser, and the browser will display the rendered result. As you can see, the HTML code in this example represents a section of a page that contains a heading reading “Shopping List (2 items),” a text input box, a button reading “Add Item,” and a list with two items reading “Eggs” and “Butter.” In a traditional website, a user would navigate to an address in their web browser, then the browser would request this HTML from a server, load it and display it. If there are already items in the list, the server could deliver HTML with the items already in place, like they are in this example.</p>
+<p>Try to type something in the input box and click the “Add Item” button. You’ll notice nothing happens. The button isn’t connected to any code that can change the HTML, and the HTML can’t change itself. We’ll get to that in a moment.</p>
+<h4>CSS is for appearance</h4>
+<p>CSS (Cascading Style Sheets) code defines the appearance of a page. For example, this article's CSS contains the font, spacing, and color of the text you're reading.</p>
+<p>You may have noticed that our shopping list example looks very plain. There is no way for HTML to specify things like spacing, font sizes, and colors. This is where CSS (Cascading Style Sheets) comes in. On the same page as the HTML above, we could add CSS code to style things up a bit:</p>
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_dyPJXjb" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/dyPJXjb(1).html" height="350" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed dyPJXjb" title="CodePen Embed dyPJXjb" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+<p>As you can see, this CSS changed the font sizes and weights and gave the section a nice background color (designers, please don’t @ me; I know this is still ugly). A developer can write style rules like these and they will be applied consistently to any HTML structure: if we add more <code>&lt;section&gt;</code>, <code>&lt;button&gt;</code> or <code>&lt;ul&gt;</code> elements to this page, they will have the same font changes applied.</p>
+<p>The button still doesn’t do anything, though: that’s where JavaScript comes in.</p>
+<h4>JavaScript is for behavior</h4>
+<p>JavaScript code defines the behavior of interactive or dynamic elements on a page. For example, the embedded CodePen examples in this article are powered by JavaScript.</p>
+<p>Without JavaScript, to make the Add Item button in our example work would require us to use special HTML to make it submit data back to the server (<code>&lt;form action="..."&gt;</code>, if you’re curious). Then the browser would discard the entire page and reload an updated version of the entire HTML file. If this shopping list was part of a larger page, anything else the user was doing would be lost. Scrolled down? You’re back at the top. Watching a video? It starts over. This is how all web applications worked for a long time: any time a user interacted with a webpage, it was as if they closed their web browser and opened it again. That’s not a big deal for this simple example, but for a large complex page which could take a while to load, it’s not efficient for either the browser or the server.</p>
+<p><strong>If we want anything to change on a webpage without reloading the entire page, we need JavaScript</strong> (<a href="https://www.seguetech.com/java-vs-javascript-difference/">not to be confused with Java, which is an entirely different language</a>… don’t get me started). Let’s try adding some:</p>
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_gOOdeLY" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/gOOdeLY(1).html" height="325" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed gOOdeLY" title="CodePen Embed gOOdeLY" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+<p>Now when we type some text in the box and click the “Add Item” button, our new item is added to the list and the item count at the top is updated! In a real app, we would also add some code to send the new item to the server in the background so that it will still show up the next time we load the page.</p>
+<p>Separating JavaScript from the HTML and CSS makes sense in this simple example. Traditionally, even more complicated interactions would be added this way: HTML is loaded and displayed, and JavaScript runs afterwards to add things to it and change it. As things get more complex, however, we start needing to keep better track of things in our JavaScript.</p>
+<p>If we were to keep building this shopping list app, next we’d probably add buttons for editing or removing items from the list. Let’s say we write the JavaScript for a button that removes an item, but we forget to add the code that updates the item total at the top of the page. Suddenly we have a bug: after a user removes an item, the total on the page won’t match the list! Once we notice the bug, we fix it by adding that same <code>totalText.innerHTML</code> line from our “Add Item” code to the “Remove Item” code. Now we have the same code duplicated in more than one place. Later on, let’s say we want to change that code so that instead of “(2 items)” at the top of the page it reads “Items: 2.” We’ll have to make sure we update it in all three places: in the HTML, in the JavaScript for the “Add Item” button, and in the JavaScript for the “Remove Item” button. If we don’t, we’ll have another bug where that text abruptly changes after a user interaction.</p>
+<p>In this simple example, we can already see how quickly these things can get messy. There are ways to organize our JavaScript to make this kind of problem easier to deal with, but as things continue to get more complex, we’ll need to keep restructuring and rewriting things to keep up. As long as HTML and JavaScript are kept separate, a lot of effort can be required to make sure everything is kept in sync between them. That’s one of the reasons why new JavaScript frameworks, like React, have gained traction: they are designed to show the relationships between things like HTML and JavaScript. To understand how that works, we first need to understand just a teeny bit of computer science.</p>
+<h3>Two kinds of programming</h3>
+<p>The key concept to understand here involves the distinction between two common programming styles. (There are other programming styles, of course, but we’re only dealing with two of them here.) Most programming languages lend themselves to one or the other of these, and some can be used in both ways. It's important to grasp both in order to understand the main benefit of HTML-in-JS from a JavaScript developer's perspective.</p>
+<ul><li><a href="https://en.wikipedia.org/wiki/Imperative_programming"><strong>Imperative programming</strong></a>: The word "imperative" here implies commanding a computer to do something. A line of imperative code is a lot like <a href="https://www.learngrammar.net/a/examples-of-imperative-sentence">an imperative sentence</a> in English: it gives the computer a specific instruction to follow. In imperative programming, we must tell the computer exactly <em>how</em> to do every little thing we need it to do. In web development, this is starting to be considered "the old way" of doing things and it's what you do with vanilla JavaScript, or libraries like jQuery. The JavaScript in my shopping list example above is imperative code.<ul><li>Imperative: “Do X, then do Y, then do Z”.</li><li>Example: When the user selects this element, add the <code>.selected</code> class to it; and when the user de-selects it, remove the <code>.selected</code> class from it.</li></ul></li><li><a href="https://en.wikipedia.org/wiki/Declarative_programming"><strong>Declarative programming</strong></a>: This is a more abstract layer above imperative programming. Instead of giving the computer instructions, we instead "declare" <em>what</em> we want the results to be after the computer does something. Our tools (e.g. React) figure out the <em>how</em> for us automatically. These tools are built with imperative code on the inside that we don't have to pay attention to from the outside.<ul><li>Declarative: “The result should be XYZ. Do whatever you need to do to make that happen.”</li><li>Example: This element has the <code>.selected</code> class if the user has selected it.</li></ul></li></ul>
+<h4>HTML is a declarative language</h4>
+<p>Forget about JavaScript for a moment. Here's an important fact: <strong>HTML on its own is a declarative language</strong>. In an HTML file, you can <strong>declare</strong> something like:</p>
+<pre rel="HTML" class="language-markup" data-line=""><code markup="tt">&lt;section&gt;
+  &lt;h1&gt;Hello&lt;/h1&gt;
+  &lt;p&gt;My name is Mike.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+<p>When a web browser reads this HTML, it will figure out these <strong>imperative steps</strong> for you and execute them:</p>
+<ol><li>Create a section element</li><li>Create a heading element of level 1</li><li>Set the inner text of the heading element to “Hello”</li><li>Place the heading element into the section element</li><li>Create a paragraph element</li><li>Set the inner text of the paragraph element to “My name is Mike”</li><li>Place the paragraph element into the section element</li><li>Place the section element into the document</li><li>Display the document on the screen</li></ol>
+<p>As a web developer, the details of how a browser does these things is irrelevant; all that matters is that it does them. This is a perfect example of the difference between these two kinds of programming. In short, <strong>HTML is a declarative </strong><a href="https://en.wikipedia.org/wiki/Abstraction_(computer_science)"><strong>abstraction</strong></a><strong> wrapped around a web browser's imperative display engine.</strong> It takes care of the "how" so you only have to worry about the "what." You can enjoy life writing declarative HTML because the fine people at Mozilla or Google or Apple wrote the imperative code for you when they built your web browser.</p>
+<h4>JavaScript is an imperative language</h4>
+<p>We’ve already looked at a simple example of imperative JavaScript in the shopping list example above, and I mentioned how the complexity of an app’s features has ripple effects on the effort required to implement them and the potential for bugs in that implementation. Now let’s look at a slightly more complex feature and see how it can be simplified by using a declarative approach.</p>
+<p>Imagine a webpage that contains the following:</p>
+<ul><li>A list of labelled checkboxes, each row of which changes to a different color when it is selected</li><li>Text at the bottom like "1 of 4 selected" that should update when the checkboxes change</li><li>A "Select All" button which should be disabled if all checkboxes are already selected</li><li>A "Select None" button which should be disabled if no checkboxes are selected</li></ul>
+<p>Here’s an implementation of this in plain HTML, CSS and imperative JavaScript:</p>
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_gOYveOp" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/gOYveOp.html" height="500" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed gOYveOp" title="CodePen Embed gOYveOp" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+<p class="explanation">There isn’t much CSS code here because I’m using the wonderful <a href="https://www.patternfly.org/">PatternFly design system</a>, which provides most of the CSS for my example. I imported their CSS file in the CodePen settings.</p>
+<h4>All the small things</h4>
+<p>In order to implement this feature with imperative JavaScript, we need to give the browser several granular instructions. This is the English-language equivalent to the code in my example above:</p>
+<ul><li>In our HTML, we declare the initial structure of the page:<ul><li>There are four row elements, each containing a checkbox. The third box is checked.</li><li>There is some summary text which reads "1 of 4 selected."</li><li>There is a "Select All" button which is enabled.</li><li>There is a "Select None" button which is disabled.</li></ul></li><li>In our JavaScript, we write instructions for what to change when each of these events occurs:<ul><li>When a checkbox changes from unchecked to checked:<ul><li>Find the row element containing the checkbox and add the <code>.selected</code> CSS class to it.</li><li>Find all the checkbox elements in the list and count how many are checked and how many are not checked.</li><li>Find the summary text element and update it with the checked number and the total number.</li><li>Find the "Select None" button element and enable it if it was disabled.</li><li>If all checkboxes are now checked, find the "Select All" button element and disable it.</li></ul></li><li>When a checkbox changes from checked to unchecked:<ul><li>Find the row element containing the checkbox and remove the <code>.selected</code> class from it.</li><li>Find all the checkbox elements in the list and count how many are checked and not checked.</li><li>Find the summary text element and update it with the checked number and the total number.</li><li>Find the "Select All" button element and enable it if it was disabled.</li><li>If all checkboxes are now unchecked, find the "Select None" button element and disable it.</li></ul></li><li>When the "Select All" button is clicked:<ul><li>Find all the checkbox elements in the list and check them all.</li><li>Find all the row elements in the list and add the <code>.selected</code> class to them.</li><li>Find the summary text element and update it.</li><li>Find the "Select All" button and disable it.</li><li>Find the "Select None" button and enable it.</li></ul></li><li>When the "Select None" button is clicked:<ul><li>Find all the checkbox elements in the list and uncheck them all.</li><li>Find all the row elements in the list and remove the <code>.selected</code> class from them.</li><li>Find the summary text element and update it.</li><li>Find the "Select All" button and enable it.</li><li>Find the "Select None" button and disable it.</li></ul></li></ul></li></ul>
+<p>Wow. That's a lot, right? Well, we better remember to write code for each and every one of those things. <strong>If we forget or screw up any of those instructions, we will end up with a bug</strong> where the totals don't match the checkboxes, or a button is enabled that doesn't do anything when you click it, or a row ends up with the wrong color, or something else we didn’t think of and won’t find out about until a user complains.</p>
+<p>The big problem here is that there is no <strong><a href="https://en.wikipedia.org/wiki/Single_source_of_truth">single source of truth</a></strong> for the <a href="https://en.wikipedia.org/wiki/State_(computer_science)"><strong>state</strong></a> of our app, which in this case is “which checkboxes are checked?” The checkboxes know whether or not they are checked, of course, but, the row styles also have to know, the summary text has to know, and each button has to know. Five copies of this information are stored separately all around the HTML, and when it changes in any of those places the JavaScript developer needs to catch that and write imperative code to keep the others in sync.</p>
+<p>This is still only a simple example of one small component of a page. If that sounds like a headache, imagine how complex and fragile an application becomes when you need to write the whole thing this way. For many complex modern web applications, it’s not a scalable solution.</p>
+<h3>Moving towards a single source of truth</h3>
+<p>Tools, like React, allow us to use JavaScript in a declarative way. Just as HTML is a declarative abstraction wrapped around the web browser’s display instructions, <strong>React is a declarative abstraction wrapped around JavaScript.</strong></p>
+<p>Remember how HTML let us focus on the structure of a page and not the details of how the browser displays that structure? Well, when we use React, we can focus on the structure again by defining it based on data stored in a single place. When that source of truth changes, React will update the structure of the page for us automatically. It will take care of the imperative steps behind the scenes, just like the web browser does for HTML. (Although React is used as an example here, this concept is not unique to React and is used by other frameworks, such as Vue.)</p>
+<p>Let's go back to our list of checkboxes from the example above. In this case, the truth we care about is simple: which checkboxes are checked? The other details on the page (e.g. what the summary says, the color of the rows, whether or not the buttons are enabled) are effects derived from that same truth. So, why should they need to have their own copy of this information? They should just use the single source of truth for reference, and everything on the page should "just know" which checkboxes are checked and conduct themselves accordingly. You might say that the row elements, summary text, and buttons should all be able to automatically <em>react</em> to a checkbox being checked or unchecked. (See what I did there?)</p>
+<h4>Tell me what you want (what you really, really want)</h4>
+<p>In order to implement this page with React, we can replace the list with a few simple declarations of facts:</p>
+<ul><li>There is a list of true/false values called <code>checkboxValues</code> that represents which boxes are checked.<ul><li>Example: &nbsp;<code>checkboxValues = [false, false, true, false]</code></li><li>This list represents the <strong>truth</strong> that we have four checkboxes, and that the third one is checked.</li></ul></li><li>For each value in <code>checkboxValues</code>, there is a row element which:<ul><li>has a CSS class called <code>.selected</code> if the value is true, and</li><li>contains a checkbox, which is checked if the value is true.</li></ul></li><li>There is a summary text element that contains the text "<code>{x}</code> of <code>{y}</code> selected" where <code>{x}</code> is the number of true values in <code>checkboxValues</code> and <code>{y}</code> is the total number of values in <code>checkboxValues</code>.</li><li>There is a "Select All" button that is enabled if there are any false values in <code>checkboxValues</code>.</li><li>There is a "Select None" button that is enabled if there are any true values in <code>checkboxValues</code>.</li><li>When a checkbox is clicked, its corresponding value changes in <code>checkboxValues</code>.</li><li>When the "Select All" button is clicked, it sets all values in <code>checkboxValues</code> to true.</li><li>When the "Select None" button is clicked, it sets all values in <code>checkboxValues</code> to false.</li></ul>
+<p>You'll notice that the last three items are still imperative instructions ("When this happens, do that"), but that's the only imperative code we need to write. It's three lines of code, and they all update the single source of truth. The rest of those bullets are declarations ("there is a...") which are now built right into the definition of the page's structure. In order to do this, we write our elements in a special JavaScript <a href="https://en.wikipedia.org/wiki/Syntax">syntax</a> provided by React called JSX, which resembles HTML but can contain JavaScript logic. That gives us the ability to mix logic like "if" and "for each" with the HTML structure, so the structure can be different depending on the contents of <code>checkboxValues</code> at any given time.</p>
+<p>Here’s the same shopping list example as above, this time implemented with React:</p>
+<div class="wp-block-cp-codepen-gutenberg-embed-block cp_embed_wrapper"><iframe id="cp_embed_WNeyWOO" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/WNeyWOO(1).html" height="500" scrolling="no" frameborder="0" allowfullscreen="" allowpaymentrequest="" name="CodePen Embed WNeyWOO" title="CodePen Embed WNeyWOO" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe></div>
+<p>JSX is definitely weird. When I first encountered it, it just felt wrong. My initial reaction was, “What the heck is this? HTML doesn’t belong in JavaScript!” I wasn’t alone. That said, it’s not HTML, but rather <a href="https://reactjs.org/docs/jsx-in-depth.html">JavaScript dressed up to look like HTML</a>. It is also quite powerful.</p>
+<p>Remember that list of 20 imperative instructions above? Now we have three. For the price of defining our HTML inside our JavaScript, the rest of them come for free. <strong>React just does them for us</strong> whenever <code>checkboxValues</code> changes.</p>
+<p>With this code, it is now <strong>impossible</strong> for the summary to not match the checkboxes, or for the color of a row to be wrong, or for a button to be enabled when it should be disabled. There is an entire category of bugs which are now impossible for us to have in our app: <strong>sources of truth being out of sync</strong>. Everything flows down from the single source of truth, and we developers can write less code and sleep better at night. Well, JavaScript developers can, at least…</p>
+<h3>It's a trade-off</h3>
+<p>As web applications become more complex, maintaining the classic separation of concerns between HTML and JavaScript comes at an increasingly painful cost. HTML was originally designed for static documents, and in order to add more complex interactive functionality to those documents, imperative JavaScript has to keep track of more things and become more confusing and fragile.</p>
+<h4>The upside: predictability, reusability and composition</h4>
+<p>The ability to use a single source of truth is the most important benefit of this pattern, but the trade-off gives us other benefits, too. Defining elements of our page as JavaScript code means that we can turn chunks of it into reusable components, preventing us from copying and pasting the same HTML in multiple places. If we need to change a component, we can make that change in one place and it will update everywhere in our application (or in many applications, if we’re publishing reusable components to other teams).</p>
+<p>We can take these simple components and compose them together like LEGO bricks, creating more complex and useful components, without making them too confusing to work with. And if we’re using components built by others, we can easily update them when they release improvements or fix bugs without having to rewrite our code.</p>
+<h4>The downside: it’s JavaScript all the way down</h4>
+<p>All of those benefits do come at a cost. There are good reasons people value keeping HTML and JavaScript separate, and to get these other benefits, we need to combine them into one. As I mentioned before, moving away from simple HTML files complicates the workflow of someone who didn’t need to worry about JavaScript before. It may mean that someone who previously could make changes to an application on their own must now learn additional complex skills to maintain that autonomy.</p>
+<p>There can also be technical downsides. For example, some tools like linters and parsers expect regular HTML, and some third-party imperative JavaScript plugins can become harder to work with. Also, JavaScript isn’t the best-designed language; it’s just what we happen to have in our web browsers. Newer tools and features are making it better, but it still has some pitfalls you need to learn about before you can be productive with it.</p>
+<p>Another potential problem is that when the semantic structure of a page is broken up into abstract components, it can become easy for developers to stop thinking about what actual HTML elements are being generated at the end. Specific HTML tags like <code>&lt;section&gt;</code> and <code>&lt;aside&gt;</code> have specific semantic meanings that are lost when using generic tags like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>, even if they look the same visually on a page. This is especially important for accessibility. For example, these choices will impact how screen reader software behaves for visually impaired users. It might not be the most exciting part, but JavaScript developers should always remember that semantic HTML is <a href="https://www.petelambert.com/journal/html-is-the-web/">the most important part</a> of a web page.</p>
+<h3>Use it if it helps you, not because it’s “what’s hot right now”</h3>
+<p>It’s become a trend for developers to reach for frameworks on every single project. Some people are of the mindset that separating HTML and JavaScript is obsolete, but this isn’t true. For a simple static website that doesn’t need much user interaction, it’s not worth the trouble. The more enthusiastic React fans might disagree with me here, but <strong>if all your JavaScript is doing is creating a non-interactive webpage, you shouldn’t be using JavaScript</strong>. JavaScript doesn’t load as fast as regular HTML, so if you’re not getting a significant developer experience or code reliability improvement, it’s doing more harm than good.</p>
+<p>You also don’t have to build your entire website in React! Or Vue! Or Whatever! A lot of people don’t know this because all the tutorials out there show how to use React for the whole thing. If you only have one little complex widget on an otherwise simple website, <a href="https://reactjs.org/docs/add-react-to-a-website.html">you can use React for that one component</a>. You don’t always need to worry about webpack or Redux or Gatsby or any of the other crap people will tell you are “best practices” for your React app.</p>
+<p>For a sufficiently complex application, declarative programming is absolutely worth the trouble. It is a game changer that has empowered developers the world over to build amazing, robust and reliable software with confidence and without having to sweat the small stuff. Is React in particular the best possible solution to these problems? No. Will it just be replaced by the next thing? Eventually. But declarative programming is not going anywhere, and the next thing will probably just do it better.</p>
+<h3>What’s this I’ve heard about CSS-in-JS?</h3>
+<p>I’m not touching that one.</p>
+</div>
+<aside class="entry-unrelated sidebar">
+<div id="all-ads">
+<div id="scroll-ad-position"></div>
+<div id="sticky-sidebar-stuff">
+<div id="conditional-message">
+<div class="fem-ad fem-sidebar-ad">
+<div class="fem-header">
+<div class="fem-header-inner">
+<div class="fem-learning-partner">
+Our Learning Partner
+</div>
+<a href="https://frontendmasters.com/learn/react/?utm_source=css-tricks&amp;utm_medium=website&amp;utm_campaign=css-tricks-tags-sidebar"><img src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/fem_react_vrxkhh.png" alt="Frontend Masters logo" class="fem-logo"></a>
+</div>
+</div>
+<svg class="fem-diagonal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><defs><lineargradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c02d28"></stop><stop offset="100%" stop-color="#e66225"></stop></lineargradient></defs><polygon points="0,2 0,0 100,0 100,10" fill="url(#linear)"></polygon></svg>
+<div class="fem-message">
+ <h4>Wanna learn React deeply?</h4>
+<p>React is the web's most popular framework, always topping the charts for JavaScript developers awareness, interest, and satisfaction. Not to mention so many jobs listing it as a requirement these days. <a href="https://frontendmasters.com/?utm_source=css-tricks&amp;utm_medium=website&amp;utm_campaign=css-tricks-tags-sidebar">Frontend Masters</a> has a the best courses on the web for React, including <a href="https://frontendmasters.com/learn/react/?utm_source=css-tricks&amp;utm_medium=website&amp;utm_campaign=css-tricks-tags-sidebar">a complete learning course</a> from the best teachers in JavaScript.</p>
+</div>
+</div>
+</div> </div>
+</div>
+</aside>
+</div>
+</div>
+</article>
+</main>
+<div class="related-ads-comments-wrap">
+<div class="related-ads-comments">
+<div class="end-of-article-ads">
+<div id="conditional-message">
+<div class="fem-ad fem-footer-ad">
+<div class="fem-header">
+<div class="fem-header-inner">
+<a href="https://frontendmasters.com/learn/react/?utm_source=css-tricks&amp;utm_medium=website&amp;utm_campaign=css-tricks-tags-sidebar"><img src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/fem_react_large_qmp81d.png" alt="Frontend Masters logo" class="fem-logo-large"></a>
+</div>
+</div>
+<div class="fem-message">
+<div>
+<h4>Wanna learn React deeply?</h4>
+<p>React is the web's most popular framework, always topping the charts for JavaScript developers awareness, interest, and satisfaction. Not to mention so many jobs listing it as a requirement these days. <a href="https://frontendmasters.com/?utm_source=css-tricks&amp;utm_medium=website&amp;utm_campaign=css-tricks-tags-sidebar">Frontend Masters</a> has a the best courses on the web for React, including <a href="https://frontendmasters.com/learn/react/?utm_source=css-tricks&amp;utm_medium=website&amp;utm_campaign=css-tricks-tags-sidebar">a complete learning course</a> from the best teachers in JavaScript.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bsap-doubles side-by-side">
+<div id="bsap_1250418" class="bsarocks bsap_3469a2a501a9e18091036aa0c89f9dcb"></div>
+</div>
+</div>
+<section class="respond-area">
+<h2 class="comments-title" id="comments">
+Comments
+</h2>
+<ol class="commentlist" id="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-1754340">
+<div class="comment-wrap" id="comment-1754340">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/3eb3e46d68c25d9b1702eeafb0c8440a?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Nikunj Bhatt</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754340"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T10:43:12-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I am a full-stack developer but there are people, known as front-end designers, who have no knowledge of JavaScript and mixing JavaScript with HTML is frustrating them.</p>
+<p>Although frameworks like Vue and React updates many things atomatically but if the developer has forgotten to program something then there will be bug; framework doesn’t fix everything automatically. So, frameworks are useful for rapid development but saying – we can make that change in one place and it will update everywhere in our application (when front-end frameworks are used) – could be exaggerating.</p>
+<p>Also, it is better to separate HTML and JavaScript in publically accessible (without login) pages; and use a front-end framework in dynamic pages which depend of live updation through user interaction.</p>
+<p>Developers need to choose and use such frameworks wisely. I am completely agree with your message in the section – Use it if it helps you, not because it’s “what’s hot right now”.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754340" data-commentid="1754340" data-postid="302876" data-belowelement="comment-1754340" data-respondelement="respond" aria-label="Reply to Nikunj Bhatt">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754354">
+<div class="comment-wrap" id="comment-1754354">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754354"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T15:16:07-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<blockquote><p>
+if the developer has forgotten to program something then there will be bug; framework doesn’t fix everything automatically
+</p></blockquote>
+<p>Absolutely! Developers still need to pay attention, and you can definitely still have lots of kinds of bugs. I only mean that tools like this make it possible to define and use single sources of truth. The developer still has to take advantage of that and stick to it.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1754362">
+<div class="comment-wrap" id="comment-1754362">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/01ba77f97bb959bd48cef95375758575?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Manoj</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754362"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T18:23:36-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>What a well written article.<br>
+Engrossing read.</p>
+<p>I’d like to add, as a somewhat front end developer who relies on imperative programming, I understood completely the purpose or the point Mike was making with this article.</p>
+<p>It’s about awareness of what these new frameworks are, why people have started using them and their perks and of course things that may not be so likeable about them.</p>
+<p>Mike goes on to inform us, when and where something like react would be useful and where it would be unnecessary or complete overkill.</p>
+<p>I wonder then if instead of spending an eternity playing with native js, jquery and trying new things with these languages and learning things I could do with these two that I thought I could never do before, if I’m wasting valuable time and should ought to be ‘diving in’ to the pool with the js framework folks.</p>
+<p>The thing is, I’ve just not had any reason to use any of them just yet. Until I do, I’ll keep it html5+css3+javascript &amp; jquery+php and mysql</p>
+<p>I’m sure when the time is right I’ll be okay with jumping over to the next big framework heh.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1754385">
+<div class="comment-wrap" id="comment-1754385">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/821aab15f2120e4c844e9c1c9c275807?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Jem Shaw</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754385"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T08:28:12-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>A shame that it wasted your time. Good job it left you enough time to write a lengthy comment!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754342">
+<div class="comment-wrap" id="comment-1754342">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/c145686317e2479663d51e7b3bce503c?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">logicelf</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754342"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T11:41:04-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Great write-up, thanks Mike.</p>
+<p>“What’s this I’ve heard about CSS-in-JS?</p>
+<p>I’m not touching that one.”</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754342" data-commentid="1754342" data-postid="302876" data-belowelement="comment-1754342" data-respondelement="respond" aria-label="Reply to logicelf">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754355">
+<div class="comment-wrap" id="comment-1754355">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754355"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T15:16:41-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Glad you like it! Heh, yeah, that’s a topic for another day :) I still haven’t wrapped my head around it yet.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1754365">
+<div class="comment-wrap" id="comment-1754365">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/0e515bf05dbebe115b5ae12e0e9e61de?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">TestUser</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754365"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T19:13:20-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I am a tech-lead at a Dutch startup, and an Engineering Lead in a Pakistani tech firm.</p>
+<p>I am going to make a valid point here bur before that, I would need to justify something, my stance and my position. By skillset, I am a Cloud &amp; Solution Architect, a Computer Systems Engineer, Computer Architect, Project &amp; Product Manager, an IoT Expert, a full-stack developer, Robotist and a Graphics Designer.</p>
+<p>Now, first of all I thought this article was a comparison between server side rendering, or a review of ejs, or nest and static HTML templates, it wasn’t.</p>
+<p>Then I though it might be about HTML5, it’s APIs and power it has given to Web Developers and JS Wrappers available to consume them, it wasn’t.</p>
+<p>Bear with me since this article was a waste of my time , yet not entirely useless, but not what the title suggests.</p>
+<p>Instead it was a comparison between JSX and HTML. The article states HTML as a declarative language. SQL is a declarative language my friend. HTML is just markup, it’s a markup language. Keeping aside HTML5. And if you are talking about inline functions, you have got to do some research in how browsers work and how they render web pages.</p>
+<p>And JSX isn’t HTML, it’s just a fancy new feature that is also available in React and you might be able to utilize it by importing babel, setting up ts config and tweaking your linter.</p>
+<p>Might not want to publish articles with extremely catchy titles just to get more views out of it. PS, this page is CSS tricks. A group of Frontend End Web Developers I suppose?</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754343">
+<div class="comment-wrap" id="comment-1754343">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/d545db090bfff6c89baaf0a8843e474c?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">GiorgosK</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754343"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T11:43:50-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>You don’t have to include html in js to make app development simpler. Frameworks like Vue and svelte don’t need such abstraction and to a lot of new comers are easier to understand as they are closer to plain html/css/ks</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754343" data-commentid="1754343" data-postid="302876" data-belowelement="comment-1754343" data-respondelement="respond" aria-label="Reply to GiorgosK">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor even depth-2" id="li-comment-1754356">
+<div class="comment-wrap" id="comment-1754356">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754356"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T15:22:32-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>It’s true, this isn’t the only solution to these problems, nor is it the best. I only wanted to explain why you might do it at all. From what I’ve seen of Vue and Svelte, they are also elegant and possibly more approachable (depending on how you use them), but they have their own downsides as well. Vue’s custom attributes and template strings make it not truly HTML either, just a different abstraction. And Svelte is enough of a black box that I think I might have a hard time reasoning about it when debugging.</p>
+<p>I need to learn more about them before I criticize them too much though, I definitely am coming at this with mostly React experience, comparing it to my experience of using things like jQuery. I may yet decide to go all in with Vue or Svelte instead :) thanks for the perspective!</p>
+</div>
+</div>
+ <div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1754376">
+<div class="comment-wrap" id="comment-1754376">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/d9a2a20c00803cd6912aecb3bbfe69bb?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Daniel Vivar</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754376"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T01:36:51-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>If you use Web Components in a certain and consistent way, maintaining a well documented library for your users, then you can use HTML as it was invented for: to DEFINE content and its structure.</p>
+<p>I think eventually Web Components will rule front-end development.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment byuser comment-author-miketurley bypostauthor even depth-2" id="li-comment-1754390">
+<div class="comment-wrap" id="comment-1754390">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754390"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:15:34-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I think you may be right about web components, I have my eye on them. For now though, they don’t seem mature enough for my needs. We’ll get there!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1754440">
+<div class="comment-wrap" id="comment-1754440">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/cde84eff7c1de3f49e9e30fa0114bc0d?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Heloisa</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754440"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-15T16:53:07-07:00">February 15, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>When reading the article, that’s exactly what came to my mind. The problems listed by the author are real for React/JSX, but Vue.js still keeps some separation of concerns. In my company, designers usually code HTML/CSS and when adopting a framework to modernize our stack, we’ve opted for Vue.js as the learning curve would be a bit less steep for designers.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754344">
+<div class="comment-wrap" id="comment-1754344">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/5d2b48245d0a245e063eea7c4c00f5ed?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Jamie</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754344"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T11:54:33-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>What about these issues:</p>
+<p>Backend: for web applications, you still need a whole separate layer of, e.g., saving to a db, storing and getting configurations, etc. By moving to React, we didn’t simplify any of this.<br>
+Workflow: plain HTML/CSS/JS doesn’t require much setup for my local laptop or my commodity web server. Even a LAMP stack is quite commodified. I can use any tools I want (text editors, etc.). But to get going with React, I need to deal with (at the least) Node, dependency-management, rapid version changes…<br>
+Teamwork: One of the benefits of React-style components is that teams can work together without muddling things up. But it also requires a lot of enforced agreement — this text editor, that version, this vendor, that plugin. This was how things worked in the pre-HTML world, where Macs and Windows could barely exchange files at all. This is why “onboarding” is such a buzzword now: it doesn’t just mean “learn how the codebase works” it means “set up your environment in this exact way.”</p>
+<p>I agree with you that React might be useful for you if you’re building an “app” — but good old-fashioned web pages feel like they’ve been downgraded to an afterthought in this age of harping on “apps.”</p>
+<p>It seems to me that companies like Google and Facebook benefit when an infrastructure and particular style of working gets defined by them. It’s classic lock-in.</p>
+<p>Thanks for the thoughtful essay.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754344" data-commentid="1754344" data-postid="302876" data-belowelement="comment-1754344" data-respondelement="respond" aria-label="Reply to Jamie">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754392">
+<div class="comment-wrap" id="comment-1754392">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754392"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:26:32-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I’m glad you enjoyed the article! I think I agree with a lot of what you said here, but a few things:</p>
+<p>Backend: true, moving to React doesn’t solve any backend problems, the comparison I’m trying to draw is frontend-specific. But in my opinion if you don’t render HTML on the server, that nicely decouples the document’s presentation from the API / business logic, leaving the backend only responsible for providing those things through a nice REST API or GraphQL, etc. And you can still use tools to server-side render your React for performance and SEO if you want, although I’ll admit that can be a bit rough.</p>
+<p>Workflow: for the majority of “React and friends” projects you’ll find out there, you’re totally right. But, a bundler is not strictly required: you can use React (and even JSX) in plain static HTML+JS, using <code>&lt;script&gt;</code> tags just like jQuery. You won’t get the benefits of bundlers, but you can do quick-and-dirty prototypes this way, or add a small React widget to an otherwise static page, no webpack required: <a href="https://reactjs.org/docs/add-react-to-a-website.html" rel="nofollow ugc">https://reactjs.org/docs/add-react-to-a-website.html</a></p>
+<p>Teamwork: that’s definitely a legitimate issue with all of this, but I don’t think that’s a problem unique to something like React. An organized codebase has always been a hard thing to maintain across collaborators.</p>
+<p>All legitimate points, but it’s never so cut-and-dried.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1754508">
+<div class="comment-wrap" id="comment-1754508">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/0c5177c0b22ccd6ef7fbfd1da81d7a04?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Jim R</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754508"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-18T15:28:42-07:00">February 18, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>“But to get going with React, I need to deal with (at the least) Node, dependency-management, rapid version changes…”</p>
+<p>Yes, and that for me is the biggest barrier to learning some of these tools. I have both IIS and Apache servers on my workstation, I’ve got databases, Python, PHP, etc. and any of those were easier to understand how to install and configure than what I’ve read about Node, package managers, and all the other overhead that seems to go with these new frameworks. (If anyone can recommend a good tutorial about how to set all that up on a Windows workstation, that would be great.)</p>
+<p>But the even bigger question in my mind as I have read articles about React or all the other frameworks popping up has been, “why?” Until I read this article it sounded like a lot of extra complexity without that much benefit. Or maybe the authors were using React in a situation where it was complete overkill, and some of the other posters have alluded to. Now I get it, or at least I get it far more than before. Thanks, Mike.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754346">
+<div class="comment-wrap" id="comment-1754346">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/da1b5cd04a48e0dfd3cb69baec5a31c7?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">James</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754346"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T12:19:06-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Just another I know React thus Im holier than thou attitude. Even Google has problems with JS rendering in 2020, so you are handicapping yourself by using JS on an ecommerce website. Who can post the little brain vs the big brain meme here for me.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754346" data-commentid="1754346" data-postid="302876" data-belowelement="comment-1754346" data-respondelement="respond" aria-label="Reply to James">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor even depth-2" id="li-comment-1754357">
+<div class="comment-wrap" id="comment-1754357">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754357"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T15:25:24-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Where in my article do I imply that I’m holier than thou? I apologize if I came across that way. I am only trying to explain the reasoning behind why you might use it. It absolutely has flaws. SEO is a big one, if you run into that issue I think that falls under “use it if it helps you”.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt depth-2" id="li-comment-1754366">
+<div class="comment-wrap" id="comment-1754366">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/bb985a8b8cfd2c30c415f6550251b93c?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Ders</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754366"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T19:14:58-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>It’s ….zero percent that. Literally not a single smug or I’ll conceived point in the entire article.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754347">
+<div class="comment-wrap" id="comment-1754347">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/403052ba5a02a69af4fe2eb77b51cf44?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Casey</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754347"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T12:27:56-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>This isn’t really new … Blade = HTML-in-PHP, ERB = HTML-in-Ruby, jinja = HTML-in-Python, JSX = HTML-in-JavaScript.</p>
+<p>Before, designers wrote templates and developers wrote PHP/Python/Ruby. Now the sensible split is between presentational vs stateful components.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754347" data-commentid="1754347" data-postid="302876" data-belowelement="comment-1754347" data-respondelement="respond" aria-label="Reply to Casey">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754358">
+<div class="comment-wrap" id="comment-1754358">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754358"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T15:28:44-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Yeah, I perhaps should have given more background on the history of other server-rendered templating frameworks. This is only new in the sense of being able to write client-side stuff declaratively; those examples all still fall under the “changes require reloading the page” flaw I think. They are absolutely better solutions if you don’t need a lot of fancy client-side widgets, though. You can always use a little of both :)</p>
+<p>Maybe it would have been worth getting into presentational vs stateful components, but I felt that might be a bit out of scope of the article. I appreciate you adding that context.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1754370">
+<div class="comment-wrap" id="comment-1754370">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/bcc219fc829c9c4318db30b5cec4db34?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">ram</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754370"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T23:33:08-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Good article. Nice explanation.</p>
+<p>Please let me know how it is different from Angular.<br>
+Whenever controls need to be created dynamically we can use anyone of the JQuery or Angular or React etc., Frameworks.</p>
+<p>I really liked the way you explained ”you can use React for that one component”.</p>
+<p>If I have many HTML files, where user interaction is very limited and I have only one component where interaction is maximum, then please provide an example of developing the single component and how to integrate all of them into a single website and publish.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754393">
+<div class="comment-wrap" id="comment-1754393">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754393"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:35:09-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>My impression of the main difference between React and Angular is that React provides a top-down uni-directional flow of data (everything comes from the source of truth), and Angular provides bi-directional data binding (link some stuff together so that when one of them changes the others will automatically change). I find React to be more predictable, and even though its elements are defined in JSX/JavaScript they are closer to describing normal HTML than Angular, which involves a bunch of custom attributes in its HTML. React is also less opinionated (which can be good and bad), whereas Angular is sort of an all-in-one package where you need to do everything “the Angular way”. They each have their place, and I will admit I am biased as I have much more experience with React.</p>
+<p>For an example of adding a single React component to an otherwise non-React website, see the page in the React docs that I linked to in the “Use it if it helps you” section: <a href="https://reactjs.org/docs/add-react-to-a-website.html" rel="nofollow ugc">https://reactjs.org/docs/add-react-to-a-website.html</a>. Basically, you can include an empty <code>&lt;div&gt;</code> somewhere on your website and then tell React to render there, and it will take over that div’s children and leave the rest of your page alone.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1754350">
+<div class="comment-wrap" id="comment-1754350">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/cfccaf165d582855ae4cfe7030244af0?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Michael Trilford</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754350"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T14:22:26-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I don’t mind the HTML/CSS-in-JS approach, as long as your output is well crafted. Being able to deliver that craft is only possible by having a great foundation of the basics in the three languages mentioned.</p>
+<p>What I mean by that, the components are not rendering “div soup” to the DOM and they work well (semantic) with the components they’re being slotted into.</p>
+<p>With CSS-in-JS, as long as it isn’t inline-styles, and the developer experience of working with CSS-in-JS is a good one, I’m all for it.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754350" data-commentid="1754350" data-postid="302876" data-belowelement="comment-1754350" data-respondelement="respond" aria-label="Reply to Michael Trilford">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754359">
+<div class="comment-wrap" id="comment-1754359">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754359"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T15:29:48-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>100% agree.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754360">
+<div class="comment-wrap" id="comment-1754360">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/ede0e9fceb3b1e87a1981780aeeb7f48?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Bob Hamilton</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754360"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T17:08:09-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Tim Berners-Lee had the wisdom to foresee this. His <em>Rule of Least Power</em> has been a guiding principle of the W3C for years.</p>
+<p><a href="https://www.w3.org/2001/tag/doc/leastPower" rel="nofollow ugc">https://www.w3.org/2001/tag/doc/leastPower</a></p>
+<blockquote><p>
+When designing computer systems, one is often faced with a choice between using a more or less powerful language for publishing information, for expressing constraints, or for solving some problem. This finding explores tradeoffs relating the choice of language to reusability of information. The “Rule of Least Power” suggests choosing the least powerful language suitable for a given purpose.
+</p></blockquote>
+<p>And with regards to HTML:</p>
+<blockquote><p>
+Many Web technologies are designed to exploit the Rule of Least Power. HTML is intentionally designed not to be a full programming language, so that many different things can be done with an HTML document: software can present the document in various styles, extract tables of contents, index it, and so on. Similarly, CSS is a declarative styling language that is easily analyzed. The Semantic Web is an attempt, largely, to map large quantities of existing data onto a common language so that the data can be analyzed in ways never dreamed of by its creators. If, for example, some weather data is published as a Web resource using RDF, a user can retrieve it as a table, perhaps average it, plot it, or deduce things from it in combination with other information. At the other end of the scale is the weather information conveyed by an ingeniously written Java applet. While the applet might provide a very cool user interface or other sophisticated features, the results of the program will not usually be predictable in advance. A search engine finding the resource will have no idea of what the weather data is or even, in the absence of other information, that it is a weather-related resource The only way to find out what a Java applet means is generally to set it running, and see what it does. Thus, HTML, CSS and the Semantic Web are examples of Web technologies designed with “least power” in mind. Web resources that use these technologies are more likely to be reused in flexible ways than those expressed in more powerful languages.
+</p></blockquote>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754360" data-commentid="1754360" data-postid="302876" data-belowelement="comment-1754360" data-respondelement="respond" aria-label="Reply to Bob Hamilton">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754394">
+<div class="comment-wrap" id="comment-1754394">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754394"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:38:36-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Wise words, I can’t argue with that. That’s a big thing to consider in the trade-off. I think React is best used when it preserves things like the ability to index and read data, either through server-side rendering (e.g. Gatsby) or by designing the application’s backend to include a public-facing API so that the React view is just one front-end, consuming the same data that is also available programmatically for other uses.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1754364">
+<div class="comment-wrap" id="comment-1754364">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/b5266438132d581ec2032b9c07fc96dc?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Sam</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754364"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T19:03:25-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>What is diff btw Framework and Library?</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754364" data-commentid="1754364" data-postid="302876" data-belowelement="comment-1754364" data-respondelement="respond" aria-label="Reply to Sam">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754395">
+<div class="comment-wrap" id="comment-1754395">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754395"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:40:48-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>To be honest, I think the distinction has been lost a bit in the JavaScript world; they are often used interchangeably, and I’m guilty of that.</p>
+<p>According to Wikipedia, “A library offers functions to be called by its parent code, whereas a framework defines the entire application design.” (<a href="https://en.wikipedia.org/wiki/JavaScript_framework" rel="nofollow ugc">https://en.wikipedia.org/wiki/JavaScript_framework</a>) So by that definition, I would consider React to be a library, not a framework. And in fact React’s own website calls it that. Thanks for pointing that out!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754367">
+<div class="comment-wrap" id="comment-1754367">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/d7ecdb1fe3ca322b368090eb18fa8b02?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">JD</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754367"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T20:13:37-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I like frameworks like React, but I also hate the way they (mostly) leave a user with no JavaScript in the dark. I personally like to couple react with a server side render for the initial load.</p>
+<p>I feel like this post started on the wrong foot by mentioning that you need Javascript to stop the whole page from reloading. Most websites for code editing post to an iframe to refresh the results. It’s important we don’t forget all the HTML &amp; CSS tools given to us.</p>
+<p>I’ll shortly be embarking on a journey of creating a real time IRC client that will work seamlessly without JS and/or cookies (mostly using some css-tricks!).</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754367" data-commentid="1754367" data-postid="302876" data-belowelement="comment-1754367" data-respondelement="respond" aria-label="Reply to JD">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754389">
+<div class="comment-wrap" id="comment-1754389">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754389"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:09:17-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<blockquote><p>
+Most websites for code editing post to an iframe to refresh the results
+</p></blockquote>
+<p>Can you elaborate on this? I would think that frame’s contents still have the same restrictions, but I haven’t come across code like that before. That sounds like an interesting solution!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1754368">
+<div class="comment-wrap" id="comment-1754368">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/46bfac6be3bcfd77fa65b23f50a3a2b8?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">cmakeshift</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754368"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-13T20:14:52-07:00">February 13, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Just watch then what WebAssembly is going to do in some years from now. A lot of enterprise systems will become dumb terminals with nothing more than a canvas and a web socket, and will amount to a VNC client.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754368" data-commentid="1754368" data-postid="302876" data-belowelement="comment-1754368" data-respondelement="respond" aria-label="Reply to cmakeshift">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1754371">
+<div class="comment-wrap" id="comment-1754371">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/14ad276f982255e5355fc525f0561900?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Sean</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754371"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T00:12:58-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>There’s so much to unpack here, and we have certainly strayed very far away from our roots. How does reaching for a tool like react solve the problem of a single source of truth differently than using ES modules, classes, and commonJS? And how about the template tag and HTML imports to separate markup and components?</p>
+<p>The inputs are all missing labels in the examples, and the table summary should be a caption element with aria-live=assertive.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754371" data-commentid="1754371" data-postid="302876" data-belowelement="comment-1754371" data-respondelement="respond" aria-label="Reply to Sean">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor even depth-2" id="li-comment-1754396">
+<div class="comment-wrap" id="comment-1754396">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754396"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:46:34-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Thank you for pointing out the missing labels and aria attributes! I need to go back and update those, and practice what I preach. I’m still learning how to make accessible markup, I am one of the JavaScript developers who learned all this in the wrong order!</p>
+<p>As for your question, those things solve a different source-of-truth problem, helping to avoid repeated code. React manages the source of truth for view state specifically, and helps to avoid repeated state (user input, data loaded from an API, results of user interaction, etc) as well as code.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754374">
+<div class="comment-wrap" id="comment-1754374">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/52aa4213aa310b14d095094f3867330c?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Colin Ant</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754374"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T00:56:01-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>This is a helpful article. Especially for relative new comers. I think Mike is clear about the intent of the article too so there is no air of holiness at all. It is clearly not a sermon, it is a commentary that provides a low gradient insight into a very current debate. Good work. Thanks Mike.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754374" data-commentid="1754374" data-postid="302876" data-belowelement="comment-1754374" data-respondelement="respond" aria-label="Reply to Colin Ant">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754375">
+<div class="comment-wrap" id="comment-1754375">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/fb490f81c96b96c7f439011e5394fa55?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Oxford Harrison</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754375"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T01:22:10-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I still don’t see the rationale behind HTML/CSS-in-JS! If we must take back our words on the principle of Separation of Concerns, we must as well take back our words on all other design and development principles like Inversion of Control, the Single Responsibility principle, etc. If it doesn’t make sense to separate things, why do you componentize? Why isn’t a monolithic UI better? You see, it’s really shameful that even professional devs are having to preach one thing but practice another! Or maybe React developers never really understood any of these and the REASON we have 3 distinct technologies (HTML, CSS and JS) in the first place.</p>
+<p>A good framework is one that facilitates development all within the spheres of our profession; one that makes it easier to do the right thing, and harder to do the wrong thing. It’s sad how many developers have got caught up in this. I can’t begin to imagine how many web apps have been made in this code mess, how they’re surviving currently, and the amount of time and resources that will sooner or later be needed to rewrite them to normalcy as the community is now welcoming “sane” UI frameworks like CHTML (<a href="https://github.com/onephrase/chtml" rel="nofollow ugc">https://github.com/onephrase/chtml</a>).</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754375" data-commentid="1754375" data-postid="302876" data-belowelement="comment-1754375" data-respondelement="respond" aria-label="Reply to Oxford Harrison">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754397">
+<div class="comment-wrap" id="comment-1754397">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754397"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:48:42-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I disagree. Just because we’re experimenting with rethinking one thing doesn’t mean we need to rethink everything.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+<li class="comment even depth-2" id="li-comment-1754406">
+<div class="comment-wrap" id="comment-1754406">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/90567047601967d15fb73e97298d17e6?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Paul Henschel</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754406"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T15:03:29-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>React differs between separation of technology and separation off concern, it’s all in their docs. It separates state from from the view layer, but treats all elements of the view layer as a function of state which is not just logical, you could argue that we haven’t understood what separation of concern meant before react.</p>
+<p>Look at frameworks before react. They separate technologies, which terminated scope. But you obviously need these technologies to be dynamic, so scope is introduced back via DI and logic is introduced back via syntax extensions (for-each, if, etc). In other words they separate for no reason at all, just to glue these parts back with massive complexity.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754378">
+<div class="comment-wrap" id="comment-1754378">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/0cb10f04ad7a06de29f01ac2c7be04bf?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Yaw Manuel</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754378"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T02:01:44-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Using HTML @import to import HTML files into other html files is the React for me.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754378" data-commentid="1754378" data-postid="302876" data-belowelement="comment-1754378" data-respondelement="respond" aria-label="Reply to Yaw Manuel">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754379">
+<div class="comment-wrap" id="comment-1754379">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/821aab15f2120e4c844e9c1c9c275807?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Jem Shaw</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754379"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T02:06:34-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>As a one‐man‐band marketing consultant I sometimes get dragged into full-build website projects where I have to stretch patchy skills to meet client requirements. Coming across well-written, opinionless and accessible content like this is a godend.<br>
+Nicely done, Mike, you’re bookmarked!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754379" data-commentid="1754379" data-postid="302876" data-belowelement="comment-1754379" data-respondelement="respond" aria-label="Reply to Jem Shaw">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754380">
+<div class="comment-wrap" id="comment-1754380">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/84b7c457e30f9c71b3950a8276237c39?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Gabriel de Kadt</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754380"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T03:20:58-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Thank you and the CSS-Tricks team for this article. Interesting, reasonable, informative. Declarative vs Imperative? Small brain here. didn’t know that. Learnt something new. :thumbsup:</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754380" data-commentid="1754380" data-postid="302876" data-belowelement="comment-1754380" data-respondelement="respond" aria-label="Reply to Gabriel de Kadt">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754381">
+<div class="comment-wrap" id="comment-1754381">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/307f38eefe6a474014ae5ff6615ab1f9?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Gerhard Großmann</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754381"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T03:49:28-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Thank you so much for this overview! I now better understand, when and why to use HTML-in-JS frameworks, and that they have their good. I also learnt what their selective purpose should be and that they are not meant to supersede HTML per se – hopefully some overly enthusiasts of React, Vue etc. will read your article, too.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754381" data-commentid="1754381" data-postid="302876" data-belowelement="comment-1754381" data-respondelement="respond" aria-label="Reply to Gerhard Großmann">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754383">
+<div class="comment-wrap" id="comment-1754383">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/b8ebd0096a5cdb2b7435c1c44d791b83?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Hammed Oyedele</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754383"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T05:36:12-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I don’t understand why people are shouting HTML in JavaScript is weird…this same set of people have used HTML in PHP and other server side template systems before and to spoil it all, they are saying Vue, Angular or Svelte is better and they never take time to inspect the final output of these guys and find out it is all HTML in JavaScript at the end.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754383" data-commentid="1754383" data-postid="302876" data-belowelement="comment-1754383" data-respondelement="respond" aria-label="Reply to Hammed Oyedele">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor even depth-2" id="li-comment-1754398">
+<div class="comment-wrap" id="comment-1754398">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754398"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T10:50:05-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>I have to agree with you there. At least JSX prevents SQL injections from interpolating user input into string-template-based HTML ;)</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1 buried" id="li-comment-1754400">
+<div class="comment-wrap" id="comment-1754400">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/a059816e4b3f9c8647c5240f9108d780?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Abdul Wakeel</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754400"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T11:58:47-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Excellent explanation of imperative and declarative programming , after a long time I read one of the best article.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754400" data-commentid="1754400" data-postid="302876" data-belowelement="comment-1754400" data-respondelement="respond" aria-label="Reply to Abdul Wakeel">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-1754401">
+<div class="comment-wrap" id="comment-1754401">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/e92efc6a6f934631b4f272461cd0e8e1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Tom</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754401"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T12:14:39-07:00">February 14, 2020</time></div>
+ </div>
+<div class="comment-content article-content">
+<p>Great article, I’m trying to push the company I work for into a more declarative JS framework and have been given the time to experiment. For me, I’ve kinda fallen in love with Angular as it still has a certain degree of separation of concerns (as in separate files for html, styles and the typescript. I’ve found during this experimentation with the rest of my team that the other FE devs who are more html and scss leaning can work on what they need to easier than they could with react or vue</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754401" data-commentid="1754401" data-postid="302876" data-belowelement="comment-1754401" data-respondelement="respond" aria-label="Reply to Tom">Reply</a> </div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-miketurley bypostauthor odd alt depth-2" id="li-comment-1754404">
+<div class="comment-wrap" id="comment-1754404">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/77e77ed902add30318fbdf97f95111a1?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Mike Turley</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754404"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T14:21:27-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>That is definitely a strong point in favor of Angular, and also of Vue and Svelte for that matter. I think those land at a different place on the trade-off spectrum here, but (strictly my opinion) React’s predictability and ecosystem put it ahead of those for me, at least for sufficiently complex UIs. It’s definitely a decision each team should make based on their own priorities and the task at hand.</p>
+<p>Personally, I am very curious to see what the future holds for Web Components, since they could be used within any of these frameworks. I still have issues with them, but they are moving in the right direction. Maybe my next article will be about that!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754407">
+<div class="comment-wrap" id="comment-1754407">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/90567047601967d15fb73e97298d17e6?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Paul Henschel</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754407"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T15:04:12-07:00">February 14, 2020</time></div>
+</div>
+ <div class="comment-content article-content">
+<p>React differs between separation of technology and separation off concern, it’s all in their docs. It separates state from from the view layer, but treats all elements of the view layer as a function of state which is not just logical, you could argue that we haven’t understood what separation of concern meant before react.</p>
+<p>Look at frameworks before react. They separate technologies, which terminated scope. But you obviously need these technologies to be dynamic, so scope is introduced back via DI and logic is introduced back via syntax extensions (for-each, if, etc). In other words they separate for no reason at all, just to glue these parts back with massive complexity.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754407" data-commentid="1754407" data-postid="302876" data-belowelement="comment-1754407" data-respondelement="respond" aria-label="Reply to Paul Henschel">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1 buried" id="li-comment-1754409">
+<div class="comment-wrap" id="comment-1754409">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/6e95ef2255fdcd63cdc9c4755faafb3d?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Kuldip D Gandhi</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754409"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T15:46:20-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Awesome article. Aptly described.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754409" data-commentid="1754409" data-postid="302876" data-belowelement="comment-1754409" data-respondelement="respond" aria-label="Reply to Kuldip D Gandhi">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754411">
+<div class="comment-wrap" id="comment-1754411">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/15db5db42c4389bdd67eed0bc134d07d?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">akC</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754411"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T16:39:11-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Thanks alot for this spoon feeding article mate. It felt very much like tailor made for me. Till this moment i was hesitant to try and raged on this js eating html programming method. Im one of the guy who liked keeping html css and js distinct even in a complex applications..i knew that these new frameworks were changing this method but it only made me go nuts like why!!!<br>
+Every inch of my ambiguity is clear now and frankly you have given me a confident tap on shoulder on how i should perspective these new frameworks.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754411" data-commentid="1754411" data-postid="302876" data-belowelement="comment-1754411" data-respondelement="respond" aria-label="Reply to akC">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754417">
+<div class="comment-wrap" id="comment-1754417">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/828bb871a5cbcfc60807647375a77b42?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Luke Young</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754417"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-14T21:48:43-07:00">February 14, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>What a great article. You absolutely explained it perfectly. I’m a full stack developer but I have felt uneasy with putting HTML into js. I feel like it’s an evolutionary step which very soon we will not do any more. I’m still a purest on the front end HTML/CSS/JS. For all the above reasons you mentioned. On the backend we use partial views so this is how reusable single source components are achieved. What’s delivered at the client side is really just a dynamic response but the client gets a pure response. So many ways to cut code eh!</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754417" data-commentid="1754417" data-postid="302876" data-belowelement="comment-1754417" data-respondelement="respond" aria-label="Reply to Luke Young">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754438">
+<div class="comment-wrap" id="comment-1754438">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/62d626d474256e25d5e94e9b9c74054a?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Jonathan Land</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754438"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-15T14:26:21-07:00">February 15, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Excellent write-up! I find it’s almost impossible to find good technical writing aimed at non-experts (other than tutorials, that is).</p>
+<p>My projects lately have been split between using vanilla HTML+js and using reactive tools, and while I have a good grasp of the practical differences, I’m constantly thinking “how would I explain this to someone for whom this is new? What’s the thought process they would need to understand?” My answer would now be to send them this article :)</p>
+<p>Truly inspiring. The web needs more of this kind of writing.</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754438" data-commentid="1754438" data-postid="302876" data-belowelement="comment-1754438" data-respondelement="respond" aria-label="Reply to Jonathan Land">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754456">
+<div class="comment-wrap" id="comment-1754456">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/d752c4785e9e08521321e40a086fea91?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Notsuno</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754456"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-16T11:11:40-07:00">February 16, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>It’s more a short vs. long term question imo, and what makes more sense depends on your domain, and how much you can or a are willing to plan ahead. There’s so much happening in that area because there’s no native middle ground between those technologies imo.</p>
+<p>JS/React are quickly changing and more flexible short term, HTML and CSS are more stable but also more rigid. It’s no surprise that there is money in creating a middle ground, by making JS more stable and long term viable with frameworks (e.g. Gatsby), and making HTML and CSS more flexible short term by combining concerns (e.g. colocation of styles and semantics in Tailwind).</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754456" data-commentid="1754456" data-postid="302876" data-belowelement="comment-1754456" data-respondelement="respond" aria-label="Reply to Notsuno">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754459">
+<div class="comment-wrap" id="comment-1754459">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/5fe616b175f3f2f986b7b7cb652915fd?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Anonymous</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754459"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-16T16:02:17-07:00">February 16, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Hey Mike,</p>
+<p>Nice article! It’s funny, I was just thinking about all of this yesterday. I’m also a Frontend Developer, but I didn’t start really getting in-depth with JavaScript until our company dove head first into React a couple of years ago. All of the “traditional” frontenders like me were suddenly plunged into an amorphous world of ES6, JSX, React, and JavaScript. At the time, I wasn’t able to discern the difference between a lot of it.</p>
+<p>Now that I’m very comfortable writing complex React Apps, I started thinking about how hard this would be to create these same stateful Apps with vanilla JS. I actually created a jsfiddle yesterday of a counter app. What I wasn’t able to do was articulate out loud exactly why it was annoying without React. I think you cemented it for me from another comment, the fact that React provides:</p>
+<blockquote><p>
+a top-down uni-directional flow of data (everything comes from the source of truth)
+</p></blockquote>
+<p>Thanks for this article, it’s like it was written for me. Also, I appreciated the references to the late 90’s/early 00’s jams!</p>
+<p>P.S. Small world; I was in your C++ class in high school. Your snake game was unreal. Hope all is well. :)</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754459" data-commentid="1754459" data-postid="302876" data-belowelement="comment-1754459" data-respondelement="respond" aria-label="Reply to Anonymous">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-1754467">
+<div class="comment-wrap" id="comment-1754467">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/438605a759a221d714d3f41a2c3b606e?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">Andy</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754467"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-17T07:36:19-07:00">February 17, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>Not counter-arguments, but genuine questions:</p>
+<p>How does this measure up for Accessibility? Will it work with Screen Readers? A lot of government sites have quite definite accessibility requirements, and HTML works pretty well these days, even when written badly. I guess that JavaScript should be fine, but only if the developers do the work to make it work correctly. See <a href="https://webaim.org/techniques/javascript/" rel="nofollow ugc">https://webaim.org/techniques/javascript/</a><br>
+How does this affect SEO? Google have only recently updated their indexer (Caffeine) to use a recent version of Chrome. And JavaScript based pages will inevitably be indexed later/more infrequently that HTML ones – HTML pages are easy to index, JavaScript ones require code to be run first. Other search engines have varying levels of support; some are blind to JavaScript. See <a href="https://www.deepcrawl.com/knowledge/white-papers/javascript-seo-guide/how-javascript-rendering-works/" rel="nofollow ugc">https://www.deepcrawl.com/knowledge/white-papers/javascript-seo-guide/how-javascript-rendering-works/</a></p>
+<p>Personally, I don’t like mixing content and code – it makes it too hard to change the content – but then I do build CMSes for a living…</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754467" data-commentid="1754467" data-postid="302876" data-belowelement="comment-1754467" data-respondelement="respond" aria-label="Reply to Andy">Reply</a> </div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1754472">
+<div class="comment-wrap" id="comment-1754472">
+<div class="author-avatar">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="50" height="50" loading="lazy" class="lazyload-gravatar" alt="User Avatar" data-src="https://secure.gravatar.com/avatar/329331e1689461ba761fb1e85b27422e?s=160&amp;d=retro&amp;r=pg">
+<svg class="half-circle" width="80px" height="80px">
+<use xlink:href="#half-circle"></use>
+</svg>
+</div>
+<div class="comment-body">
+<div class="comment-author-wrap vcard">
+<div class="comment-author">mfs</div> <div class="comment-time"><a href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754472"><span class="screen-reader">Permalink to comment</span>#</a> <time datetime="2020-02-17T09:13:53-07:00">February 17, 2020</time></div>
+</div>
+<div class="comment-content article-content">
+<p>“As web applications become more complex, maintaining the classic separation of concerns between HTML and JavaScript comes at an increasingly painful cost. ”</p>
+<p>“but if all your JavaScript is doing is creating a non-interactive webpage, you shouldn’t be using JavaScript.”</p>
+<p>Yes. Of course. But violation of these is why JS is “eating” HTML. There’s a new hammer (i.e., React) and now EVERYTHING is a nail. What’s disturbing is the bias that’s going into these decisions. That is, devs/engineers are making themselves the focal point instead of the client and/or application. What could go wrong?</p>
+</div>
+</div>
+<div class="comment-actions">
+<div class="reply">
+<a rel="nofollow" class="comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#comment-1754472" data-commentid="1754472" data-postid="302876" data-belowelement="comment-1754472" data-respondelement="respond" aria-label="Reply to mfs">Reply</a> </div>
+</div>
+</div>
+</li>
+</ol>
+<div class="respond">
+<div class="comment-form-form-area">
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://css-tricks.com/why-javascript-is-eating-html/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://css-tricks.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<input type="hidden" name="_mc4wp_subscribe_wp-comment-form" value="0"><p class=" mc4wp-checkbox mc4wp-checkbox-wp-comment-form"><label><input type="checkbox" name="_mc4wp_subscribe_wp-comment-form" value="1" checked="checked"><span>Get the CSS-Tricks newsletter</span></label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="302876" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6b528590aa"></p> <p class="antispam-group antispam-group-q" style="clear: both;">
+<label>Copy and paste this code: <strong class="antspmpro-input-a">micuno</strong> <span class="required">*</span></label>
+<input type="hidden" name="antspmpro-a" class="antispam-control antispam-control-a" value="micuno">
+<input type="text" name="antspmpro-q-luwele" class="antispam-control antispam-control-q" value="4.1">
+</p>
+<p class="antispam-group antispam-group-e" style="display: none;">
+<label>Leave this field empty</label>
+<input type="text" name="antspmpro-e-email-url-website-luwele" class="antispam-control antispam-control-e" value="">
+</p>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="58"></p></form> </div>
+<div class="comment-reminders bold-underline-links">
+<p>All comments are held for moderation. We'll publish all comments that are on topic, not rude, and adhere to our <a href="https://css-tricks.com/coc">Code of Conduct</a>. You'll even get little stars if you do an extra good job.</p>
+<p>You may write comments in <a href="https://commonmark.org/help/">Markdown</a>. This is the best way to post any code, inline like `&lt;div&gt;this&lt;/div&gt;` or multiline blocks within triple backtick fences (```) with double new lines before and after.</p>
+<p>Want to tell us something privately, like pointing out a typo or stuff like that? <a href="https://css-tricks.com/contact/">Contact Us</a>.</p>
+</div>
+</div>
+<div class="comment-form-coc-area bold-underline-links">
+We have a<br>
+<a href="https://css-tricks.com/coc/">Code of Conduct</a>.
+<circle-text r="132" class="circle-text-coc">
+Be cool. Be helpful. The web is a big place. Have fun. High five.
+</circle-text>
+</div>
+</div>
+</section> <div class="related-posts">
+<div id="jp-relatedposts" class="jp-relatedposts">
+<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div></div> </div>
+</div>
+</div>
+<footer class="site-footer footer-newsletter">
+<div class="footer-newsletter-inside">
+<hr class="thick">
+<h2>How do you stay up to date in this fast⁠-⁠moving&nbsp;industry?</h2>
+<p>A good start is to sign up for our weekly hand-written newsletter. We bring you the best articles and ideas from around the web, and what we think about them.</p>
+<div id="footer-form-wrap">
+<form action="https://chriscoyier.us2.list-manage.com/subscribe/post?u=155f5a9ccc4e24c318130cace&amp;id=197f127a68" method="post" id="mc-embedded-subscribe-form">
+<div class="subwrap">
+<div class="inner-sub">
+<div class="submarine">
+<div class="porthole"></div>
+<div class="porthole"></div>
+<div class="fin"></div>
+<div class="fin lower"></div>
+<div class="periscope"></div>
+<div class="prop"></div>
+<label for="mce-EMAIL" class="screen-reader">Email Address</label>
+<input type="email" name="EMAIL" class="required email mailchimp-email-input" id="mce-EMAIL" placeholder="lovetricks@internet.cool" required="">
+<div class="inner"></div>
+</div>
+<div class="btnwrap">
+<b>
+<span>Subscribe</span>
+</b>
+<input type="submit" value="Subscribe" name="Subscribe" id="mc-embedded-subscribe" class="button subscribe-button">
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="social-links">
+<a href="https://www.facebook.com/CSSTricks/" class="social-link-facebook">
+<strong>Facebook</strong>
+<span>@CSSTricks</span>
+</a>
+<a href="https://twitter.com/css" class="social-link-twitter">
+<strong>Twitter</strong>
+<span>@CSS</span>
+</a>
+<a href="https://www.youtube.com/user/realcsstricks" class="social-link-youtube">
+<strong>YouTube</strong>
+<span>@realcsstricks</span>
+</a>
+<a href="https://www.instagram.com/real_css_tricks/" class="social-link-instagram">
+<strong>Instagram</strong>
+<span>@real_css_tricks</span>
+</a>
+<a href="https://css-tricks.com/feed/" class="social-link-rss">
+<strong>RSS</strong>
+<span>Feed</span>
+</a>
+</div>
+</div>
+</footer>
+<div class="footer-colophon-wrapper">
+<footer class="site-footer footer-colophon">
+<div>
+<p>CSS-Tricks<span>*</span> is created, written by, and maintained by <a href="https://chriscoyier.net/">Chris Coyier</a> and <a href="https://css-tricks.com/about/">a team</a> of swell people. The tech stack for this site is fairly <a href="https://css-tricks.com/simple-boring/">boring</a>. That's a good thing! I've used <a href="https://wordpress.org/">WordPress</a> since day one all the way up to <a href="https://css-tricks.com/design-v17/">v17</a>, a decision I'm <a href="https://css-tricks.com/video-screencasts/154-poster-child-wordpress-site/">very happy with</a>. I also leverage <a href="https://css-tricks.com/jetpack/">Jetpack</a> for extra functionality and <a href="https://css-tricks.com/local-by-flywheel/">Local</a> for local development.</p>
+<p class="mega-big-time-warning"><small><span>*</span>May or may not contain any actual "CSS" or&nbsp;"Tricks".</small></p>
+</div>
+<nav>
+<h4>Other Nav</h4>
+<a href="https://css-tricks.com/contact/">Contact</a>
+<a href="https://css-tricks.com/about/">About</a>
+<a href="https://css-tricks.com/guest-posting/">Guest Writing</a>
+<a href="https://css-tricks.com/jobs">Jobs</a>
+<a href="https://css-tricks.com/advertising/">Advertise</a>
+<a href="https://css-tricks.com/license/">License</a>
+<a href="https://css-tricks.com/subscription-options/">Subscribe</a>
+<a href="https://css-tricks.com/authors/">All Authors</a>
+</nav>
+</footer>
+</div>
+<footer class="site-footer footer-partners">
+<div class="footer-partner footer-partner-codepen">
+<div>
+<a href="https://codepen.io/">
+<svg class="codepen-logo" viewBox="0 0 138 26" width="100%" height="100%"><path d="M15 8a7 7 0 1 0 0 10m7-8.7L33 2l11 7.3v7.4L33 24l-11-7.3zm0 0l11 7.4 11-7.4m0 7.4L33 9.3l-11 7.4M33 2v7.3m0 7.4V24M52 6h5a7 7 0 0 1 0 14h-5zm28 0h-9v14h9m-9-7h6m11 1h6a4 4 0 0 0 0-8h-6v14m26-14h-9v14h9m-9-7h6m11 7V6l11 14V6"></path></svg> <span class="screen-reader-text">CodePen</span>
+</a>
+<p class="bold-underline-links">
+<a href="https://codepen.io/">CodePen</a> is a place to experiment, debug, and show off your HTML, CSS, and JavaScript creations.
+</p>
+</div>
+</div>
+<div class="footer-partner footer-partner-flywheel">
+<div>
+<a href="https://share.getf.ly/k96n2f">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 589.02 164.24"><defs><style>.cls-1{fill:#50c6db;}</style></defs><title>Flywheel logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M82.7,18.32a63.8,63.8,0,1,0,63.8,63.79A63.79,63.79,0,0,0,82.7,18.32Zm-17.1,9a57.29,57.29,0,0,1,34.88.22,19.81,19.81,0,0,0-7.69,10.18c-2.41,7.3.13,14,2.38,19.84l.25.64c1.31,3.47,1.94,7.92-1.44,11.05a17,17,0,0,0-4.66-3c.53-7.19-3.68-13.54-11.72-17.18L77,48.83C71.67,46.44,67.1,44.38,64.82,40c-2.48-4.75-1.07-9.35.55-12.37ZM91.73,82a9,9,0,1,1-9-9A9,9,0,0,1,91.73,82Zm-36-50.5a19.63,19.63,0,0,0,2,12.24c3.56,6.82,10.13,9.79,15.93,12.41l.64.29c3.4,1.54,7,4.22,7.07,8.63A16.93,16.93,0,0,0,76,66.36c-4.78-5.52-12.32-7.15-20.61-4.18l-.66.24c-5.45,2-10.15,3.65-14.95,2.11a13.3,13.3,0,0,1-8.3-8.27A57.8,57.8,0,0,1,55.71,31.47ZM27.84,99a57.43,57.43,0,0,1-.11-33.42,20.39,20.39,0,0,0,9.6,6.55c7.39,2.38,14.15,0,20.11-2.19l.65-.24c3.6-1.29,8.23-1.88,11.5,1.48A16.78,16.78,0,0,0,67,75.59c-7.47-.75-14.08,3.34-17.82,11.34l-.29.63c-2.39,5.13-4.46,9.56-8.9,11.76a13.77,13.77,0,0,1-11.9-.17ZM55.2,132.47a57.75,57.75,0,0,1-23.49-24,22.72,22.72,0,0,0,2.72.18,20.31,20.31,0,0,0,9.08-2.11c7-3.44,10-9.88,12.61-15.55l.29-.62c1.61-3.45,4.5-7.11,9.4-6.81A16.81,16.81,0,0,0,67,88.42c-5.81,4.67-7.51,12.19-4.34,20.5l.25.65c2,5.31,3.77,9.89,2.25,14.48-1.67,5.07-6,7.34-9.4,8.34ZM100,136.83a57.27,57.27,0,0,1-34.94-.1,19.79,19.79,0,0,0,7.69-10.17c2.41-7.3-.13-14-2.38-19.84l-.24-.64c-1.34-3.52-2-8,1.57-11.18a16.83,16.83,0,0,0,4.55,2.79C75.59,105,79.8,111.48,88,115.17l.65.29c5.28,2.39,9.85,4.45,12.13,8.82,2.48,4.75,1.07,9.35-.55,12.37C100.18,136.65,100.12,136.8,100,136.83Zm9.85-4.16a19.61,19.61,0,0,0-2-12.09c-3.56-6.82-10.13-9.79-15.93-12.41l-.64-.29c-3.49-1.58-7.21-4.36-7.06-9a16.86,16.86,0,0,0,5.12-1.25c4.77,5.74,12.43,7.48,20.85,4.46l.67-.24c5.44-2,10.14-3.66,14.94-2.11a13.24,13.24,0,0,1,8.22,8.06A57.77,57.77,0,0,1,109.86,132.67ZM140.1,82.11a57.12,57.12,0,0,1-2.41,16.43,20.34,20.34,0,0,0-9.47-6.39c-7.39-2.38-14.14,0-20.1,2.19l-.66.24c-3.67,1.31-8.43,1.91-11.71-1.69a17,17,0,0,0,2.6-4.2,18.2,18.2,0,0,0,1.94.12c6.75,0,12.65-4.07,16.1-11.45l.29-.63c2.4-5.13,4.46-9.56,8.91-11.76a13.71,13.71,0,0,1,11.95.2A57.18,57.18,0,0,1,140.1,82.11ZM122,57.8c-7,3.44-10,9.87-12.61,15.55l-.29.62c-1.62,3.46-4.53,7.16-9.47,6.81a16.85,16.85,0,0,0-1.1-4.93c5.8-4.67,7.48-12.18,4.32-20.48l-.25-.66c-2-5.3-3.77-9.88-2.25-14.48,1.67-5.06,6-7.33,9.4-8.34l.44-.12a57.79,57.79,0,0,1,23.48,24.08A20.55,20.55,0,0,0,122,57.8Z"></path><path class="cls-1" d="M82.7.86A81.26,81.26,0,1,0,164,82.11,81.26,81.26,0,0,0,82.7.86Zm0,152.31a71.06,71.06,0,1,1,71.05-71.06A71.14,71.14,0,0,1,82.7,153.17Z"></path><path class="cls-1" d="M150.27,15.1C142.66,7.42,132.85,1.78,124,0a1.1,1.1,0,0,0-.67,2.08,82.79,82.79,0,0,1,39.69,40.17,1.11,1.11,0,0,0,1,.65,1.26,1.26,0,0,0,.33-.05,1.11,1.11,0,0,0,.74-1.27C163.26,32.3,158,22.89,150.27,15.1Z"></path><path class="cls-1" d="M41.8,162.14A82.79,82.79,0,0,1,2.11,122a1.1,1.1,0,0,0-2.09.67c1.87,9.3,7.15,18.71,14.87,26.5s17.42,13.32,26.23,15.08l.22,0a1.1,1.1,0,0,0,.46-2.1Z"></path><path class="cls-1" d="M229.51,49.8h-30a1.76,1.76,0,0,0-1.75,1.75V113.2a1.75,1.75,0,0,0,1.75,1.75h6a1.75,1.75,0,0,0,1.75-1.75V87h19.4a1.75,1.75,0,0,0,1.75-1.75v-6a1.75,1.75,0,0,0-1.75-1.75H207.3V59.3h22.21a1.75,1.75,0,0,0,1.75-1.75v-6A1.75,1.75,0,0,0,229.51,49.8Z"></path><path class="cls-1" d="M275.74,105.45H253.53V51.55a1.75,1.75,0,0,0-1.75-1.75h-6A1.76,1.76,0,0,0,244,51.55V113.2a1.75,1.75,0,0,0,1.75,1.75h30a1.75,1.75,0,0,0,1.75-1.75v-6A1.75,1.75,0,0,0,275.74,105.45Z"></path><path class="cls-1" d="M317.67,49.57H311a1.74,1.74,0,0,0-1.54.92L295.92,75.56,282.07,50.47a1.75,1.75,0,0,0-1.53-.9h-6.68a1.75,1.75,0,0,0-1.54,2.59L291,86.58V113.2a1.75,1.75,0,0,0,1.75,1.75h6a1.75,1.75,0,0,0,1.75-1.75v-26l18.68-35.06a1.75,1.75,0,0,0-1.55-2.57Z"></path><path class="cls-1" d="M587.27,105.45H565.06V51.55a1.75,1.75,0,0,0-1.75-1.75h-6a1.76,1.76,0,0,0-1.75,1.75V113.2a1.75,1.75,0,0,0,1.75,1.75h30A1.75,1.75,0,0,0,589,113.2v-6A1.75,1.75,0,0,0,587.27,105.45Z"></path><path class="cls-1" d="M443.73,49.8h-6A1.76,1.76,0,0,0,436,51.55V77.49H414.5V51.55a1.75,1.75,0,0,0-1.75-1.75h-6A1.75,1.75,0,0,0,405,51.55V113.2a1.75,1.75,0,0,0,1.75,1.75h6a1.75,1.75,0,0,0,1.75-1.75V87H436V113.2a1.75,1.75,0,0,0,1.75,1.75h6a1.75,1.75,0,0,0,1.75-1.75V51.55A1.75,1.75,0,0,0,443.73,49.8Z"></path><path class="cls-1" d="M492.1,49.8H461.71A1.76,1.76,0,0,0,460,51.55V113.2a1.75,1.75,0,0,0,1.75,1.75H492.1a1.75,1.75,0,0,0,1.75-1.75v-6a1.75,1.75,0,0,0-1.75-1.75H469.46V87h19.7a1.75,1.75,0,0,0,1.75-1.75v-6a1.75,1.75,0,0,0-1.75-1.75h-19.7V59.3H492.1a1.75,1.75,0,0,0,1.75-1.75v-6A1.75,1.75,0,0,0,492.1,49.8Z"></path><path class="cls-1" d="M540,49.8H509.62a1.75,1.75,0,0,0-1.75,1.75V113.2a1.75,1.75,0,0,0,1.75,1.75H540a1.75,1.75,0,0,0,1.75-1.75v-6a1.75,1.75,0,0,0-1.75-1.75H517.37V87h19.76a1.75,1.75,0,0,0,1.75-1.75v-6a1.75,1.75,0,0,0-1.75-1.75H517.37V59.3H540a1.75,1.75,0,0,0,1.75-1.75v-6A1.75,1.75,0,0,0,540,49.8Z"></path><path class="cls-1" d="M392.73,49.78h-6.57a1.25,1.25,0,0,0-1.22,1L374.81,94.4,364.5,50.75a1.25,1.25,0,0,0-1.22-1h-6.6a1.26,1.26,0,0,0-1.22,1l-10.32,43.6L335,50.75a1.25,1.25,0,0,0-1.22-1h-6.57a1.26,1.26,0,0,0-1,.48,1.25,1.25,0,0,0-.24,1.06L340.58,114a1.27,1.27,0,0,0,.26.58,1.25,1.25,0,0,0,1,.47h6.57a1.25,1.25,0,0,0,1.22-1L360,70.31l10.34,43.8a1.26,1.26,0,0,0,1.22,1h6.62a1.24,1.24,0,0,0,1.21-1L394,51.32a1.28,1.28,0,0,0-.24-1.06A1.26,1.26,0,0,0,392.73,49.78Z"></path></g></g></svg> <span class="screen-reader-text">Flywheel</span>
+</a>
+<p class="bold-underline-links">
+CSS-Tricks is hosted by <a href="https://share.getf.ly/k96n2f">Flywheel</a>, the best WordPress hosting in the business, with a local development tool to match.
+</p>
+</div>
+</div>
+<div class="footer-partner footer-partner-shoptalk">
+<div>
+<a href="https://shoptalkshow.com/"><img class="shoptalk-img" src="./Why JavaScript is Eating HTML _ CSS-Tricks_files/shoptalk_logo_e2defo.png" alt="ShopTalk Show"></a>
+<p class="bold-underline-links">
+<a href="https://shoptalkshow.com/">ShopTalk</a> is a podcast all about front-end web design and development.
+</p>
+</div>
+</div>
+</footer>
+<footer class="site-footer footer-subsites">
+<div class="footer-subsite footer-subsite-conferences bold-underline-links">
+<span class="presents"><strong>CSS-Tricks</strong> Presents</span>
+📅 Upcoming <a href="https://conferences.css-tricks.com/">Front-End Conferences</a>
+</div>
+<div class="footer-subsite footer-subsite-serverless bold-underline-links">
+<span class="presents"><strong>CSS-Tricks</strong> Presents</span>
+<a href="https://serverless.css-tricks.com/">The Power of Serverless</a> for Front-End Developers
+</div>
+</footer>
+<svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clippath id="clip0"><path fill="#fff" d="M0 0h40v40H0z"></path></clippath>
+<clippath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clippath>
+<clippath id="a"><path fill="#fff" d="M0 0h40v40H0z"></path></clippath>
+<clippath id="clip0"><path fill="#fff" d="M0 0h40v40H0z"></path></clippath>
+<clippath id="clip0"><path fill="#fff" d="M0 0h40v40H0z"></path></clippath>
+</defs>
+<symbol id="half-circle" viewBox="0 0 106 57"><path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path></symbol>
+<symbol id="icon-burger" viewBox="0 0 24 24"><rect y="2" width="24" height="2" rx="1"></rect><rect y="20" width="24" height="2" rx="1"></rect><rect y="8" width="24" height="2" rx="1"></rect><rect y="14" width="24" height="2" rx="1"></rect></symbol>
+<symbol id="icon-close" viewBox="0 0 95.08 95.09"><path d="M58.31 47.47l34.58-34.58a7.63 7.63 0 000-10.69 7.63 7.63 0 00-10.69 0L47.62 36.78 13 2.19a7.63 7.63 0 00-10.69 0 7.63 7.63 0 000 10.69l34.6 34.6L2.33 82.07a7.29 7.29 0 000 10.69 7.63 7.63 0 0010.69 0l34.6-34.6 34.6 34.6a7.27 7.27 0 0010.68 0 7.63 7.63 0 000-10.69z"></path></symbol>
+<symbol id="icon-globe" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM2 12h20"></path><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></symbol>
+<symbol id="icon-itunes" viewBox="0 0 171.75 171.75"><path d="M85.88 0a85.88 85.88 0 1085.87 85.88A85.88 85.88 0 0085.88 0zm38.52 24.27a3.64 3.64 0 013.67 2.81c.18.62.22 12 .18 45.45l-.07 44.61-.46 1.67a15.89 15.89 0 01-11 11.32c-3.88 1.16-9.57 1.6-12.36.94a12.2 12.2 0 01-6.26-3.61 12.82 12.82 0 01-4.14-9.6 12.4 12.4 0 011.37-5.81 12.67 12.67 0 016.53-6.44c2.64-1.32 5-2 11.88-3.44 4.52-1 5.62-1.35 6.5-2.4 1.21-1.44 1.19-.91 1.13-23.74-.06-19.83-.08-20.92-.44-21.47a2.86 2.86 0 00-2.83-1.07c-1.25.18-45.76 9.18-46.87 9.48a3.37 3.37 0 00-2.41 2.65c-.17.79-.24 9.55-.24 31.1 0 33.1 0 32.35-1.3 35.86a19.24 19.24 0 01-1.5 3.08 18.11 18.11 0 01-5 4.85c-4.06 2.4-12 3.64-16.25 2.53a13.17 13.17 0 01-9.35-8.56 16.44 16.44 0 01-.38-7.75 13.11 13.11 0 013.41-6.32c2.91-2.92 6.36-4.29 15.63-6.17 2-.41 4.07-.89 4.59-1.06a5.31 5.31 0 002.84-2.69c.35-.79.38-2.71.48-35.78l.1-34.95.49-1a5.88 5.88 0 013-2.73c.79-.3 47-9.72 54.86-11.18a37.21 37.21 0 014.2-.58z"></path></symbol>
+<symbol id="icon-link" viewBox="0 0 100 58.84"><path d="M78.47 48H49.21a10.66 10.66 0 01-9-4.91h10.58A21.57 21.57 0 0071.7 26.64h6.76a10.67 10.67 0 010 21.33zm-67.6-26.47a10.67 10.67 0 0110.67-10.66H50.8A10.59 10.59 0 0158.34 14a10.94 10.94 0 011.43 1.79H49.21a21.57 21.57 0 00-20.92 16.4h-6.76a10.67 10.67 0 01-10.66-10.66zm39.92 10.66H39.86a10.68 10.68 0 019.35-5.54h10.93a10.67 10.67 0 01-9.35 5.54zM100 37.31a21.53 21.53 0 00-21.53-21.53h-6.92A21.53 21.53 0 0050.8 0H21.54a21.53 21.53 0 000 43.06h6.83v-.31A21.41 21.41 0 0034 52.53a21.4 21.4 0 0015.2 6.31h29.26A21.56 21.56 0 00100 37.31z"></path></symbol>
+<symbol id="icon-logo-star" viewBox="0 0 362.62 388.52"><path d="M156.58 239l-88.3 64.75c-10.59 7.06-18.84 11.77-29.43 11.77-21.19 0-38.85-18.84-38.85-40 0-17.69 14.13-30.64 27.08-36.52l103.6-44.74-103.6-45.92C13 142.46 0 129.51 0 111.85 0 90.66 18.84 73 40 73c10.6 0 17.66 3.53 28.25 11.77l88.3 64.75-11.74-104.78C141.28 20 157.76 0 181.31 0s40 18.84 36.5 43.56L206 149.52l88.3-64.75C304.93 76.53 313.17 73 323.77 73a39.2 39.2 0 0138.85 38.85c0 18.84-12.95 30.61-27.08 36.5l-103.61 45.91L335.54 239c14.13 5.88 27.08 18.83 27.08 37.67 0 21.19-18.84 38.85-40 38.85-9.42 0-17.66-4.71-28.26-11.77L206 239l11.77 104.78c3.53 24.72-12.95 44.74-36.5 44.74s-40-18.84-36.5-43.56z"></path></symbol>
+<symbol id="icon-nav-almanac" viewBox="0 0 36 40"><path d="M31 39H9V1h22c2.2 0 4 1.8 4 4v30c0 2.2-1.8 4-4 4zM9 1H1v38h8V1zM2 10h7M2 14h7"></path><path d="M28 16l-4-4-4 4V1h8v15z"></path></symbol>
+<symbol id="icon-nav-articles" viewBox="0 0 40 40"><path d="M24.9 6H9.1C7.9 6 7 6.9 7 8.1V16c0 1.2.9 2.1 2.1 2.1h15.8c1.2 0 2.1-.9 2.1-2.1V8.1c0-1.2-.9-2.1-2.1-2.1z"></path><path d="M33.2 4H37c1.1 0 2 .9 2 2v29.2c0 2.1-1.7 3.8-3.8 3.8H4.8C2.7 39 1 37.3 1 35.2V4.8C1 2.7 2.7 1 4.8 1H29c2.2 0 4 1.8 4 4v28c0 1.7 1.3 3 3 3s3-1.3 3-3V9M7 23h20M7 28h20M7 33h20"></path></symbol>
+<symbol id="icon-nav-guides" viewBox="0 0 40 40"><g clip-path="url(#clip0)"><path d="M6.2 37.4L14 35V1L3.8 4.1C2.1 4.7 1 6.2 1 7.9v25.7c0 2.7 2.6 4.6 5.2 3.8zM26 39l10.2-3.1c1.7-.5 2.8-2.1 2.8-3.8V5c0-2.7-2.6-4.6-5.1-3.8L26 3.6V39zM14 1l12 3M14 35l12 4"></path></g></symbol>
+<symbol id="icon-nav-jobs" viewBox="0 0 40 40"><g clip-path="url(#a)"><path d="M39 23l-19 4-19-4V12c0-2.2 1.8-4 4-4h30c2.2 0 4 1.8 4 4v11z"></path><path d="M38 24v11c0 2.2-1.8 4-4 4H6c-2.2 0-4-1.8-4-4V24M32 8H7V5c0-2.2 1.8-4 4-4h17c2.2 0 4 1.8 4 4v3z"></path><path d="M15 27c0 2.75 2.25 5 5 5s5-2.25 5-5"></path></g></symbol>
+<symbol id="icon-nav-newsletter" viewBox="0 0 40 40"><g clip-path="url(#a)"><path d="M35 39H5c-2.2 0-4-1.8-4-4V19l19 9 19-9v16c0 2.2-1.8 4-4 4zM2 38l12-13M38 38L26 25M33.2 15l5.8 4M1 19l5.8-4"></path><path d="M7 22V5c0-2.2 1.8-4 4-4h18c2.2 0 4 1.8 4 4v17"></path><path d="M26 13c0 3.3-2.7 6-6 6s-6-2.7-6-6"></path></g></symbol>
+<symbol id="icon-nav-snippets" viewBox="0 0 40 40"><g clip-path="url(#clip0)"><path d="M17.2 37.8l-15-15c-1.6-1.6-1.6-4.1 0-5.7l15-15c1.6-1.6 4.1-1.6 5.7 0l15 15c1.6 1.6 1.6 4.1 0 5.7l-15 15c-1.6 1.6-4.2 1.6-5.7 0z"></path><path d="M14 16l-4 4 4 4M26 24l4-4-4-4M21 16l-2 8"></path></g></symbol>
+<symbol id="icon-nav-videos" viewBox="0 0 40 40"><g clip-path="url(#clip0)"><path d="M20 39c10.493 0 19-8.507 19-19S30.493 1 20 1 1 9.507 1 20s8.507 19 19 19z"></path><path d="M20 33c7.18 0 13-5.82 13-13S27.18 7 20 7 7 12.82 7 20s5.82 13 13 13z"></path><path d="M17.1 17v6.6c0 .8.8 1.2 1.5.9l6-3.3c.7-.4.7-1.4 0-1.7l-6-3.3c-.7-.4-1.5 0-1.5.8z"></path></g></symbol>
+<symbol id="icon-pin" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.727 2A4.727 4.727 0 004 6.727c0 1.826 1.198 3.65 2.59 5.12a18.357 18.357 0 002.137 1.917 18.36 18.36 0 002.138-1.918c1.392-1.469 2.59-3.293 2.59-5.119A4.727 4.727 0 008.726 2zm0 13l-.555.832-.002-.002-.005-.003-.016-.01a6.814 6.814 0 01-.253-.18 20.364 20.364 0 01-2.758-2.416C3.666 11.669 2 9.357 2 6.728a6.727 6.727 0 1113.454 0c0 2.63-1.665 4.941-3.137 6.495a20.366 20.366 0 01-2.956 2.556 6.845 6.845 0 01-.055.038l-.016.01-.005.004-.002.001s-.001.001-.556-.831zm0 0l.555.832a1 1 0 01-1.11 0L8.727 15z"></path><path d="M8.727 8.637a1.91 1.91 0 100-3.819 1.91 1.91 0 000 3.819z"></path></symbol>
+<symbol id="icon-play" viewBox="0 0 32 32"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.25 16c0 6.213-5.037 11.25-11.25 11.25S4.75 22.213 4.75 16 9.787 4.75 16 4.75 27.25 9.787 27.25 16zM16 31c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C7.716 1 1 7.716 1 16c0 8.284 6.716 15 15 15zm-1.657-19.744c-1.002-.668-2.343.05-2.343 1.253v7.63c0 1.204 1.341 1.922 2.343 1.254l5.722-3.815a1.507 1.507 0 000-2.508l-5.722-3.814z"></path></symbol>
+<symbol id="icon-search" viewBox="0 0 100 100"><path d="M80.65 66.78a33.55 33.55 0 01-47.44-47.44 33.55 33.55 0 1147.44 47.44zm6.73-54.16a43.06 43.06 0 00-65.32 55.71L2 88.39A6.8 6.8 0 0011.61 98l20.06-20.06a43.06 43.06 0 0055.71-65.32z"></path></symbol>
+<symbol id="icon-star" viewBox="0 0 100 95.52"><path d="M64.19 28.77a5.17 5.17 0 003.9 2.83s29.27-3 31.74 4.61-23 22.39-23 22.39a5.17 5.17 0 00-1.49 4.58s11.91 26.9 5.42 31.61S52.4 79.87 52.4 79.87a5.21 5.21 0 00-2.41-.6 5.14 5.14 0 00-2.41.6S25.68 99.5 19.2 94.79s5.42-31.61 5.42-31.61a5.18 5.18 0 00-1.49-4.58S-2.31 43.83.17 36.21s31.74-4.61 31.74-4.61a5.19 5.19 0 003.9-2.83S42 0 50 0s14.19 28.77 14.19 28.77z"></path></symbol>
+<symbol id="logo-facebook" viewBox="0 0 16 16"><path d="M5.667 16h3.2V7.933h2.266L11.4 5.2H8.867V3.667C8.867 3 9 2.8 9.6 2.8h1.733V0h-2.2c-2.4 0-3.466 1.067-3.466 3.067V5.2H4v2.733h1.667V16z"></path></symbol>
+<symbol id="logo-instagram" viewBox="0 0 256 256"><path d="M128 23.06c34.18 0 38.23.13 51.72.75 12.48.57 19.26 2.65 23.77 4.41a39.66 39.66 0 0114.72 9.57 39.66 39.66 0 019.57 14.72c1.76 4.51 3.84 11.29 4.41 23.77.62 13.49.75 17.54.75 51.72s-.13 38.23-.75 51.72c-.57 12.48-2.65 19.26-4.41 23.77a42.33 42.33 0 01-24.29 24.29c-4.51 1.76-11.29 3.84-23.77 4.41-13.49.62-17.54.75-51.72.75s-38.23-.13-51.72-.75c-12.48-.57-19.26-2.65-23.77-4.41a39.58 39.58 0 01-14.72-9.57 39.58 39.58 0 01-9.57-14.72c-1.76-4.51-3.84-11.29-4.41-23.77-.62-13.49-.75-17.54-.75-51.72s.13-38.23.75-51.72c.57-12.48 2.65-19.28 4.41-23.77a39.66 39.66 0 019.57-14.72 39.58 39.58 0 0114.72-9.57c4.49-1.76 11.29-3.84 23.77-4.41 13.49-.62 17.54-.75 51.72-.75M128 0C93.24 0 88.88.15 75.23.77S52.3 3.56 44.15 6.72a62.88 62.88 0 00-22.67 14.76A62.83 62.83 0 006.72 44.16C3.56 52.3 1.39 61.6.77 75.23S0 93.24 0 128s.15 39.12.77 52.77 2.79 22.93 5.95 31.08a62.88 62.88 0 0014.76 22.67 62.88 62.88 0 0022.67 14.76c8.15 3.16 17.45 5.33 31.08 5.95s18 .77 52.77.77 39.12-.15 52.77-.77 22.93-2.79 31.07-5.95a65.4 65.4 0 0037.44-37.43c3.16-8.15 5.33-17.45 5.95-31.08s.77-18 .77-52.77-.15-39.12-.77-52.77-2.79-22.93-5.95-31.07a62.83 62.83 0 00-14.76-22.68 62.83 62.83 0 00-22.68-14.76C203.7 3.56 194.4 1.39 180.77.77S162.76 0 128 0zm0 62.27A65.73 65.73 0 10193.73 128 65.73 65.73 0 00128 62.27zm0 108.4A42.67 42.67 0 11170.67 128 42.68 42.68 0 01128 170.67zm83.69-111a15.36 15.36 0 11-15.36-15.36 15.36 15.36 0 0115.36 15.36z"></path></symbol>
+<symbol id="logo-rss" viewBox="0 0 16 16"><path d="M0 0v3.2c3.4 0 6.6 1.333 9 3.733 2.4 2.4 3.733 5.6 3.733 9.067H16C16 7.2 8.8 0 0 0zM2.2 11.666c-1.2 0-2.2 1-2.2 2.2C0 15.066 1 16 2.2 16c1.2 0 2.2-1 2.2-2.2-.067-1.134-1.067-2.134-2.2-2.134z"></path><path d="M0 5.467v3.2C4.067 8.733 7.333 12 7.333 16h3.2C10.533 10.2 5.8 5.533 0 5.467z"></path></symbol>
+<symbol id="logo-spectrum" viewBox="0 0 32 32"><path d="M6 14.5A1.5 1.5 0 007.5 16H9a7 7 0 017 7v1.5a1.5 1.5 0 001.5 1.5h7a1.5 1.5 0 001.5-1.5V23c0-9.389-7.611-17-17-17H7.5A1.5 1.5 0 006 7.5v7z"></path></symbol>
+<symbol id="logo-twitter" viewBox="0 0 16 16"><path d="M0 12.867a9.332 9.332 0 005 1.466c6.067 0 9.533-5.133 9.333-9.733.667-.466 1.2-1.066 1.667-1.666-.6.266-1.2.466-1.867.533a3.55 3.55 0 001.467-1.8c-.667.4-1.333.666-2.067.8-.666-.734-1.533-1.134-2.466-1.134-2.134 0-3.667 2-3.2 4-2.734-.133-5.134-1.4-6.734-3.4a3.299 3.299 0 001 4.4c-.533-.066-1.066-.2-1.466-.4C.6 7.468 1.733 8.867 3.267 9.2c-.467.134-1 .134-1.467.067a3.16 3.16 0 003.067 2.267A6.726 6.726 0 010 12.867z"></path></symbol>
+<symbol id="logo-youtube" viewBox="0 0 16 16"><path d="M15.667 4.4c-.2-.667-.734-1.267-1.4-1.4C13 2.667 8 2.667 8 2.667s-5 0-6.267.333c-.666.2-1.2.733-1.4 1.4C0 5.666 0 8.333 0 8.333s0 2.6.333 3.867c.2.667.734 1.267 1.4 1.4C3 13.933 8 13.933 8 13.933s5 0 6.267-.333c.666-.2 1.2-.733 1.4-1.4C16 10.933 16 8.333 16 8.333s0-2.667-.333-3.933zm-9.334 6.266V5.933l4.2 2.4-4.2 2.333z"></path></symbol>
+<symbol id="logo" viewBox="0 0 474.15 58.26"><path d="M46 42.57a4.5 4.5 0 00-3 1.13c-4.1 3.46-8.13 5.39-14.08 5.39-10.78 0-18.58-8.93-18.58-20V29c0-11 7.88-19.87 18.58-19.87a20.42 20.42 0 0113.48 5.03 4.95 4.95 0 007.88-3.86 4.94 4.94 0 00-1.93-3.94C43.44 2.57 37.73 0 29 0 12 0 0 13.12 0 29.13v.16c0 16.17 12.23 29 28.64 29 9.09 0 15.12-2.9 20.43-7.56a4.76 4.76 0 001.61-3.54A4.71 4.71 0 0046 42.57zm36.86-17.95C72 22 69.43 20.12 69.43 15.77v-.16c0-3.7 3.38-6.68 9.17-6.68 4.43 0 8.61 1.45 13 4.26a4.78 4.78 0 002.57.72 4.6 4.6 0 004.67-4.59 4.47 4.47 0 00-2.17-3.94A31 31 0 0078.76.16C67.58.16 59.53 6.84 59.53 16.5v.16c0 10.38 6.76 13.92 18.74 16.82C88.73 35.89 91 38.06 91 42.08v.16c0 4.18-3.86 7.08-10 7.08a24.42 24.42 0 01-15.77-5.79 4.79 4.79 0 00-7.56 3.7A4.64 4.64 0 0059.61 51a35.05 35.05 0 0021.16 7.1c11.83 0 20.11-6.28 20.11-16.82v-.16c0-9.34-6.11-13.6-18.02-16.5zm49.88 0c-10.86-2.57-13.43-4.51-13.43-8.85v-.16c0-3.7 3.38-6.68 9.17-6.68 4.42 0 8.61 1.45 13 4.26a4.78 4.78 0 002.57.72 4.6 4.6 0 004.67-4.59 4.47 4.47 0 00-2.17-3.94A31 31 0 00128.64.16c-11.18 0-19.23 6.68-19.23 16.33v.16c0 10.38 6.76 13.92 18.74 16.82 10.46 2.41 12.71 4.59 12.71 8.61v.16c0 4.18-3.86 7.08-10 7.08a24.42 24.42 0 01-15.77-5.79 4.79 4.79 0 00-7.56 3.7 4.64 4.64 0 001.96 3.77 35.05 35.05 0 0021.16 7.08c11.83 0 20.11-6.28 20.11-16.82v-.16c0-9.32-6.11-13.58-18.02-16.48zm45.62 3.22h-15.13a4.79 4.79 0 000 9.58h15.12a4.79 4.79 0 000-9.58zM224 1h-37.45a4.59 4.59 0 000 9.17h13.68v42.62a5 5 0 0010 0V10.14H224A4.59 4.59 0 00224 1zm38.86 0h-20.15a4.91 4.91 0 00-5 5v46.79a4.95 4.95 0 009.89 0V37.66h12.47l13.68 17.46a5.65 5.65 0 004.83 2.58 4.67 4.67 0 004.75-4.59 5.74 5.74 0 00-1.61-3.78l-10.78-13.6c7.56-2.33 12.79-7.81 12.79-16.82v-.16a17 17 0 00-4.66-12.15C275.45 3.06 269.9 1 262.82 1zm10.86 18.51c0 5.71-4.51 9.41-11.58 9.41h-14.53V10H262c7.32 0 11.67 3.3 11.67 9.33zm27-18.91a4.89 4.89 0 00-5 4.91v47.28a4.95 4.95 0 009.89 0V5.47a4.88 4.88 0 00-4.98-4.91zm62.67 42a4.5 4.5 0 00-3 1.13c-4.1 3.46-8.13 5.39-14.08 5.39-10.78 0-18.58-8.93-18.58-20V29c0-11 7.88-19.87 18.58-19.87a20.42 20.42 0 0113.44 5.07 4.95 4.95 0 007.88-3.86 4.94 4.94 0 00-1.93-3.94C360.72 2.57 355 0 346.32 0c-17.06 0-29 13.12-29 29.13v.16c0 16.17 12.23 29 28.64 29 9.09 0 15.12-2.9 20.43-7.56a4.76 4.76 0 001.61-3.58 4.71 4.71 0 00-4.7-4.58zm41-16.82l17.54-16.9a4.81 4.81 0 001.77-3.7A4.53 4.53 0 00419 .56a5.2 5.2 0 00-4.1 1.85l-26.66 26.88V5.47a4.95 4.95 0 00-9.9 0v47.32a4.95 4.95 0 009.9 0V41.12l9.17-8.85 18.1 23.09a5 5 0 004.18 2.33 4.83 4.83 0 005-4.83 5.36 5.36 0 00-1.37-3.54zm51.8-1.13c-10.92-2.65-13.49-4.53-13.49-8.88v-.16c0-3.7 3.38-6.68 9.17-6.68 4.42 0 8.61 1.45 13 4.26a4.78 4.78 0 002.57.72 4.6 4.6 0 004.67-4.59 4.47 4.47 0 00-2.17-3.94A31 31 0 00452 .16c-11.15 0-19.2 6.68-19.2 16.34v.16c0 10.38 6.76 13.92 18.74 16.82 10.46 2.41 12.71 4.59 12.71 8.61v.16c0 4.18-3.86 7.08-10 7.08a24.42 24.42 0 01-15.77-5.79 4.79 4.79 0 00-7.56 3.7 4.64 4.64 0 001.96 3.76A35.05 35.05 0 00454 58.1c11.83 0 20.11-6.28 20.11-16.82v-.16c.04-9.34-6.11-13.6-17.98-16.5z"></path></symbol>
+</svg>
+<svg width="0" height="0" class="visually-hidden">
+<defs>
+<lineargradient id="orange-to-pink" x1="1" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#DA1B60"></stop>
+<stop offset="100%" stop-color="#ff8a00"></stop>
+</lineargradient>
+<filter id="duotone_orange_pink">
+<fecolormatrix type="matrix" result="grayscale" values="1 0 0 0 0
+                  1 0 0 0 0
+                  1 0 0 0 0
+                  0 0 0 1 0">
+</fecolormatrix>
+<fecomponenttransfer color-interpolation-filters="sRGB" result="duotone">
+<fefuncr type="table" tableValues="0.7411764706 0.9882352941"></fefuncr>
+<fefuncg type="table" tableValues="0.0431372549 0.7333333333"></fefuncg>
+<fefuncb type="table" tableValues="0.568627451 0.05098039216"></fefuncb>
+<fefunca type="table" tableValues="0 1"></fefunca>
+</fecomponenttransfer>
+</filter>
+</defs>
+</svg>
+<!--<script src="https://c0.wp.com/p/jetpack/8.2.3/_inc/build/photon/photon.min.js" type="text/javascript"></script>-->
+<!--<script type="text/javascript">
+/* <![CDATA[ */
+var antispampro_vars = {"code":"micuno","input_name_suffix":"luwele"};
+/* ]]> */
+</script>-->
+<!--<script src="https://css-tricks.com/wp-content/plugins/anti-spam-pro/js/anti-spam-pro-4.1.js" type="text/javascript"></script>-->
+<!--<script type="text/javascript">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/css-tricks.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"0","show_fading":"1"};
+/* ]]> */
+</script>-->
+<!--<script src="https://css-tricks.com/wp-content/plugins/wp-polls/polls-js.js?ver=2.75.4" type="text/javascript"></script>-->
+<!--<script type="text/javascript">
+/* <![CDATA[ */
+var markdownify = {"ajax_url":"\/wp-admin\/admin-ajax.php","nonce":"2e56b601d3"};
+/* ]]> */
+</script>-->
+<!--<script src="https://css-tricks.com/wp-content/plugins/jetpack-markdown-live-preview-comments/js/markdownify.js?ver=1" type="text/javascript"></script>-->
+<!--<script src="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/js/min/comment-reply.min.js?ver=1.1" type="text/javascript"></script>-->
+<!--<script src="https://c0.wp.com/p/jetpack/8.2.3/modules/widgets/search/js/search-widget.js" type="text/javascript"></script>-->
+<!--<script src="https://c0.wp.com/p/jetpack/8.2.3/_inc/build/lazy-images/js/lazy-images.min.js" type="text/javascript"></script>-->
+<!--<script async="async" src="https://css-tricks.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.3" type="text/javascript"></script>-->
+<!--<script type="e96e1279240ed80755b195e6-text/javascript" src="https://stats.wp.com/e-202008.js" async="async" defer="defer"></script>-->
+<!--<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.2.3',blog:'45537868',post:'302876',tz:'-7',srv:'css-tricks.com'} ]);
+	_stq.push([ 'clickTrackerInit', '45537868', '302876' ]);
+</script>-->
+<!--<script src="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/js/min/global-concat.min.js?cache_bust=1580242691266" type="text/javascript">
+</script>-->
+<!--<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68528-29', 'auto');
+
+  if (typeof articleYear !== "undefined") {
+    ga('set', 'dimension1', articleYear);
+  }
+  if (typeof articleAuthor !== "undefined") {
+    ga('set', 'dimension2', articleAuthor);
+  }
+  if (typeof articleType !== "undefined") {
+    ga('set', 'dimension3', articleType);
+  }
+
+  ga('send', 'pageview');
+</script>-->
+<!--<script async="" src="https://static.codepen.io/assets/embed/ei.js" type="text/javascript"></script>-->
+<!--<script src="//instant.page/3.0.0" type="e96e1279240ed80755b195e6-module" defer="" integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>-->
+
+
+</body></html>

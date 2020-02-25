@@ -1,0 +1,443 @@
+@charset "utf-8";
+/* MathBits.css - style sheet */
+
+body,td,th {   /*Background color, hover color, side strip graphic set independently by area*/
+	font-family: Times New Roman, Times, serif;	 
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	margin-top: 20px;
+	margin-bottom: 20px;}    
+	
+a:link, a:visited, a:active {color: #000000}
+
+.ArialBlack12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	color: #000000; 
+}
+.ArialBlack8 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	color: #000000; 
+}
+.ArialBlack9 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #000000; 
+}
+.ArialBlack10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	color: #000000; 
+}
+.ArialBlack10B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000; 
+}
+.ArialBlack12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	color: #000000; 
+}
+.ArialBlack12B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000000; 
+}
+.ArialRed10B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 14px;
+	color: #FF0000;
+}
+.ArialRed12B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 16px;
+	color: #FF0000;
+}
+.ArialBRed14B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 18px;
+	color: #FF0000;
+}
+.ArialBRed16B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 20px;
+	color: #FF0000;
+}
+.ArialBRed24B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 30px;
+	color: #FF0000;
+}
+.ArialGreen8 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 12px;
+	color: #336666;
+}
+.ArialGreen10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 14px;
+	color: #336666;
+}
+.ArialGreen12B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 16px;
+	color: #336666;
+}
+.ArialGreen14B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 18px;
+	color: #336666;
+}
+.ArialBlack14 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #000000; 
+}
+.ArialBlack14B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #000000; 
+}
+.ArialBlack16 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	color: #000000;
+}
+.ArialBlack16B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #000000;
+}
+.ArialBlack20 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	color: #000000; 
+}
+.ArialBlack20B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #000000; 
+}
+.ArialBlack24 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 30px;
+	color: #000000; 
+}
+.ArialBlack24B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #000000; 
+}
+.ArialBlack36 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 36px;
+	color: #000000;
+}
+.ArialRed14B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #990000; 
+}
+.ArialRed14 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #990000; 
+}
+.ArialRed16 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #990000; 
+}
+.ArialRed16B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #990000; 
+}
+.ArialRed24B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #990000; 
+}
+.ArialGreen24B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #006600; 
+}
+.ArialBlue16B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #0000FF;
+	font-weight: bold;
+}
+.ArialBlue14 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #0000FF; 
+}
+.ArialBlue24B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #0000FF; 
+}
+.TimesBlack12 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 16px;
+	color: #000000;
+}
+.TimesBlack8 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 13px;
+	color: #000000;
+}
+.TimesBlack10 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 14px;
+	color: #000000;
+}
+.TimesBlack12B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000000;
+}
+.TimesBlack24 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 30px;
+	color: #000000;
+}
+.TimesBlack24B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #000000;
+}
+.TimesBlack36B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 40px;
+	color: #000000;
+}
+.TimesBlue12 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 16px;
+	color: #0000FF;
+}
+.TimesBlue12B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: #0000FF;
+}
+.TimesBlue14 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #0000FF;
+}
+.TimesBlack12I {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 16px;
+	color: #000000;
+}
+.TimesBlack10I {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 14px;
+	color: #000000;
+}
+.TimesBlack12I {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 16px;
+	color: #000000;
+}
+.TimesTI20B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #006666;
+}
+.TimesBlack20B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #000000;
+}
+.TimesBlack20 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 24px;
+	color: #000000;
+}
+.TimesDarkRed20B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #990000;
+}
+.TimesDarkRed14 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #990000;
+}
+.TimesDarkRed12 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 16px;
+	color: #990000;
+}
+.TimesDarkRed10 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 14px;
+	color: #990000;
+}
+.TimesDarkGreen {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #006600;
+}
+.TimesRed10I {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 14px;
+	color: #FF0000;
+}
+.TimesRed12I {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 16px;
+	color: #FF0000;
+}
+.TimesRed14 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #FF0000;
+}
+.TimesRed16 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #FF0000;
+}
+.TimesBrown16 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #993300;
+}
+.TimesBlack14 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 18px;
+	color: #000000;
+}
+.TimesBlack14B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #000000;
+}
+.TimesBlack16 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #000000;
+}
+.TimesNavy16 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: normal;
+	font-size: 20px;
+	color: #000080;
+}
+.TimesNavyB16 {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #000080;
+}
+.TimesBlack16B {
+	font-family: Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #000000;
+}
+
+/*table border colors*/
+.blackborder { border: solid 2px #000000; background-color:#FFFFFF; border-collapse: collapse;}  /*outside edge*/
+.blackborderthin { border: solid 1px #000000; background-color:#FFFFFF; border-collapse: collapse;}  /*outside edge*/
+.blackborderdarkgreen { border: solid 1px #000000; background-color:#C6CEA5; border-collapse: collapse;}  /*A1 resource boxes*/
+.blackborderdarblue { border: solid 1px #000000; background-color:#B3CCD8; border-collapse: collapse;}  /*Jr resource boxes*/
+.blackborderyellow{ border: solid 2px #000000; background-color:#FFFFcc; border-collapse: collapse;} /*black edge yellow fill*/
+.grayborderblack { border: solid 1px #000000; background-color:#FFFFFF; border-collapse: collapse;}  /*formerly gray main table, now black*/
+.graybordergray{ border: solid 2px #808080; background-color:#EAEAEA; border-collapse: collapse;} /*gray with dark gray border*/
+.blueborder{ border: solid 2px #0099FF; background-color:#FFFFFF; border-collapse: collapse;} /*blue for faces border*/
+.blackbordergreen{ border: solid 2px #000000; background-color:#DCF3D1; border-collapse: collapse;} /*Bingo Boarding Green*/
+.blackborderblue{ border: solid 2px #000000; background-color:#C9E8FC; border-collapse: collapse;} /*PreAlgebra Ponderings*/
+.redborder { border: solid 2px #BA0113; background-color:#FFFFFF; border-collapse: collapse;}  /*outside edge*/
+
+.greenborder { border: solid 3px #336666; background-color:#FFFFFF; border-collapse: collapse;} /*main page green*/
+.blueborder { border: solid 2px #000000; background-color:#D7EBFF; border-collapse: collapse;}  /*main page blue fill*/
+.orangeborder { border: solid 2px #000000; background-color:#FFCC99; border-collapse: collapse;} /*main page orange fill*/
+.yellowborderGray { border: solid 2px #C0C0C0; background-color:#FFFFE0; border-collapse: collapse;} 
+.whiteborderGray { border: solid 2px #C0C0C0; background-color:#FFFFFF; border-collapse: collapse;} 

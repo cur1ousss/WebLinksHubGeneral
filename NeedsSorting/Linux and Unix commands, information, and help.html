@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://www.computerhope.com/unix.htm -->
+<html lang="en" itemscope="" itemtype="http://schema.org/WebPage" class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linux and Unix commands, information, and help</title>
+<!--<base href="https://www.computerhope.com/unix.htm">--><base href=".">
+<link rel="canonical" href="https://www.computerhope.com/unix.htm">
+<link href="./Linux and Unix commands, information, and help_files/site.css" type="text/css" rel="stylesheet">
+<script async="" src="./Linux and Unix commands, information, and help_files/analytics.js"></script><script async="" src="./Linux and Unix commands, information, and help_files/f.txt"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Unix and Linux commands help and information containing hundreds of commands, syntax, questions and answers, history, news, links, and much more." name="description">
+<meta itemprop="name" content="Linux and Unix commands, information, and help">
+<meta itemprop="description" content="Unix and Linux commands help and information containing hundreds of commands, syntax, questions and answers, history, news, links, and much more.">
+<meta property="og:url" content="https://www.computerhope.com/unix.htm">
+<meta property="og:description" content="Unix and Linux commands help and information containing hundreds of commands, syntax, questions and answers, history, news, links, and much more.">
+<meta property="og:title" content="Linux and Unix commands, information, and help">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux and Unix commands, information, and help">
+<meta name="twitter:description" content="Unix and Linux commands help and information containing hundreds of commands, syntax, questions and answers, history, news, links, and much more.">
+<meta name="twitter:creator" content="@computerhope">
+<!--[if lt IE 9]>
+<script src="https://www.computerhope.com/cdn/html5shiv.js"></script>
+<![endif]-->
+<meta property="og:image" content="https://www.computerhope.com/cdn/ssh.jpg">
+<meta itemprop="image" content="https://www.computerhope.com/cdn/ssh.jpg">
+<link rel="image_src" href="./Linux and Unix commands, information, and help_files/ssh.jpg">
+<link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="https://feeds.feedburner.com/LatestNewPagesOnComputerHope">
+<link rel="apple-touch-icon" href="https://www.computerhope.com/cdn/apple-touch-icon.png">
+<link rel="shortcut icon" href="https://www.computerhope.com/cdn/favicon.ico" type="image/x-icon">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-126444-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body style="">
+<div class="skip"><a href="https://www.computerhope.com/unix.htm#main-content">Skip to Main Content</a></div>
+<div class="wrapper">
+<header class="cf"> <a href="https://www.computerhope.com/" style="border-bottom: none!important;"><img src="./Linux and Unix commands, information, and help_files/computer-hope.jpg" width="412" height="82" alt="Computer Hope" class="logo"></a>
+<div itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+<form action="https://www.computerhope.com/cgi-bin/search.cgi" method="post">
+<input class="sbar" name="q" title="Search" type="text" accesskey="s">
+<button type="Submit">Search</button>
+</form>
+<ul id="nav">
+<li><a href="https://www.computerhope.com/oh.htm" title="Questions and answers, troubleshooting, and help">Help</a></li>
+<li><a href="https://www.computerhope.com/tips/" title="Computer tips and tricks">Tips</a></li>
+<li><a href="https://www.computerhope.com/jargon.htm" title="Computer terms, jargon, and glossary">Dictionary</a></li>
+<li><a href="https://www.computerhope.com/history/" title="Computer timeline, events, and biographies">History</a></li>
+<li><a href="https://www.computerhope.com/forum/" title="Computer Hope forums and community">Forums</a></li>
+<li><a href="https://www.computerhope.com/contact/" title="Contact Computer Hope or other computer companies">Contact</a></li>
+</ul><select class="selectnav" id="selectnav1"><option value="">- Navigation -</option><option value="https://www.computerhope.com/oh.htm">Help</option><option value="https://www.computerhope.com/tips/">Tips</option><option value="https://www.computerhope.com/jargon.htm">Dictionary</option><option value="https://www.computerhope.com/history/">History</option><option value="https://www.computerhope.com/forum/">Forums</option><option value="https://www.computerhope.com/contact/">Contact</option></select>
+</div>
+</header>
+<div class="container ad"> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3999293766533555" data-ad-slot="7994873325" data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div class="container">
+<ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://www.computerhope.com/" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li>
+<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://www.computerhope.com/oh.htm" itemprop="item"><span itemprop="name">Help</span></a><meta itemprop="position" content="2"></li>
+<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://www.computerhope.com/os.htm" itemprop="item"><span itemprop="name">Operating systems</span></a><meta itemprop="position" content="3"></li>
+</ol>
+</div>
+<div class="container content" id="main-content">
+<article>
+<h1 itemprop="headline">Unix and Linux commands help</h1>
+<div class="updated">Updated: <span itemprop="dateModified" content="2018-05-21">05/21/2018</span> by <span itemprop="author publisher creator" itemscope="" itemtype="https://schema.org/Organization"><span itemprop="name">Computer Hope</span></span></div>
+<img src="./Linux and Unix commands, information, and help_files/ssh.jpg" alt="SSH" width="350" height="300" class="floatRight">
+<div class="pagenav contents">
+<ul>
+<li><a href="https://www.computerhope.com/unix.htm#unix">Unix ABCs</a></li>
+<li><a href="https://www.computerhope.com/unix.htm#linux">Linux ABCs</a></li>
+<li><a href="https://www.computerhope.com/unix.htm#dos">MS-DOS vs. Linux and Unix</a></li>
+<li><a href="https://www.computerhope.com/unix.htm#commands">Unix and Linux commands</a></li>
+<li class="out"><a href="https://www.computerhope.com/unixtop1.htm">Unix Top 10 commands</a></li>
+<li class="out"><a href="https://www.computerhope.com/ushort.htm">Unix Shortcuts</a></li>
+<li class="out"><a href="https://www.computerhope.com/history/unix.htm">Unix and Linux history</a></li>
+<li class="out"><a href="https://www.computerhope.com/tips/linux.htm">Unix and Linux tips</a></li>
+<li class="out"><a href="https://www.computerhope.com/network/unix.htm">Unix and Linux links</a></li>
+<li class="out"><a href="https://www.computerhope.com/linuxqa.htm">Linux Q&amp;A</a></li>
+</ul>
+</div>
+<h2 id="unix">Unix ABCs</h2>
+<p class="tab intro">Unix, which is not an acronym, was developed in the late <a href="https://www.computerhope.com/history/1960.htm">1960s</a> by many of the same people who helped create the <a href="https://www.computerhope.com/jargon/c/c.htm">C</a> programming language. Today, however, Unix is not just the work of a couple of programmers. Other organizations, institutes, and individuals contributed significant additions to the modern Unix system.</p>
+<ul class="arrow noprint">
+<li>See our <a href="https://www.computerhope.com/jargon/u/unix.htm">Unix</a> definition for additional related information.</li>
+</ul>
+<h2 id="linux">Linux ABCs</h2>
+<p class="tab">Linux (pronounced "<i>lee</i>'nuhks" or <i>li</i>'nuks, but not li'<i>nuhks</i>) is the <a href="https://www.computerhope.com/jargon/k/kernel.htm">kernel</a> of a free, <a href="https://www.computerhope.com/jargon/o/opensour.htm">open-source</a> <a href="https://www.computerhope.com/os.htm">operating system</a>. The <a href="https://www.computerhope.com/jargon/l/linux-kernel.htm">Linux kernel</a> was developed by <a href="https://www.computerhope.com/people/linus_torvalds.htm">Linus Torvalds</a> and released in 1991. It provided the underlying foundations for an operating system, but it lacked the user-level tools to make it complete.</p>
+<p class="tab">The <a href="https://www.computerhope.com/jargon/g/gnu.htm">GNU project</a>, begun in 1984 by <a href="https://www.computerhope.com/people/richard_stallman.htm">Richard Stallman</a>, had similar aims, creating a set of open-source tools and <a href="https://www.computerhope.com/jargon/u/utility.htm">utilities</a> modeled on the closed-source Unix operating system. The GNU project lacked an underlying kernel, however. After the Linux kernel was released, contributors ported GNU tools to the Linux kernel, and the GNU/Linux operating system was born.</p>
+<p class="tab">There is significant controversy (even today) over whether to refer to this combined operating system as "GNU/Linux" or "Linux." However, the general populace has gravitated to the name "Linux," and this name has largely stuck. The contributions of the GNU project must not be overlooked, however. When you run an essential command in Linux, you are using a tool painstakingly created by members of the GNU project.</p>
+<p class="tab">Over the years, Linux kernel development has grown to a group of over 10,000 developers all over the world. It is released under <a href="https://www.computerhope.com/jargon/g/gpl.htm">GPL</a> (General Public License), meaning it can be distributed, used, and expanded free of charge, and developers have access to all the source code.</p>
+<ul class="arrow noprint">
+<li>See our <a href="https://www.computerhope.com/jargon/l/linux.htm">Linux</a> definition for related information and variant information.</li>
+</ul>
+<h2 id="dos">MS-DOS vs. Linux and Unix</h2>
+<p class="tab">If you can navigate a computer using <a href="https://www.computerhope.com/msdos.htm">MS-DOS</a> or the Windows command line, you should be able to quickly pick up using Linux and Unix. In the chart below is a listing of common MS-DOS commands with their Linux and Unix counterpart.</p>
+<table class="mtable tab">
+<tbody><tr>
+<th>MS-DOS</th>
+<th>Linux and Unix</th>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/attribhl.htm">attrib</a></b></td>
+<td><a href="https://www.computerhope.com/unix/uchmod.htm">chmod</a></td>
+</tr>
+<tr class="tcw">
+<td><b>backup</b></td>
+<td><a href="https://www.computerhope.com/unix/utar.htm">tar</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/dirhlp.htm">dir</a></b></td>
+<td><a href="https://www.computerhope.com/unix/uls.htm">ls</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/clshlp.htm">cls</a></b></td>
+<td><a href="https://www.computerhope.com/unix/uclear.htm">clear</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/copyhlp.htm">copy</a></b></td>
+<td><a href="https://www.computerhope.com/unix/ucp.htm">cp</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/delhlp.htm">del</a></b></td>
+<td><a href="https://www.computerhope.com/unix/urm.htm">rm</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/deltree.htm">deltree</a></b></td>
+<td><a href="https://www.computerhope.com/unix/urm.htm">rm</a> -R<br>
+<a href="https://www.computerhope.com/unix/urmdir.htm">rmdir</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/edithlp.htm">edit</a></b></td>
+<td><a href="https://www.computerhope.com/unix/uvi.htm">vi</a><br>
+<a href="https://www.computerhope.com/unix/upico.htm">pico</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/formathl.htm">format</a></b></td>
+<td>fdformat, <a href="https://www.computerhope.com/unix/umount.htm">mount</a>, and <a href="https://www.computerhope.com/unix/umount.htm">umount</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/movehlp.htm">move</a> and <a href="https://www.computerhope.com/renamehl.htm">rename</a></b></td>
+<td><a href="https://www.computerhope.com/unix/umv.htm">mv</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/typehlp.htm">Type</a></b></td>
+<td><a href="https://www.computerhope.com/unix/uless.htm">less</a> &lt;file&gt;</td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/cdhlp.htm">cd</a></b></td>
+<td><a href="https://www.computerhope.com/unix/ucd.htm">cd</a><br>
+<a href="https://www.computerhope.com/unix/uchdir.htm">chdir</a></td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/morehlp.htm">more</a> &lt; file</b></td>
+<td><a href="https://www.computerhope.com/unix/umore.htm">more</a> file</td>
+</tr>
+<tr class="tcw">
+<td><b><a href="https://www.computerhope.com/mdhlp.htm">md</a></b></td>
+<td><a href="https://www.computerhope.com/unix/umkdir.htm">mkdir</a></td>
+</tr>
+<tr class="tcw">
+<td><b>win</b></td>
+<td><a href="https://www.computerhope.com/unix/ux.htm">startx</a></td>
+</tr>
+</tbody></table>
+<h2 id="commands">Linux and Unix commands</h2>
+<table class="mtable tab">
+<tbody><tr>
+<td colspan="2">&nbsp; * See the <a href="https://www.computerhope.com/unix/overview.htm">Linux and Unix commands overview</a> page for a brief description of all commands.</td>
+</tr>
+<tr>
+<td class="tclb bld">A</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/ua2p.htm">a2p</a> | <a href="https://www.computerhope.com/unix/uac.htm">ac</a> | <a href="https://www.computerhope.com/unix/adduser.htm">addgroup</a> | <a href="https://www.computerhope.com/unix/adduser.htm">adduser</a> | <a href="https://www.computerhope.com/unix/ualias.htm">alias</a> | <a href="https://www.computerhope.com/unix/agrep.htm">agrep</a> | <a href="https://www.computerhope.com/unix/apropos.htm">apropos</a> | <a href="https://www.computerhope.com/unix/apt-cache.htm">apt-cache</a> | <a href="https://www.computerhope.com/unix/apt-get.htm">apt-get</a> | <a href="https://www.computerhope.com/unix/aptitude.htm">aptitude</a> | <a href="https://www.computerhope.com/unix/uar.htm">ar</a> | <a href="https://www.computerhope.com/unix/uarch.htm">arch</a> | <a href="https://www.computerhope.com/unix/arp.htm">arp</a> | <a href="https://www.computerhope.com/unix/uas.htm">as</a> | <a href="https://www.computerhope.com/unix/aspell.htm">aspell</a> | <a href="https://www.computerhope.com/unix/uat.htm">at</a> | <a href="https://www.computerhope.com/unix/uat.htm">atq</a> | <a href="https://www.computerhope.com/unix/uat.htm">atrm</a> | <a href="https://www.computerhope.com/unix/uawk.htm">awk</a></td>
+</tr>
+<tr>
+<td class="tclb bld">B</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/ubasenam.htm">basename</a> | <a href="https://www.computerhope.com/unix/ubash.htm">bash</a> | <a href="https://www.computerhope.com/unix/uat.htm">batch</a> | <a href="https://www.computerhope.com/unix/ubc.htm">bc</a> | <a href="https://www.computerhope.com/unix/ubdiff.htm">bdiff</a> | <a href="https://www.computerhope.com/unix/ubfs.htm">bfs</a> | <a href="https://www.computerhope.com/unix/ubg.htm">bg</a> | <a href="https://www.computerhope.com/unix/ubiff.htm">biff</a> | <a href="https://www.computerhope.com/unix/ubreak.htm">break</a> | <a href="https://www.computerhope.com/unix/ubs.htm">bs</a> | <a href="https://www.computerhope.com/unix/uexit.htm">bye</a></td>
+</tr>
+<tr>
+<td class="tclb bld">C</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/ucal.htm">cal</a> | <a href="https://www.computerhope.com/unix/ucalande.htm">calendar</a> | <a href="https://www.computerhope.com/unix/ucancel.htm">cancel</a> | <a href="https://www.computerhope.com/unix/ucat.htm">cat</a> | <a href="https://www.computerhope.com/unix/ucc.htm">cc</a> | <a href="https://www.computerhope.com/unix/ucd.htm">cd</a> | <a href="https://www.computerhope.com/unix/cfdisk.htm">cfdisk</a> | <a href="https://www.computerhope.com/unix/ucd.htm">chdir</a> | <a href="https://www.computerhope.com/unix/ueqn.htm">checkeq</a> | <a href="https://www.computerhope.com/unix/uchecknr.htm">checknr</a> | <a href="https://www.computerhope.com/unix/chfn.htm">chfn</a> | <a href="https://www.computerhope.com/unix/uchgrp.htm">chgrp</a> | <a href="https://www.computerhope.com/unix/uchkey.htm">chkey</a> | <a href="https://www.computerhope.com/unix/uchmod.htm">chmod</a> | <a href="https://www.computerhope.com/unix/uchown.htm">chown</a> | <a href="https://www.computerhope.com/unix/chroot.htm">chroot</a> | <a href="https://www.computerhope.com/unix/chsh.htm">chsh</a> | <a href="https://www.computerhope.com/unix/ucksum.htm">cksum</a> | <a href="https://www.computerhope.com/unix/uclear.htm">clear</a> | <a href="https://www.computerhope.com/unix/uclear.htm">cls</a> | <a href="https://www.computerhope.com/unix/ucmp.htm">cmp</a> | <a href="https://www.computerhope.com/unix/ucol.htm">col</a> | <a href="https://www.computerhope.com/unix/ucomm.htm">comm</a> | <a href="https://www.computerhope.com/unix/ucompres.htm">compress</a> | <a href="https://www.computerhope.com/unix/ubreak.htm">continue</a> | <a href="https://www.computerhope.com/unix/ucp.htm">copy</a> | <a href="https://www.computerhope.com/unix/ucp.htm">cp</a> | <a href="https://www.computerhope.com/unix/ucpio.htm">cpio</a> | <a href="https://www.computerhope.com/unix/ucrontab.htm">crontab</a> | <a href="https://www.computerhope.com/unix/ucsh.htm">csh</a> | <a href="https://www.computerhope.com/unix/ucsplit.htm">csplit</a> | <a href="https://www.computerhope.com/unix/uctags.htm">ctags</a> | <a href="https://www.computerhope.com/unix/ucu.htm">cu</a> | <a href="https://www.computerhope.com/unix/curl.htm">curl</a> | <a href="https://www.computerhope.com/unix/ucut.htm">cut</a></td>
+</tr>
+<tr>
+<td class="tclb bld">D</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/udate.htm">date</a> | <a href="https://www.computerhope.com/unix/udc.htm">dc</a> | <a href="https://www.computerhope.com/unix/dd.htm">dd</a> | <a href="https://www.computerhope.com/unix/deluser.htm">delgroup</a> | <a href="https://www.computerhope.com/unix/deluser.htm">deluser</a> | <a href="https://www.computerhope.com/unix/depmod.htm">depmod</a> | <a href="https://www.computerhope.com/unix/uderoff.htm">deroff</a> | <a href="https://www.computerhope.com/unix/udf.htm">df</a> | <a href="https://www.computerhope.com/unix/dhclient.htm">dhclient</a> | <a href="https://www.computerhope.com/unix/udiff.htm">diff</a> | <a href="https://www.computerhope.com/unix/dig.htm">dig</a> | <a href="https://www.computerhope.com/unix/uls.htm">dir</a> | <a href="https://www.computerhope.com/unix/udircmp.htm">dircmp</a> | <a href="https://www.computerhope.com/unix/udirname.htm">dirname</a> | <a href="https://www.computerhope.com/unix/dmesg.htm">dmesg</a> | <a href="https://www.computerhope.com/unix/dos2unix.htm">dos2unix</a> | <a href="https://www.computerhope.com/unix/dpkg.htm">dpkg</a> | <a href="https://www.computerhope.com/unix/udpost.htm">dpost</a> | <a href="https://www.computerhope.com/unix/udu.htm">du</a></td>
+</tr>
+<tr>
+<td class="tclb bld">E</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uecho.htm">echo</a> | <a href="https://www.computerhope.com/unix/ued.htm">ed</a> | <a href="https://www.computerhope.com/unix/uedit.htm">edit</a> | <a href="https://www.computerhope.com/unix/uegrep.htm">egrep</a> | <a href="https://www.computerhope.com/unix/eject.htm">eject</a> | <a href="https://www.computerhope.com/unix/uelm.htm">elm</a> | <a href="https://www.computerhope.com/unix/uemacs.htm">emacs</a> | <a href="https://www.computerhope.com/unix/uenable.htm">enable</a> | <a href="https://www.computerhope.com/unix/uenv.htm">env</a> | <a href="https://www.computerhope.com/unix/ueqn.htm">eqn</a> | <a href="https://www.computerhope.com/unix/uex.htm">ex</a> | <a href="https://www.computerhope.com/unix/uexit.htm">exit</a> | <a href="https://www.computerhope.com/unix/uexpand.htm">expand</a> | <a href="https://www.computerhope.com/unix/uexpr.htm">expr</a></td>
+</tr>
+<tr>
+<td class="tclb bld">F</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uhistory.htm">fc</a> | <a href="https://www.computerhope.com/unix/fdisk.htm">fdisk</a> | <a href="https://www.computerhope.com/unix/ufg.htm">fg</a> | <a href="https://www.computerhope.com/unix/ufgrep.htm">fgrep</a> | <a href="https://www.computerhope.com/unix/ufile.htm">file</a> | <a href="https://www.computerhope.com/unix/ufind.htm">find</a> | <a href="https://www.computerhope.com/unix/findsmb.htm">findsmb</a> | <a href="https://www.computerhope.com/unix/ufinger.htm">finger</a> | <a href="https://www.computerhope.com/unix/ufmt.htm">fmt</a> | <a href="https://www.computerhope.com/unix/ufold.htm">fold</a> | <a href="https://www.computerhope.com/unix/ufor.htm">for</a> | <a href="https://www.computerhope.com/unix/ufor.htm">foreach</a> | <a href="https://www.computerhope.com/unix/free.htm">free</a> | <a href="https://www.computerhope.com/unix/dos2unix.htm">fromdos</a> | <a href="https://www.computerhope.com/unix/fsck.htm">fsck</a> | <a href="https://www.computerhope.com/unix/ftp.htm">ftp</a> | <a href="https://www.computerhope.com/unix/fuser.htm">fuser</a></td>
+</tr>
+<tr>
+<td class="tclb bld">G</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/gawk.htm">gawk</a> | <a href="https://www.computerhope.com/unix/ugetfacl.htm">getfacl</a> | <a href="https://www.computerhope.com/unix/gpasswd.htm">gpasswd</a> | <a href="https://www.computerhope.com/unix/ugprof.htm">gprof</a> | <a href="https://www.computerhope.com/unix/ugrep.htm">grep</a> | <a href="https://www.computerhope.com/unix/groupadd.htm">groupadd</a> | <a href="https://www.computerhope.com/unix/groupdel.htm">groupdel</a> | <a href="https://www.computerhope.com/unix/groupmod.htm">groupmod</a> | <a href="https://www.computerhope.com/unix/uzcat.htm">gunzip</a> | <a href="https://www.computerhope.com/unix/vim.htm">gview</a> | <a href="https://www.computerhope.com/unix/vim.htm">gvim</a> | <a href="https://www.computerhope.com/unix/uzcat.htm">gzip</a></td>
+</tr>
+<tr>
+<td class="tclb bld">H</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uhalt.htm">halt</a> | <a href="https://www.computerhope.com/unix/uunhash.htm">hash</a> | <a href="https://www.computerhope.com/unix/uunhash.htm">hashstat</a> | <a href="https://www.computerhope.com/unix/uhead.htm">head</a> | <a href="https://www.computerhope.com/unix/uhelp.htm">help</a> | <a href="https://www.computerhope.com/unix/uhistory.htm">history</a> | <a href="https://www.computerhope.com/unix/host.htm">host</a> | <a href="https://www.computerhope.com/unix/hostid.htm">hostid</a> | <a href="https://www.computerhope.com/unix/uhostnam.htm">hostname</a></td>
+</tr>
+<tr>
+<td class="tclb bld">I</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uid.htm">id</a> | <a href="https://www.computerhope.com/unix/uifconfi.htm">ifconfig</a> | <a href="https://www.computerhope.com/unix/ifup.htm">ifdown</a> | <a href="https://www.computerhope.com/unix/ifup.htm">ifup</a> | <a href="https://www.computerhope.com/unix/info.htm">info</a> | <a href="https://www.computerhope.com/unix/telinit.htm">init</a> | <a href="https://www.computerhope.com/unix/insmod.htm">insmod</a> | <a href="https://www.computerhope.com/unix/iostat.htm">iostat</a> | <a href="https://www.computerhope.com/unix/ip.htm">ip</a> | <a href="https://www.computerhope.com/unix/uisalist.htm">isalist</a> | <a href="https://www.computerhope.com/unix/iwconfig.htm">iwconfig</a></td>
+</tr>
+<tr>
+<td class="tclb bld">J</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/ujobs.htm">jobs</a> | <a href="https://www.computerhope.com/unix/ujoin.htm">join</a></td>
+</tr>
+<tr>
+<td class="tclb bld">K</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/ukeylogi.htm">keylogin</a> | <a href="https://www.computerhope.com/unix/ukill.htm">kill</a> | <a href="https://www.computerhope.com/unix/killall.htm">killall</a> | <a href="https://www.computerhope.com/unix/uksh.htm">ksh</a></td>
+</tr>
+<tr>
+<td class="tclb bld">L</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/last.htm">last</a> | <a href="https://www.computerhope.com/unix/uld.htm">ld</a> | <a href="https://www.computerhope.com/unix/uldd.htm">ldd</a> | <a href="https://www.computerhope.com/unix/uless.htm">less</a> | <a href="https://www.computerhope.com/unix/ulex.htm">lex</a> | <a href="https://www.computerhope.com/unix/link.htm">link</a> | <a href="https://www.computerhope.com/unix/uln.htm">ln</a> | <a href="https://www.computerhope.com/unix/uexit.htm">lo</a> | <a href="https://www.computerhope.com/unix/ulocate.htm">locate</a> | <a href="https://www.computerhope.com/unix/ulogin.htm">login</a> | <a href="https://www.computerhope.com/unix/ulogname.htm">logname</a> | <a href="https://www.computerhope.com/unix/uexit.htm">logout</a> | <a href="https://www.computerhope.com/unix/losetup.htm">losetup</a> | <a href="https://www.computerhope.com/unix/ulp.htm">lp</a> | <a href="https://www.computerhope.com/unix/ulpadmin.htm">lpadmin</a> | <a href="https://www.computerhope.com/unix/ulpc.htm">lpc</a> | <a href="https://www.computerhope.com/unix/ulpq.htm">lpq</a> | <a href="https://www.computerhope.com/unix/ulpr.htm">lpr</a> | <a href="https://www.computerhope.com/unix/ulprm.htm">lprm</a> | <a href="https://www.computerhope.com/unix/ulpstat.htm">lpstat</a> | <a href="https://www.computerhope.com/unix/uls.htm">ls</a> | <a href="https://www.computerhope.com/unix/lsof.htm">lsof</a> | <a href="https://www.computerhope.com/unix/lsmod.htm">lsmod</a>| <a href="https://www.computerhope.com/unix/xz.htm">lzcat</a> | <a href="https://www.computerhope.com/unix/xz.htm">lzma</a></td>
+</tr>
+<tr>
+<td class="tclb bld">M</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/umach.htm">mach</a> | <a href="https://www.computerhope.com/unix/umail.htm">mail</a> | <a href="https://www.computerhope.com/unix/umailcom.htm">mailcompat</a> | <a href="https://www.computerhope.com/unix/umailx.htm">mailx</a> | <a href="https://www.computerhope.com/unix/umake.htm">make</a> | <a href="https://www.computerhope.com/unix/uman.htm">man</a> | <a href="https://www.computerhope.com/jargon/m/md5sum.htm">md5sum</a> | <a href="https://www.computerhope.com/unix/merge.htm">merge</a> | <a href="https://www.computerhope.com/unix/umesg.htm">mesg</a> | <a href="https://www.computerhope.com/unix/mii-tool.htm">mii-tool</a> | <a href="https://www.computerhope.com/unix/umkdir.htm">mkdir</a> | <a href="https://www.computerhope.com/unix/mkfs.htm">mkfs</a> | <a href="https://www.computerhope.com/unix/mkswap.htm">mkswap</a> | <a href="https://www.computerhope.com/unix/modinfo.htm">modinfo</a> | <a href="https://www.computerhope.com/unix/modprobe.htm">modprobe</a> | <a href="https://www.computerhope.com/unix/umore.htm">more</a> | <a href="https://www.computerhope.com/unix/umount.htm">mount</a> | <a href="https://www.computerhope.com/unix/umv.htm">move</a> | <a href="https://www.computerhope.com/unix/umt.htm">mt</a> | <a href="https://www.computerhope.com/unix/umv.htm">mv</a> | <a href="https://www.computerhope.com/unix/myisamch.htm">myisamchk</a> | <a href="https://www.computerhope.com/unix/mysql.htm">mysql</a> | <a href="https://www.computerhope.com/unix/mysqldum.htm">mysqldump</a></td>
+</tr>
+<tr>
+<td class="tclb bld">N</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/nc.htm">nc</a> | <a href="https://www.computerhope.com/unix/ueqn.htm">neqn</a> | <a href="https://www.computerhope.com/unix/unetstat.htm">netstat</a> | <a href="https://www.computerhope.com/unix/unewalia.htm">newalias</a> | <a href="https://www.computerhope.com/unix/unewform.htm">newform</a> | <a href="https://www.computerhope.com/unix/unewgrp.htm">newgrp</a> | <a href="https://www.computerhope.com/unix/unice.htm">nice</a> | <a href="https://www.computerhope.com/unix/uniscat.htm">niscat</a> | <a href="https://www.computerhope.com/unix/unischmo.htm">nischmod</a> | <a href="https://www.computerhope.com/unix/unischow.htm">nischown</a> | <a href="https://www.computerhope.com/unix/unischtt.htm">nischttl</a> | <a href="https://www.computerhope.com/unix/unisdefa.htm">nisdefaults</a> | <a href="https://www.computerhope.com/unix/unismatc.htm">nisgrep</a> | <a href="https://www.computerhope.com/unix/unismatc.htm">nismatch</a> | <a href="https://www.computerhope.com/unix/unispass.htm">nispasswd</a> | <a href="https://www.computerhope.com/unix/unistbla.htm">nistbladm</a> | <a href="https://www.computerhope.com/unix/nl.htm">nl</a> | <a href="https://www.computerhope.com/unix/nmap.htm">nmap</a> | <a href="https://www.computerhope.com/unix/unohup.htm">nohup</a> | <a href="https://www.computerhope.com/unix/unroff.htm">nroff</a> | <a href="https://www.computerhope.com/unix/unslooku.htm">nslookup</a></td>
+</tr>
+<tr>
+<td class="tclb bld">O</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/od.htm">od</a> | <a href="https://www.computerhope.com/unix/uon.htm">on</a> | <a href="https://www.computerhope.com/unix/utrap.htm">onintr</a> | <a href="https://www.computerhope.com/unix/uoptisa.htm">optisa</a></td>
+</tr>
+<tr>
+<td class="tclb bld">P</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/upack.htm">pack</a> | <a href="https://www.computerhope.com/unix/upagesiz.htm">pagesize</a> | <a href="https://www.computerhope.com/unix/parted.htm">parted</a> | <a href="https://www.computerhope.com/unix/partprob.htm">partprobe</a> | <a href="https://www.computerhope.com/unix/upasswor.htm">passwd</a> | <a href="https://www.computerhope.com/unix/upaste.htm">paste</a> | <a href="https://www.computerhope.com/unix/upax.htm">pax</a> | <a href="https://www.computerhope.com/unix/upcat.htm">pcat</a> | <a href="https://www.computerhope.com/unix/uperl.htm">perl</a> | <a href="https://www.computerhope.com/unix/upg.htm">pg</a> | <a href="https://www.computerhope.com/unix/upgrep.htm">pgrep</a> | <a href="https://www.computerhope.com/unix/upico.htm">pico</a> | <a href="https://www.computerhope.com/unix/upine.htm">pine</a> | <a href="https://www.computerhope.com/unix/uping.htm">ping</a> | <a href="https://www.computerhope.com/unix/upgrep.htm">pkill</a> | <a href="https://www.computerhope.com/unix/uhalt.htm">poweroff</a> | <a href="https://www.computerhope.com/unix/upr.htm">pr</a> | <a href="https://www.computerhope.com/unix/printenv.htm">printenv</a> | <a href="https://www.computerhope.com/unix/upriocnt.htm">priocntl</a> | <a href="https://www.computerhope.com/unix/uprintf.htm">printf</a> | <a href="https://www.computerhope.com/unix/ups.htm">ps</a> | <a href="https://www.computerhope.com/unix/pstree.htm">pstree</a> | <a href="https://www.computerhope.com/unix/upvs.htm">pvs</a> | <a href="https://www.computerhope.com/unix/upwd.htm">pwd</a> | <a href="https://www.computerhope.com/unix/python.htm">python</a></td>
+</tr>
+<tr>
+<td class="tclb bld">Q</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uexit.htm">quit</a></td>
+</tr>
+<tr>
+<td class="tclb bld">R</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/urcp.htm">rcp</a> | <a href="https://www.computerhope.com/unix/readlink.htm">readlink</a> | <a href="https://www.computerhope.com/unix/uhalt.htm">reboot</a> | <a href="https://www.computerhope.com/unix/ued.htm">red</a> | <a href="https://www.computerhope.com/unix/urehash.htm">rehash</a> | <a href="https://www.computerhope.com/unix/ursh.htm">remsh</a> | <a href="https://www.computerhope.com/unix/rename.htm">rename</a> | <a href="https://www.computerhope.com/unix/renice.htm">renice</a> | <a href="https://www.computerhope.com/unix/ufor.htm">repeat</a> | <a href="https://www.computerhope.com/unix/replace.htm">replace</a> | <a href="https://www.computerhope.com/unix/vim.htm">rgview</a> | <a href="https://www.computerhope.com/unix/vim.htm">rgvim</a> | <a href="https://www.computerhope.com/unix/urlogin.htm">rlogin</a> | <a href="https://www.computerhope.com/unix/urm.htm">rm</a> | <a href="https://www.computerhope.com/unix/umail.htm">rmail</a> | <a href="https://www.computerhope.com/unix/urmdir.htm">rmdir</a> | <a href="https://www.computerhope.com/unix/rmmod.htm">rmmod</a> | <a href="https://www.computerhope.com/unix/urn.htm">rn</a> | <a href="https://www.computerhope.com/unix/route.htm">route</a> | <a href="https://www.computerhope.com/unix/urpcinfo.htm">rpcinfo</a> | <a href="https://www.computerhope.com/unix/ursh.htm">rsh</a> | <a href="https://www.computerhope.com/unix/rsync.htm">rsync</a> | <a href="https://www.computerhope.com/unix/vim.htm">rview</a> | <a href="https://www.computerhope.com/unix/vim.htm">rvim</a></td>
+</tr>
+<tr>
+<td class="tclb bld">S</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/us2p.htm">s2p</a> | <a href="https://www.computerhope.com/unix/usag.htm">sag</a> | <a href="https://www.computerhope.com/unix/usar.htm">sar</a> | <a href="https://www.computerhope.com/unix/scp.htm">scp</a> | <a href="https://www.computerhope.com/unix/screen.htm">screen</a> | <a href="https://www.computerhope.com/unix/uscript.htm">script</a> | <a href="https://www.computerhope.com/unix/usdiff.htm">sdiff</a> | <a href="https://www.computerhope.com/unix/used.htm">sed</a> | <a href="https://www.computerhope.com/unix/usendmai.htm">sendmail</a> | <a href="https://www.computerhope.com/unix/service.htm">service</a> | <a href="https://www.computerhope.com/unix/uset.htm">set</a> | <a href="https://www.computerhope.com/unix/usetenv.htm">setenv</a> | <a href="https://www.computerhope.com/unix/usetfacl.htm">setfacl</a> | <a href="https://www.computerhope.com/unix/sfdisk.htm">sfdisk</a> | <a href="https://www.computerhope.com/unix/sftp.htm">sftp</a> | <a href="https://www.computerhope.com/unix/ush.htm">sh</a> | <a href="https://www.computerhope.com/unix/sha224sum.htm">sha224sum</a> | <a href="https://www.computerhope.com/unix/sha256sum.htm">sha256sum</a> | <a href="https://www.computerhope.com/unix/sha384sum.htm">sha384sum</a> | <a href="https://www.computerhope.com/unix/sha512sum.htm">sha512sum</a> | <a href="https://www.computerhope.com/unix/shred.htm">shred</a> | <a href="https://www.computerhope.com/unix/ushutdow.htm">shutdown</a> | <a href="https://www.computerhope.com/unix/signals.htm">signals</a> | <a href="https://www.computerhope.com/unix/usleep.htm">sleep</a> | <a href="https://www.computerhope.com/unix/slogin.htm">slogin</a> | <a href="https://www.computerhope.com/unix/smbclien.htm">smbclient</a> | <a href="https://www.computerhope.com/unix/usort.htm">sort</a> | <a href="https://www.computerhope.com/unix/uspell.htm">spell</a> | <a href="https://www.computerhope.com/unix/usplit.htm">split</a> | <a href="https://www.computerhope.com/unix/stat.htm">stat</a> | <a href="https://www.computerhope.com/unix/ustop.htm">stop</a> | <a href="https://www.computerhope.com/unix/startx.htm">startx</a> | <a href="https://www.computerhope.com/unix/strftime.htm">strftime</a> | <a href="https://www.computerhope.com/unix/strip.htm">strip</a> | <a href="https://www.computerhope.com/unix/ustty.htm">stty</a> | <a href="https://www.computerhope.com/unix/usu.htm">su</a> | <a href="https://www.computerhope.com/unix/sudo.htm">sudo</a> | <a href="https://www.computerhope.com/unix/swapon.htm">swapoff</a> | <a href="https://www.computerhope.com/unix/swapon.htm">swapon</a> | <a href="https://www.computerhope.com/unix/sysklogd.htm">sysklogd</a></td>
+</tr>
+<tr>
+<td class="tclb bld">T</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/utabs.htm">tabs</a> | <a href="https://www.computerhope.com/unix/tac.htm">tac</a> | <a href="https://www.computerhope.com/unix/utail.htm">tail</a> | <a href="https://www.computerhope.com/unix/talk.htm">talk</a> | <a href="https://www.computerhope.com/unix/utar.htm">tar</a> | <a href="https://www.computerhope.com/unix/utbl.htm">tbl</a> | <a href="https://www.computerhope.com/unix/utcopy.htm">tcopy</a> | <a href="https://www.computerhope.com/unix/tcpdump.htm">tcpdump</a> | <a href="https://www.computerhope.com/unix/tcsh.htm">tcsh</a> | <a href="https://www.computerhope.com/unix/utee.htm">tee</a> | <a href="https://www.computerhope.com/unix/telinit.htm">telinit</a> | <a href="https://www.computerhope.com/unix/utelnet.htm">telnet</a> | <a href="https://www.computerhope.com/unix/test.htm">test</a> | <a href="https://www.computerhope.com/unix/utime.htm">time</a> | <a href="https://www.computerhope.com/unix/utimex.htm">timex</a> | <a href="https://www.computerhope.com/unix/dos2unix.htm">todos</a> | <a href="https://www.computerhope.com/unix/top.htm">top</a> | <a href="https://www.computerhope.com/unix/utouch.htm">touch</a> | <a href="https://www.computerhope.com/unix/utput.htm">tput</a> | <a href="https://www.computerhope.com/unix/utr.htm">tr</a> | <a href="https://www.computerhope.com/unix/utracero.htm">traceroute</a> | <a href="https://www.computerhope.com/unix/tree.htm">tree</a> | <a href="https://www.computerhope.com/unix/utroff.htm">troff</a> | <a href="https://www.computerhope.com/unix/tty.htm">tty</a></td>
+</tr>
+<tr>
+<td class="tclb bld">U</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uul.htm">ul</a> |&nbsp; <a href="https://www.computerhope.com/unix/uumask.htm">umask</a> | <a href="https://www.computerhope.com/unix/uunalias.htm">unalias</a> | <a href="https://www.computerhope.com/unix/uuname.htm">uname</a> | <a href="https://www.computerhope.com/unix/uuncompr.htm">uncompress</a> | <a href="https://www.computerhope.com/unix/uunhash.htm">unhash</a> | <a href="https://www.computerhope.com/unix/uuniq.htm">uniq</a> | <a href="https://www.computerhope.com/unix/unlink.htm">unlink</a> | <a href="https://www.computerhope.com/unix/xz.htm">unlzma</a> | <a href="https://www.computerhope.com/unix/umount.htm">unmount</a> | <a href="https://www.computerhope.com/unix/uunpack.htm">unpack</a> | <a href="https://www.computerhope.com/unix/utar.htm">untar</a> | <a href="https://www.computerhope.com/unix/uuntil.htm">until</a> | <a href="https://www.computerhope.com/unix/xz.htm">unxz</a> | <a href="https://www.computerhope.com/unix/unzip.htm">unzip</a> | <a href="https://www.computerhope.com/unix/uptime.htm">uptime</a> | <a href="https://www.computerhope.com/unix/useradd.htm">useradd</a> | <a href="https://www.computerhope.com/unix/userdel.htm">userdel</a> | <a href="https://www.computerhope.com/unix/usermod.htm">usermod</a></td>
+</tr>
+<tr>
+<td class="tclb bld">V</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uvacatio.htm">vacation</a> | <a href="https://www.computerhope.com/unix/uvi.htm">vedit</a> |&nbsp; <a href="https://www.computerhope.com/unix/uvgrind.htm">vgrind</a> | <a href="https://www.computerhope.com/unix/uvi.htm">vi</a> | <a href="https://www.computerhope.com/unix/uvi.htm">view</a> | <a href="https://www.computerhope.com/unix/vim.htm">vim</a> | <a href="https://www.computerhope.com/unix/vipw.htm">vipw</a> | <a href="https://www.computerhope.com/unix/visudo.htm">visudo</a> | <a href="https://www.computerhope.com/unix/vmstat.htm">vmstat</a></td>
+</tr>
+<tr>
+<td class="tclb bld">W</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/w.htm">w</a> | <a href="https://www.computerhope.com/unix/uwait.htm">wait</a> | <a href="https://www.computerhope.com/unix/wall.htm">wall</a> | <a href="https://www.computerhope.com/unix/uwc.htm">wc</a> | <a href="https://www.computerhope.com/unix/wget.htm">wget</a> | <a href="https://www.computerhope.com/unix/uwhereis.htm">whereis</a> | <a href="https://www.computerhope.com/unix/whatis.htm">whatis</a> | <a href="https://www.computerhope.com/unix/uwhich.htm">which</a> | <a href="https://www.computerhope.com/unix/uuntil.htm">while</a>| <a href="https://www.computerhope.com/unix/uwho.htm">who</a> | <a href="https://www.computerhope.com/unix/whoami.htm">whoami</a> | <a href="https://www.computerhope.com/unix/uwhois.htm">whois</a> | <a href="https://www.computerhope.com/unix/write.htm">write</a></td>
+</tr>
+<tr>
+<td class="tclb bld">X</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/ux.htm">X</a> | <a href="https://www.computerhope.com/unix/xargs.htm">xargs</a> | <a href="https://www.computerhope.com/unix/uxfd.htm">xfd</a> | <a href="https://www.computerhope.com/unix/xhost.htm">xhost</a> | <a href="https://www.computerhope.com/unix/xinit.htm">xinit</a> | <a href="https://www.computerhope.com/unix/uxlsfont.htm">xlsfonts</a> | <a href="https://www.computerhope.com/unix/xorg.htm">xorg</a> | <a href="https://www.computerhope.com/unix/uxset.htm">xset</a> | <a href="https://www.computerhope.com/unix/uxterm.htm">xterm</a> | <a href="https://www.computerhope.com/unix/uxrdb.htm">xrdb</a> | <a href="https://www.computerhope.com/unix/xz.htm">xz</a> | <a href="https://www.computerhope.com/unix/xz.htm">xzcat</a></td>
+</tr>
+<tr>
+<td class="tclb bld">Y</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uyacc.htm">yacc</a> | <a href="https://www.computerhope.com/unix/yes.htm">yes</a> | <a href="https://www.computerhope.com/unix/uyppassw.htm">yppasswd</a> | <a href="https://www.computerhope.com/unix/yum.htm">yum</a></td>
+</tr>
+<tr>
+<td class="tclb bld">Z</td>
+<td class="tcw"><a href="https://www.computerhope.com/unix/uzcat.htm">zcat</a> | <a href="https://www.computerhope.com/unix/zip.htm">zip</a> | <a href="https://www.computerhope.com/unix/zipcloak.htm">zipcloak</a> | <a href="https://www.computerhope.com/unix/zipinfo.htm">zipinfo</a> | <a href="https://www.computerhope.com/unix/zipnote.htm">zipnote</a> | <a href="https://www.computerhope.com/unix/zipsplit.htm">zipsplit</a></td>
+</tr>
+</tbody></table>
+<div class="tip tab"><span class="title">Tip</span>
+<p>You can get additional information about a specific command for your Unix or Linux variant by using the <b><a href="https://www.computerhope.com/unix/uman.htm">man</a></b> command.</p>
+</div>
+</article>
+<div class="bottomad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3999293766533555" data-ad-slot="6514780129" data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<div class="related"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3999293766533555" data-ad-slot="9849691723" data-ad-format="autorelaxed"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+</div>
+<div id="meta_wrap" class="cf">
+<ul class="options cf">
+<li class="useful-page"> <span class="nolink">Was this page useful?</span> <a href="https://www.computerhope.com/cgi-bin/feedback.cgi?yes" rel="nofollow" class="first-child">Yes</a> <a href="https://www.computerhope.com/cgi-bin/feedback.cgi?no" rel="nofollow">No</a></li>
+<li>
+<ul>
+<li class="feedback"><a href="https://www.computerhope.com/feedback/" rel="nofollow" title="Give us your feedback about this page">Feedback</a></li>
+<li class="email"><a href="https://www.computerhope.com/contact/" rel="nofollow" title="E-mail Computer Hope">E-mail</a></li>
+<li class="share"><a href="https://www.computerhope.com/share/" rel="nofollow" title="Share this page with friends and social networks">Share</a></li>
+<li class="first-child print"><a href="https://www.computerhope.com/unix.htm#" onclick="window.print();return false;" rel="nofollow" title="Print a copy of this page">Print</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<footer>
+<form action="https://www.computerhope.com/cgi-bin/search.cgi" method="post" class="cf">
+<input class="sbar" name="q" title="Search" type="text" style="color: rgb(187, 187, 187);">
+<button type="Submit">Search</button>
+</form>
+<ul class="cf">
+<li class="recent-pages">
+<ol>
+<li class="widget-title"><h5>Recently added pages</h5></li>
+<li id="ra1"><a href="https://www.computerhope.com/issues/ch002004.htm">How to format a Microsoft Excel spreadsheet</a></li>
+<li id="ra2"><a href="https://www.computerhope.com/issues/ch002007.htm">How to reference a cell from another cell in Microsoft Excel</a></li>
+<li id="ra3"><a href="https://www.computerhope.com/issues/ch002003.htm">Google Sheets vs. Microsoft Excel</a></li>
+<li id="ra4"><a href="https://www.computerhope.com/issues/ch002002.htm">Google Docs vs. Microsoft Word</a></li>
+<li id="ra5"><a href="https://www.computerhope.com/jargon/p/partition.htm">What is a Partition?</a></li>
+<li><a href="https://www.computerhope.com/whatnew.htm">View all recent updates</a></li>
+</ol>
+</li>
+<li class="useful-links">
+<ol>
+<li class="widget-title"><h5>Useful links</h5></li>
+<li><a href="https://www.computerhope.com/more.htm">About Computer Hope</a></li>
+<li><a href="https://www.computerhope.com/sindex.htm">Site Map</a></li>
+<li><a href="https://www.computerhope.com/forum/">Forum</a></li>
+<li><a href="https://www.computerhope.com/contact/">Contact Us</a></li>
+<li><a href="https://www.computerhope.com/issues/ch000586.htm">How to Help</a></li>
+<li><a href="https://www.computerhope.com/chtop10.htm">Top 10 pages</a></li>
+</ol>
+</li>
+<li class="social-networks">
+<ol>
+<li class="widget-title first-child"><h5>Follow us</h5></li>
+<li><a href="https://www.facebook.com/computerhope/" class="facebook">Facebook</a></li>
+<li><a href="https://twitter.com/computerhope/" class="twitter">Twitter</a></li>
+<li><a href="https://www.pinterest.com/computerhope/" class="pinterest">Pinterest</a></li>
+<li><a href="https://www.youtube.com/user/Computerhope/" class="youtube">YouTube</a></li>
+<li><a href="https://www.computerhope.com/rss.htm" class="rss">RSS</a></li>
+</ol>
+</li>
+</ul>
+<div class="copyright">© 2019 Computer Hope<br><a href="https://www.computerhope.com/legal.htm" class="legal">Legal Disclaimer - Privacy Statement</a></div>
+</footer>
+</div>
+<script async="" src="./Linux and Unix commands, information, and help_files/recent.js"></script>
+<script src="./Linux and Unix commands, information, and help_files/jquery.min.js"></script>
+<script src="./Linux and Unix commands, information, and help_files/site.js"></script><a href="https://www.computerhope.com/unix.htm#" class="back-to-top" style="display: inline;">Back to Top</a>
+<script async="" src="./Linux and Unix commands, information, and help_files/addthis_widget.js"></script>
+
+
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr039.htm?view=embed -->
+<html lang="en-us" style="" class="applicationcache geolocation history postmessage svg websockets localstorage sessionstorage websqldatabase webworkers hashchange pointerevents canvas audio canvastext video webgl cssgradients multiplebgs opacity rgba inlinesvg hsla supports svgclippaths smil no-touchevents fontface generatedcontent textshadow cssanimations backgroundsize borderimage borderradius boxshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox flexboxlegacy cssreflections csstransforms csstransforms3d csstransitions indexeddb indexeddb-deletedatabase js ibm-v18 ibm-cxtype-3g hires linux chrome chrome7 webkit webkit5 ibm-grid-medium"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2019">
+
+
+
+
+<meta name="keywords" content="member functions, static, examples, ccnx11h">
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="./ibmdita.css">
+<link rel="Start" href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr036.htm">
+<title>Static member functions (C++ only)</title>
+<script type="text/javascript">
+window.digitalData = {page: {pageInfo: {ibm: {config: {coremodules: {enabled: false}, survey: {global_percent: 0}}}}}};
+window.kcTranslations = {'content.copy': 'Copy'};
+</script>
+
+
+<link type="text/css" href="./www(1).css" rel="stylesheet">
+<link type="text/css" href="./tables.css" rel="stylesheet">
+<link type="text/css" href="./content_northstar_styles.css" rel="stylesheet">
+<script type="text/javascript" charset="utf-8" src="./www(2).js"></script><style></style>
+<script type="text/javascript" charset="utf-8" src="./tables.js"></script>
+<script type="text/javascript" charset="utf-8" src="./dyntabs.js"></script>
+<script type="text/javascript" charset="utf-8" src="./content_northstar_main.build.js"></script>
+<link type="text/css" href="./globaltopic.css" rel="stylesheet"><script type="text/javascript" charset="utf-8" src="./globaltopic.js"></script><link type="text/css" href="./spinner.css" rel="stylesheet"></head>
+<body id="cplr039" clickeventadded="true"><main role="main" aria-label=""><article role="article" aria-labelledby="d25719e11">
+<h1 class="topictitle1" id="d25719e11" style="display: none;">Static member functions <span class="ph" data-hd-otherprops="html">(C++ only)</span></h1>
+
+
+<div class="body refbody">
+<div class="section"><p>You cannot have static and nonstatic member functions
+with the same names and the same number and type of arguments.</p>
+</div>
+
+<div class="section"><p>Like static data members, you may access a static member
+function <code class="ph codeph">f()</code> of a class <code class="ph codeph">A</code> without
+using an object of class <code class="ph codeph">A</code>.</p>
+</div>
+
+<div class="section"><div class="p">A static member function does not have a <code class="ph codeph">this</code> pointer.
+The following example demonstrates this: <pre class="codeblock"><code>#include &lt;iostream&gt;
+using namespace std;
+
+struct X {
+private:
+  int i;
+  static int si;
+public:
+  void set_i(int arg) { i = arg; }
+  static void set_si(int arg) { si = arg; }
+
+  void print_i() {
+    cout &lt;&lt; "Value of i = " &lt;&lt; i &lt;&lt; endl;
+    cout &lt;&lt; "Again, value of i = " &lt;&lt; this-&gt;i &lt;&lt; endl;
+  }
+
+  static void print_si() {
+    cout &lt;&lt; "Value of si = " &lt;&lt; si &lt;&lt; endl;
+    cout &lt;&lt; "Again, value of si = " &lt;&lt; this-&gt;si &lt;&lt; endl; // error
+  }
+
+};
+
+int X::si = 77;       // Initialize static data member
+
+int main() {
+  X xobj;
+  xobj.set_i(11);
+  xobj.print_i();
+
+  // static data members and functions belong to the class and
+  // can be accessed without using an object of class X
+  X::print_si();
+  X::set_si(22);
+  X::print_si();
+}</code></pre>The following is the output of the above example: <pre class="codeblock"><code>Value of i = 11
+Again, value of i = 11
+Value of si = 77
+Value of si = 22</code></pre>The compiler does not allow the member
+access operation <code class="ph codeph">this-&gt;si</code> in function <code class="ph codeph">A::print_si()</code> because
+this member function has been declared as static, and therefore does
+not have a <code class="ph codeph">this</code> pointer.</div>
+</div>
+
+<div class="section"><p>You can call a static member function using the <code class="ph codeph">this</code> pointer
+of a nonstatic member function. In the following example, the nonstatic
+member function <code class="ph codeph">printall()</code> calls the static member
+function <code class="ph codeph">f()</code> using the <code class="ph codeph">this</code> pointer: </p>
+</div>
+
+<div class="section"><p data-hd-platform="zos">CCNX11H</p>
+</div>
+
+<div class="example"> <pre class="codeblock"><code>#include &lt;iostream&gt;
+using namespace std;
+
+class C {
+  static void f() {
+    cout &lt;&lt; "Here is i: " &lt;&lt; i &lt;&lt; endl;
+  }
+  static int i;
+  int j;
+public:
+  C(int firstj): j(firstj) { }
+  void printall();
+};
+
+void C::printall() {
+  cout &lt;&lt; "Here is j: " &lt;&lt; this-&gt;j &lt;&lt; endl;
+  this-&gt;f();
+}
+
+int C::i = 3;
+
+int main() {
+  C obj_C(0);
+  obj_C.printall();
+}</code></pre></div>
+
+<div class="section"><div class="p">The following is the output of the above example: <pre class="codeblock"><code>Here is j: 0
+Here is i: 3</code></pre></div>
+</div>
+
+<div class="section"><p>A static member function cannot be declared with the keywords <a href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr139.htm?view=kc#cplr139"><code class="ph codeph">virtual</code></a>, <code class="ph codeph">const</code>, <code class="ph codeph">volatile</code>,
+or<code class="ph codeph"> const volatile</code>.</p>
+</div>
+
+<div class="section"><p>A static member function can access only the names of
+static members, enumerators, and nested types of the class in which
+it is declared. Suppose a static member function <code class="ph codeph">f()</code> is
+a member of class <code class="ph codeph">X</code>. The static member function <code class="ph codeph">f()</code> cannot
+access the nonstatic members <code class="ph codeph">X</code> or the nonstatic members
+of a base class of <code class="ph codeph">X</code>.</p>
+</div>
+
+</div>
+
+<aside role="complementary" aria-labelledby="d25719e11"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a data-hd-product="cpp cpp" href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr036.htm?view=kc">Static members (C++ only)</a></div>
+</div>
+
+<div class="linklist relinfo relref"><h2 class="linkheading">Related reference</h2>
+<ul><li><a data-hd-product="cpp" href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr035.htm?view=kc">The this pointer (C++ only)</a></li>
+</ul></div>
+</nav></aside></article></main><div id="ibm-overlay-backdrop"></div></body></html>

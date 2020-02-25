@@ -1,0 +1,28 @@
+/* Reveal the hidden lower tabs. */
+.devsite-collapsible-section .devsite-doc-set-nav-tab-list {
+  display: block;
+}
+
+@media screen and (max-width: 720px) {
+  /* Hide revealed the hidden lower tabs. */
+  .devsite-collapsible-section .devsite-doc-set-nav-tab-list {
+    display: none;
+  }
+
+  /* Reveal the hidden secondary branding (product category). */
+  .devsite-doc-set-nav-row .devsite-secondary-branding {
+    display: block;
+    font-size: inherit;
+    left: calc(24px + 24px + 16px);
+    overflow: hidden;
+    right: 100px;
+    text-overflow: ellipsis;
+    top: 15px;
+    white-space: nowrap;
+  }
+}
+
+/* Reveal the  hidden console link. */
+body[cloud-alternate-top-links-layout] a.devsite-header-link.hide-on-small {
+  display: inherit;
+}

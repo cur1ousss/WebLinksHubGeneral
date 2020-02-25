@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://dennisnotes.com/note/20180627-ubuntu-18.04-server-setup/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.58.3">
+
+
+<title>Secure Ubuntu 18.04 server setup - Dennis' Notes</title>
+<meta property="og:title" content="Secure Ubuntu 18.04 server setup - Dennis&#39; Notes">
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="./Secure Ubuntu 18.04 server setup - Dennis&#39; Notes_files/fonts.css" media="all">
+<link rel="stylesheet" href="./Secure Ubuntu 18.04 server setup - Dennis&#39; Notes_files/main.css" media="all">
+
+</head>
+<body>
+	<header class="header">
+		      	  <div class="header-title">
+      <a href="https://dennisnotes.com/">Dennis' Notes</a>
+  </div>
+		<nav class="nav">
+  <ul class="nav-links">
+    
+    <li><a href="https://dennisnotes.com/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+	</header>
+
+
+<main class="content" role="main">
+  <article class="article">
+    <h1 class="article-title">Secure Ubuntu 18.04 server setup</h1>
+    
+    <span class="article-date">June 27, 2018</span> 🍪 <span class="article-duration">10 min read</span>
+    
+    <div class="article-content">
+      
+
+<p>This note contains a basic Ubuntu 18.04 server setup. The server will be installed on a encrypted LVM volume which can be unlocked via SSH. This are the settings I found most useful for me, I can’t guaranty a completely secure system by using this notes. If you find any issues or you have suggestions on what I could improve in this setup, just message me.</p>
+
+<h1 id="installation">Installation</h1>
+
+<p>For advanced options, such as encrypted LVM volumes, to be available during installation, the image must be loaded from the alternative Ubuntu download page and not from the main website - which provides a image which uses the Subiquity installer. The ISO file with the classic installer, which offers more options, can be found on the <a href="http://cdimage.ubuntu.com/releases/18.04/release/" target="_blank">Ubuntu alternative download page</a>. Select the image for your type of computer, usually the <em>ubuntu-18.04-server-amd64.iso</em>. The installation is straightforward, just follow the installation instructions. Make sure to select a encrypted LVM volume, the installer will ask you for a security key afterwards. You can also select to install the OpenSSH server, because we’ll use it to access the server.</p>
+
+<p>After a reboot you have to unlock the LVM volume with the security key you selected during the installation.</p>
+
+<h1 id="updates">Updates</h1>
+
+<p>First of all update the server.
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+sudo apt upgrade</code></pre></div><p></p>
+
+<h1 id="language-region-settings">Language / Region settings</h1>
+
+<p>I sometimes have problems with language and region settings after installation. To fix this, I set the locales to en_US.UTF-8.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo locale-gen en_US.UTF-8
+export <span style="color:#fb660a">LANGUAGE</span>=en_US.UTF-8
+export <span style="color:#fb660a">LANG</span>=en_US.UTF-8
+export <span style="color:#fb660a">LC_ALL</span>=en_US.UTF-8
+sudo locale-gen en_US.UTF-8
+sudo dpkg-reconfigure locales</code></pre></div>
+
+<h1 id="network-setup">Network setup</h1>
+
+<p>This step is optional and depends on how and where you host your server. I need to setup a static IP, which I do in the network settings like follows:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/netplan/01-netcfg.yaml</code></pre></div>
+
+<p>Here’s an example file, the IPs must be changed according to your setup.
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">network:
+  version: <span style="color:#0086f7;font-weight:bold">2</span>
+  renderer: networkd
+  ethernets:
+    ens3:
+      dhcp4: no
+      dhcp6: no
+      addresses: [<span style="color:#0086f7;font-weight:bold">192</span>.168.14.2/24, <span style="color:#0086d2">"2001:4::1/64"</span>]
+      gateway4: <span style="color:#0086f7;font-weight:bold">192</span>.168.14.1
+      gateway6: <span style="color:#0086f7;font-weight:bold">2001</span>:4::1
+      nameservers:
+        addresses: [<span style="color:#0086f7;font-weight:bold">84</span>.200.69.80, <span style="color:#0086f7;font-weight:bold">84</span>.200.70.40, <span style="color:#0086d2">"2001:1608:10:25::1c04:b12f"</span>, <span style="color:#0086d2">"2001:1608:10:25::9249:d69b"</span>]</code></pre></div><p></p>
+
+<p><em>addresses</em> contain the IPs of the server. The rest of the settings should be self-explanatory. After changing the config, apply it by:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">netplan apply</code></pre></div>
+
+<h2 id="ip-hardening">IP hardening</h2>
+
+<p>We also want to setup some IP settings for security. This can be done in:
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/sysctl.d/50-ip-sec.conf</code></pre></div><p></p>
+
+<p>I’ll just post my configuration file, which disables ICMP redirects, enables IP spoofing protection, ignores broadcast requests and so on. I also disable IPv6 auto configuration, because it’s manually configured in the step before. Some more information about the various options can be found in the <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide/sec-securing_network_access" target="_blank">redhat docs - Securing Network Access</a>
+.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#080;background-color:#0f140f;font-style:italic"># Disable Source Routing</span>
+net.ipv4.conf.all.accept_source_route = <span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.all.accept_source_route = <span style="color:#0086f7;font-weight:bold">0</span> 
+net.ipv4.conf.default.accept_source_route = <span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.default.accept_source_route = <span style="color:#0086f7;font-weight:bold">0</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Disable acceptance of all ICMP redirected packets on all interfaces</span>
+net.ipv4.conf.all.accept_redirects = <span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.all.accept_redirects = <span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv4.conf.default.accept_redirects = <span style="color:#0086f7;font-weight:bold">0</span> 
+net.ipv6.conf.default.accept_redirects = <span style="color:#0086f7;font-weight:bold">0</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Disable send IPv4 redirect packets</span>
+net.ipv4.conf.all.send_redirects = <span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv4.conf.default.send_redirects = <span style="color:#0086f7;font-weight:bold">0</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Set Reverse Path Forwarding to strict mode as defined in RFC 3704</span>
+net.ipv4.conf.all.rp_filter = <span style="color:#0086f7;font-weight:bold">1</span>
+net.ipv4.conf.default.rp_filter = <span style="color:#0086f7;font-weight:bold">1</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Ignore ICMP broadcast requests</span>
+net.ipv4.icmp_echo_ignore_broadcasts = <span style="color:#0086f7;font-weight:bold">1</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Block pings</span>
+net.ipv4.icmp_echo_ignore_all = <span style="color:#0086f7;font-weight:bold">1</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Syn flood help</span>
+net.ipv4.tcp_syncookies = <span style="color:#0086f7;font-weight:bold">1</span>
+net.ipv4.tcp_max_syn_backlog = <span style="color:#0086f7;font-weight:bold">2048</span>
+net.ipv4.tcp_synack_retries = <span style="color:#0086f7;font-weight:bold">2</span>
+net.ipv4.tcp_syn_retries = <span style="color:#0086f7;font-weight:bold">5</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Log suspicious martian packets</span>
+net.ipv4.conf.all.log_martians = <span style="color:#0086f7;font-weight:bold">1</span>
+net.ipv4.conf.default.log_martians=<span style="color:#0086f7;font-weight:bold">1</span>
+net.ipv4.icmp_ignore_bogus_error_responses = <span style="color:#0086f7;font-weight:bold">1</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Disable IPv6 auto config</span>
+net.ipv6.conf.default.accept_ra=<span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.default.autoconf=<span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.all.accept_ra=<span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.all.autoconf=<span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.eth0.accept_ra=<span style="color:#0086f7;font-weight:bold">0</span>
+net.ipv6.conf.eth0.autoconf=<span style="color:#0086f7;font-weight:bold">0</span></code></pre></div>
+
+<p>After you’ve created / changed this file, apply the settings:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sysctl --system</code></pre></div>
+
+<h1 id="copy-your-ssh-key">Copy your SSH key</h1>
+
+<p>If you haven’t selected the option to install the OpenSSH server during the installation process do it now:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install openssh-server</code></pre></div>
+
+<p>We will setup the server to allow SSH access only via SSH keys. Therefore, the public key to be used should be copied to the server at this point. If you don’t have an SSH key yet, it has to be generated - I made a <a href="https://dennisnotes.com/note/20180531-ssh-setup/" target="_blank">note for that</a>. Here is an example, which needs to be executed on your client system, not on the server, of how a key can be copied to the server:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-copy-id -i ~/.ssh/id_ed25519.pub dennis@dennisnotes.com</code></pre></div>
+
+<p>I copy my Ed25519 public key for the user dennis to the server dennisnotes.com. Make sure to use the public key (.pub) and not your private key! You’ll be asked to provide your password to copy the key to the server. This is because we still use the default SSH settings. We’ll change this in the next step.</p>
+
+<p>In the last step you should test if the access to the server with the SSH key works. Do this from your client machine. It should open up a SSH connection using your SSH key. Maybe you need to unlock the key by entering the keys password.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh dennis@dennisnotes.com</code></pre></div>
+
+<p>In addition to the Ed25519 key, I copy an RSA key to the server, which will later be used for the Dropbear SSH server to unlock the encrypted LVM volume via SSH:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-copy-id -i ~/.ssh/id_rsa.pub dennis@dennisnotes.com</code></pre></div>
+
+<h1 id="ssh-server-configuration">SSH server configuration</h1>
+
+<p>The OpenSSH configuration is located at <em>/etc/ssh/sshd_config</em>.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/ssh/sshd_config</code></pre></div>
+
+<p>I just post the content of my config here. In short I forbid the root login and password logins, I allow the login only for the user <em>dennis</em>, I change the default port 22 to another (e.g. 1234), I use protocol 2 and I allow the login via SSH key. Some more tips and details about the settings can be found in the <a href="https://www.ssh.com/ssh/config/" target="_blank">SSH Docs</a> as well as in the <a href="https://www.debian.org/doc/manuals/securing-debian-howto/ch-sec-services.en.html" target="_blank">Debian Doc</a>.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Port <span style="color:#0086f7;font-weight:bold">1234</span> <span style="color:#080;background-color:#0f140f;font-style:italic"># Security by obscurity doesn't work, but it leads to smaller fail2ban logs etc.</span>
+AllowUsers dennis
+
+Protocol <span style="color:#0086f7;font-weight:bold">2</span>
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Logging</span>
+SyslogFacility AUTH
+LogLevel INFO
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Authentication:</span>
+LoginGraceTime <span style="color:#0086f7;font-weight:bold">120</span>
+PermitRootLogin no
+UsePrivilegeSeparation yes
+StrictModes yes
+MaxAuthTries <span style="color:#0086f7;font-weight:bold">3</span>
+MaxSessions <span style="color:#0086f7;font-weight:bold">10</span>
+
+PubkeyAuthentication yes
+RSAAuthentication yes
+AuthorizedKeysFile %h/.ssh/authorized_keys
+
+IgnoreRhosts yes
+RhostsRSAAuthentication no
+HostbasedAuthentication no
+
+PasswordAuthentication no
+PermitEmptyPasswords no
+
+ChallengeResponseAuthentication no
+
+UsePAM yes
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Additional settings</span>
+X11Forwarding no
+PrintMotd no
+Banner none
+DebianBanner no
+
+AcceptEnv LANG LC_*
+
+Subsystem       sftp    /usr/lib/openssh/sftp-server</code></pre></div>
+
+<p>After you’ve changed the config file restart the ssh service.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl restart sshd</code></pre></div>
+
+<h1 id="firewall">Firewall</h1>
+
+<p>After setting up the SSH server a firewall should be activated to secure the system. We’ll use the uncomplicated firewall (UFW). UFW should be installed by default, if not install it now. afterwards enable the SSH port, which you’ve set in your <em>sshd_config</em>. In the example above this would be port 1234. Afterwards you need to enable the firewall.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install ufw
+sudo ufw allow <span style="color:#0086f7;font-weight:bold">1234</span>/tcp
+sudo ufw enable</code></pre></div>
+
+<p>You should still be able to connect to your system via the ssh port. Test it by executing the following command on your client system:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -p <span style="color:#0086f7;font-weight:bold">1234</span> dennis@dennisnotes.com</code></pre></div>
+
+<p>Note the <em>-p 1234</em>, with the option -p we set the ssh port of the remote system.</p>
+
+<h1 id="restrict-su">Restrict su</h1>
+
+<p>To allow only users in a given <em>admin</em> group to switch users - <em>su</em> - execute the following steps in which you create a admin group, add a user <em>dennis</em> to this group and restrict the access to <em>/bin/su</em> to the admin group.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo groupadd admin
+sudo usermod -a -G admin dennis
+sudo dpkg-statoverride --update --add root admin <span style="color:#0086f7;font-weight:bold">4750</span> /bin/su</code></pre></div>
+
+<h1 id="fail2ban">fail2ban</h1>
+
+<p>Fail2ban is an intrusion prevention system that basically monitors log files and searches for certain patterns corresponding to a failed login. If a certain number of failed login attempts are detected from an IP address within a certain time, fail2ban blocks access for this IP address by creating a corresponding firewall rule. First of all install fail2ban:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install fail2ban</code></pre></div>
+
+<p>Fail2Ban can be configured via configuration files in <em>/etc/fail2ban/jail.d</em>. Further filters can be created in <em>/etc/fail2ban/filter.d</em>. Currently our system is only accessible via SSH, so we should fail2ban watch the SSH access. To do so create a new configuration file like follows:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/fail2ban/jail.d/ssh.conf</code></pre></div>
+
+<p>Here is a example configuration file.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[sshd]
+
+<span style="color:#fb660a">enabled</span>  = true
+<span style="color:#fb660a">port</span>     = <span style="color:#0086f7;font-weight:bold">1234</span>
+<span style="color:#fb660a">filter</span>   = sshd
+<span style="color:#fb660a">logpath</span>  = /var/log/auth.log
+<span style="color:#fb660a">maxretry</span> = <span style="color:#0086f7;font-weight:bold">3</span></code></pre></div>
+
+<p>It is a relatively simple configuration that specifies that we monitor SSH access to port 1234, whose log files are located at /var/log/auth.log. To check the log file for failed logins, the filter <em>sshd</em>, which is included in the installation, is used. After three failed login attempts the corresponding IP address will be banned. It is also possible to notify the administrator by e-mail if IP addresses have been banned, etc. There are several sources on the Internet, such as the <a href="https://www.fail2ban.org/wiki/index.php/MANUAL_0_8" target="_blank">official fail2ban documentation</a>.</p>
+
+<p>After a new configuration has been added, the fail2ban service must be restarted. After the restart, the new configuration should appear in the status query from the fail2ban client, which can then also be viewed in detail.</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl restart fail2ban
+sudo fail2ban-client status
+sudo fail2ban-client status sshd</code></pre></div>
+
+<h1 id="lvm-volume-ssh-unlock-via-dropbear">LVM Volume - SSH unlock via Dropbear</h1>
+
+<p>To unlock the LVM volume via SSH on a reboot we need a little SSH server which is only used during the boot process. This is where Dropbear comes in. Install it via:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install dropbear-initramfs</code></pre></div>
+
+<p>Next we need to set the port we want to use, as well as some other options:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/dropbear-initramfs/config</code></pre></div>
+
+<p>Here is a example of how my configuration looks like:
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">DROPBEAR_OPTIONS</span>=<span style="color:#0086d2">"-p 1234 -s -j -k -I 60"</span></code></pre></div><p></p>
+
+<p>In the next step you have to specify the RSA key you want to use later. I already copied my <em>id_rsa.pub</em> key to the server in a previous step, it can be found at <em>~/.ssh/authorized_keys</em>. The key, e.g. <em>ssh-rsa blablakey comment</em>, must now be copied. At the end it must be added to the authorized_keys of dropbear:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/dropbear-initramfs/authorized_keys</code></pre></div>
+
+<p>We add some more options like no X11 forwarding etc. for security, my file looks like this:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command=<span style="color:#0086d2">"/bin/cryptroot-unlock"</span> ssh-rsa blablakey comment</code></pre></div>
+
+<p>Finally you have to update the initramfs:</p>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo update-initramfs -u</code></pre></div>
+
+<!-- There's an issue with a incompatibility between cryptsetup and busybox-initramfs, thus the following workaround, which I took directly from [Hamy's Internet Thingy Blog](https://hamy.io/post/0005/remote-unlocking-of-luks-encrypted-root-in-ubuntu-debian/), must be applied by creating the following file: 
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/initramfs-tools/hooks/dropbear-fix.sh</code></pre></div>
+
+Here is the content:
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/sh
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># This hook is for fixing busybox-initramfs issue while unlocking a luks</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># encrypted rootfs. The problem is that the included busybox version</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># is stripped down to the point that it breaks cryptroot-unlock script:</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># https://bugs.launchpad.net/ubuntu/+source/busybox/+bug/1651818</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># This is a non-aggressive fix based on the original busybox-initramfs hook</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># until the bug is fixed.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># busybox or busybox-static package must be present for this to work</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># This file should be placed in /etc/initramfs-tools/hooks/ and have +x flag set</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># after that you need to rebuild the initramfs with &#39;update-initramfs -u&#39;</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Users reported the solution working on at least:</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Ubuntu 17.04, 17.10, 18.04</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Also note that this does not replace busybox-initramfs package.</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># The package must be present, this hook just fixes what&#39;s broken.</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Hamy - www.hamy.io</span>
+
+set -e
+
+<span style="color:#fb660a;font-weight:bold">case</span> <span style="color:#0086d2">&#34;</span><span style="color:#0086d2">${</span><span style="color:#fb660a">1</span><span style="color:#fb660a;font-weight:bold">:-</span><span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span> in
+  prereqs)  echo <span style="color:#0086d2">&#34;&#34;</span>; exit <span style="color:#0086f7;font-weight:bold">0</span>;;
+<span style="color:#fb660a;font-weight:bold">esac</span>
+
+[ <span style="color:#fb660a">n</span> = <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$BUSYBOX</span><span style="color:#0086d2">&#34;</span> ] &amp;&amp; exit <span style="color:#0086f7;font-weight:bold">0</span>
+
+[ -r /usr/share/initramfs-tools/hook-functions ] || exit <span style="color:#0086f7;font-weight:bold">0</span>
+. /usr/share/initramfs-tools/hook-functions
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Testing the presence of busybox-initramfs hook</span>
+[ -x /usr/share/initramfs-tools/hooks/zz-busybox-initramfs ] || exit <span style="color:#0086f7;font-weight:bold">0</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># The original busybox binary added by busybox-initramfs</span>
+<span style="color:#fb660a">BB_BIN_ORG</span>=<span style="color:#fb660a">$DESTDIR</span>/bin/busybox
+[ -x <span style="color:#fb660a">$BB_BIN_ORG</span> ] || exit <span style="color:#0086f7;font-weight:bold">0</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># The one we want to replace it with</span>
+[ -x /bin/busybox ] || exit <span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a">BB_BIN</span>=/bin/busybox
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Ensure the original busybox lacks extended options</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># and the soon-to-be-replaced-by one does not</span>
+<span style="color:#fb660a;font-weight:bold">if</span> <span style="color:#fb660a">$BB_BIN_ORG</span> ps -eo pid,args &gt;/dev/null <span style="color:#0086f7;font-weight:bold">2</span>&gt;&amp;<span style="color:#0086f7;font-weight:bold">1</span>; <span style="color:#fb660a;font-weight:bold">then</span>
+  exit <span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a;font-weight:bold">elif</span> ! <span style="color:#fb660a">$BB_BIN</span> ps -eo pid,args &gt;/dev/null <span style="color:#0086f7;font-weight:bold">2</span>&gt;&amp;<span style="color:#0086f7;font-weight:bold">1</span>; <span style="color:#fb660a;font-weight:bold">then</span>
+  exit <span style="color:#0086f7;font-weight:bold">0</span>
+<span style="color:#fb660a;font-weight:bold">fi</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Get the inode number of busybox-initramfs binary</span>
+<span style="color:#fb660a">BB_BIN_ORG_IND</span>=<span style="color:#fb660a;font-weight:bold">$(</span>stat --format=%i <span style="color:#fb660a">$BB_BIN_ORG</span><span style="color:#fb660a;font-weight:bold">)</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># Replace the binary</span>
+rm -f <span style="color:#fb660a">$BB_BIN_ORG</span>
+copy_exec <span style="color:#fb660a">$BB_BIN</span> /bin/busybox
+
+echo -n <span style="color:#0086d2">&#34;Fixing busybox-initramfs for:&#34;</span>
+
+<span style="color:#fb660a;font-weight:bold">for</span> alias in <span style="color:#fb660a;font-weight:bold">$(</span><span style="color:#fb660a">$BB_BIN</span> --list-long<span style="color:#fb660a;font-weight:bold">)</span>; <span style="color:#fb660a;font-weight:bold">do</span>
+  <span style="color:#fb660a">alias</span>=<span style="color:#0086d2">&#34;</span><span style="color:#0086d2">${</span><span style="color:#fb660a">alias</span>#/<span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span>
+  <span style="color:#fb660a;font-weight:bold">case</span> <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$alias</span><span style="color:#0086d2">&#34;</span> in
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># strip leading /usr, we don&#39;t use it</span>
+    usr/*) <span style="color:#fb660a">alias</span>=<span style="color:#0086d2">&#34;</span><span style="color:#0086d2">${</span><span style="color:#fb660a">alias</span>#usr/<span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span> ;;
+    */*) ;;
+    *) <span style="color:#fb660a">alias</span>=<span style="color:#0086d2">&#34;bin/</span><span style="color:#fb660a">$alias</span><span style="color:#0086d2">&#34;</span> ;;  <span style="color:#080;background-color:#0f140f;font-style:italic"># make it into /bin</span>
+  <span style="color:#fb660a;font-weight:bold">esac</span>
+
+  <span style="color:#080;background-color:#0f140f;font-style:italic"># Remove (and then re-add) all the hardlinks added by busybox-initramfs</span>
+  <span style="color:#fb660a;font-weight:bold">if</span> [ -e <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$DESTDIR</span><span style="color:#0086d2">/</span><span style="color:#fb660a">$alias</span><span style="color:#0086d2">&#34;</span> ] &amp;&amp; [ <span style="color:#fb660a;font-weight:bold">$(</span>stat --format=%i <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$DESTDIR</span><span style="color:#0086d2">/</span><span style="color:#fb660a">$alias</span><span style="color:#0086d2">&#34;</span><span style="color:#fb660a;font-weight:bold">)</span> -eq <span style="color:#fb660a">$BB_BIN_ORG_IND</span> ]; <span style="color:#fb660a;font-weight:bold">then</span>
+      echo -n <span style="color:#0086d2">&#34; </span><span style="color:#0086d2">${</span><span style="color:#fb660a">alias</span>##*/<span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span>
+      rm -f <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$DESTDIR</span><span style="color:#0086d2">/</span><span style="color:#fb660a">$alias</span><span style="color:#0086d2">&#34;</span>
+      ln <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$DESTDIR</span><span style="color:#0086d2">/bin/busybox&#34;</span> <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$DESTDIR</span><span style="color:#0086d2">/</span><span style="color:#fb660a">$alias</span><span style="color:#0086d2">&#34;</span>
+  <span style="color:#fb660a;font-weight:bold">fi</span>
+<span style="color:#fb660a;font-weight:bold">done</span>
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># To get a trailing new line</span>
+echo</code></pre></div>
+
+After this file has been created, it must still be made executable. Finally you have to update the initramfs:
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod +x /etc/initramfs-tools/hooks/dropbear-fix.sh
+sudo update-initramfs -u</code></pre></div> -->
+
+<h3 id="setup-the-ip-address-in-grub">Setup the IP Address in grub</h3>
+
+<p>I need a static IP which I setup in a step before, which is only loaded after I decrypted the LVM volume and booted Ubuntu. To set the IP address before I add the following flag in the GRUB config.
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/default/grub </code></pre></div><p></p>
+
+<p>Heres an example of my GRUB_CMDLINE_LUNX_DEFAULT setting in which <em>192.168.14.2</em> is the servers IP, <em>192.168.14.1</em> the Gateway and <em>dennisnotes</em> the hostname.
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fb660a">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span style="color:#0086d2">"ip=192.168.14.2::192.168.14.1:255.255.0.0:dennisnotes:ens3:none:"</span></code></pre></div><p></p>
+
+<p>After you’ve added this you need to recreate the <em>grub.cfg</em> file like follows:
+</p><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo update-grub</code></pre></div><p></p>
+
+<h3 id="test-the-ssh-lvm-volume-unlock">Test the SSH LVM Volume unlock</h3>
+
+<ul>
+<li>Reboot</li>
+<li><code>ssh root@dennisnotes.com -p 1234</code></li>
+<li>type pw</li>
+<li>done</li>
+</ul>
+
+<p>This is my base server setup. In further notes I will explain how to set up nginx, Nextcloud via Docker images with a nginx proxy and so on.</p>
+
+    </div>
+  </article>
+</main>
+
+    <footer class="footer">
+      Created by Dennis Ludl 🍪 <a href="https://dennisnotes.com/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+    </footer>
+  
+
+
+</body></html>

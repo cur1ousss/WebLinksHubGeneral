@@ -1,0 +1,241 @@
+html, body {
+  margin: 0;
+  color: black;
+  background-color: white;
+  font: normal normal 17px/24px Roboto, Arial, sans-serif;
+}
+
+#menu, #content {
+  padding: 20px;
+  /* overflow-y: scroll; */
+}
+
+#menu, footer {
+  text-align: center;
+  color: white;
+  background: rgb(24, 128, 184);
+}
+
+footer a {
+  color: #fee;
+  text-decoration: none;
+  font-size: 80%;
+}
+
+#name {
+  font-size: 275%;
+  font-weight: bold;
+  padding-top: 25px;
+  text-shadow: 1px 1px 1px #666;
+}
+
+#icons {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+#icons img {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+nav {
+  display: none;
+  font-size: 130%;
+  text-shadow: 1px 1px 1px #19d;
+}
+
+nav > div {
+  cursor: pointer;
+}
+
+nav > div:hover {
+  text-decoration: underline;
+}
+
+.courselisting span {
+  display: inline-block;
+  text-align: center;
+  font-size: 65%;
+  font-family: arial, helvetica, sans-serif;
+  color: white;
+  width: 6em;
+  background-color: #119;
+  padding: 0;
+  margin: 0 0.7ex 0 0;
+  position: relative;
+  top: -0.4ex;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 180%;
+  letter-spacing: 1.5px;
+  color: rgb(168, 32, 53);
+  margin-top: 50px;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+#social, #books, .courselisting {
+  list-style-type: none;
+  margin-left: -1ex;
+}
+
+#consulting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 2em;
+  line-height: 2.2em;
+}
+
+#consulting img {
+  margin-right: 24px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+footer.side {
+  display: none;
+}
+
+footer.bottom {
+  display: block;
+}
+
+span.side {
+  display: none;
+}
+
+span.topbottom {
+  display: inline;
+}
+
+#content {
+  line-height: 1.55em;
+}
+
+#books li {
+  background-position: left top;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+  padding: 0 0 0 56px;
+}
+
+#book1 {
+  background-image: url(../images/jspl.jpg);
+}
+
+#book2 {
+  background-image: url(../images/pjs.png);
+}
+
+#book3 {
+  background-image: url(../images/ple.png);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav a:link {
+  color: rgb(240, 240, 240);
+}
+
+nav a:visited {
+  color: rgb(220, 220, 220);
+}
+
+#content a:link {
+  color: rgb(24, 128, 184);
+}
+
+#content a:visited {
+  color: rgb(130, 24, 201);
+}
+
+i {
+  font-family: "Roboto Slab", Georgia, serif;
+}
+
+@media screen and (min-width: 666px) {
+  /* Screen is wide here, so menu on left, content on right */
+
+  body {
+    /* Massive Safari bug makes grid impossible :( */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+
+  #icons {
+    margin-bottom: 40px;
+    width: 240px;
+  }
+
+  #icons img {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  #menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    overflow: scroll;
+  }
+
+  nav {
+    /* Only visible in wider screen */
+    display: block;
+  }
+
+  footer.side {
+    display: block;
+    margin-top: 20px
+  }
+
+  footer.bottom {
+    display: none;
+  }
+
+  span.side {
+    display: inline;
+  }
+
+  span.topbottom {
+    display: none;
+  }
+
+  #content {
+    position: absolute;
+    top: 0;
+    left: 300px;
+    overflow: scroll;
+  }
+
+  .courselisting {
+    column-count: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .courselisting {
+    column-count: 2;
+  }
+}

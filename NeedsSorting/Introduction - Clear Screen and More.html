@@ -1,0 +1,386 @@
+
+<!-- saved from url=(0060)https://mathbits.com/MathBits/CompSci/Introduction/clear.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Introduction - Clear Screen and More</title>
+<meta name="description" content="Introductin - Clear Screen and More">
+<meta name="author" content="Donna Roberts">
+<meta mame="keywords" content="computer science programming in C++ Microsoft Visual C++ beginner&#39;s C++">
+<meta name="copyright" content="Frederick and Donna Roberts, MathBits.com"> 
+<meta http-equiv="pragma" content="NO-CACHE">
+<style fprolloverstyle="">A:hover {color: #000000; font-weight: bold}
+</style>
+<script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    if (!window.web3.currentProvider ||
+        !window.web3.currentProvider.isMetaMask) {
+      __insertDappDetected()
+    }
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script></head>
+
+<body bgproperties="fixed" link="#000000" vlink="#000000" alink="#990000" bgcolor="#FFFFFF" background="./Introduction - Clear Screen and More_files/csbackground.jpg">
+
+<script language="JavaScript">
+<!-- Begin
+if (window != top) top.location.href = location.href;
+// End -->
+</script>
+
+<div align="center">
+	<table border="5" width="742" id="table1" cellpadding="2" background="./Introduction - Clear Screen and More_files/CSspiralnotebook2.gif" style="border-collapse: collapse" bordercolor="#993300">
+		<tbody><tr>
+			<td>
+			<div align="right">
+				<table border="0" width="630" id="table2" cellpadding="2">
+					<tbody><tr>
+						<td>
+
+<p align="center"><br>
+<img border="0" src="./Introduction - Clear Screen and More_files/CStopicIntro.jpg" width="593" height="112"> <br>
+<font size="2">
+<a href="https://mathbits.com/MathBits/CompSci/Introduction/intro.htm" alt="Return to Topic Menu">Return to Topic Menu </a> |
+<a href="https://mathbits.com/MathBits/CompSci/compsci.htm" alt="Return to Computer Science Main Page">Computer Science Main Page</a> |
+<a href="http://mathbits.com/" alt="Return to MathBits.com">MathBits.com</a> </font>&nbsp;<font size="2">|
+<a href="http://mathbits.com/MathBits/TermsOfUse/termsofuse.htm">Terms of Use</a></font></p>
+
+<p align="center"><b><font face="Times New Roman" size="6">Clearing the Screen,
+Flush, and Pause</font></b></p>
+<center>
+<div align="center">
+  <table border="0" width="600" id="table3">
+    <tbody><tr>
+      <td>
+      <div align="center">
+        <center>
+        <table border="0" width="600" bgcolor="#FFCC99" style="border-collapse: collapse" bordercolor="#111111" cellpadding="3" cellspacing="0" id="table4">
+          <tbody><tr>
+            <td width="38" rowspan="2" valign="top">
+            <img border="0" src="./Introduction - Clear Screen and More_files/ag00092_.gif" width="36" height="35">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p></td>
+            <td width="552" valign="top" colspan="2"><font size="6" face="Times New Roman"><b>Clearing
+              the Screen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></font><font face="Arial" size="5"><b>system("CLS");</b></font>
+              <p><font face="Times New Roman">When the screen is cleared in
+              Visual C++, the cursor is moved to the upper left corner of the
+              screen.&nbsp; To clear the screen in Visual C++, utilize the code:&nbsp;
+              <b><font size="4">system("CLS");</font></b><br>
+              The standard library header file<b><font size="4"> &lt;stdlib.h&gt;</font></b>
+              is needed.</font></p>
+              <p><font face="Times New Roman"><b><font size="4">Note:&nbsp; </font></b>If
+              you wish to clear the screen after a </font><font face="Arial">cout</font><font face="Times New Roman">
+              statement, you will need to <font color="#990000"><b>"flush"</b></font>
+              the iostream. &nbsp;</font></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="21" valign="top">&nbsp;</td>
+            <td width="525" valign="top"><font face="Arial">system ("CLS");<br>
+              cout&lt;&lt; "Hello"&lt;&lt;flush; <font color="#990000">//flush
+              forces the printing to the screen before it clears</font><br>
+              system ("CLS");<br>
+              cout&lt;&lt; "Good-Bye"&lt;&lt;endl;</font></td>
+          </tr>
+        </tbody></table>
+        </center>
+      </div>
+      <center>
+      &nbsp;<div align="center">
+        <table border="0" width="600" bgcolor="#FFCC99" style="border-collapse: collapse" bordercolor="#111111" cellpadding="3" cellspacing="0" id="table5">
+          <tbody><tr>
+            <td width="32">
+            <img border="0" src="./Introduction - Clear Screen and More_files/ag00092_.gif" width="36" height="35"></td>
+            <td width="552"><b><font face="Times New Roman" size="6">Flushing
+              the Output Stream:</font></b></td>
+          </tr>
+          <tr>
+            <td width="32">&nbsp;</td>
+            <td width="552">
+              <p align="left"><font face="Times New Roman">You will discover
+              that it will be necessary on occasions to "clear the output
+              stream".&nbsp; All information going "out" to the
+              screen goes through the output stream.&nbsp; (Thus the header
+              named &lt;iostream.h&gt; - input/output stream.)</font></p>
+              <p align="left"><font face="Times New Roman">To force the
+              information to go to the screen immediately (and not wait for more
+              information to enter the stream before outputting to the screen),
+              we will be using&nbsp;</font><b><font face="Arial"> flush.</font></b></p>
+              <p>The correct syntax will be:</p>
+              <p align="center"><font face="Arial" size="4">cout &lt;&lt;
+              "Flushing the output stream." &lt;&lt; flush;</font>
+              </p><p align="center"><font face="Times New Roman" size="4" color="#CC3300">If
+              you are using a clear screen command (system ("CLS");)
+              in the middle of a program and it does not appear to be working
+              ...<br>
+              flush the cout statements which precede the clear screen command.</font></p></td>
+          </tr>
+        </tbody></table>
+      </div>
+      <p>&nbsp;</p>
+      <div align="center">
+        <table border="0" width="600" bgcolor="#FFCC99" style="border-collapse: collapse" bordercolor="#111111" cellpadding="3" cellspacing="0" id="table6">
+          <tbody><tr>
+            <td width="38" rowspan="2" valign="top">
+            <img border="0" src="./Introduction - Clear Screen and More_files/ag00092_.gif" width="36" height="35">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p></td>
+            <td width="552" valign="top" colspan="2"><b><font size="6">Pausing
+              the screen until user hits a key:&nbsp;</font><font size="5"><br>
+              <font face="Arial">system("PAUSE");</font></font></b>
+              <p><b><font size="4">Note:</font></b>&nbsp;&nbsp; This command
+              will "pause" the screen and display the message
+              "Press any key to continue . . . " as it waits for a
+              keystroke. If you wish to pause the screen after a <font face="Arial">cout</font>
+              statement, you will need to <font face="Arial"><b>"flush"</b></font>
+              the iostream. (Requires header file <b><font size="4">&lt;stdlib.h&gt;</font></b>)</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="9" valign="top">&nbsp;</td>
+            <td width="537" valign="top"><font face="Arial">cout&lt;&lt;
+              "Hello"&lt;&lt;endl&lt;&lt;flush; <font size="2" color="#990000">//flush
+              forces the printing to the screen before it pauses</font><br>
+              system ("PAUSE"); <font size="2" color="#990000">//pause
+              displays a message and waits for the user to hit a key</font><br>
+              cout&lt;&lt; "Good-Bye"&lt;&lt;endl;</font></td>
+          </tr>
+        </tbody></table>
+      </div>
+      </center>
+      <p class="MsoTitle" align="left"><br>
+      <br>
+      <font color="#990000" size="6"><b>Example:</b></font></p>
+      <center>
+      <div align="center">
+        <table border="0" width="536" bgcolor="#FFCC99" style="border-collapse: collapse" bordercolor="#111111" cellpadding="3" cellspacing="0" id="table7">
+          <tbody><tr>
+            <td width="528"><font face="Arial" size="4">//This program will
+              clear the screen and print a message.</font>
+              <p><font face="Arial" size="4">#include &lt;iostream.h&gt;<br>
+              #include &lt;stdlib.h&gt;</font></p>
+              <p><font face="Arial" size="4">int main(void)<br>
+              {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp; system ("CLS");<br>
+              &nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; "\tHi,
+              there!\n\n";<br>
+              &nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; "\nComputers
+              are";<br>
+              &nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; "great!\n";<br>
+              &nbsp;&nbsp;&nbsp;&nbsp; return 0;<br>
+              }</font></p></td>
+          </tr>
+        </tbody></table>
+      </div>
+      <p><font face="Times New Roman">Let's see what the output from this
+      program will look like.&nbsp; The screen display is shown in the table
+      below.&nbsp; The cells of the table are used to represent the coordinates
+      of the screen.<br>
+      &nbsp;Refer to your grid sheet.</font></p>
+      <div align="center">
+        <table border="1" width="600" bgcolor="#FFEAD5" bordercolor="#800000" cellspacing="0" cellpadding="3" style="border-collapse: collapse" id="table8">
+          <tbody><tr>
+            <td width="31" bgcolor="#FFFFFF" align="center">1</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">2</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">3</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">4</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">5</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">6</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">7</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">8</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">9</td>
+            <td width="31" bgcolor="#FFFFFF" align="center">10</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">11</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">12</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">13</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">14</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">15</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">16</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">17</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">18</td>
+            <td width="32" bgcolor="#FFFFFF" align="center">19</td>
+          </tr>
+          <tr>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>&nbsp;</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>H</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>i</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>,</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>t</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>h</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>e</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>r</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>e</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>!</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>C</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>o</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>m</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>p</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>u</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>t</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>e</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>r</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99"><font face="Arial"><b>s</b></font></td>
+            <td width="31" align="center" bgcolor="#FFCC99">&nbsp;</td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>a</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>r</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>e</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>g</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>r</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>e</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>a</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>t</b></font></td>
+            <td width="32" align="center" bgcolor="#FFCC99"><font face="Arial"><b>!</b></font></td>
+          </tr>
+        </tbody></table>
+      </div>
+      </center>
+      <p align="left"><font face="Times New Roman">&nbsp;Of course, there are
+      more than 19 columns across your screen (there are 80). Notice the
+      following things:</font></p>
+      <ul>
+        <li>
+          <p align="left"><font face="Times New Roman">the placement of the word
+          </font><font face="Arial"><b>Hi</b></font><font face="Times New Roman">
+          in the 9th column after the </font><font face="Arial"><b>\t</b></font><font face="Times New Roman">
+          (tab) was executed.</font></p></li>
+        <li>
+          <p align="left"><font face="Times New Roman">the number of lines that
+          were skipped in relation to the number of </font><b><font face="Arial">\n</font></b><font face="Times New Roman">
+          commands.</font></p></li>
+        <li>
+          <p align="left"><font face="Times New Roman">the lack of any empty
+          spacing between the word </font><font face="Arial"><b>are</b></font><font face="Times New Roman">
+          and </font><b><font face="Arial">great</font></b><font face="Times New Roman">.</font></p></li>
+      </ul>
+      <p align="center">&nbsp;
+</p></td></tr></tbody></table>
+</div>
+  <center>
+  <div align="center">
+    <center>
+  <table border="0" width="600" id="table9">
+    <tbody><tr>
+      <td>
+      
+  <center>
+      <p align="center"><font face="Times New Roman">
+      <img border="0" src="./Introduction - Clear Screen and More_files/bd14768_.gif" width="600" height="10"></font></p>
+  </center>
+
+    <p align="center">
+    &nbsp;<font size="2"><a href="https://mathbits.com/MathBits/CompSci/Introduction/intro.htm" alt="Return to Topic Menu">Return to Topic Menu </a> |
+<a href="https://mathbits.com/MathBits/CompSci/compsci.htm" alt="Return to Computer Science Main Page">Computer Science Main Page</a> |
+<a href="http://mathbits.com/" alt="Return to MathBits.com">MathBits.com</a> </font>&nbsp;<font size="2">|
+	<a href="http://mathbits.com/MathBits/TermsOfUse/termsofuse.htm">Terms of Use</a></font></p><p align="center">&nbsp;
+    <script language="JavaScript" src="./Introduction - Clear Screen and More_files/CopyrightCS.js">
+          </script><font face="Times New Roman" color="#000000" size="2">Copyright 1998-2019 <a href="http://mathbits.com/"> MathBits.com</a></font><br><font face="Times New Roman" color="#000000" size="2">All Rights Reserved</font>     
+    </p>
+</td></tr></tbody></table>
+
+
+  </center></div>
+  
+
+						</center></center></td>
+					</tr>
+				</tbody></table>
+			</div>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+  
+
+
+
+</body></html>

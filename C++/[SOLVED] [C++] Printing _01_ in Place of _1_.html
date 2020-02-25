@@ -1,0 +1,2681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)https://ubuntuforums.org/showthread.php?t=1479913 -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" id="vbulletin_html"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="https://ubuntuforums.org">
+<!--<base href="https://ubuntuforums.org/">--><base href="."><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.2.2">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<link rel="Shortcut Icon" href="https://ubuntuforums.org/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+
+<script async="" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/gtm.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MXBXNKW');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=422"><\/script>');
+		document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/ubuntu-VB4/misc";
+	var IMGDIR_BUTTON = "images/ubuntu-VB4/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "422";
+	var BBURL = "https://ubuntuforums.org";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "showthread.php?t=1479913";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "https://ubuntuforums.org/";
+// -->
+</script><script type="text/javascript" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/yuiloader-dom-event.js"></script><script type="text/javascript" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/connection-min.js"></script>
+<script type="text/javascript" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/vbulletin-core.js"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Ubuntu Forums RSS Feed" href="https://ubuntuforums.org/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="Ubuntu Forums - Programming Talk - RSS Feed" href="https://ubuntuforums.org/external.php?type=RSS2&amp;forumids=39">
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="./[SOLVED] [C++] Printing _01_ in Place of _1__files/css.php">
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="css.php?styleid=117&amp;langid=3&amp;d=1572793989&amp;td=ltr&amp;sheet=popupmenu-ie.css,vbulletin-ie.css,vbulletin-chrome-ie.css,vbulletin-formcontrols-ie.css,editor-ie.css" />
+	<![endif]-->
+
+<link href="./[SOLVED] [C++] Printing _01_ in Place of _1__files/css" rel="stylesheet" type="text/css">
+	
+	<meta name="description" content="I just read how to do this two days ago, but can&#39;t remember where I saw it.  What I am trying to do is take in integer value int x = 1; and have it print out to the console as 01">
+
+	<title>[SOLVED] [C++] Printing "01" in Place of "1"</title>
+	<link rel="canonical" href="https://ubuntuforums.org/showthread.php?t=1479913">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="./[SOLVED] [C++] Printing _01_ in Place of _1__files/css(1).php">
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css.php?styleid=117&amp;langid=3&amp;d=1572793989&amp;td=ltr&amp;sheet=toolsmenu-ie.css,postlist-ie.css,showthread-ie.css,postbit-ie.css,poll-ie.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="./[SOLVED] [C++] Printing _01_ in Place of _1__files/css(2).php">
+
+</head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXBXNKW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+	<div><a name="top" href="https://ubuntuforums.org/index.php" class="logo-image"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/ubuntulogo-o-small.png" alt="Ubuntu Forums" title="Ubuntu Forums"></a></div>
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a rel="faq" href="https://ubuntuforums.org/faq.php">FAQ</a></li>
+                <li>
+                    <!-- OpenID Login Button -->
+<form class="logindetails" action="https://ubuntuforums.org/login.php" method="post">
+<input type="hidden" name="do" value="login">
+<input type="hidden" name="openid" value="https://login.ubuntu.com">
+<input type="submit" class="loginbutton" value="Login with SSO"><br>
+</form>
+<!-- / OpenID Login Button -->
+                </li>
+
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		
+		
+	</div>
+	<hr>
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		
+	
+		<li class="selected" id="vbtab_forum">
+			<a class="navtab" href="https://ubuntuforums.org/forum.php">Forum</a>
+		</li>
+		
+		
+			<ul class="floatcontainer">
+				
+					
+						<li class="popupmenu" id="vbmenu_qlinks">
+							<a href="javascript://" class="popupctrl" id="yui-gen1">Quick Links</a>
+							<ul class="popupbody" id="yui-gen0">
+								
+									<li id="link_mje2_914"><a href="https://ubuntuforums.org/search.php?do=process&amp;type[]=1&amp;replyless=1&amp;replylimit=0">Unanswered Posts</a></li>
+								
+									<li id="link_mjm0_271"><a href="https://ubuntuforums.org/search.php?do=getnew&amp;contenttype=vBForum_Post">New Posts</a></li>
+								
+									<li id="link_odiw_103"><a href="http://ubuntuforums.org/showgroups.php">View Forum Leaders</a></li>
+								
+									<li id="link_mdy0_388"><a href="http://ubuntuforums.org/faq.php">FAQ</a></li>
+								
+									<li id="link_nzqx_135"><a href="http://ubuntuforums.org/faq.php?faq=vb3_reading_posting#faq_vb3_contact_admin">Contact an Admin</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="menu_mja2_174">
+							<a href="javascript://" class="popupctrl" id="yui-gen3">Forum Community</a>
+							<ul class="popupbody" id="yui-gen2">
+								
+									<li id="link_mja2_178"><a target="_blank" href="https://wiki.ubuntu.com/ForumCouncil">Forum Council</a></li>
+								
+									<li id="link_mja2_759"><a target="_blank" href="https://wiki.ubuntu.com/ForumCouncilAgenda"><span> FC Agenda</span></a></li>
+								
+									<li id="link_mja2_602"><a target="_blank" href="https://wiki.ubuntu.com/ForumsGovernance">Forum Governance</a></li>
+								
+									<li id="link_ntk3_139"><a href="http://ubuntuforums.org/showgroups.php/">Forum Staff</a></li>
+								
+									<li id="link_mja2_802"><a href="http://ubuntuforums.org/misc.php?do=showrules">Ubuntu Forums Code of Conduct</a></li>
+								
+									<li id="link_mja2_447"><a target="_blank" href="http://webchat.freenode.net/?channels=ubuntuforums">Forum IRC Channel</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="menu_mja2_686">
+							<a href="javascript://" class="popupctrl" id="yui-gen5">Ubuntu Community</a>
+							<ul class="popupbody" id="yui-gen4">
+								
+									<li id="link_mja2_167"><a target="_blank" href="http://community.ubuntu.com/">Ubuntu</a></li>
+								
+									<li id="link_mja2_232"><a target="_blank" href="http://www.ubuntu.com/download/desktop">Get <b style="color: #dd4814">Ubuntu</b></a></li>
+								
+									<li id="link_mja2_426"><a target="_blank" href="http://www.kubuntu.org/getkubuntu">Get <b style="color:#10147e">Kubuntu</b></a></li>
+								
+									<li id="link_mja2_138"><a target="_blank" href="http://xubuntu.org/getxubuntu/">Get <b style="color: #04a">Xubuntu</b></a></li>
+								
+									<li id="link_mja2_351"><a target="_blank" href="https://help.ubuntu.com/community/Lubuntu/GetLubuntu">Get <b style="color: #033C71">Lubuntu</b></a></li>
+								
+									<li id="link_nzmw_867"><a target="_blank" href="http://ubuntustudio.org/download/">Get <b style="color:#116286">Ubuntu Studio</b></a></li>
+								
+									<li id="link_nzmw_456"><a target="_blank" href="http://www.mythbuntu.org/download-type">Get <b style="color: #dd4814">Mythbuntu</b></a></li>
+								
+									<li id="link_nzmw_464"><a target="_blank" href="http://www.edubuntu.org/download">Get <b style="color: #a30b00">Edubuntu</b></a></li>
+								
+									<li id="link_nzmw_559"><a target="_blank" href="http://ubuntugnome.org/download/">Get <b style="color: #dd4814">Ubuntu GNOME</b></a></li>
+								
+									<li id="link_nzmw_633"><a target="_blank" href="http://www.ubuntukylin.com/downloads/show.php?lang=en&amp;id=122">Get <b style="color: #dd4814">Ubuntu Kylin</b></a></li>
+								
+									<li id="link_nzy1_643"><a target="_blank" href="https://ubuntubudgie.org/downloads">Get <b style="color: #8B008B">Ubuntu Budgie</b></a></li>
+								
+									<li id="link_nzy1_968"><a target="_blank" href="https://ubuntu-mate.org/download/">Get <b style="color: #87A556">Ubuntu Mate</b></a></li>
+								
+									<li id="link_mja2_877"><a target="_blank" href="http://www.ubuntu.com/project/about-ubuntu/conduct">Ubuntu Code of Conduct</a></li>
+								
+									<li id="link_mja2_199"><a target="_blank" href="https://wiki.ubuntu.com/">Ubuntu Wiki</a></li>
+								
+									<li id="link_mja2_891"><a target="_blank" href="https://help.ubuntu.com/community/">Community Wiki</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="menu_mja2_593">
+							<a href="javascript://" class="popupctrl" id="yui-gen7">Other Support</a>
+							<ul class="popupbody" id="yui-gen6">
+								
+									<li id="link_mja2_994"><a target="_blank" href="https://answers.launchpad.net/">Launchpad Answers</a></li>
+								
+									<li id="link_mja2_430"><a target="_blank" href="http://webchat.freenode.net/?channels=ubuntu">Ubuntu IRC Support</a></li>
+								
+									<li id="link_mja2_646"><a target="_blank" href="http://askubuntu.com/">AskUbuntu</a></li>
+								
+									<li id="link_mja2_817"><a target="_blank" href="https://help.ubuntu.com/">Official Documentation</a></li>
+								
+									<li id="link_mja2_745"><a target="_blank" href="https://help.ubuntu.com/community">User Documentation</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="menu_mtaz_185">
+							<a href="javascript://" class="popupctrl" id="yui-gen9">Social Media</a>
+							<ul class="popupbody" id="yui-gen8">
+								
+									<li id="link_mtaz_522"><a target="_blank" href="https://www.facebook.com/UbuntuForums">Facebook</a></li>
+								
+									<li id="link_mtaz_149"><a target="_blank" href="https://twitter.com/ubuntuforums">Twitter</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="menu_ode5_930">
+							<a href="javascript://" class="popupctrl" id="yui-gen11">Useful Links</a>
+							<ul class="popupbody" id="yui-gen10">
+								
+									<li id="link_ode5_240"><a target="_blank" href="http://distrowatch.com/table.php?distribution=ubuntu">Distrowatch</a></li>
+								
+									<li id="link_ode5_738"><a target="_blank" href="https://bugs.launchpad.net/ubuntu/">Bugs: Ubuntu</a></li>
+								
+									<li id="link_ode5_821"><a target="_blank" href="https://launchpad.net/ubuntu/+ppas">PPAs: Ubuntu</a></li>
+								
+									<li id="link_ode5_923"><a target="_blank" href="http://www.webupd8.org/">Web Upd8: Ubuntu</a></li>
+								
+									<li id="link_ode5_916"><a target="_blank" href="http://www.omgubuntu.co.uk/">OMG! Ubuntu</a></li>
+								
+									<li id="link_ode5_248"><a target="_blank" href="https://insights.ubuntu.com/">Ubuntu Insights</a></li>
+								
+									<li id="link_ode5_244"><a target="_blank" href="http://planet.ubuntu.com/">Planet Ubuntu</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						
+					
+				
+			</ul>
+		
+
+	
+		<li id="vbtab_whatsnew">
+			<a class="navtab" href="https://ubuntuforums.org/activity.php">Activity Page</a>
+		</li>
+		
+		
+
+	
+		<li id="tab_nti4_938">
+			<a target="_blank" class="navtab" href="http://ubuntuforums.org/showthread.php?t=2230004">Please read before SSO login</a>
+		</li>
+		
+		
+
+		
+	</ul>
+	
+		<div id="globalsearch" class="globalsearch">
+			<form action="https://ubuntuforums.org/search.php?do=process" method="post" id="navbar_search" class="navbar_search">
+				
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="process">
+				<span class="textboxcontainer"><span><input type="text" value="" name="query" class="textbox" tabindex="99"></span></span>
+				<span class="buttoncontainer"><span><input type="image" class="searchbutton" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/search.png" name="submit" onclick="document.getElementById(&#39;navbar_search&#39;).submit;" tabindex="100"></span></span>
+			</form>
+			<ul class="navbar_advanced_search">
+				<li><a href="https://ubuntuforums.org/search.php?search_type=1" accesskey="4">Advanced Search</a></li>
+				
+			</ul>
+		</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="https://ubuntuforums.org/index.php" accesskey="1"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/navbit-home.png" alt="Home" title="Home"></a></li>
+		
+	<li class="navbit"><a href="https://ubuntuforums.org/index.php">Forum</a></li>
+
+	<li class="navbit"><a href="https://ubuntuforums.org/forumdisplay.php?f=130">The Ubuntu Forum Community</a></li>
+
+	<li class="navbit"><a href="https://ubuntuforums.org/forumdisplay.php?f=125">Ubuntu Specialised Support</a></li>
+
+	<li class="navbit"><a href="https://ubuntuforums.org/forumdisplay.php?f=310">Development &amp; Programming</a></li>
+
+	<li class="navbit"><a href="https://ubuntuforums.org/forumdisplay.php?f=39">Programming Talk</a></li>
+
+		
+	<li class="navbit lastnavbit"><span>[SOLVED] [C++] Printing "01" in Place of "1"</span></li>
+
+	</ul>
+	<hr>
+</div>
+
+
+
+
+
+
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+		<div id="pagination_top" class="pagination_top">
+		
+			<div id="postpagestats_above" class="postpagestats">
+				Results 1 to 6 of 6
+			</div>
+		</div>
+	</div>
+	<div id="pagetitle" class="pagetitle">
+		<h1>
+			Thread: <span class="threadtitle"><a href="https://ubuntuforums.org/showthread.php?t=1479913" title="Reload this Page">[C++] Printing "01" in Place of "1"</a></span>
+		</h1>
+		
+			
+<span id="fb-root"></span>
+<script type="text/javascript" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/all.js"></script>
+
+<fb:like href="https://ubuntuforums.org/showthread.php?t=1479913" font="tahoma" layout="standard" show_faces="false" width="260" action="like" colorscheme="light"></fb:like>
+		
+	</div>
+	<div id="thread_controls" class="thread_controls toolsmenu">
+		<div>
+		<ul id="postlist_popups" class="postlist_popups popupgroup">
+			
+			
+			<li class="popupmenu" id="threadtools">
+				<h6><a class="popupctrl" href="javascript://" id="yui-gen13">Thread Tools</a></h6>
+				<ul class="popupbody" id="yui-gen12">
+					<li><a href="https://ubuntuforums.org/printthread.php?t=1479913&amp;pp=10&amp;page=1" accesskey="3" rel="nofollow">Show Printable Version</a></li>
+					
+					<li>
+						
+							<a href="https://ubuntuforums.org/subscription.php?do=addsubscription&amp;t=1479913" rel="nofollow">Subscribe to this Thread…</a>
+						
+					</li>
+					
+
+						
+					
+				</ul>
+			</li>
+
+			
+
+			
+
+			
+
+			
+				<li class="popupmenu" id="displaymodes">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen15">Display</a></h6>
+					<ul class="popupbody" id="yui-gen14">
+						<li><label>Linear Mode</label></li>
+						<li><a href="https://ubuntuforums.org/showthread.php?t=1479913&amp;mode=hybrid"> Switch to Hybrid Mode</a></li>
+						<li><a href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9278889&amp;mode=threaded#post9278889"> Switch to Threaded Mode</a></li>
+					</ul>
+				</li>
+			
+
+			
+			</ul>
+		</div>
+	</div>
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			
+<li class="postbit postbitim postcontainer old" id="post_9278889">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">May 11th, 2010</span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post9278889" href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9278889#post9278889" class="postcounter">#1</a><a id="postcount9278889" name="1"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction" id="yui-gen16">
+	<a class="username offline popupctrl" href="https://ubuntuforums.org/member.php?u=569393" title="dodle is offline" id="yui-gen18"><strong><span style="color: #000000;">dodle</span></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen17">
+		<li class="left">
+			<a href="https://ubuntuforums.org/member.php?u=569393" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://ubuntuforums.org/search.php?do=finduser&amp;userid=569393&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+						<img class="inlineimg onlinestatus" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/user-offline.png" alt="dodle is offline" border="0" title="dodle is offline">
+
+					
+					<span class="usertitle">
+						Dark Roasted Ubuntu
+					</span>
+					
+
+                                        
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>May 2008</dd>
+						
+						
+						<!-- <dt>Beans</dt> <dd>1,029</dd>	 -->
+<dt>Beans</dt> <dd>1,029</dd>
+
+                                                 
+						
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			[C++] Printing "01" in Place of "1"
+		</h2>
+		
+				
+					
+					
+				
+				
+		<div class="content">
+			<div id="post_message_9278889">
+				<blockquote class="postcontent restore">
+					I just read how to do this two days ago, but can't remember where I saw it.  What I am trying to do is take in integer value <div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:36px;">int x = 1;</pre>
+</div> and have it print out to the console as <div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:36px;">01</pre>
+</div>
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_9278889" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/progress.gif" alt="">
+				
+				
+<!-- added advance reply -->
+                    
+                        <a class="quickreply" href="https://ubuntuforums.org/newreply.php?p=9278889&amp;noquote=1" rel="nofollow"><img id="replyimg_9278889" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/clear.gif" alt="Advanced reply" title="Advanced reply"> Adv Reply</a>
+                        <span class="seperator">&nbsp;</span>
+                    
+<!-- end added advance reply -->
+<!-- the next id was qrwq_9278889 -->
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr>
+</li>
+
+<li class="postbit postbitim postcontainer old" id="post_9278902">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">May 11th, 2010</span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post9278902" href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9278902#post9278902" class="postcounter">#2</a><a id="postcount9278902" name="2"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo">
+			<div class="contact">
+				
+					<a class="postuseravatarlink" href="https://ubuntuforums.org/member.php?u=322753" title="dwhitney67 is offline">
+						
+							<img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/avatar322753_4.gif" alt="dwhitney67&#39;s Avatar" title="dwhitney67&#39;s Avatar">
+						
+					</a>
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction" id="yui-gen19">
+	<a class="username offline popupctrl" href="https://ubuntuforums.org/member.php?u=322753" title="dwhitney67 is offline" id="yui-gen21"><strong><span style="color: #000000;">dwhitney67</span></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen20">
+		<li class="left">
+			<a href="https://ubuntuforums.org/member.php?u=322753" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://ubuntuforums.org/search.php?do=finduser&amp;userid=322753&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://ubuntuforums.org/private.php?do=newpm&amp;u=322753" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+						<img class="inlineimg onlinestatus" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/user-offline.png" alt="dwhitney67 is offline" border="0" title="dwhitney67 is offline">
+
+					
+					<span class="usertitle">
+						Tolerant of Ubuntu
+					</span>
+					
+						<span class="rank"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/rank_28.png" alt="" border=""></span>
+					
+
+                                        
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Jun 2007</dd>
+						<dt>Location</dt> <dd>Maryland, US</dd>
+						
+						<!-- <dt>Beans</dt> <dd>6,285</dd>	 -->
+<dt>Beans</dt> <dd>6,285</dd>
+
+                                                 <dt>Distro</dt><dd>Kubuntu</dd>
+						
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			Re: [C++] Printing "01" in Place of "1"
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_9278902">
+				<blockquote class="postcontent restore">
+					This should work:<br>
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:132px;">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+int main()
+{
+   int i = 1;
+
+   std::cout &lt;&lt; std::setw(2) &lt;&lt; std::setfill('0') &lt;&lt; i &lt;&lt; std::endl;
+}</pre>
+</div>setw    == set width<br>
+setfill == set unused spaces to the given character<br>
+<br>
+Read more here:  <a href="http://www.cplusplus.com/reference/iostream/" target="_blank">http://www.cplusplus.com/reference/iostream/</a>
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_9278902" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/progress.gif" alt="">
+				
+				
+<!-- added advance reply -->
+                    
+                        <a class="quickreply" href="https://ubuntuforums.org/newreply.php?p=9278902&amp;noquote=1" rel="nofollow"><img id="replyimg_9278902" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/clear.gif" alt="Advanced reply" title="Advanced reply"> Adv Reply</a>
+                        <span class="seperator">&nbsp;</span>
+                    
+<!-- end added advance reply -->
+<!-- the next id was qrwq_9278902 -->
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr>
+</li>
+
+<li class="postbit postbitim postcontainer old" id="post_9278915">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">May 11th, 2010</span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post9278915" href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9278915#post9278915" class="postcounter">#3</a><a id="postcount9278915" name="3"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo">
+			<div class="contact">
+				
+					<a class="postuseravatarlink" href="https://ubuntuforums.org/member.php?u=591713" title="Tony Flury is offline">
+						
+							<img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/avatar591713_2.gif" alt="Tony Flury&#39;s Avatar" title="Tony Flury&#39;s Avatar">
+						
+					</a>
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction" id="yui-gen22">
+	<a class="username offline popupctrl" href="https://ubuntuforums.org/member.php?u=591713" title="Tony Flury is offline" id="yui-gen24"><strong><span style="color: #000000;">Tony Flury</span></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen23">
+		<li class="left">
+			<a href="https://ubuntuforums.org/member.php?u=591713" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://ubuntuforums.org/search.php?do=finduser&amp;userid=591713&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://ubuntuforums.org/private.php?do=newpm&amp;u=591713" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+						<img class="inlineimg onlinestatus" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/user-offline.png" alt="Tony Flury is offline" border="0" title="Tony Flury is offline">
+
+					
+					<span class="usertitle">
+						Tall Cafè Ubuntu
+					</span>
+					
+						<span class="rank"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/rank_20.png" alt="" border=""></span>
+					
+
+                                        
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>May 2008</dd>
+						<dt>Location</dt> <dd>UK</dd>
+						
+						<!-- <dt>Beans</dt> <dd>1,450</dd>	 -->
+<dt>Beans</dt> <dd>1,450</dd>
+
+                                                 <dt>Distro</dt><dd>Ubuntu 8.04 Hardy Heron</dd>
+						
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			Re: [C++] Printing "01" in Place of "1"
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_9278915">
+				<blockquote class="postcontent restore">
+					I would do it like this : <br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:84px;">fprint(stdout, "%c%d", (i&gt;0 &amp;&amp;i&lt;=9)?'0':'', i);
+
+or in pure c++
+
+cout &lt;&lt; (i&gt;0 &amp;&amp; i&lt;=9)?'0':'' &lt;&lt; i;</pre>
+</div>The conditional operator outputs a '0' character if i is between 0 and 9.
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+				<blockquote class="signature restore"><div class="signaturecontainer">Tony - Happy to try to help.<br>
+Unless otherwise stated - all code posted by me is untested. Remember to Mark the Thread as Solved.<br>
+<a href="http://ubuntucounter.geekosophical.net/" target="_blank"><u><font color="Blue">Ubuntu user number # 24044</font></u></a> <b>Projects :</b> <a href="https://launchpad.net/timewarp" target="_blank"><u><font color="blue">TimeWarp - on the fly Backups</font></u></a></div></blockquote>
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_9278915" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/progress.gif" alt="">
+				
+				
+<!-- added advance reply -->
+                    
+                        <a class="quickreply" href="https://ubuntuforums.org/newreply.php?p=9278915&amp;noquote=1" rel="nofollow"><img id="replyimg_9278915" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/clear.gif" alt="Advanced reply" title="Advanced reply"> Adv Reply</a>
+                        <span class="seperator">&nbsp;</span>
+                    
+<!-- end added advance reply -->
+<!-- the next id was qrwq_9278915 -->
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr>
+</li>
+
+<li class="postbit postbitim postcontainer old" id="post_9279036">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">May 11th, 2010</span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post9279036" href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9279036#post9279036" class="postcounter">#4</a><a id="postcount9279036" name="4"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction" id="yui-gen25">
+	<a class="username offline popupctrl" href="https://ubuntuforums.org/member.php?u=569393" title="dodle is offline" id="yui-gen27"><strong><span style="color: #000000;">dodle</span></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen26">
+		<li class="left">
+			<a href="https://ubuntuforums.org/member.php?u=569393" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://ubuntuforums.org/search.php?do=finduser&amp;userid=569393&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+						<img class="inlineimg onlinestatus" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/user-offline.png" alt="dodle is offline" border="0" title="dodle is offline">
+
+					
+					<span class="usertitle">
+						Dark Roasted Ubuntu
+					</span>
+					
+
+                                        
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>May 2008</dd>
+						
+						
+						<!-- <dt>Beans</dt> <dd>1,029</dd>	 -->
+<dt>Beans</dt> <dd>1,029</dd>
+
+                                                 
+						
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			Re: [C++] Printing "01" in Place of "1"
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_9279036">
+				<blockquote class="postcontent restore">
+					<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>dwhitney67</strong>
+					<a href="https://ubuntuforums.org/showthread.php?p=9278902#post9278902" rel="nofollow"><img class="inlineimg" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message"><div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:132px;">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+int main()
+{
+   int i = 1;
+
+   std::cout &lt;&lt; std::setw(2) &lt;&lt; std::setfill('0') &lt;&lt; i &lt;&lt; std::endl;
+}</pre>
+</div></div>
+			
+		</div>
+	</div>
+</div>Thanks, that does the trick.<br>
+<br>
+@Tony Flury:  I couldn't get your code to work.  The compiler complained about an empty character constant.<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>Tony Flury</strong>
+					<a href="https://ubuntuforums.org/showthread.php?p=9278915#post9278915" rel="nofollow"><img class="inlineimg" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message"><div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:36px;">cout &lt;&lt; (i&gt;0 &amp;&amp; i&lt;=9)?'0':'' &lt;&lt; i;</pre>
+</div></div>
+			
+		</div>
+	</div>
+</div>But your code did lead me to do this (which I should have been able to figure out on my own &gt;.&lt;):<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:60px;">if (i&gt;0 &amp;&amp; i&lt;10)
+    cout &lt;&lt; 0;
+  cout &lt;&lt; i;</pre>
+</div>
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_9279036" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/progress.gif" alt="">
+				
+				
+<!-- added advance reply -->
+                    
+                        <a class="quickreply" href="https://ubuntuforums.org/newreply.php?p=9279036&amp;noquote=1" rel="nofollow"><img id="replyimg_9279036" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/clear.gif" alt="Advanced reply" title="Advanced reply"> Adv Reply</a>
+                        <span class="seperator">&nbsp;</span>
+                    
+<!-- end added advance reply -->
+<!-- the next id was qrwq_9279036 -->
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr>
+</li>
+
+<li class="postbit postbitim postcontainer old" id="post_9279068">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">May 11th, 2010</span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post9279068" href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9279068#post9279068" class="postcounter">#5</a><a id="postcount9279068" name="5"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo">
+			<div class="contact">
+				
+					<a class="postuseravatarlink" href="https://ubuntuforums.org/member.php?u=591713" title="Tony Flury is offline">
+						
+							<img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/avatar591713_2.gif" alt="Tony Flury&#39;s Avatar" title="Tony Flury&#39;s Avatar">
+						
+					</a>
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction" id="yui-gen28">
+	<a class="username offline popupctrl" href="https://ubuntuforums.org/member.php?u=591713" title="Tony Flury is offline" id="yui-gen30"><strong><span style="color: #000000;">Tony Flury</span></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen29">
+		<li class="left">
+			<a href="https://ubuntuforums.org/member.php?u=591713" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://ubuntuforums.org/search.php?do=finduser&amp;userid=591713&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://ubuntuforums.org/private.php?do=newpm&amp;u=591713" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+						<img class="inlineimg onlinestatus" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/user-offline.png" alt="Tony Flury is offline" border="0" title="Tony Flury is offline">
+
+					
+					<span class="usertitle">
+						Tall Cafè Ubuntu
+					</span>
+					
+						<span class="rank"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/rank_20.png" alt="" border=""></span>
+					
+
+                                        
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>May 2008</dd>
+						<dt>Location</dt> <dd>UK</dd>
+						
+						<!-- <dt>Beans</dt> <dd>1,450</dd>	 -->
+<dt>Beans</dt> <dd>1,450</dd>
+
+                                                 <dt>Distro</dt><dd>Ubuntu 8.04 Hardy Heron</dd>
+						
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			Re: [C++] Printing "01" in Place of "1"
+		</h2>
+		
+				
+				
+		<div class="content">
+			<div id="post_message_9279068">
+				<blockquote class="postcontent restore">
+					<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/quote_icon.png" alt="Quote" title="Quote"> Originally Posted by <strong>dodle</strong>
+					<a href="https://ubuntuforums.org/showthread.php?p=9279036#post9279036" rel="nofollow"><img class="inlineimg" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/viewpost-right.png" alt="View Post" title="View Post"></a>
+				</div>
+				<div class="message">Thanks, that does the trick.<br>
+<br>
+@Tony Flury:  I couldn't get your code to work.  The compiler complained about an empty character constant.</div>
+			
+		</div>
+	</div>
+</div>I do say in my disclaimer that code is not tested <img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/icon_wink.gif" border="0" alt="" title="Wink" class="inlineimg"><br>
+<br>
+try<br>
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:36px;">cout &lt;&lt; (i&gt;=0 &amp;&amp; a&lt;=9)?"0":"" &lt;&lt; i;</pre>
+</div>I forgot you can't do an empty character - but of course you can do empty strings - dwhitney's solution is "smarter" though.<br>
+<br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				But your code did lead me to do this (which I should have been able to figure out on my own &gt;.&lt;):<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:60px;">if (i&gt;0 &amp;&amp; i&lt;10)
+    cout &lt;&lt; 0;
+  cout &lt;&lt; i;</pre>
+</div>
+			
+		</div>
+	</div>
+</div>That works but is two lines which could be inadvertantly seperated etc. I would instinctively go with a one line solution to keep it all together.
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+				<blockquote class="signature restore"><div class="signaturecontainer">Tony - Happy to try to help.<br>
+Unless otherwise stated - all code posted by me is untested. Remember to Mark the Thread as Solved.<br>
+<a href="http://ubuntucounter.geekosophical.net/" target="_blank"><u><font color="Blue">Ubuntu user number # 24044</font></u></a> <b>Projects :</b> <a href="https://launchpad.net/timewarp" target="_blank"><u><font color="blue">TimeWarp - on the fly Backups</font></u></a></div></blockquote>
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_9279068" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/progress.gif" alt="">
+				
+				
+<!-- added advance reply -->
+                    
+                        <a class="quickreply" href="https://ubuntuforums.org/newreply.php?p=9279068&amp;noquote=1" rel="nofollow"><img id="replyimg_9279068" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/clear.gif" alt="Advanced reply" title="Advanced reply"> Adv Reply</a>
+                        <span class="seperator">&nbsp;</span>
+                    
+<!-- end added advance reply -->
+<!-- the next id was qrwq_9279068 -->
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr>
+</li>
+
+<li class="postbit postbitim postcontainer old" id="post_9281461">
+	<div class="postdetails_noavatar">
+		<div class="posthead">
+                        
+                                <span class="postdate old">
+                                        
+                                                <span class="date">May 11th, 2010</span>
+                                        
+                                </span>
+                                <span class="nodecontrols">
+                                        
+                                                <a name="post9281461" href="https://ubuntuforums.org/showthread.php?t=1479913&amp;p=9281461#post9281461" class="postcounter">#6</a><a id="postcount9281461" name="6"></a>
+                                        
+                                        
+                                        
+                                </span>
+                        
+		</div>
+
+		<div class="userinfo_noavatar">
+			<div class="contact">
+				
+				<div class="username_container">
+					
+						<div class="popupmenu memberaction" id="yui-gen31">
+	<a class="username offline popupctrl" href="https://ubuntuforums.org/member.php?u=700519" title="raf_kig is offline" id="yui-gen33"><strong><span style="color: #000000;">raf_kig</span></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen32">
+		<li class="left">
+			<a href="https://ubuntuforums.org/member.php?u=700519" class="siteicon_profile">
+				View Profile
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://ubuntuforums.org/search.php?do=finduser&amp;userid=700519&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				View Forum Posts
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://ubuntuforums.org/private.php?do=newpm&amp;u=700519" class="siteicon_message" rel="nofollow">
+				Private Message
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+						<img class="inlineimg onlinestatus" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/user-offline.png" alt="raf_kig is offline" border="0" title="raf_kig is offline">
+
+					
+					<span class="usertitle">
+						5 Cups of Ubuntu
+					</span>
+					
+						<span class="rank"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/rank_1.png" alt="" border=""></span>
+					
+
+                                        
+					
+					
+						<div class="imlinks">
+							    
+						</div>
+					
+				</div>
+			</div>
+			
+				<div class="userinfo_extra">
+					<dl class="userstats">
+						<dt>Join Date</dt> <dd>Nov 2008</dd>
+						
+						
+						<!-- <dt>Beans</dt> <dd>24</dd>	 -->
+<dt>Beans</dt> <dd>24</dd>
+
+                                                 
+						
+					</dl>
+					
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="postbody">
+		
+		<div class="postrow">
+		
+		<h2 class="posttitle icon">
+			Re: [C++] Printing "01" in Place of "1"
+		</h2>
+		
+				
+				
+					
+				
+		<div class="content">
+			<div id="post_message_9281461">
+				<blockquote class="postcontent restore">
+					<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	<pre class="bbcode_code" style="height:36px;">printf("%02d", i);</pre>
+</div>
+				</blockquote>
+			</div>
+
+			
+
+
+		</div>
+			
+				
+			
+			
+			
+		</div>
+	</div>
+	<div class="postfoot">
+		<div class="textcontrols floatcontainer">
+			<span class="postcontrols">
+				<img style="display:none" id="progress_9281461" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/progress.gif" alt="">
+				
+				
+<!-- added advance reply -->
+                    
+                        <a class="quickreply" href="https://ubuntuforums.org/newreply.php?p=9281461&amp;noquote=1" rel="nofollow"><img id="replyimg_9281461" src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/clear.gif" alt="Advanced reply" title="Advanced reply"> Adv Reply</a>
+                        <span class="seperator">&nbsp;</span>
+                    
+<!-- end added advance reply -->
+<!-- the next id was qrwq_9281461 -->
+				
+				
+			</span>
+			<span class="postlinking">
+				
+					
+				
+				
+
+				 
+				
+
+					
+
+					
+					 
+
+					
+					
+					
+					
+					
+			</span>
+		</div>
+	</div>
+	<hr>
+</li>
+
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		<div class="clear"></div>
+<div class="navpopupmenu popupmenu nohovermenu" id="showthread_navpopup">
+	
+		<span class="shade">Quick Navigation</span>
+		<a href="https://ubuntuforums.org/showthread.php?t=1479913" class="popupctrl" id="yui-gen35"><span class="ctrlcontainer">Programming Talk</span></a>
+		<a href="https://ubuntuforums.org/showthread.php?t=1479913#top" class="textcontrol" onclick="document.location.hash=&#39;top&#39;;return false;">Top</a>
+	
+	<ul class="navpopupbody popupbody" id="yui-gen34">
+		
+		<li class="optionlabel">Site Areas</li>
+		<li><a href="https://ubuntuforums.org/usercp.php">Settings</a></li>
+		<li><a href="https://ubuntuforums.org/private.php">Private Messages</a></li>
+		<li><a href="https://ubuntuforums.org/subscription.php">Subscriptions</a></li>
+		<li><a href="https://ubuntuforums.org/online.php">Who's Online</a></li>
+		<li><a href="https://ubuntuforums.org/search.php">Search Forums</a></li>
+		<li><a href="https://ubuntuforums.org/index.php">Forums Home</a></li>
+		
+			<li class="optionlabel">Forums</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=130">The Ubuntu Forum Community</a>
+					<ol class="d1">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=327">Ubuntu Official Flavours Support</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=326">New to Ubuntu</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=331">General Help</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=333">Installation &amp; Upgrades</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=332">Hardware</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=329">Desktop Environments</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=336">Networking &amp; Wireless</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=334">Multimedia Software</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=125">Ubuntu Specialised Support</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=427">Ubuntu Development Version</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=338">Security</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=308">Virtualisation</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=441">Ubuntu Servers, Cloud and Juju</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=339">Server Platforms</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=392">Ubuntu Cloud and Juju</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=93">Gaming &amp; Leisure</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=413">Emulators</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=313">Wine</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=310">Development &amp; Programming</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=44">Packaging and Compiling Programs</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=201">Development CD/DVD Image Testing</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=417">Ubuntu Application Development</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=307">Ubuntu Dev Link Forum</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=39">Programming Talk</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=41">Repositories &amp; Backports</a>
+					<ol class="d4">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=47">Ubuntu Backports</a>
+					<ol class="d5">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=82">Bug Reports / Support</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=341">System76 Support</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=328">Apple Hardware Users</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=175">Ubuntu Community Discussions</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=434">Ubuntu, Linux and OS Chat</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=302">Recurring Discussions</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=270">Full Circle Magazine</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=11">The Cafe</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=298">Cafe Games</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=38">Market</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=426">Mobile Technology Discussions</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=13">Announcements &amp; News</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=243">Weekly Newsletter</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=404">Membership Applications</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=122">The Fridge Discussions</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=357">Forum Council Agenda</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=48">Forum Feedback &amp; Help</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=181">Request a LoCo forum</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=123">Resolution Centre</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=423">Other Discussion and Support</a>
+					<ol class="d2">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=446">Other OS Support and Projects</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=447">Other Operating Systems</a>
+					<ol class="d4">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=452">Ubuntu/Debian BASED</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=161">Debian</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=453">MINT</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=321">Arch and derivatives</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=162">Fedora/RedHat and derivatives</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=344">Mandriva/Mageia</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=163">Slackware and derivatives</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=164">openSUSE and SUSE Linux Enterprise</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=165">Mac OSX</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=457">PCLinuxOS</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=166">Gentoo and derivatives</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=170">Windows</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=171">BSD</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=401">Any Other OS</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=145">Assistive Technology &amp; Accessibility</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=16">Art &amp; Design</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=169">Education &amp; Science</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=428">Documentation and Community Wiki Discussions</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=100">Tutorials</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=255">Outdated Tutorials &amp; Tips</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=76">Ubuntu Women</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=183">Ubuntu LoCo Team Forums</a>
+					<ol class="d3">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=245">Americas LoCo Teams</a>
+					<ol class="d4">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=189">Argentina Team</a>
+					<ol class="d5">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=349">Software</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=350">Hardware</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=351">Comunidad</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=209">Arizona Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=208">Arkansas Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=445">Brazil Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=188">California Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=395">Canada Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=397">Centroamerica Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=362">Chile Team</a>
+					<ol class="d5">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=363">Comunidad</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=364">Hardware</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=365">Software</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=366">Instalación y Actualización</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=197">Colombia Team - Colombia</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=210">Georgia Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=247">Illinois Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=213">Indiana - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=203">Kentucky Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=292">Maine Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=282">Minnesota Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=276">Mississippi Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=371">Nebraska Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=187">New Mexico Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=212">New York - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=278">North Carolina Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=191">Ohio Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=286">Oklahoma Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=345">Oregon Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=228">Pennsylvania Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=393">Peru Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=379">Texas Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=414">Uruguay Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=184">Utah Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=236">Virginia Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=312">West Virginia Team - US</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=389">Asia and Oceania LoCo Teams</a>
+					<ol class="d4">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=399">Australia Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=409">Bangladesh Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=382">Hong Kong Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=431">Myanmar Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=303">Philippine Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=433">Singapore Team</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=388">Europe, Middle East, and African (EMEA) LoCo Teams</a>
+					<ol class="d4">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=372">Albania Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=206">Catalan Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=462">Portugal Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=258">Egypt Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=304">Georgia Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=195">Ireland Team - Ireland</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=193">Kenyan Team - Kenya</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=196">Kurdish Team - Kurdistan</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=272">Lebanon Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=390">Morocco Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=264">Saudi Arabia Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=261">Sudan Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=227">Tunisia Team</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=204">Other Forums &amp; Teams</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=458">LoCo Archive</a>
+					<ol class="d4">
+						
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=396">Afghanistan Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=232">Alabama Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=280">Alaska Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=383">Algerian Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=202">Andhra Pradesh Team - India</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=400">Austria Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=309">Bangalore Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=373">Bolivia Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=291">Cameroon Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=207">Colorado Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=248">Connecticut Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=262">Costa Rica Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=347">Delhi Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=290">Ecuador Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=374">El Salvador Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=225">Florida Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=356">Galician LoCo Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=461">Greek team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=314">Hawaii Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=369">Honduras Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=398">Idaho Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=381">Iowa Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=320">Jordan Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=275">Kansas Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=378">Libya Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=288">Louisiana Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=224">Maryland Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=260">Massachusetts Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=271">Michigan Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=277">Missouri Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=229">Montana Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=410">Namibia Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=283">Nevada Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=289">New Hampshire Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=185">New Jersey Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=190">Northeastern Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=281">Panama Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=273">Paraguay Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=429">Qatar Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=375">Quebec Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=287">Rhode Island Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=250">Senegal Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=311">South Carolina Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=285">South Dakota Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=319">Switzerland Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=186">Tamil Team - India</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=259">Tennessee Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=386">Trinidad &amp; Tobago Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=384">Uganda Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=274">United Kingdom Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=284">US LoCo Teams</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=300">Venezuela Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=360">Wales Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=252">Washington DC Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=380">Washington State Team - US</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=263">Wisconsin Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=387">Yemen Team</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=194">Za Team - South Africa</a></li>
+			
+		
+			
+				<li><a href="https://ubuntuforums.org/forumdisplay.php?f=299">Zimbabwe Team</a></li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+			
+					</ol>
+				</li>
+			
+		
+		
+	</ul>
+</div>
+<div class="clear"></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	<div class="navlinks">
+		
+			<strong>«</strong>
+			<a href="https://ubuntuforums.org/showthread.php?t=1479913&amp;goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="https://ubuntuforums.org/showthread.php?t=1479913&amp;goto=nextnewest" rel="nofollow">Next Thread</a>
+			<strong>»</strong>
+		
+	</div>
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	
+	
+	
+	
+	<div class="options_block_container">
+		
+		<div class="options_block2">
+			<h4 class="blockhead options_correct">Bookmarks</h4>
+			<div id="social_bookmarks_list" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				<h5 class="blocksubhead">Bookmarks</h5>
+				<ul class="icon_list"><li class="smallfont">
+	
+		<a href="http://digg.com/submit?phrase=2&amp;url=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/bookmarksite_digg.gif" alt="Submit to Digg" title="Submit to Digg"></a>
+	
+	<a href="http://digg.com/submit?phrase=2&amp;url=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark">Digg</a>
+</li><li class="smallfont">
+	
+		<a href="http://del.icio.us/post?url=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/bookmarksite_delicious.gif" alt="Submit to del.icio.us" title="Submit to del.icio.us"></a>
+	
+	<a href="http://del.icio.us/post?url=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark">del.icio.us</a>
+</li><li class="smallfont">
+	
+		<a href="http://www.stumbleupon.com/submit?url=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/bookmarksite_stumbleupon.gif" alt="Submit to StumbleUpon" title="Submit to StumbleUpon"></a>
+	
+	<a href="http://www.stumbleupon.com/submit?url=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark">StumbleUpon</a>
+</li><li class="smallfont">
+	
+		<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/bookmarksite_google.gif" alt="Submit to Google" title="Submit to Google"></a>
+	
+	<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=https%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D1479913&amp;title=%5BC%2B%2B%5D+Printing+%2201%22+in+Place+of+%221%22" target="socialbookmark">Google</a>
+</li></ul>
+			</div>
+		</div>
+		
+		<div class="options_block">
+			<h4 class="collapse blockhead options_correct">
+				<a class="collapse" id="collapse_posting_rules" href="https://ubuntuforums.org/showthread.php?t=1479913#top"><img src="./[SOLVED] [C++] Printing _01_ in Place of _1__files/collapse_40b.png" alt=""></a>
+				Posting Permissions
+			</h4>
+			<div id="posting_rules" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				
+<div id="forumrules" class="info_subblock">
+
+	<ul class="youcandoblock">
+		<li>You <strong>may not</strong> post new threads</li>
+		<li>You <strong>may not</strong> post replies</li>
+		<li>You <strong>may not</strong> post attachments</li>
+		<li>You <strong>may not</strong> edit your posts</li>
+		<li>&nbsp;</li>
+	</ul>
+	<div class="bbcodeblock">
+		<ul>
+			<li><a href="https://ubuntuforums.org/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></li>
+			<li><a href="https://ubuntuforums.org/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></li>
+			<li><a href="https://ubuntuforums.org/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></li>
+			<li><a href="https://ubuntuforums.org/misc.php?do=bbcode#videocode" target="_blank">[VIDEO]</a> code is <strong>Off</strong></li>
+			<li>HTML code is <strong>Off</strong></li>
+		</ul>
+	</div>
+	<p class="rules_link"><a href="https://ubuntuforums.org/misc.php?do=showrules" target="_blank">Ubuntu Forums Code of Conduct</a></p>
+
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="https://ubuntuforums.org/index.php" method="get" id="footer_select" class="footer_select">
+
+		
+			<select name="styleid" onchange="switch_id(this, &#39;style&#39;)">
+				<optgroup label="Quick Style Chooser"><option class="hidden"></option></optgroup>
+				
+					
+					<optgroup label=" Standard Styles">
+									
+					
+	<option value="117" class="" selected="selected">-- Ubuntu vB4.x</option>
+
+					
+					</optgroup>
+										
+				
+				
+					
+					<optgroup label=" Mobile Styles">
+					
+					
+	<option value="118" class="">-- Ubuntu Mobile Style</option>
+
+					
+					</optgroup>
+										
+				
+			</select>	
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		
+		<li><a href="https://ubuntuforums.org/">Ubuntu Forums</a></li>
+		
+		
+		<li><a href="https://ubuntuforums.org/archive/index.php">Archive</a></li>
+		
+		
+		
+		<li><a href="https://ubuntuforums.org/showthread.php?t=1479913#top" onclick="document.location.hash=&#39;top&#39;; return false;">Top</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+<div id="footer_time" class="shade footer_time">All times are GMT +1. The time now is <span class="time">06:27 AM</span>.</div>
+
+<div id="footer_copyright" class="shade footer_copyright">
+	<!-- Do not remove this copyright notice -->
+	vBulletin  ©2000 - 2020, Jelsoft Enterprises Ltd. Ubuntu Logo, Ubuntu and Canonical © Canonical Ltd. Tango Icons © Tango Desktop Project. 
+<br>
+User contributions on this site are licensed under the  <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International License</a>. For details and our forum data attribution, retention and privacy policy, see <a href="http://ubuntuforums.org/showthread.php?t=2231107">here</a> 
+
+	<!-- Do not remove this copyright notice -->	
+</div>
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	
+</div>
+ 
+
+</div>
+
+</body></html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>What’s the difference between JavaScript and ECMAScript?</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism.css">
+    <link rel="stylesheet" type="text/css" href="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-unescaped-markup.css">
+
+    <link href="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/css.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/screen.css">
+    <link rel="stylesheet" type="text/css" href="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/algolia-search.css">
+    
+    <script type="text/javascript" async="" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/analytics.js"></script><script src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/algoliasearch.js"></script>
+    <script src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/autocomplete.js"></script>
+
+    <link rel="shortcut icon" href="https://www.freecodecamp.org/news/favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/amp/">
+    
+    <meta property="og:site_name" content="Developer News">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What’s the difference between JavaScript and ECMAScript?">
+    <meta property="og:description" content="by Michael Aranda
+
+What’s the difference between JavaScript and ECMAScript?
+I’ve tried googling “the difference between JavaScript and ECMAScript.”
+
+I ended up having to wade through a sea of ambiguous and seemingly conflicting
+results:
+
+“ECMAScript is a standard.”
+
+“JavaScript is a standard.”
+
+“ECMAScript is a specification.”
+
+“JavaScript is an implementation of the ECMAScript standard.”
+
+“ECMAScript is standardized JavaScript.”
+
+“ECMAScript is a language.”
+
+“JavaScript is a dialect of ECMAScri">
+    <meta property="og:url" content="https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/">
+    <meta property="og:image" content="https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg">
+    <meta property="article:published_time" content="2017-10-28T17:51:16.000Z">
+    <meta property="article:modified_time" content="2017-08-25T05:34:38.000Z">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Web Development">
+    <meta property="article:tag" content="Programming">
+    <meta property="article:tag" content="Tech">
+    <meta property="article:tag" content="Startup">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What’s the difference between JavaScript and ECMAScript?">
+    <meta name="twitter:description" content="by Michael Aranda
+
+What’s the difference between JavaScript and ECMAScript?
+I’ve tried googling “the difference between JavaScript and ECMAScript.”
+
+I ended up having to wade through a sea of ambiguous and seemingly conflicting
+results:
+
+“ECMAScript is a standard.”
+
+“JavaScript is a standard.”
+
+“ECMAScript is a specification.”
+
+“JavaScript is an implementation of the ECMAScript standard.”
+
+“ECMAScript is standardized JavaScript.”
+
+“ECMAScript is a language.”
+
+“JavaScript is a dialect of ECMAScri">
+    <meta name="twitter:url" content="https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/">
+    <meta name="twitter:image" content="https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="freeCodeCamp.org">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript, Web Development, Programming, Tech, Startup">
+    <meta name="twitter:site" content="@freecodecamp">
+    <meta property="og:image:width" content="750">
+    <meta property="og:image:height" content="422">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Developer News",
+        "logo": "https://cdn-media-1.freecodecamp.org/ghost/2018/12/FCC-logo-white.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "freeCodeCamp.org",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/fcda43852608626fe46d7fd43145766e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://www.freecodecamp.org/news/author/freecodecamp/",
+        "sameAs": []
+    },
+    "headline": "What’s the difference between JavaScript and ECMAScript?",
+    "url": "https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/",
+    "datePublished": "2017-10-28T17:51:16.000Z",
+    "dateModified": "2017-08-25T05:34:38.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg",
+        "width": 750,
+        "height": 422
+    },
+    "keywords": "JavaScript, Web Development, Programming, Tech, Startup",
+    "description": "by Michael Aranda\n\nWhat’s the difference between JavaScript and ECMAScript?\nI’ve tried googling “the difference between JavaScript and ECMAScript.”\n\nI ended up having to wade through a sea of ambiguous and seemingly conflicting\nresults:\n\n“ECMAScript is a standard.”\n\n“JavaScript is a standard.”\n\n“ECMAScript is a specification.”\n\n“JavaScript is an implementation of the ECMAScript standard.”\n\n“ECMAScript is standardized JavaScript.”\n\n“ECMAScript is a language.”\n\n“JavaScript is a dialect of ECMAScri",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.freecodecamp.org/news/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.25">
+    <link rel="alternate" type="application/rss+xml" title="Developer News" href="https://www.freecodecamp.org/news/rss/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/js.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-55446531-20');
+</script>
+
+<style id="fit-vids-style">.fluid-width-video-container{flex-grow: 1;width:100%;}.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="post-template tag-javascript tag-web-development tag-programming tag-tech tag-startup">
+
+    <div class="site-wrapper">
+        <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        <form onsubmit="event.preventDefault();">
+  <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="search" placeholder="Search 5,000+ tutorials" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><span class="aa-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;" role="listbox" id="algolia-autocomplete-listbox-0"><div class="aa-dataset-1"></div></span></span>
+</form>
+
+<script>
+  const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
+  const index = client.initIndex('news');
+  autocomplete('#search-input', { hint: false }, [
+    {
+      source: autocomplete.sources.hits(index, { hitsPerPage: 8 }),
+      debounce: 250,
+      templates: {
+        suggestion: (suggestion, result) => {
+          return `
+            <a href="${suggestion.url}">
+              <div class="algolia-result">
+                <span>${suggestion._highlightResult.title.value}</span>
+              </div>
+            </a>
+          `;
+        },
+        empty: (options) => {
+          return `
+            <div class="algolia-result">
+              No tutorials found
+            </div>
+          `;
+        },
+        footer: (query, result) => {
+          if (!query.isEmpty) {
+            return `
+              <hr/>
+              <a href="https://freecodecamp.org/news/search?query=${result.query}">
+                <div class="algolia-result algolia-footer">
+                  <span>See all results for ${result.query}</span>
+                </div>
+              </a>
+            `;
+          }
+        }
+      }
+    }
+  ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+    // Set to true if hit is selected by mouse or enter key
+    hitSelected = true;
+    // Do nothing on click, as the browser will already do it
+    if (context.selectionMethod === 'click') {
+      return;
+    }
+    // Change the page, for example, on other events
+    window.location.assign(suggestion.url);
+  });
+
+  // If no hits in the Autocomplete dropdown are highlighted,
+  // treat input like normal search bar
+  const input = document.getElementById("search-input");
+  let searchQuery;
+  let hitSelected;
+
+  // Get the value of the search bar after each key event
+  input.addEventListener('input', e => {
+    searchQuery = input.value;
+  });
+
+  input.addEventListener('keydown', e => {
+    if (event.key === "Enter" && !hitSelected && searchQuery) {
+      window.location.assign(`https://freecodecamp.org/news/search?query=${searchQuery}`);
+    }
+  });
+</script>    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/news"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/FCC-logo-white.png" alt="Developer News"></a>
+    </div>
+    <div class="site-nav-right main-nav">
+        <div class="main-nav-group">
+            <ul class="nav" role="menu">
+    <li class="nav-learn" role="menuitem"><a href="https://learn.freecodecamp.org/">Learn</a></li>
+    <li class="nav-forum" role="menuitem"><a href="https://www.freecodecamp.org/forum/">Forum</a></li>
+    <li class="nav-news" role="menuitem"><a href="https://www.freecodecamp.org/news/">News</a></li>
+</ul>
+
+        </div>
+    </div>
+    <button class="site-nav-right toggle-button-nav">
+        Menu
+    </button>
+</nav>
+
+
+        
+
+
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-javascript tag-web-development tag-programming tag-tech tag-startup ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2017-10-28">28 October 2017</time>
+                    <span class="date-divider">/</span>
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">
+                        #JavaScript
+                    </a>
+                </section>
+                <h1 class="post-full-title">What’s the difference between JavaScript and ECMAScript?</h1>
+            </header>
+
+            <div class="post-full-author-header">
+
+
+            </div>
+
+            
+<div class="social-row">
+    <button class="twitter" onclick="window.open('https://twitter.com/share?text=What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F&amp;url=https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/', 'share-twitter', 'width=550,height=235');return false;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+    </svg> <span>&nbsp;Tweet this to your followers</span></button>
+    <div></div>
+    <button class="email" onclick="window.location.href = 'mailto:?subject=helpful freeCodeCamp article: What’s the difference between JavaScript and ECMAScript?  &amp;body=What’s the difference between JavaScript and ECMAScript? https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/';">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="32" height="32">
+    <defs>
+        <path d="M0 100L640 100L320 360L0 100Z" id="b1cw6CIsqS"></path>
+        <path d="M0 537.18L0 160L320 420L640 160L640 541.1L0 537.18Z" id="aAHuzNbff"></path>
+    </defs>
+    <g>
+
+        <use xlink:href="#b1cw6CIsqS" opacity="1" fill-opacity="1"></use>
+        <path d="M0 100L640 100L320 360L0 100Z" id="c2GF8nL4hl" fill="white" fill-opacity="1" filter="url(#shadow605849)"></path>
+        <use xlink:href="#aAHuzNbff" opacity="1" fill-opacity="1"></use>
+        <path d="M0 537.18L0 160L320 420L640 160L640 541.1L0 537.18Z" id="a5mitN1KH" fill="white" fill-opacity="1" filter="url(#shadow15043397)"></path>
+
+    </g>
+</svg> <span>Email this to a friend</span></button>
+
+    <div></div>
+    <button class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.freecodecamp.org/news/author/freecodecamp/', 'share-facebook','width=580,height=296');return false;">
+        <!-- Facebook Filled icon by Icons8 -->
+
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="32" height="32">
+    <defs>
+        <path d="M640 321.89C640 482.61 523.62 615.43 369.16 638.11C368.42 630.47 367.98 556.08 367.83 414.93C395.49 414.61 420.42 414.27 442.61 413.9C446.4 380.3 452.55 347.37 456.62 323.22C425.51 322.93 388.88 323.31 367.83 323.22C368.37 281.18 368.35 303.77 367.83 262.54C372.62 222.64 384.99 209.96 459.86 213.65C459.57 203.36 460.61 151.4 459.86 133.3C460.87 134.09 279.13 86.74 269.33 241.43C268.52 265.86 268.65 290.49 269.33 323.22C265.63 322.84 238.44 322.84 187.75 323.22L187.75 414.93L269.33 414.93C270.65 564.06 270.21 638.45 268 638.11C114.78 614.35 0 481.73 0 321.89C0 145.28 143.39 1.89 320 1.89C496.61 1.89 640 145.28 640 321.89Z" id="bS1mFenfS"></path>
+    </defs>
+    <g>
+        <g>
+            <g>
+                <use xlink:href="#bS1mFenfS"></use>
+            </g>
+        </g>
+    </g>
+</svg> <span>Share this with your friends</span></button>
+</div>
+            <figure class="post-full-image">
+                <img srcset="https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg 300w,
+                            https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg 600w,
+                            https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg 1000w,
+                            https://cdn-media-1.freecodecamp.org/images/0*zdzWJW4DiWkFjDnY.jpg 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/0zdzWJW4DiWkFjDnY.jpg" alt="What’s the difference between JavaScript and ECMAScript?" onerror="this.style.display='none'">
+            </figure>
+
+            <section class=" post-full-content">
+                <div class="post-content medium-migrated-article">
+                    <p>by Michael Aranda</p><h1 id="what-s-the-difference-between-javascript-and-ecmascript">What’s the difference between JavaScript and ECMAScript?</h1><p>I’ve tried googling “the difference between JavaScript and ECMAScript.”</p><p>I ended up having to wade through a sea of ambiguous and seemingly conflicting results:</p><p>“ECMAScript is a standard.”</p><p>“JavaScript is a standard.”</p><p>“ECMAScript is a specification.”</p><p>“JavaScript is an implementation of the ECMAScript standard.”</p><p>“ECMAScript is standardized JavaScript.”</p><p>“ECMAScript is a language.”</p><p>“JavaScript is a dialect of ECMAScript.”</p><p>“ECMAScript <strong>is </strong>JavaScript.”</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/M484XDZ0RUsuBCsMGdAfeyMscLf0t9Z2L39I.gif" class="kg-image"></figure><!--kg-card-end: image--><p>Holding back the urge to cry, I bucked up and decided to commit to some painful yet productive research.</p><p>This
+ article represents my current understanding of the differences between 
+JavaScript and ECMAScript. It is geared towards people who are familiar 
+with JavaScript but would like a clearer understanding of its 
+relationship with ECMAScript, web browsers, <a href="https://babeljs.io/" rel="noopener">Babel</a>, and more. You will also learn about scripting languages, JavaScript engines, and JavaScript runtimes for good measure.</p><p>So get pumped.</p><h3 id="a-javascript-ecmascript-glossary">A JavaScript/ECMAScript glossary</h3><p>Below
+ is a list of definitions, designed with a focus on consistency and 
+clarity. The definitions are not 100% complete. They are constructed in a
+ way that provides a high-level understanding of the connection and 
+relationship between JavaScript and ECMAScript.</p><p>Without further ado, let’s get started.</p><h3 id="ecma-international">Ecma International</h3><p><strong>An organization that creates standards for technologies.</strong></p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/9hTL9XKeWeDKV7iP1ozAHfRAZ6sKpKOYFOIZ.jpeg" class="kg-image"></figure><!--kg-card-end: image--><p>To
+ illustrate an example of “standard” (though not one created by Ecma), 
+think of all the keyboards you have ever used. Did the vast majority 
+have letters in the same order, and a space bar, an Enter key, arrow 
+keys, with numbers displayed in a row at the top? This is because most 
+keyboard manufacturers base their keyboard design on the <a href="https://en.wikipedia.org/wiki/QWERTY" rel="noopener">QWERTY </a>layout standard.</p><h3 id="ecma-262">ECMA-262</h3><p><strong>This is a standard published by Ecma International. It contains the specification for a general purpose scripting language.</strong></p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/1EV9EoLmaB-icJYqpu7rYSxeyJAvA-drQQl5.png" class="kg-image"></figure><!--kg-card-end: image--><p>ECMA-262
+ is a standard like QWERTY, but instead of representing a keyboard 
+layout specification, it represents a scripting language specification 
+called ECMAScript.</p><p>Think of ECMA-262 as ECMAScript’s reference number.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/BLfQVsprp9JKHuRPcS0kLp8LFWHTFUfTk9-f.png" class="kg-image"><figcaption>ECMA-260, ECMA-261, ECMA-262. There’s ECMAScript.</figcaption></figure><!--kg-card-end: image--><h3 id="a-scripting-language">A scripting language</h3><p><strong>A programming language designed specifically for acting on an existing entity or system</strong></p><p>For
+ a general idea of what makes a programming language a scripting 
+language, consider the commands “walk”, “run”, and “jump.” These actions
+ require something to carry them out, perhaps a person, a dog, or a 
+video game character. Without an actor to perform these commands, 
+“walk”, “run”, and “jump” wouldn’t make sense. This set of actions is 
+analogous to a scripting language that focuses on manipulating an 
+external entity.</p><h3 id="ecmascript">ECMAScript</h3><p><strong>The specification defined in ECMA-262 for creating a general purpose scripting language.</strong><br><strong>Synonym: </strong>ECMAScript specification</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/p-RbJhYkrEKUnojlVs7RoXoVE7Qxz1QXozVQ.png" class="kg-image"><figcaption>Photo credit: <a href="https://code.tutsplus.com/tutorials/ecmascript-6-power-tutorial-class-and-inheritance--cms-24117" rel="noopener" target="_blank" title="">code.tutsplus.com</a></figcaption></figure><!--kg-card-end: image--><p>While ECMA-262 is the name of the standard, it represents the scripting language specification ECMAScript.</p><p>ECMAScript
+ provides the rules, details, and guidelines that a scripting language 
+must observe to be considered ECMAScript compliant.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/6ZDYS8oka3qX9aep2SaxSaLfFXwIFG-8ljW5.png" class="kg-image"><figcaption>An excerpt from the <a href="https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" rel="noopener" target="_blank" title="">ECMAScript 2017 Language Specification</a>. The document is only about 900 pages, if you are looking for a light read.</figcaption></figure><!--kg-card-end: image--><h4 id="javascript"><strong>JavaScript</strong></h4><p><strong>A general purpose scripting language that conforms to the ECMAScript specification.</strong></p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/dbnmtPdU02XbZ41M74SLaIPbLUeG3zMJa5UV.jpeg" class="kg-image"><figcaption>Photo credit: <a href="https://www.udemy.com/javascript-from-basic-fundamentals-to-advanced/" rel="noopener" target="_blank" title="">Udemy</a></figcaption></figure><!--kg-card-end: image--><p>JavaScript
+ is the coffee-flavored language with which I love to program. 
+ECMAScript is the specification it’s based on. By reading the <a href="https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" rel="noopener">ECMAScript specification</a>, you learn how to <strong>create</strong><em> </em>a scripting language. By reading the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="noopener">JavaScript documentation</a>, you learn how to <strong>use</strong> a scripting language.</p><p>When
+ people call JavaScript a “dialect of the ECMAScript language,” they 
+mean it in the same sense as when talking about English, French, or 
+Chinese dialects. A dialect derives most of its lexicon and syntax from 
+its parent language, but deviates enough to deserve distinction.</p><p>JavaScript
+ mostly implements the ECMAScript specification as described in 
+ECMA-262, but a handful of differences do exist. Mozilla outlines 
+JavaScript’s non-ECMAScript language features <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla" rel="noopener">here</a>:</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/wZx36dAL-wYWFA8weITyQfErv8YzkjQDNuVl.png" class="kg-image"><figcaption>A
+ screenshot from September 3, 2017. It is a list of JavaScript’s 
+experimental features that are not a part of ECMAScript (at least not 
+yet).</figcaption></figure><!--kg-card-end: image--><h4 id="a-javascript-engine"><strong>A JavaScript engine</strong></h4><p><strong>A program or interpreter that understands and executes JavaScript code.</strong></p><p><strong>Synonyms</strong>: JavaScript interpreter, JavaScript implementation</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/suYku9Y4XZ-DMt1b9eGxv39vil2OA3wmAlHg.jpeg" class="kg-image"><figcaption>Photo credit: <a href="https://www.translatemedia.com/translation-blog/exploring-the-source-of-language-comprehension/" rel="noopener" target="_blank" title="">translatemedia.com</a></figcaption></figure><!--kg-card-end: image--><p>JavaScript
+ engines are commonly found in web browsers, including V8 in Chrome, 
+SpiderMonkey in Firefox, and Chakra in Edge. Each engine is like a 
+language module for its application, allowing it to support a certain 
+subset of the JavaScript language.</p><p>A JavaScript engine to a browser is like language comprehension to a person.<strong> </strong>If
+ we re-visit our example of the actions “walk”, “run”, “jump”, a 
+JavaScript engine is the part of an “entity” that actually understands 
+what these actions mean.</p><p>This analogy helps to explain a few things about browsers:</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/bOGBPwrH1u-nqxgkgh37q61h9rj8vduA0tUZ.png" class="kg-image"><figcaption>Photo credit: <a href="https://datavizcatalogue.com/methods/line_graph.html" rel="noopener" target="_blank" title="">datavizcatalogue.com</a></figcaption></figure><!--kg-card-end: image--><h4 id="differences-in-browser-performance"><strong>Differences in browser performance</strong></h4><p>Two
+ people may recognize the command “jump”, but one may react to the 
+command faster because the person can understand and process the command
+ faster than the other person. Similarly, two browsers can understand 
+JavaScript code, but one runs it faster because its JavaScript engine is
+ implemented more efficiently.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/a2oywyaVJoD4vLyas60zOd8CYnwKyqlnltqS.png" class="kg-image"><figcaption>Photo credit: <a href="http://vcsolutions.com/battle-of-the-browsers-the-best-web-browser-is/" rel="noopener" target="_blank" title="">vcsolutions.com</a></figcaption></figure><!--kg-card-end: image--><h4 id="differences-in-browser-support"><strong>Differences in browser support</strong></h4><p>Consider
+ the differences that exist between people who speak the same language. 
+Even if many people speak English, some may know some words, 
+expressions, and syntax rules that others don’t, and vice versa. 
+Browsers are the same way. Even though the JavaScript engines of 
+browsers all understand JavaScript, some browsers have a greater 
+understanding of the language than others. There are differences in the 
+way browsers support the language.</p><p>With regards to browser 
+support, people usually talk about “ECMAScript compatibility” rather 
+than “JavaScript compatibility,” even though JavaScript engines parse 
+and execute… well, JavaScript. This can be a little confusing, but there
+ is an explanation.</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/YbOZFdJwH-qPCcnnDyKD6mzlQdEw0NcN8EsB.png" class="kg-image"><figcaption>This table is part of a browser support table in the <a href="https://en.wikipedia.org/wiki/ECMAScript" rel="noopener" target="_blank" title="">ECMAScript Wikipedia</a> page. JavaScript versions are not mentioned here.</figcaption></figure><!--kg-card-end: image--><p>If you will recall, ECMAScript is a specification for what a scripting language <strong>could</strong>
+ look like. Releasing a new edition of ECMAScript does not mean that all
+ JavaScript engines in existence suddenly have those new features. It is
+ up to the groups or organizations who are responsible for JavaScript 
+engines to be up-to-date about the latest ECMAScript specification, and 
+to adopt its changes.</p><p>Therefore, developers tend to ask questions 
+like, “What version of ECMAScript does this browser support?” or “Which 
+ECMAScript features does this browser support?” They want to know if 
+Google, Mozilla, and Microsoft have gotten around to updating their 
+browsers’ JavaScript engines — for example <a href="https://en.wikipedia.org/wiki/Chrome_V8" rel="noopener">V8</a>, <a href="https://en.wikipedia.org/wiki/Spider_monkey" rel="noopener">SpiderMonkey</a>, and <a href="https://en.wikipedia.org/wiki/Chakra_(JScript_engine)" rel="noopener">Chakra</a>, respectively — with the features described in the latest ECMAScript.</p><p>The <a href="http://kangax.github.io/compat-table/es6/" rel="noopener">ECMAScript compatibility table</a> is a good resource for answering those questions.</p><p>If
+ a new edition of ECMAScript comes out, JavaScript engines do not 
+integrate the entire update at one go. They incorporate the new 
+ECMAScript features incrementally, as seen in this excerpt from 
+Firefox’s JavaScript changelog:</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/C9trDMdtG4QldUnxltoT9-whAG4gMXkhpkzq.png" class="kg-image"><figcaption>In
+ Firefox 50, pieces of ES2015 and ES2017 were both implemented in 
+Firefox’s JavaScript engine, SpiderMonkey. Other pieces of ES2015 and 
+ES2017 were implemented before, and will continue to be implemented in 
+the future.</figcaption></figure><!--kg-card-end: image--><h4 id="a-javascript-runtime">A JavaScript runtime</h4><p><strong>The
+ environment in which the JavaScript code runs and is interpreted by a 
+JavaScript engine.The runtime provides the host objects that JavaScript 
+can operate on and work with.</strong></p><p><strong>Synonyms</strong><em>: </em>Host environment</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/5l8SuhHU3K19bMXLUeDUliu8HKvEupgZtNOM.jpeg" class="kg-image"><figcaption>Photo credit: <a href="https://www.emuparadise.me/Nintendo_DS_ROMs/New_Super_Mario_Bros._(U)(Psyfer)/46505" rel="noopener" target="_blank" title="">Emuparadise</a></figcaption></figure><!--kg-card-end: image--><p>The
+ JavaScript runtime is the “existing entity or system” mentioned in the 
+scripting language definition. Code passes through the JavaScript 
+engine, and once parsed and understood, an entity or system performs the
+ interpreted actions. A dog<strong> </strong>walks, a person<strong> </strong>runs, a video game character jumps (or in the case of the above image, wrecks).</p><p>Applications
+ make themselves available to JavaScript scripting by providing “host 
+objects” at runtime. For the client side, the JavaScript runtime would 
+be the web browser, where host objects like windows and HTML documents 
+are made available for manipulation.</p><p>Have you ever worked with the
+ window or document host objects? The window and document objects are 
+not actually a part of the core JavaScript language. They are Web APIs, 
+objects provided by a browser acting as JavaScript’s host environment. 
+For the server side, the JavaScript runtime is Node.js. Server-related 
+host objects such as the file system, processes, and requests are 
+provided in Node.js.</p><p>An interesting point: different JavaScript 
+runtimes can share the same JavaScript engine. V8, for example, is the 
+JavaScript engine used in both Google Chrome and Node.js — two very 
+different environments.</p><h4 id="ecmascript-6">ECMAScript 6</h4><p><strong>It is the sixth edition of the ECMA-262 standard, and features major changes and improvements to the ECMAScript specification.</strong></p><p><strong>Synonyms</strong>: ES6, ES2015, and ECMAScript 2015</p><!--kg-card-begin: image--><figure class="kg-card kg-image-card"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/wtwD646nQf8w2gV0QDDxpf5zDHOL43j6xWT-.png" class="kg-image"></figure><!--kg-card-end: image--><p>This
+ edition of ECMAScript changed its name from ES6 to ES2015 because in 
+2015 Ecma International decided to switch to annual releases of 
+ECMAScript. Accordingly, Ecma International also started to name new 
+editions of the ECMAScript specification based on the year they are 
+released. In short, ES6 and ES2015 are two different names for the same 
+thing.</p><h4 id="babel">Babel</h4><p><strong>A transpiler that can convert ES6 code to ES5 code.</strong></p><!--kg-card-begin: image--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/fzmf2hHXlv5dgoQ178bSp-oGPkSISGwiAKLa.png" class="kg-image"><figcaption>Photo credit: <a href="https://html5hive.org/es6-and-babel-tutorial/" rel="noopener" target="_blank" title="">HTML5Hive.org</a></figcaption></figure><!--kg-card-end: image--><p>Developers can use the <a href="http://es6-features.org/" rel="noopener">shiny new features that come with ES6</a>,
+ but may be concerned with cross-browser compatibility for their web 
+apps. At the time of the writing of this article, Edge and Internet 
+Explorer do not fully support features from the ES6 specification.</p><p>Concerned
+ developers can use Babel to convert their ES6 code to a functionally 
+equivalent version that only use ES5 features. All of the major browsers
+ fully support ES5, so they can run the code without any issues.</p><h3 id="one-more-interesting-tidbit">One more interesting tidbit</h3><p>I
+ hope you found this information about JavaScript and ECMAScript useful.
+ Before we wrap up things here, I’d like to share one more piece of 
+information that needs to be clarified for fledgling web developers like
+ me.</p><h4 id="chicken-or-the-egg">Chicken or the egg</h4><p>A 
+confusing bit of history is that JavaScript was created in 1996. It was 
+then submitted to Ecma International in 1997 for standardization, which 
+resulted in ECMAScript. At the same time, because JavaScript conformed 
+to the ECMAScript specification, JavaScript is an example of an 
+ECMAScript implementation.</p><p>That leaves us with this fun fact: ECMAScript is based on JavaScript, and JavaScript is based on ECMAScript.</p><p>I know.</p><p>It sounds exactly like the time-travel trope of people being their own parent — a little wonky, but kind of fun to think about.</p><h3 id="all-good-things">All good things</h3><p>I know we’ve all had fun here, but that was a lot of information to digest. I’ll take this opportunity to say farewell.</p><p>Please feel free to leave any questions, comments, suggestions, or concerns below.</p><p>Thank you very much for reading!</p>
+                </div>
+            </section>
+
+
+            
+<div class="social-row">
+    <button class="twitter" onclick="window.open('https://twitter.com/share?text=What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F&amp;url=https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/', 'share-twitter', 'width=550,height=235');return false;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+    </svg> <span>&nbsp;Tweet this to your followers</span></button>
+    <div></div>
+    <button class="email" onclick="window.location.href = 'mailto:?subject=helpful freeCodeCamp article: What’s the difference between JavaScript and ECMAScript?  &amp;body=What’s the difference between JavaScript and ECMAScript? https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/';">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="32" height="32">
+    <defs>
+        <path d="M0 100L640 100L320 360L0 100Z" id="b1cw6CIsqS"></path>
+        <path d="M0 537.18L0 160L320 420L640 160L640 541.1L0 537.18Z" id="aAHuzNbff"></path>
+    </defs>
+    <g>
+
+        <use xlink:href="#b1cw6CIsqS" opacity="1" fill-opacity="1"></use>
+        <path d="M0 100L640 100L320 360L0 100Z" id="c2GF8nL4hl" fill="white" fill-opacity="1" filter="url(#shadow605849)"></path>
+        <use xlink:href="#aAHuzNbff" opacity="1" fill-opacity="1"></use>
+        <path d="M0 537.18L0 160L320 420L640 160L640 541.1L0 537.18Z" id="a5mitN1KH" fill="white" fill-opacity="1" filter="url(#shadow15043397)"></path>
+
+    </g>
+</svg> <span>Email this to a friend</span></button>
+
+    <div></div>
+    <button class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.freecodecamp.org/news/author/freecodecamp/', 'share-facebook','width=580,height=296');return false;">
+        <!-- Facebook Filled icon by Icons8 -->
+
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="32" height="32">
+    <defs>
+        <path d="M640 321.89C640 482.61 523.62 615.43 369.16 638.11C368.42 630.47 367.98 556.08 367.83 414.93C395.49 414.61 420.42 414.27 442.61 413.9C446.4 380.3 452.55 347.37 456.62 323.22C425.51 322.93 388.88 323.31 367.83 323.22C368.37 281.18 368.35 303.77 367.83 262.54C372.62 222.64 384.99 209.96 459.86 213.65C459.57 203.36 460.61 151.4 459.86 133.3C460.87 134.09 279.13 86.74 269.33 241.43C268.52 265.86 268.65 290.49 269.33 323.22C265.63 322.84 238.44 322.84 187.75 323.22L187.75 414.93L269.33 414.93C270.65 564.06 270.21 638.45 268 638.11C114.78 614.35 0 481.73 0 321.89C0 145.28 143.39 1.89 320 1.89C496.61 1.89 640 145.28 640 321.89Z" id="bS1mFenfS"></path>
+    </defs>
+    <g>
+        <g>
+            <g>
+                <use xlink:href="#bS1mFenfS"></use>
+            </g>
+        </g>
+    </g>
+</svg> <span>Share this with your friends</span></button>
+</div>
+            <script type="text/javascript">
+                function loadDiscourseComments() {
+                    var xhr = new XMLHttpRequest();
+                    var file = "https://www.freecodecamp.org/forum/srv/status";
+                    var randomNum = Math.round(Math.random() * 10000);
+                    xhr.open('HEAD', file + "?rand=" + randomNum, true);
+                    xhr.send();
+                    xhr.addEventListener("readystatechange", processRequest, false);
+                    function processRequest(e) {
+                        if (xhr.readyState == 4) {
+                            if (xhr.status >= 200 && xhr.status < 304) {
+                                document.getElementById('discourse-comments').innerHTML = '';
+                                DiscourseEmbed = {
+                                    discourseUrl: 'https://www.freecodecamp.org/forum/',
+                                    discourseEmbedUrl: 'https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/'
+                                };
+                                var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+                                d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                            } else {
+                                document.getElementById('discourse-comments').innerHTML = '<div style="text-align: center;">Sorry, we could not load the comments. Please try again after sometime.</div>';
+                            }
+                        }
+                    }
+                }
+                if (window && window.addEventListener) {
+                    window.addEventListener('load', function () {
+                        document.getElementById('trigger-load-comments').onclick = loadDiscourseComments;
+                    });
+                }
+            </script>
+
+            <div id="discourse-comments">
+                <button id="trigger-load-comments">Show comments</button>
+            </div>
+
+        </article>
+    </div>
+</main>
+
+
+
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            <article class="read-next-card" style="background-image: url(/news/content/images/size/w600/2019/06/background.png)">
+                <header class="read-next-card-header">
+                    <p class="read-next-card-header-sitetitle">Countinue reading about</p>
+                    <h3 class="read-next-card-header-title"><a href="https://www.freecodecamp.org/news/tag/javascript/">JavaScript</a></h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ul>
+                        <li><a href="https://www.freecodecamp.org/news/a-guide-to-upgrading-to-react-router-4/">A Guide to Upgrading to React Router 4</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/explaining-the-best-javascript-meme-i-have-ever-seen/">The Best JavaScript Meme I've Ever Seen, Explained in detail</a></li>
+                        <li><a href="https://www.freecodecamp.org/news/the-guaranteed-fastest-way-to-break-into-web-development/">The Guaranteed Fastest Way to Break into Web Development</a></li>
+                    </ul>
+                </div>
+                <footer class="read-next-card-footer">
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">See all 1459 posts
+                        →</a>
+                </footer>
+            </article>
+
+            <article class="post-card post tag-mobile-app-development tag-android-app-development tag-firebase tag-androiddev tag-push-notification ">
+
+    <a class="post-card-image-link" href="https://www.freecodecamp.org/news/why-your-push-notifications-never-see-the-light-of-day-3fa297520793/">
+        <img class="post-card-image" srcset="https://cdn-media-1.freecodecamp.org/images/1*1KfeXO-IedHQ9cUI83cV3g.jpeg 300w,
+                    https://cdn-media-1.freecodecamp.org/images/1*1KfeXO-IedHQ9cUI83cV3g.jpeg 600w,
+                    https://cdn-media-1.freecodecamp.org/images/1*1KfeXO-IedHQ9cUI83cV3g.jpeg 1000w,
+                    https://cdn-media-1.freecodecamp.org/images/1*1KfeXO-IedHQ9cUI83cV3g.jpeg 2000w" sizes="(max-width: 1000px) 400px, 700px" onerror="this.style.display='none'" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/11KfeXO-IedHQ9cUI83cV3g.jpeg" alt="Why your Push Notifications never see the light of day">
+    </a>
+
+    <div class="post-card-content">
+
+        <div class="post-card-content-link">
+
+            <header class="post-card-header">
+                <span class="post-card-tags">
+                    <a href="https://www.freecodecamp.org/news/tag/mobile-app-development/">
+                        #Mobile App Development
+                    </a>
+                </span>
+                <h2 class="post-card-title">
+                    <a href="https://www.freecodecamp.org/news/why-your-push-notifications-never-see-the-light-of-day-3fa297520793/">
+                        Why your Push Notifications never see the light of day
+                    </a>
+                </h2>
+            </header>
+
+        </div>
+
+
+        <footer class="post-card-meta">
+
+            <time class="meta-item-single">2 years ago</time>
+
+
+        </footer>
+
+    </div>
+
+</article>
+            <article class="post-card post tag-javascript tag-tech tag-development tag-front-end-development tag-software-development ">
+
+    <a class="post-card-image-link" href="https://www.freecodecamp.org/news/quick-painless-automatic-updates-in-electron-d993d5408b3a/">
+        <img class="post-card-image" srcset="https://cdn-media-1.freecodecamp.org/images/1*afd_KNE6oIHoqycO5GlDXA.jpeg 300w,
+                    https://cdn-media-1.freecodecamp.org/images/1*afd_KNE6oIHoqycO5GlDXA.jpeg 600w,
+                    https://cdn-media-1.freecodecamp.org/images/1*afd_KNE6oIHoqycO5GlDXA.jpeg 1000w,
+                    https://cdn-media-1.freecodecamp.org/images/1*afd_KNE6oIHoqycO5GlDXA.jpeg 2000w" sizes="(max-width: 1000px) 400px, 700px" onerror="this.style.display='none'" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/1afd_KNE6oIHoqycO5GlDXA.jpeg" alt="Quick, painless, automatic updates in Electron">
+    </a>
+
+    <div class="post-card-content">
+
+        <div class="post-card-content-link">
+
+            <header class="post-card-header">
+                <span class="post-card-tags">
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">
+                        #JavaScript
+                    </a>
+                </span>
+                <h2 class="post-card-title">
+                    <a href="https://www.freecodecamp.org/news/quick-painless-automatic-updates-in-electron-d993d5408b3a/">
+                        Quick, painless, automatic updates in Electron
+                    </a>
+                </h2>
+            </header>
+
+        </div>
+
+
+        <footer class="post-card-meta">
+
+            <time class="meta-item-single">2 years ago</time>
+
+
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-desc-col">
+                <p>freeCodeCamp is a donor-supported tax-exempt 501(c)(3)
+                    nonprofit organization (United States Federal Tax
+                    Identification Number: 82-0779546)
+                </p>
+                <p>
+                    Our mission: to help people learn to code for free. We
+                    accomplish this by creating thousands of videos, articles, and
+                    interactive coding lessons - all freely available to the
+                    public. We also have thousands of freeCodeCamp study groups
+                    around the world.
+                </p>
+                <p>
+                    Donations to freeCodeCamp go toward our education initiatives,
+                    and help pay for servers, services, and staff. You can&nbsp;<a href="https://freecodecamp.org/donate" class="inline" rel="noopener noreferrer" target="_blank">make a tax-deductible donation here</a>.
+                </p>
+            </div>
+            <div class="footer-col-1">
+                <div class="col-header">Our Nonprofit</div>
+                <a href="https://freecodecamp.org/about">About</a><a href="https://freecodecamp.org/donate">Donate</a><a href="https://freecodecamp.org/shop" rel="noopener noreferrer" target="_blank">Shop</a><a href="https://sponsors.freecodecamp.org/">Sponsors</a><a href="mailto:team@freecodecamp.org">Email
+                    Us</a>
+            </div>
+            <div class="footer-col-2">
+                <div class="col-header">Our Community</div>
+                <a href="https://freecodecamp.org/news" rel="noopener noreferrer" target="_blank">News</a><a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank">Alumni Network</a><a href="https://study-group-directory.freecodecamp.org/" rel="noopener noreferrer" target="_blank">Study Groups</a><a href="https://freecodecamp.org/forum" rel="noopener noreferrer" target="_blank">Forum</a><a href="https://gitter.im/FreeCodeCamp/home" rel="noopener noreferrer" target="_blank">Gitter</a><a href="https://github.com/freeCodeCamp/" rel="noopener noreferrer" target="_blank">GitHub</a><a href="https://freecodecamp.org/support">Support</a><a href="https://freecodecamp.org/academic-honesty">Academic Honesty</a><a href="https://freecodecamp.org/code-of-conduct">Code of Conduct</a><a href="https://freecodecamp.org/privacy-policy">Privacy Policy</a><a href="https://freecodecamp.org/terms-of-service">Terms of Service</a>
+            </div>
+            <div class="footer-col-3">
+                <div class="col-header">Our Learning Resources</div>
+                <a href="https://learn.freecodecamp.org/">Learn</a><a href="https://guide.freecodecamp.org/">Guide</a><a href="https://www.youtube.com/freecodecamp" rel="noopener noreferrer" target="_blank">Youtube</a><a href="https://podcast.freecodecamp.org/" rel="noopener noreferrer" target="_blank">Podcast</a><a href="https://twitter.com/freecodecamp" rel="noopener noreferrer" target="_blank">Twitter</a><a href="https://instagram.com/freecodecamp" rel="noopener noreferrer" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+
+    <script src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/jquery-3.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/jquery.js"></script>
+
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-unescaped-markup.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-markup-templating.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-bash.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-c.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-clojure.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-cpp.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-csharp.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-css.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-docker.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-elixir.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-erlang.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-git.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-go.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-graphql.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-haskell.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-java.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-javascript.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-json.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-jsx.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-kotlin.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-lua.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-markup.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-php.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-python.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-r.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-ruby.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-rust.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-scala.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-sql.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-swift.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-typescript.js"></script>
+    <script type="text/javascript" src="What%E2%80%99s%20the%20difference%20between%20JavaScript%20and%20ECMAScript%3F_files/prism-yaml.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        // Start fitVids
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // End fitVids
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".toggle-button-nav").click(function () {
+            $(".nav").toggleClass("show-main-nav-items");
+            $(".site-nav").toggleClass("expand-nav");
+            $(".toggle-button-nav").toggleClass("reverse-toggle-color");
+            $(".site-nav-left").toggleClass("display-search");
+        });
+    });
+</script>
+
+
+    
+
+
+
+</body></html>

@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript">
+
+(function() {
+	if(typeof amzn_assoc_utils==="undefined"){amzn_assoc_utils={};}if(typeof amzn_assoc_utils.parse==="undefined"){amzn_assoc_utils.parse=(function(){var d,b,a={'"':'"',"\\":"\\","/":"/",b:"\b",f:"\f",n:"\n",r:"\r",t:"\t"},m,k=function(n){throw {name:"SyntaxError",message:n,at:d,text:m};},g=function(n){if(n&&n!==b){k("Expected '"+n+"' instead of '"+b+"'");}b=m.charAt(d);d+=1;return b;},f=function(){var o,n="";if(b==="-"){n="-";g("-");}while(b>="0"&&b<="9"){n+=b;g();}if(b==="."){n+=".";while(g()&&b>="0"&&b<="9"){n+=b;}}if(b==="e"||b==="E"){n+=b;g();if(b==="-"||b==="+"){n+=b;g();}while(b>="0"&&b<="9"){n+=b;g();}}o=+n;if(!isFinite(o)){k("Bad number");}else{return o;}},h=function(){var q,p,o="",n;if(b==='"'){while(g()){if(b==='"'){g();return o;}if(b==="\\"){g();if(b==="u"){n=0;for(p=0;p<4;p+=1){q=parseInt(g(),16);if(!isFinite(q)){break;}n=n*16+q;}o+=String.fromCharCode(n);}else{if(typeof a[b]==="string"){o+=a[b];}else{break;}}}else{o+=b;}}}k("Bad string");},j=function(){while(b&&b<=" "){g();}},c=function(){switch(b){case"t":g("t");g("r");g("u");g("e");return true;case"f":g("f");g("a");g("l");g("s");g("e");return false;case"n":g("n");g("u");g("l");g("l");return null;}k("Unexpected '"+b+"'");},l,i=function(){var n=[];if(b==="["){g("[");j();if(b==="]"){g("]");return n;}while(b){n.push(l());j();if(b==="]"){g("]");return n;}g(",");j();}}k("Bad array");},e=function(){var o,n={};if(b==="{"){g("{");j();if(b==="}"){g("}");return n;}while(b){o=h();j();g(":");if(Object.hasOwnProperty.call(n,o)){k('Duplicate key "'+o+'"');}n[o]=l();j();if(b==="}"){g("}");return n;}g(",");j();}}k("Bad object");};l=function(){j();switch(b){case"{":return e();case"[":return i();case'"':return h();case"-":return f();default:return b>="0"&&b<="9"?f():c();}};return function(p,o){var n;m=p;d=0;b=" ";n=l();j();if(b){k("Syntax error");}return n;};}());}if(typeof amzn_assoc_utils.stringify==="undefined"){amzn_assoc_utils.stringify=function(b){var a="";if(typeof JSON!=="undefined"){a=JSON.stringify(b);}return a;};}if(typeof amzn_assoc_utils.addCssRules==="undefined"){amzn_assoc_utils.addCssRules=function(g,n){var h=document.createElement("style"),m,e=0,k="";h.appendChild(document.createTextNode(""));document.head.appendChild(h);m=h.sheet;for(e=0,rl=n.length;e<rl;e++){var d=1,l=n[e],b=n[e][0],f="";if(Object.prototype.toString.call(l[1][0])==="[object Array]"){l=l[1];d=0;}for(var c=l.length;d<c;d++){var a=l[d];f+=a[0]+":"+a[1]+(a[2]?" !important":"")+";\n";}if(typeof g==="string"){m.insertRule(g+"{"+b+"{"+f+"}}",m.cssRules.length);}else{m.insertRule(b+"{"+f+"}",m.cssRules.length);}}};}window.trackingUtils=function(l,c,e,o,p,h,d,r,t,n,q){var g={},j=new RegExp("/(ref=[\\w]+)/?","i"),a="assocPayloadId",i=function(u){return u&&encodeURIComponent(u).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");},m=(function(){var u=document.createElement("a");u.href=(window.location!==window.parent.location)?document.referrer:document.location;return u.protocol+"//"+u.hostname+((u.port===""||u.port==="80"||u.port==="443")?"":(":"+u.port))+(u.pathname.indexOf("/")!==0?("/"+u.pathname):u.pathname);}()),s=(function(){return i(m);}()),k=function(u,w,x,v){if(typeof x==="string"&&x!==""){if(u.search===""){u.search="?"+w+"="+x;}else{if(!u.search.match(new RegExp("[?&]"+w+"="))){u.search=u.search.replace(/\?/,"?"+w+"="+x+"&");}else{if(v){u.search=u.search.replace(new RegExp(w+"=([^&]*)"),w+"="+x);}}}}return u;},f=function(w,u,v){if(typeof v==="string"&&v!==""){if(!w.match(/\?/)){w=w+"?"+u+"="+v;}else{if(!w.match(u)){w=w.replace(/\?/,"?"+u+"="+v+"&");}}}return w;},b=function(v){var u=(typeof d!=="undefined")?d:0;if(typeof v!=="undefined"){u=v;}return u;};g.addRefUrls=function(z,A,v,u){var B=new RegExp("^http://.*(amazon|endless|myhabit|amazonwireless|javari|smallparts)\\.(com|ca|co\\.jp|de|fr|co\\.uk|cn|it|es)/.*","i"),w,y,x;for(x=0;x<z.length;x++){z[x].rel="nofollow";w=String(z[x].href);if(y=w.match(B)){z[x].href=g.addTrackingParameters(z[x],A,v,u);}}};g.addRefRefUrl=function(u){return k(u,"ref-refURL",s);};g.getRefRefUrl=function(){return s;};g.getRawRefUrl=function(){return m;};g.addSignature=function(v,u,w){return k(k(v,"sig",u),"sigts",w);};g.addLinkCode=function(v,u){return k(v,"linkCode",u);};g.addTrackingId=function(v,u){return k(v,"tag",u);};g.addLinkId=function(u,v){return k(u,"linkId",v);};g.addSubtag=function(u,v){return k(u,"ascsubtag",v);};g.addCreativeAsin=function(u,v){return k(k(u,"creativeASIN",v),"adId",v);};g.addAdType=function(v,u){return k(v,"adType",u);};g.addAdMode=function(u,v){return k(u,"adMode",v);};g.addAdFormat=function(v,u){return k(v,"adFormat",u);};g.addImpressionTimestamp=function(u,v){if(typeof v==="number"){v=v.toString();}return k(u,"impressionTimestamp",v);};g.convertToRedirectedUrl=function(u,x,v){var w=document.createElement("a");w.setAttribute("href",x);if(typeof v!=="undefined"){k(w,v,i(u.getAttribute("href")),true);}else{w.setAttribute("href",x+"/"+w.getAttribute("href"));}u.setAttribute("href",w.getAttribute("href"));return u;};g.getImpressionToken=function(){return h;};g.generateTransitId=function(){return g.getHashedImpressionToken();};g.getHashedImpressionToken=function(){var u=o.split("/");var v=u[u.length-2];return v;};g.getTransitId=function(){if(typeof assoc_session_storage!=="undefined"){var u=assoc_session_storage.get(a);return u;}return null;};g.getClickUrl=function(){return p;};g.addImpressionToken=function(v,w){var u=b(w);if(typeof h==="string"&&h!==""){k(v,"imprToken",h);if(typeof u!=="undefined"){k(v,"slotNum",u);}}return v;};g.addImpressionTokenStr=function(w,v){var u=b(v);if(typeof h==="string"&&h!==""){w=f(w,"imprToken",h);if(typeof u!=="undefined"){w=f(w,"slotNum",u);}}return w;};g.addTrackingParameters=function(A,B,z,E,x,u,y,w,v,F,D,C){return g.addSignature(g.addCreativeAsin(g.addLinkId(g.addTrackingId(g.addSubtag(g.addLinkCode(g.addRefRefUrl(g.addImpressionToken(g.addRefMarker(g.addAdType(g.addAdMode(g.addAdFormat(g.addImpressionTimestamp(A,C),D),F),v),x))),z),r),E),B),u),y,w);};g.addRefMarker=function(v,x){var w,u=false;if(typeof x==="undefined"){return v;}if(w=v.pathname.match(j)){v.pathname=v.pathname.replace(w[1],"ref="+x);}else{u=(v.pathname.charAt(v.pathname.length-1)==="/");v.pathname=v.pathname+(u?"":"/")+"ref="+x;}return v;};g.getRefMarker=function(u){var v;if(v=u.pathname.match(j)){return v[1].substr(4);}else{return undefined;}};g.getCurrentURL=function(){return(window.location!==window.parent.location)?document.referrer:document.location.href;};g.makeForesterCall=function(w){var u=undefined,v;if(typeof JSON!=="undefined"){v=JSON.stringify(w);}else{if(typeof amzn_assoc_utils!=="undefined"&&typeof amzn_assoc_utils.stringify==="function"){v=amzn_assoc_utils.stringify(w);}else{return;}}if(typeof o==="string"){u=o+"?assoc_payload="+encodeURIComponent(v);g.generateImage(u);}};g.recordImpression=function(w,u,z,x,B){z.linkCode=w;z.trackingId=u;z.refUrl=g.getCurrentURL();if(n||!t){g.makeForesterCall(z);}else{g.addABPFlag(z,g.makeForesterCall);}if(typeof x==="undefined"||!x){var y=(new Date()).getTime();var A=(typeof B!=="undefined")?B:"";var v=e+"?l="+w+"&t="+u+"&o="+l+"&cb="+y+A;g.generateImage(v);}};g.createAssocPayload=function(y,w,v,u){y.linkCode=w;y.trackingId=v;y.refUrl=u;var x="";if(typeof amzn_assoc_utils!=="undefined"&&typeof amzn_assoc_utils.stringify==="function"){x=amzn_assoc_utils.stringify(y);}return x;};g.recordAESImpression=function(w,u,x){if(typeof q==="string"){var z=g.createAssocPayload(x,w,u,g.getCurrentURL());var v=g.getHashedImpressionToken();var y=q+v+"/pixel?assoc_payload="+encodeURIComponent(z);g.generateImage(y);}};g.recordTransit=function(){if(!(g.getTransitId())||g.isUTMParamPresentInUrl(g.getCurrentURL())){assoc_session_storage.set(a,g.generateTransitId());}};g.isUTMParamPresentInUrl=function(v){var u=v.match(/utm_source=/i);return(u!==null);};g.addAAXClickUrls=function(v){var x,w,u;if(typeof v==="undefined"||typeof p==="undefined"){return;}for(w=0;w<v.length;w++){u=String(v[w].href);if(u.indexOf(p)<0){x=p+u;v[w].href=x;}}};g.addAAXClickUrl=function(u){if(typeof u==="undefined"||u.indexOf(p)===0){return u;}return p+u;};g.updateLinks=function(v,x){var w,u;if(typeof x!=="function"){return;}for(w=0;w<v.length;w++){u=String(v[w].href);v[w].href=x(u);}};g.elementInViewPort=function(u){var v=u.getBoundingClientRect(),w=(v.top>=0&&v.left>=0&&v.bottom<=(window.innerHeight||document.documentElement.clientHeight)&&v.right<=(window.innerWidth||document.documentElement.clientWidth));return{posX:v.left+window.pageXOffset,posY:v.top+window.pageYOffset,inViewPort:w};};g.recordViewability=function(z,y,v,w){if(typeof o==="string"){var x=g.createViewbilityPayload(z,y,v,w);var u=o+x+"&cb="+(new Date()).getTime();g.generateImage(u);}};g.recordAESViewability=function(B,A,v,w){if(typeof q==="string"){var x=g.createViewbilityPayload(B,A,v,w);var u=g.getHashedImpressionToken();var z=encodeURIComponent(x);var y=q+u+"/pixel/"+z+"&cb="+(new Date()).getTime();g.generateImage(y);}};g.createViewbilityPayload=function(z,y,v,x){var w={};if(typeof y!=="undefined"){w.above_the_fold=y;}if(typeof v!=="undefined"){w.topPos=v;}if(typeof x!=="undefined"){w.leftPos=x;}if(typeof z!=="undefined"){if(Object.keys(w).length===0){w.viewable=true;}w.slotNum=z;}var u="";if(typeof amzn_assoc_utils!=="undefined"&&typeof amzn_assoc_utils.stringify==="function"){u=amzn_assoc_utils.stringify({adViewability:[w]});}return u;};g.generateImage=function(u){if(typeof u!=="undefined"){(new Image()).src=u;}};g.addABPFlag=function(x,F){var z=false,y=2,w=document.body?document.body.appendChild(new Image()):new Image(),v=document.body?document.body.appendChild(new Image()):new Image(),C=false,A=false,u=Math.random()*11,E=t+"?ch=*&rn=*",D=function(H,G){if(y===0||G>1000){x.supplySideMetadata={ABPInstalled:y===0&&z};H(x);}else{setTimeout(function(){D(H,G*2);},G*2);}},B=function(){if(--y){return;}z=!C&&A;};w.style.display="none";v.style.display="none";w.onload=B;w.onerror=function(){C=true;B();};w.src=E.replace(/\*/,1).replace(/\*/,u);v.onload=B;v.onerror=function(){A=true;B();};v.src=E.replace(/\*/,2).replace(/\*/,u);D(F,250);};return g;};var assoc_session_storage=(function(){var a={};a.get=function(c){var d=null;if(typeof(window.sessionStorage)!=="undefined"){try{d=window.sessionStorage.getItem(c);}catch(b){}}return d;};a.set=function(c,d){if(typeof(window.sessionStorage)!=="undefined"){try{window.sessionStorage.setItem(c,d);}catch(b){}}};return a;}());window.elemTracker=function(b){var a={};a.trackElements=function(d,c){var f,e;if(typeof d!=="undefined"&&d.length>0&&typeof c==="function"){window.addEventListener("scroll",function(){for(f=0;f<d.length;f++){e=b.elementInViewPort(d[f]);if(e.inViewPort){c();}}},false);}};return a;};
+	var amznAutoTaggerMaker=function(h,v,B){var D={CA:"ca",CN:"cn",IN:"in",DE:"de",FR:"fr",GB:"co.uk",JP:"co.jp",US:"com"},j={CA:[],CN:[],IN:[],DE:["javari"],FR:["javari"],GB:["javari"],JP:["javari"],US:["smallparts","amazonwireless","endless","myhabit"]},F=(function(){var P=-1,O={};O.getNextSlotNum=function(){return ++P;};return O;}()),q,o,e=Math.max(document.body.scrollHeight,document.body.offsetHeight,document.documentElement.clientHeight,document.documentElement.scrollHeight,document.documentElement.offsetHeight),m=Math.max(document.body.scrollWidth,document.body.offsetWidth,document.documentElement.clientWidth,document.documentElement.scrollWidth,document.documentElement.offsetWidth),y={totalDocWidth:m,totalDocHeight:e,logType:"onetag_pageload",pageTitle:document.title},a="w50",J="w61",H="g12",C={},b=new RegExp("%3F"),w=new Object(),x=false,l="",s="",u=0,L=0,d=0,G=new RegExp("amzn.to"),r=new RegExp(h.redirectorEndPoint),E=["kdp.amazon.com"],N=[],I="assocPayloadId",c=function(P){var Q,O=false;for(Q=0;Q<E.length;Q++){if(P.match(E[Q])){O=true;break;}}return O;},p=function(O){return O.nextSibling&&O.nextSibling.tagName==="IMG"&&O.nextSibling.hasAttribute("src")&&(O.nextSibling.getAttribute("src").search(/ir-[a-z]{2}\.amazon-adsystem\.com/)>-1||O.nextSibling.getAttribute("src").search(/www\.assoc-amazon\.*/)>-1);},n=function(O){if(!O.href.match(r)){O.href=h.redirectorEndPoint+O.href;}},k=function(Y,ae){var Z=new RegExp("/(ref=[\\w]+)/?","i"),U,ad=false,P,S,T=false,X=Y.search.match(/\?tag=([^&]+)|&tag=([^&]+)|\?tag-value=([^&]+)|&tag-value=([^&]+)|\?tag_value=([^&]+)|&tag_value=([^&]+)|\?t=([^&]+)|&t=([^&]+)/),R=Y.search.match(/\?tag=|&tag=|\?tag-value=|&tag-value=|\?tag_value=|&tag_value=|\?t=|&t=/),O=Y.search.match(/(linkCode|link_code|lc)=([^&]+)/i),W=v.elementInViewPort(Y),ac={autoTagged:false,overwritten:false,geoRedirected:false,atf:W.inViewPort},Q=F.getNextSlotNum(),V={destinationURL:Y.href,slotNum:Q,atfInFirstLoad:W.inViewPort,posX:W.posX,posY:W.posY,logType:"onetag_textlink"},ab=p(Y),aa;ac.slotNum=Q;if(Y.search===""){Y.search="?imprToken="+v.getImpressionToken()+"&slotNum="+Q;}else{Y.search=Y.search.replace(/\?/,"?imprToken="+v.getImpressionToken()+"&slotNum="+Q+"&");}if(h.enableAutoTagging){ac.autoTagged=true;if(X){if(h.overwrite){for(S=1;S<9;S++){if(X[S]!=undefined){Y.search=Y.search.replace(X[S],ae);break;}}ac.overwritten=true;ad=true;}}else{if(R){Y.search=Y.search.replace(/tag=/,"tag="+ae);ad=true;}else{Y.search=Y.search.replace(/\?/,"?tag="+ae+"&");ad=true;}}}if(O&&typeof h.overridableLinkCodes[O[2]]!=="undefined"){T=true;}if(O&&!T){P=O[2];}else{P=ad?a:J;}if(O){V.oldLinkCode=O[2];Y.search=Y.search.replace(O[2],P);}else{Y.search=Y.search.replace(/\?/,"?linkCode="+P+"&");}if(ad){aa=ae;}else{if(typeof X!=="undefined"&&X instanceof Array&&X.length>=S+1&&typeof X[S]==="string"){aa=X[S];}else{aa="";}}if(C.shouldBeGeoRedirected()){ac.geoRedirected=true;n(Y);}if(Y.hasAttribute("data-amzn-asin")&&!Y.search.match("creativeASIN")){Y.search=Y.search.replace(/\?/,"?creativeASIN="+Y.getAttribute("data-amzn-asin")+"&");}if(C.shouldTrackTransit(h)){v.recordTransit();V[I]=v.getTransitId();}N.push({pos:W,slotNum:Q,linkCode:P,linkInfo:V,skipIRCall:ab,imprTag:aa});Y.href=v.addAAXClickUrl(Y.href);return ac;},A=function(O){if(O.href.match(b)){o=O.href.split(b);O.href=o[0]+"?"+decodeURIComponent(o[1]);}},t=function(P,O,S){var R,Q;for(R=0;R<P.length;R++){for(Q=0;Q<O.length;Q++){if(window.addEventListener){P[R].addEventListener(O[Q],S,false);}else{P[R].attachEvent("on"+O[Q],S);}}}},K=function(O,P){var Q=false;t([O],["touchstart"],function(){Q=false;});t([O],["touchmove"],function(){Q=true;});t([O],["click","touchend"],function(R){if(Q){return;}O.setAttribute("href",P);});t([O],["auxclick","contextmenu"],function(R){O.setAttribute("href",P);});t([O],["mouseup"],function(R){if(R.button===1||R.ctrlKey){O.setAttribute("href",P);}});},M=function(){var O="";for(i=0;i<h.itemRefs.length;i++){if(typeof h.itemRefs[i].type!=="undefined"&&h.itemRefs[i].type==="ASIN"&&typeof h.itemRefs[i].sourceLink!=="undefined"&&String(h.itemRefs[i].sourceLink).match(G)!==null&&typeof h.itemRefs[i].destinationLink!=="undefined"){w[h.itemRefs[i].sourceLink]=h.itemRefs[i].destinationLink;if(l!==""){O=",";}l=l+O+h.itemRefs[i].sourceLink;u++;}}},f=function(P,O){B.trackElements([P],function(){if(typeof O!==undefined&&O.slotNum!==undefined&&(O.viewed===undefined||!O.viewed)){v.recordViewability(O.slotNum);if(C.shouldInteractWithAES(h)){v.recordAESViewability(O.slotNum);}O.viewed=true;}});},g=function(O,P){K(O,O.getAttribute("href"));O.setAttribute("href",P);},z=function(){var Q,P,O;for(Q=0;Q<N.length;Q++){P=N[Q];O=P.pos;v.recordImpression(P.linkCode,P.imprTag,P.linkInfo,P.skipIRCall,P.slotNum);v.recordViewability(P.slotNum,O.inViewPort,O.posX,O.posY);if(C.shouldInteractWithAES(h)){v.recordAESImpression(P.linkCode,P.imprTag,P.linkInfo);v.recordAESViewability(P.slotNum,O.inViewPort,O.posX,O.posY);}}N=[];};if(h.locale!=undefined){q=h.locale;}else{q="US";}C.shouldBeGeoRedirected=function(){return h.enableGeoRedirection&&(h.region!==""&&h.region!==h.viewerCountry);};C.publisherCallBack=function(){window["amzn_assoc_client_cb_"+h.adUnitSlotNum]({type:"onload",data:{},widget:C});};C.decorateLinkElement=function(O){A(O);linkProperties=k(O,h.trackingId);f(O,linkProperties);return linkProperties;};C.shouldTrackTransit=function(O){return((typeof O.disableTransitTracking==="undefined")||!O.disableTransitTracking);};C.shouldInteractWithAES=function(O){return((typeof O.enableAESInteraction!=="undefined")&&O.enableAESInteraction);};C.tagLinks=function(af){var ah,ag,P,aa,aj,ac=[],al=0,X,Z,ai,ae,ak,O,Y,V=0,R=0,ab=0,Q=0,U=0,S=0,T,W,ad="";P=D[q];aa=j[q];aj=new RegExp("^(http|https)://(www|[\\w\\-\\.]+)?amazon\\.("+P+")/","i");if(aa){for(al=0;al<aa.length;al++){X=P;if(P=="co.jp"){X="co.jp|jp";}ac[al]=new RegExp("^(http|https)://(www\\.)?("+aa[al]+")\\.("+X+")/","i");}}Z=af.getElementsByTagName("a");if(!x){M();x=true;}for(ah=0;ah<Z.length;ah++){Y=undefined;ai=String(Z[ah].href);if(ae=ai.match(aj)&&!c(ai)){Y=C.decorateLinkElement(Z[ah]);g(Z[ah],ai);}else{if(h.isShortLinksSupported&&(ak=ai.match(G))!==null){L++;if(s!==""){ad=",";}s=s+ad+Z[ah].href;T=w[Z[ah].href];if(typeof T!=="undefined"){d++;Z[ah].setAttribute("href",T);Y=C.decorateLinkElement(Z[ah]);g(Z[ah],ai);}else{if(C.shouldBeGeoRedirected()){Y=C.decorateLinkElement(Z[ah]);g(Z[ah],ai);}}}else{for(O=0;O<ac.length;O++){if(ae=ai.match(ac[O])){C.decorateLinkElement(Z[ah]);g(Z[ah],ai);}}}}if(typeof Y!=="undefined"){if(Y.autoTagged){R++;}if(Y.overwritten){S++;}if(Y.geoRedirected){ab++;}if(Y.atf){Q++;}else{U++;}V++;}}y.numLinks=V;y.numAutoTaggedLinks=R;y.autoTaggingEnabled=h.enableAutoTagging;y.geoRedirectEnabled=h.enableGeoRedirection;y.disableTransitTracking=h.disableTransitTracking;y.numLinksATF=Q;y.numLinksBTF=U;y.shortLinksInLivePool=l;y.shortLinksInPage=s;y.shortLinksInLivePoolCount=u;y.shortLinksInPageCount=L;y.shortLinksMatchCount=d;if(C.shouldTrackTransit(h)){v.recordTransit();y[I]=v.getTransitId();}v.recordImpression(h.linkCode,h.trackingId,y);if(C.shouldInteractWithAES(h)){v.recordAESImpression(h.linkCode,h.trackingId,y);}t([window],["load"],z);};return C;};
+    var spec = {
+        trackingId : "mathblog0a-20",
+        region : "US",
+        overwrite : false,
+        enableAutoTagging : false,
+        linkCode : "w49",
+        overridableLinkCodes :  {   "am1": ""   , "am2": ""   , "am3": ""   , "as1": ""   , "as2": ""   , "as3": ""   , "as4": ""   , "li1": ""   , "li2": ""   , "li3": ""   , "ll1": ""   , "ll2": ""   },
+        enableGeoRedirection : true,
+        redirectorEndPoint : "https://assoc-redirect.amazon.com/g/r/",
+        adUnitSlotNum : "0",
+        itemRefs : [],
+        isShortLinksSupported : true,
+        viewerCountry : "IN",
+        disableTransitTracking : false,
+        enableAESInteraction : false
+    }, trackingUtils = window.trackingUtils(
+        "1",
+        "//fls-na.amazon-adsystem.com/1/associates-ads/1/OP/r/json",
+        "//ir-na.amazon-adsystem.com/e/ir",
+        "https://aax-us-east.amazon-adsystem.com/x/px/Qt3XsSO4ftjblFPk97zh2aIAAAFsQnZdGgEAAAFKAX7kA1g/", "https://aax-us-east.amazon-adsystem.com/x/c/Qt3XsSO4ftjblFPk97zh2aIAAAFsQnZdGgEAAAFKAX7kA1g/", "m1gC9Z7oER4FgQEGe46Jcw", undefined, undefined, undefined, true,
+        "https://assoc-na.associate-amazon.com/onetag/"
+    );
+
+    window.amznAutoTagger = amznAutoTaggerMaker(spec, trackingUtils, window.elemTracker(trackingUtils));
+    window.amznAutoTagger.tagLinks(document);
+    window.amznAutoTagger.publisherCallBack();
+}());
+
+ //# sourceURL=dynscript-0.js</script><script src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/osd.js"></script>
+    	        
+		    	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+            	
+				<title>MathBlog - A journey through the world of mathematics</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A man's journey through the wonderful world of Math and Programming">
+<link rel="canonical" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/a_002.html">
+<link rel="next" href="https://www.mathblog.dk/page/2/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mathblog">
+<meta property="og:description" content="A man's journey through the wonderful world of Math and Programming">
+<meta property="og:url" content="https://www.mathblog.dk/">
+<meta property="og:site_name" content="mathblog.dk">
+<meta name="msvalidate.01" content="A3390A574E7F38875B59EBF527F24ABE">
+<script src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/ca-pub-3056060128524975.js"></script><script src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/show_ads_impl.js" id="google_shimpl"></script><script async="" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/analytics.js"></script><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.mathblog.dk/#organization","name":"","url":"https://www.mathblog.dk/","sameAs":[]},{"@type":"WebSite","@id":"https://www.mathblog.dk/#website","url":"https://www.mathblog.dk/","name":"mathblog.dk","publisher":{"@id":"https://www.mathblog.dk/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.mathblog.dk/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.mathblog.dk/#webpage","url":"https://www.mathblog.dk/","inLanguage":"en-US","name":"MathBlog - A journey through the world of mathematics","isPartOf":{"@id":"https://www.mathblog.dk/#website"},"about":{"@id":"https://www.mathblog.dk/#organization"},"description":"A man's journey through the wonderful world of Math and Programming"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://use.fontawesome.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="mathblog.dk » Feed" href="https://www.mathblog.dk/feed/">
+<link rel="alternate" type="application/rss+xml" title="mathblog.dk » Comments Feed" href="https://www.mathblog.dk/comments/feed/">
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.7.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.7.1';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-6145403-8';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-6145403-8', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.mathblog.dk\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="implied_cookie_consent_css-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/implied-cookie-consent.css" type="text/css" media="all">
+<link rel="stylesheet" id="bento-style-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="child-style-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/style_004.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/dashicons.css" type="text/css" media="all">
+<link rel="stylesheet" id="bento-theme-styles-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/style_003.css" type="text/css" media="all">
+<style id="bento-theme-styles-inline-css" type="text/css">
+
+		.logo {
+			padding: 30px 0;
+			padding: 3rem 0;
+		}
+	
+		@media screen and (min-width: 64em) {
+			.bnt-container {
+				max-width: 1320px;
+				max-width: 132rem;
+			}
+		}
+		@media screen and (min-width: 90.75em) {
+			.bnt-container {
+				padding: 0;
+			}
+		}
+		@media screen and (min-width: 120em) {
+			.bnt-container {
+				max-width: 1680px;
+				max-width: 168rem;
+			}
+		}
+	
+		body {
+			font-family: Open Sans, Arial, sans-serif;
+			font-size: 14px;
+			font-size: 1.4em;
+		}
+		.site-content h1, 
+		.site-content h2, 
+		.site-content h3, 
+		.site-content h4, 
+		.site-content h5, 
+		.site-content h6,
+		.post-header-title h1 {
+			font-family: Open Sans, Arial, sans-serif;
+		}
+		#nav-primary {
+			font-family: Montserrat, Arial, sans-serif;
+		}
+		.primary-menu > li > a,
+		.primary-menu > li > a:after {
+			font-size: 14px;
+			font-size: 1.4rem;
+		}
+	
+		.site-header,
+		.header-default .site-header.fixed-header,
+		.header-side .site-wrapper {
+			background: #ffffff;
+		}
+		.primary-menu > li > .sub-menu {
+			border-top-color: #ffffff;
+		}
+		.primary-menu > li > a,
+		#nav-mobile li a,
+		.mobile-menu-trigger,
+		.mobile-menu-close,
+		.ham-menu-close {
+			color: #333333;
+		}
+		.primary-menu > li > a:hover,
+		.primary-menu > li.current-menu-item > a,
+		.primary-menu > li.current-menu-ancestor > a {
+			color: #00B285;
+		}
+		.primary-menu .sub-menu li,
+		#nav-mobile {
+			background-color: #dddddd;
+		}
+		.primary-menu .sub-menu li a:hover,
+		.primary-menu .sub-menu .current-menu-item:not(.current-menu-ancestor) > a,
+		#nav-mobile li a:hover,
+		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
+			background-color: #cccccc;
+		}
+		.primary-menu .sub-menu,
+		.primary-menu .sub-menu li,
+		#nav-mobile li a,
+		#nav-mobile .primary-mobile-menu > li:first-child > a {
+			border-color: #cccccc;
+		}
+		.primary-menu .sub-menu li a {
+			color: #333333; 
+		}
+		.primary-menu .sub-menu li:hover a {
+			color: #333333; 
+		}
+		#nav-mobile {
+			background-color: #dddddd;
+		}
+		#nav-mobile li a,
+		.mobile-menu-trigger,
+		.mobile-menu-close {
+			color: #333333;
+		}
+		#nav-mobile li a:hover,
+		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
+			background-color: #cccccc;
+		}
+		#nav-mobile li a,
+		#nav-mobile .primary-mobile-menu > li:first-child > a {
+			border-color: #cccccc;	
+		}
+		#nav-mobile li a:hover,
+		.mobile-menu-trigger-container:hover,
+		.mobile-menu-close:hover {
+			color: #333333;
+		}
+	
+		.site-content {
+			background-color: #f4f4f4;
+		}
+		.site-content h1, 
+		.site-content h2, 
+		.site-content h3, 
+		.site-content h4, 
+		.site-content h5, 
+		.site-content h6 {
+			color: #333333;
+		}
+		.products .product a h3,
+		.masonry-item-box a h2 {
+			color: inherit;	
+		}
+		.site-content {
+			color: #333333;
+		}
+		.site-content a:not(.masonry-item-link) {
+			color: #00b285;
+		}
+		.site-content a:not(.page-numbers) {
+			color: #00b285;
+		}
+		.site-content a:not(.ajax-load-more) {
+			color: #00b285;
+		}
+		.site-content a:not(.remove) {
+			color: #00b285;
+		}
+		.site-content a:not(.button) {
+			color: #00b285;
+		}
+		.page-links a .page-link-text:not(:hover) {
+			color: #00B285;
+		}
+		label,
+		.wp-caption-text,
+		.post-date-blog,
+		.entry-footer, 
+		.archive-header .archive-description, 
+		.comment-meta,
+		.comment-notes,
+		.project-types,
+		.widget_archive li,
+		.widget_categories li,
+		.widget .post-date,
+		.widget_calendar table caption,
+		.widget_calendar table th,
+		.widget_recent_comments .recentcomments,
+		.product .price del,
+		.widget del,
+		.widget del .amount,
+		.product_list_widget a.remove,
+		.product_list_widget .quantity,
+		.product-categories .count,
+		.product_meta,
+		.shop_table td.product-remove a,
+		.woocommerce-checkout .payment_methods .wc_payment_method .payment_box {
+			color: #999999;
+		}
+		hr,
+		.entry-content table,
+		.entry-content td,
+		.entry-content th,
+		.separator-line,
+		.comment .comment .comment-nested,
+		.comment-respond,
+		.sidebar .widget_recent_entries ul li,
+		.sidebar .widget_recent_comments ul li,
+		.sidebar .widget_categories ul li,
+		.sidebar .widget_archive ul li,
+		.sidebar .widget_product_categories ul li,
+		.woocommerce .site-footer .widget-woo .product_list_widget li,
+		.woocommerce .site-footer .widget-woo .cart_list li:last-child,
+		.woocommerce-tabs .tabs,
+		.woocommerce-tabs .tabs li.active,
+		.cart_item,
+		.cart_totals .cart-subtotal,
+		.cart_totals .order-total,
+		.woocommerce-checkout-review-order table tfoot,
+		.woocommerce-checkout-review-order table tfoot .order-total,
+		.woocommerce-checkout-review-order table tfoot .shipping {
+			border-color: #dddddd;	
+		}
+		input[type="text"], 
+		input[type="password"], 
+		input[type="email"], 
+		input[type="number"], 
+		input[type="tel"], 
+		input[type="search"], 
+		textarea, 
+		select, 
+		.select2-container {
+			background-color: #e4e4e4;
+			color: #333333;
+		}
+		::-webkit-input-placeholder { 
+			color: #aaaaaa; 
+		}
+		::-moz-placeholder { 
+			color: #aaaaaa; 
+		}
+		:-ms-input-placeholder { 
+			color: #aaaaaa; 
+		}
+		input:-moz-placeholder { 
+			color: #aaaaaa; 
+		}
+		.pagination a.page-numbers:hover,
+		.woocommerce-pagination a.page-numbers:hover,
+		.site-content a.ajax-load-more:hover,
+		.page-links a .page-link-text:hover,
+		.widget_price_filter .ui-slider .ui-slider-range, 
+		.widget_price_filter .ui-slider .ui-slider-handle,
+		input[type="submit"],
+		.site-content .button,
+		.widget_price_filter .ui-slider .ui-slider-range, 
+		.widget_price_filter .ui-slider .ui-slider-handle {
+			background-color: #00b285;	
+		}
+		.pagination a.page-numbers:hover,
+		.woocommerce-pagination a.page-numbers:hover,
+		.site-content a.ajax-load-more:hover,
+		.page-links a .page-link-text:hover {
+			border-color: #00b285;
+		}
+		.page-links a .page-link-text:not(:hover),
+		.pagination a, 
+		.woocommerce-pagination a,
+		.site-content a.ajax-load-more {
+			color: #00b285;
+		}
+		input[type="submit"]:hover,
+		.site-content .button:hover {
+			background-color: #00906c;
+		}
+		input[type="submit"],
+		.site-content .button,
+		.site-content a.button,
+		.pagination a.page-numbers:hover,
+		.woocommerce-pagination a.page-numbers:hover,
+		.site-content a.ajax-load-more:hover,
+		.page-links a .page-link-text:hover {
+			color: #ffffff;	
+		}
+		input[type="submit"]:hover,
+		.site-content .button:hover {
+			color: #ffffff;
+		}
+		.shop_table .actions .button,
+		.shipping-calculator-form .button,
+		.checkout_coupon .button,
+		.widget_shopping_cart .button:first-child,
+		.price_slider_amount .button {
+			background-color: #999999;
+		}
+		.shop_table .actions .button:hover,
+		.shipping-calculator-form .button:hover,
+		.checkout_coupon .button:hover,
+		.widget_shopping_cart .button:first-child:hover,
+		.price_slider_amount .button:hover {
+			background-color: #777777;
+		}
+		.shop_table .actions .button,
+		.shipping-calculator-form .button,
+		.checkout_coupon .button,
+		.widget_shopping_cart .button:first-child,
+		.price_slider_amount .button {
+			color: #ffffff;
+		}
+		.shop_table .actions .button:hover,
+		.shipping-calculator-form .button:hover,
+		.checkout_coupon .button:hover,
+		.widget_shopping_cart .button:first-child:hover,
+		.price_slider_amount .button:hover {
+			color: #ffffff;
+		}
+	
+		.sidebar-footer {
+			background-color: #888888;
+		}
+		.site-footer {
+			color: #cccccc;
+		}
+		.site-footer a {
+			color: #ffffff;
+		}
+		.site-footer label, 
+		.site-footer .post-date-blog, 
+		.site-footer .entry-footer, 
+		.site-footer .comment-meta, 
+		.site-footer .comment-notes, 
+		.site-footer .widget_archive li, 
+		.site-footer .widget_categories li, 
+		.site-footer .widget .post-date, 
+		.site-footer .widget_calendar table caption, 
+		.site-footer .widget_calendar table th, 
+		.site-footer .widget_recent_comments .recentcomments {
+			color: #aaaaaa;
+		}
+		.sidebar-footer .widget_recent_entries ul li, 
+		.sidebar-footer .widget_recent_comments ul li, 
+		.sidebar-footer .widget_categories ul li, 
+		.sidebar-footer .widget_archive ul li {
+			border-color: #999999;
+		}
+		.bottom-footer {
+			background-color: #666666;
+			color: #cccccc;
+		}
+		.bottom-footer a {
+			color: #ffffff;
+		}
+	
+		.home.blog .post-header-title h1 {
+			color: #ffffff;
+		}
+		.home.blog .post-header-subtitle {
+			color: #cccccc;
+		}
+	
+
+				.post-header {
+					background-image: url(https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?fit=1200%2C300&ssl=1);
+				}
+			
+</style>
+<link crossorigin="anonymous" rel="stylesheet" id="font-awesome-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/all.css" type="text/css" media="all">
+<link crossorigin="anonymous" rel="stylesheet" id="google-fonts-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"","inbound_paths":"[]","home_url":"https:\/\/www.mathblog.dk","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/frontend.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jquery.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jquery_002.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/implied-cookie-consent.js"></script>
+<link rel="https://api.w.org/" href="https://www.mathblog.dk/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.mathblog.dk/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.mathblog.dk/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.2.2">
+<link rel="shortlink" href="https://wp.me/9uwFH">
+
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+<link rel="stylesheet" type="text/css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/shCore.css"><link rel="stylesheet" type="text/css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="icon" href="https://i2.wp.com/www.mathblog.dk/files/2017/12/cropped-mblogo.png?fit=32%2C32&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i2.wp.com/www.mathblog.dk/files/2017/12/cropped-mblogo.png?fit=192%2C192&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i2.wp.com/www.mathblog.dk/files/2017/12/cropped-mblogo.png?fit=180%2C180&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i2.wp.com/www.mathblog.dk/files/2017/12/cropped-mblogo.png?fit=270%2C270&amp;ssl=1">
+        
+    <style type="text/css"></style><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/services.css"><link rel="preload" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/integrator.js" as="script"><script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/integrator.js"></script><link rel="preload" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/integrator_002.js" as="script"><script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/integrator_002.js"></script><link rel="preload" href="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/show_ads_impl.js" as="script"></head>
+    
+    
+        
+    <body class="home blog wp-custom-logo has-sidebar right-sidebar header-default">
+	
+		         				
+		<div class="site-wrapper clear">
+
+			<header class="site-header no-fixed-header">
+            	<div class="bnt-container">
+                
+                	        <div class="mobile-menu-trigger">
+        	<div class="mobile-menu-trigger-container">
+                <div class="mobile-menu-trigger-stick">
+                </div>
+                <div class="mobile-menu-trigger-stick">
+                </div>
+                <div class="mobile-menu-trigger-stick">
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-shadow">
+            </div>
+            <div id="nav-mobile" class="nav">
+            	<div class="mobile-menu-close-container">
+                	<div class="mobile-menu-close">
+                    </div>
+                </div>
+                <nav>
+                    <div class="menu-container"><ul id="menu-bottom-1" class="primary-mobile-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4584"><a><span class="menu-item-inner">Solutions</span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2235"><a href="https://www.mathblog.dk/project-euler-solutions/"><span class="menu-item-inner">Project Euler Solutions</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4585"><a href="https://www.mathblog.dk/uva-online-judge-solutions/"><span class="menu-item-inner">UVa Online Judge Solutions</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7628"><a href="https://www.mathblog.dk/shenzhen-io-solutions/"><span class="menu-item-inner">Shenzhen I/O Solutions</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6985"><a href="#"><span class="menu-item-inner">Resources</span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4725"><a href="https://www.mathblog.dk/programming-challenges/"><span class="menu-item-inner">Programming Challenges</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2341"><a href="https://www.mathblog.dk/tools/"><span class="menu-item-inner">Tools &amp; Games</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5317"><a href="https://www.mathblog.dk/great-library/"><span class="menu-item-inner">The Great Library</span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5319"><a href="https://www.mathblog.dk/great-library/calculus/"><span class="menu-item-inner">Calculus</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5318"><a href="https://www.mathblog.dk/great-library/linear-algebra/"><span class="menu-item-inner">Linear Algebra</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6986"><a href="#"><span class="menu-item-inner">About</span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6987"><a href="https://www.mathblog.dk/about/"><span class="menu-item-inner">About MathBlog</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6988"><a href="https://www.mathblog.dk/contact-me/"><span class="menu-item-inner">Contact Us</span></a></li>
+</ul>
+</li>
+</ul></div>                </nav>
+            </div>
+        </div>
+                    		
+                    <div class="logo clear"><a href="https://www.mathblog.dk/" class="logo-image-link"><img class="logo-fullsize" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Mathblog.png" alt="mathblog.dk"><img class="logo-mobile" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Mathblog.png" alt="mathblog.dk"></a></div>                    
+                    		<div class="header-menu clear">
+            <div id="nav-primary" class="nav">
+                <nav>
+                    <div class="menu-container"><ul id="menu-bottom-2" class="primary-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4584"><a><span class="menu-item-inner">Solutions</span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2235"><a href="https://www.mathblog.dk/project-euler-solutions/"><span class="menu-item-inner">Project Euler Solutions</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4585"><a href="https://www.mathblog.dk/uva-online-judge-solutions/"><span class="menu-item-inner">UVa Online Judge Solutions</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7628"><a href="https://www.mathblog.dk/shenzhen-io-solutions/"><span class="menu-item-inner">Shenzhen I/O Solutions</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6985"><a href="#"><span class="menu-item-inner">Resources</span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4725"><a href="https://www.mathblog.dk/programming-challenges/"><span class="menu-item-inner">Programming Challenges</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2341"><a href="https://www.mathblog.dk/tools/"><span class="menu-item-inner">Tools &amp; Games</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5317"><a href="https://www.mathblog.dk/great-library/"><span class="menu-item-inner">The Great Library</span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5319"><a href="https://www.mathblog.dk/great-library/calculus/"><span class="menu-item-inner">Calculus</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5318"><a href="https://www.mathblog.dk/great-library/linear-algebra/"><span class="menu-item-inner">Linear Algebra</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6986"><a href="#"><span class="menu-item-inner">About</span></a>
+<ul class="sub-menu" style="right: 0px; display: none;">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6987"><a href="https://www.mathblog.dk/about/"><span class="menu-item-inner">About MathBlog</span></a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6988"><a href="https://www.mathblog.dk/contact-me/"><span class="menu-item-inner">Contact Us</span></a></li>
+</ul>
+</li>
+</ul></div>                </nav>
+            </div>
+        </div>
+		<div class="ham-menu-trigger">
+        	<div class="ham-menu-trigger-container">
+                <div class="ham-menu-trigger-stick">
+                </div>
+                <div class="ham-menu-trigger-stick">
+                </div>
+                <div class="ham-menu-trigger-stick">
+                </div>
+            </div>
+        </div>
+		<div class="ham-menu-close-container">
+			<div class="ham-menu-close">
+			</div>
+		</div>
+                            
+                </div>
+            </header>
+			
+			<!-- .site-header -->
+						
+							        
+        	<div class="site-content">
+<div class="bnt-container">
+
+	<div class="content content-blog">
+        <main class="site-main">
+
+			
+<article id="post-7913" class="post-7913 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-hackerrank tag-python tag-series has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					27
+				</div>
+				<div class="post-month">
+					Jun
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-summing-the-n-series/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Summing-the-N-series.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Summing the N series" srcset="https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?w=1200&amp;ssl=1 1200w, https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?resize=300%2C75&amp;ssl=1 300w, https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?resize=768%2C192&amp;ssl=1 768w, https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7919" data-permalink="https://www.mathblog.dk/hackerrank-summing-the-n-series/summing-the-n-series/" data-orig-file="https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Summing the N series" data-image-description="" data-medium-file="https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i2.wp.com/www.mathblog.dk/files/2018/05/Summing-the-N-series.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-summing-the-n-series/" rel="bookmark">HackerRank: Summing the N series</a></h2></header><div class="entry-content clear"><p>Finally a <a href="https://www.hackerrank.com/challenges/summing-the-n-series/problem">problem</a>
+ where we need a little bit of math to solve it. It is called Summing 
+the N series, and when I say a little bit, I mean only a little bit. The
+ problem reads</p>
+<blockquote><p>You are given a sequence whose <span id="tex_9436"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_014.png" alt="n^{th}" title="n^{th}" class="latex" width="21" height="14"></span>&nbsp;term is</p>
+<div class="MathJax_SVG_Display">&nbsp;<span id="tex_9817"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_007.png" alt="T_n = n^2 - (n - 1)^2" title="T_n = n^2 - (n - 1)^2" class="latex" width="132" height="18"></span></div>
+<p>You have to evaluate the series</p>
+<div class="MathJax_SVG_Display">&nbsp;<span id="tex_5683"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_013.png" alt="S_n = T_1   T_2   T_3   \cdots   T_n" title="S_n = T_1   T_2   T_3   \cdots   T_n" class="latex" width="204" height="15"></span></div>
+<p>Find <span id="tex_5640"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_006.png" alt="S_n mod (10^9   7)" title="S_n mod (10^9   7)" class="latex" width="110" height="18"></span>.</p></blockquote>
+<p> <a href="https://www.mathblog.dk/hackerrank-summing-the-n-series/#more-7913" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>0 comments</i></footer>		
+</article>
+<article id="post-7905" class="post-7905 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-hackerrank tag-python has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					20
+				</div>
+				<div class="post-month">
+					Jun
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-cutting-paper-squares/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Cutting-Paper-Squares.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank – Cutting Paper Squares" srcset="https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?w=1200&amp;ssl=1 1200w, https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?resize=300%2C75&amp;ssl=1 300w, https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?resize=768%2C192&amp;ssl=1 768w, https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7910" data-permalink="https://www.mathblog.dk/hackerrank-cutting-paper-squares/cutting-paper-squares/" data-orig-file="https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Cutting Paper Squares" data-image-description="" data-medium-file="https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i1.wp.com/www.mathblog.dk/files/2018/04/Cutting-Paper-Squares.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-cutting-paper-squares/" rel="bookmark">HackerRank – Cutting Paper Squares</a></h2></header><div class="entry-content clear"><p>How ever much I like paper, rock and scissor we only use paper and scissor in the <a href="https://www.hackerrank.com/challenges/p1-paper-cutting/problem">problem</a> of cutting paper squares. <a href="https://www.mathblog.dk/hackerrank-cutting-paper-squares/#more-7905" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>1 comment</i></footer>		
+</article>
+<article id="post-7890" class="post-7890 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-combinatorics tag-hackerrank tag-modulo tag-python has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					13
+				</div>
+				<div class="post-month">
+					Jun
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-connecting-towns/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Connecting-towns.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Connecting Towns" srcset="https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?w=1200&amp;ssl=1 1200w, https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?resize=300%2C75&amp;ssl=1 300w, https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?resize=768%2C192&amp;ssl=1 768w, https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7901" data-permalink="https://www.mathblog.dk/hackerrank-connecting-towns/connecting-towns/" data-orig-file="https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Connecting towns" data-image-description="" data-medium-file="https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i1.wp.com/www.mathblog.dk/files/2018/04/Connecting-towns.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-connecting-towns/" rel="bookmark">HackerRank: Connecting Towns</a></h2></header><div class="entry-content clear"><p>Welcome to the Shire… Well at least welcome to Middle Earth, we don’t actually need to travel through the shire in the next <a href="https://www.hackerrank.com/challenges/connecting-towns/problem">HackerRank</a> problem with Connecting Towns. The problem reads</p>
+<blockquote><p>Gandalf is travelling from&nbsp;<strong>Rohan</strong>&nbsp;to&nbsp;<strong>Rivendell</strong>&nbsp;to meet Frodo but there is no direct route from&nbsp;<strong>Rohan</strong>&nbsp;(T<sub>1</sub>) to&nbsp;<strong>Rivendell</strong>&nbsp;(T<sub>n</sub>).</p>
+<p>But there are towns T<sub>2</sub>,T<sub>3</sub>,T<sub>4</sub>…T<sub>n-1</sub>&nbsp;such that there are N<sub>1</sub>&nbsp;routes from Town T<sub>1</sub>&nbsp;to T<sub>2</sub>, and in general, N<sub>i</sub>&nbsp;routes from T<sub>i</sub>&nbsp;to T<sub>i+1</sub>&nbsp;for i=1 to n-1 and 0 routes for any other T<sub>i</sub>&nbsp;to T<sub>j</sub>&nbsp;for j ≠ i+1</p>
+<p>Find the total number of routes Gandalf can take to reach Rivendell from Rohan.</p>
+<p><strong>Note</strong><br>
+Gandalf has to pass all the towns T<sub>i</sub>&nbsp;for i=1 to n-1 in numerical order to reach T<sub>n</sub>.<br>
+For each T<sub>i</sub>&nbsp;, T<sub>i+1</sub>&nbsp;there are only N<sub>i</sub>&nbsp;distinct routes Gandalf can take.</p>
+<p><strong>Input Format</strong><br>
+The first line contains an integer T, T test-cases follow.<br>
+Each test-case has 2 lines. The first line contains an integer N (the number of towns).<br>
+The second line contains N – 1 space separated integers where the i<sup>th</sup>&nbsp;integer denotes the number of routes, N<sub>i</sub>, from the town T<sub>i</sub>&nbsp;to T<sub>i+1</sub></p>
+<p><strong>Output Format</strong><br>
+Total number of routes from T<sub>1</sub>&nbsp;to T<sub>n</sub>&nbsp;modulo 1234567<br>
+<a href="http://en.wikipedia.org/wiki/Modular_arithmetic">http://en.wikipedia.org/wiki/Modular_arithmetic</a></p></blockquote>
+<h2>Solving the math of Connecting Towns</h2>
+<p>There are two things we need to get our heads around. There is the 
+first part which is how many paths there are, and then there is the 
+second part of the modulo.</p>
+<p>The former problem of the paths is rather simple as it is a simple 
+combinatorics problem and the total number of paths are just the product
+ of the paths of each leg of the journey</p>
+<p style="text-align: center;"><span id="tex_2972"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_016.png" alt="N_{total}=N_1\cdot N_2\cdot\ldots\cdot N_n" title="N_{total}=N_1\cdot N_2\cdot\ldots\cdot N_n" class="latex" width="174" height="15"></span></p>
+<p>The problem of the modulo operator can be treated in different ways. 
+Since we are using Python as implementation language we can completely 
+ignore it, as it can handle arbitrarily large integers. However, we can 
+also solve it as we have done for <a href="https://www.mathblog.dk/project-euler-48-last-ten-digits/">Project Euler problem 48.</a></p>
+<p>In general we have the formula</p>
+<p style="text-align: center;"><span id="tex_9852"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_008.png" alt="(a*b) % c = (a%c) * (b % c) % c" title="(a*b) % c = (a%c) * (b % c) % c" class="latex" width="42" height="18"></span></p>
+<p>Which means that for every time we multiply with the next set of 
+paths we can also take the modulo, which means we will keep the total 
+size of the integer down significantly.&nbsp; If it actually matters in 
+Python I don’t know.</p>
+<h2>Implementing Connecting towns in Python</h2>
+<p>Let us implement the one with modulo arithmetic. However since we 
+know that both a and b in the previous formula will be smaller than the 
+modulo. Therefore a%c = a and b%c= b, so we only need to take modulo of 
+the result during the iterations. Therefore the function we need to 
+implement is</p>
+<div><div id="highlighter_163948" class="syntaxhighlighter  python"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python keyword">def</code> <code class="python plain">connectingTowns(n, routes):</code></div><div class="line number2 index1 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">paths </code><code class="python keyword">=</code> <code class="python value">1</code></div><div class="line number3 index2 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python keyword">for</code> <code class="python plain">i </code><code class="python keyword">in</code> <code class="python plain">routes:</code></div><div class="line number4 index3 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">paths </code><code class="python keyword">=</code> <code class="python plain">(paths </code><code class="python keyword">*</code> <code class="python plain">i) </code><code class="python keyword">%</code> <code class="python value">1234567</code></div><div class="line number5 index4 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python keyword">return</code> <code class="python plain">paths</code></div></div></td></tr></tbody></table></div></div>
+<p>and that should solve the problem.</p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>0 comments</i></footer>		
+</article>
+<article id="post-7873" class="post-7873 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-geometry tag-hackerrank tag-python tag-triangles has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					06
+				</div>
+				<div class="post-month">
+					Jun
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-minimum-height-triangle/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Minimum-height-triangle.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Minimum Height Triangle" srcset="https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?w=1200&amp;ssl=1 1200w, https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?resize=300%2C75&amp;ssl=1 300w, https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?resize=768%2C192&amp;ssl=1 768w, https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7885" data-permalink="https://www.mathblog.dk/hackerrank-minimum-height-triangle/minimum-height-triangle/" data-orig-file="https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Minimum height triangle" data-image-description="" data-medium-file="https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i1.wp.com/www.mathblog.dk/files/2018/06/Minimum-height-triangle.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-minimum-height-triangle/" rel="bookmark">HackerRank: Minimum Height Triangle</a></h2></header><div class="entry-content clear"><p>It is always fun to work with triangles in any kind of setting not least problem solving in HackerRank. The problem <a href="https://www.hackerrank.com/challenges/lowest-triangle/problem">Minimum Height Triangle</a> is no exception. The problem reads</p>
+<blockquote>
+<div class="challenge_problem_statement">
+<div class="msB challenge_problem_statement_body">
+<div class="hackdown-content">
+<p><strong>Given integers b&nbsp;<span id="MathJax-Element-1-Frame" class="MathJax_SVG"></span>&nbsp;and a<span id="MathJax-Element-2-Frame" class="MathJax_SVG"></span>, find the smallest integer h<span id="MathJax-Element-3-Frame" class="MathJax_SVG"></span>, such that there exists a triangle of height h<span id="MathJax-Element-4-Frame" class="MathJax_SVG"></span>, base b<span id="MathJax-Element-5-Frame" class="MathJax_SVG"></span>, having an area of at least a<span id="MathJax-Element-6-Frame" class="MathJax_SVG"></span>.</strong></p>
+<p><strong><img title="" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/1496306792-f2c37eea44-triangle.jpg" alt="image" width="251" height="160"></strong></p>
+</div>
+</div>
+</div>
+</blockquote>
+<p>In case we should have forgotten the primary school mathematics. The area of a triangle is given by</p>
+<p style="text-align: center;"><span id="tex_287"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_004.png" alt="\displaystyle A = \frac{h\cdot b}{2}" title="\displaystyle A = \frac{h\cdot b}{2}" class="latex" width="65" height="34"></span></p>
+<p>This can be isolated such that we get the height of the triangle instead as</p>
+<p style="text-align: center;"><span id="tex_2415"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_011.png" alt="\displaystyle h = \frac{2A}{b}" title="\displaystyle h = \frac{2A}{b}" class="latex" width="54" height="35"></span></p>
+<p>Since we want the minimum integer size we then need to ceil that such that we get</p>
+<p style="text-align: center;"><span id="tex_6351"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_010.png" alt="\displaystyle h = \left\lceil\frac{2A}{b}\right\rceil" title="\displaystyle h = \left\lceil\frac{2A}{b}\right\rceil" class="latex" width="71" height="40"></span></p>
+<p>This can be implemented in Python as</p>
+<div><div id="highlighter_714241" class="syntaxhighlighter  python"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python keyword">def</code> <code class="python plain">lowestTriangle(base, area):</code></div><div class="line number2 index1 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python keyword">return</code> <code class="python plain">math.ceil(</code><code class="python value">2</code> <code class="python keyword">*</code> <code class="python plain">area </code><code class="python keyword">/</code> <code class="python plain">base)</code></div></div></td></tr></tbody></table></div></div>
+<p>I usually write somewhat longer posts. But to be honest, I don’t know what to add to this problem.</p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>0 comments</i></footer>		
+</article>
+<article id="post-7860" class="post-7860 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-arithmetic tag-hackerrank tag-python tag-sequences has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					30
+				</div>
+				<div class="post-month">
+					May
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-handshake/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Handshake.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Handshake" srcset="https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?w=1200&amp;ssl=1 1200w, https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?resize=300%2C75&amp;ssl=1 300w, https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?resize=768%2C192&amp;ssl=1 768w, https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7868" data-permalink="https://www.mathblog.dk/hackerrank-handshake/handshake/" data-orig-file="https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Handshake" data-image-description="" data-medium-file="https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i2.wp.com/www.mathblog.dk/files/2018/04/Handshake.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-handshake/" rel="bookmark">HackerRank: Handshake</a></h2></header><div class="entry-content clear"><p>Time to shake hands with a lot of people in the <a href="https://www.hackerrank.com/challenges/handshake/problem">next HackerRank challenge</a> called Handshake. The problem reads</p>
+<blockquote><p>At the annual meeting of Board of Directors of Acme Inc, 
+every one starts shaking hands with everyone else in the room. Given the
+ fact that any two persons shake hand exactly once, Can you tell the 
+total count of handshakes?</p>
+<p><strong>Input Format</strong><br>
+The first line contains the number of test cases T, T lines follow.<br>
+Each line then contains an integer N, the total number of Board of Directors of Acme.</p>
+<p><strong>Output Format</strong></p>
+<p>Print the number of handshakes for each test-case in a new line.</p></blockquote>
+<p> <a href="https://www.mathblog.dk/hackerrank-handshake/#more-7860" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>3 comments</i></footer>		
+</article>
+<article id="post-7855" class="post-7855 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-combinatorics tag-hackerrank tag-python has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					23
+				</div>
+				<div class="post-month">
+					May
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-maximum-draws/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Maximum-draws.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Maximum Draws" srcset="https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?w=1200&amp;ssl=1 1200w, https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?resize=300%2C75&amp;ssl=1 300w, https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?resize=768%2C192&amp;ssl=1 768w, https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7857" data-permalink="https://www.mathblog.dk/hackerrank-maximum-draws/maximum-draws/" data-orig-file="https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Maximum draws" data-image-description="" data-medium-file="https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i1.wp.com/www.mathblog.dk/files/2018/03/Maximum-draws.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-maximum-draws/" rel="bookmark">HackerRank: Maximum Draws</a></h2></header><div class="entry-content clear"><p><a href="https://www.hackerrank.com/challenges/maximum-draws/problem">Second round</a> of the fundamental mathematics problems on HackerRank is called Maximum draws.&nbsp; It asks the following</p>
+<blockquote><p>Jim is off to a party and is searching for a matching 
+pair of socks. His drawer is filled with socks, each pair of a different
+ color. In its worst case scenario, how many socks (x) should Jim remove
+ from his drawer until he finds a matching pair?</p>
+<p><strong>Input Format</strong><br>
+The first line contains the number of test cases T.<br>
+Next T lines contains an integer N which indicates the total pairs of socks present in the drawer.</p>
+<p><strong>Output Format</strong><br>
+Print the number of Draws (x) Jim makes in the worst case scenario.</p></blockquote>
+<p> <a href="https://www.mathblog.dk/hackerrank-maximum-draws/#more-7855" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>0 comments</i></footer>		
+</article>
+<article id="post-7835" class="post-7835 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank category-uncategorized tag-geometry tag-hackerrank tag-python has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					16
+				</div>
+				<div class="post-month">
+					May
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-find-the-point/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Find-the-Point.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Find the Point" srcset="https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?w=1200&amp;ssl=1 1200w, https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?resize=300%2C75&amp;ssl=1 300w, https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?resize=768%2C192&amp;ssl=1 768w, https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7852" data-permalink="https://www.mathblog.dk/hackerrank-find-the-point/find-the-point/" data-orig-file="https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Find the Point" data-image-description="" data-medium-file="https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i0.wp.com/www.mathblog.dk/files/2018/03/Find-the-Point.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-find-the-point/" rel="bookmark">HackerRank: Find the Point</a></h2></header><div class="entry-content clear"><p>I finally found the math problems on HackerRank which makes me so happy. So let’s getting cracking on the <a href="https://www.hackerrank.com/challenges/find-point/problem">first one</a> called Find the Point. It asks us to</p>
+<blockquote><p>Consider two points, <span id="tex_1933"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_003.png" alt="p = (p_x, p_y)" title="p = (p_x, p_y)" class="latex" width="80" height="19"></span>&nbsp;and&nbsp;<span id="tex_329"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_017.png" alt="q = (q_x, q_y)" title="q = (q_x, q_y)" class="latex" width="77" height="19"></span>. We consider the inversion or&nbsp;<a href="https://en.wikipedia.org/wiki/Point_reflection">point reflection</a>,&nbsp;<span id="tex_2817"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_012.png" alt="r = (r_x, r_y)" title="r = (r_x, r_y)" class="latex" width="77" height="19"></span>, of point <span id="tex_9340"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image.png" alt="p" title="p" class="latex" width="9" height="10"></span>&nbsp;across point&nbsp;<span id="tex_3748"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_018.png" alt="q" title="q" class="latex" width="8" height="10"></span>&nbsp;&nbsp;to be a <span id="tex_900"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_015.png" alt="180^{\circ}" title="180^{\circ}" class="latex" width="28" height="13"></span>&nbsp;rotation of point&nbsp;<span id="tex_3184"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image.png" alt="p" title="p" class="latex" width="9" height="10"></span>&nbsp;around&nbsp;<span id="tex_3090"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_018.png" alt="q" title="q" class="latex" width="8" height="10"></span>.</p>
+<p>Given&nbsp;&nbsp;sets of points&nbsp;&nbsp;and&nbsp;, 
+find&nbsp;&nbsp;for each pair of points and print two space-separated 
+integers denoting the respective values of&nbsp;&nbsp;and&nbsp;&nbsp;on a
+ new line.</p></blockquote>
+<p> <a href="https://www.mathblog.dk/hackerrank-find-the-point/#more-7835" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span>, <i>2 comments</i></footer>		
+</article>
+<article id="post-7820" class="post-7820 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-algebra tag-hackerrank tag-python has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					09
+				</div>
+				<div class="post-month">
+					May
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-utopian-trees/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Utopian-Trees.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="HackerRank: Utopian Trees" srcset="https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?w=1200&amp;ssl=1 1200w, https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?resize=300%2C75&amp;ssl=1 300w, https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?resize=768%2C192&amp;ssl=1 768w, https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7833" data-permalink="https://www.mathblog.dk/hackerrank-utopian-trees/utopian-trees/" data-orig-file="https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Utopian Trees" data-image-description="" data-medium-file="https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i2.wp.com/www.mathblog.dk/files/2018/05/Utopian-Trees.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-utopian-trees/" rel="bookmark">HackerRank: Utopian Trees</a></h2></header><div class="entry-content clear"><p>I found another fun little problem at <a href="https://www.hackerrank.com/">HackerRank</a>&nbsp;called <a href="https://www.hackerrank.com/challenges/utopian-tree/problem">Utopian trees</a>.
+ It is not an easy due to the input constraints. Given how small they 
+are I am pretty sure it could be solved by bruteforce.&nbsp; The problem
+ description is</p>
+<blockquote><p>The Utopian Tree goes through&nbsp;<em>2</em>&nbsp;cycles of growth every year. Each spring, it&nbsp;<em>doubles</em>&nbsp;in height. Each summer, its height increases by&nbsp;<em>1</em>&nbsp;meter.</p>
+<p>Laura plants a Utopian Tree sapling with a height of&nbsp;<em>1</em>&nbsp;meter at the onset of spring. How tall will her tree be after n&nbsp;growth cycles?</p></blockquote>
+<p>Given that the number of test cases is smaller than 10 and the number
+ of cycles are less than 60, it should be pretty obvious that it can be 
+bruteforced. However, there is also a nice analytical solution to 
+this.&nbsp; <a href="https://www.mathblog.dk/hackerrank-utopian-trees/#more-7820" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>0 comments</i></footer>		
+</article>
+<article id="post-7808" class="post-7808 post type-post status-publish format-standard has-post-thumbnail hentry category-shenzhen-io tag-assembly tag-shenzhen-io has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					02
+				</div>
+				<div class="post-month">
+					May
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/shenzhen-i-o-carbine-target-illuminator/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Carbine-Target-Illuminator.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Shenzhen I/O: Carbine Target Illuminator" srcset="https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?w=1200&amp;ssl=1 1200w, https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?resize=300%2C75&amp;ssl=1 300w, https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?resize=768%2C192&amp;ssl=1 768w, https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7817" data-permalink="https://www.mathblog.dk/shenzhen-i-o-carbine-target-illuminator/carbine-target-illuminator/" data-orig-file="https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Carbine Target Illuminator" data-image-description="" data-medium-file="https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i1.wp.com/www.mathblog.dk/files/2018/05/Carbine-Target-Illuminator.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/shenzhen-i-o-carbine-target-illuminator/" rel="bookmark">Shenzhen I/O: Carbine Target Illuminator</a></h2></header><div class="entry-content clear"><p>Once
+ again we are going to make equipment for military use. Someone in the 
+company is not going to be happy about it. This time it is a Carbine 
+Target illuminator, so we can see the bad guys before we shoot them. 
+With the use of radar we are going to measure the distance to the bad 
+guy by counting the number of cycles between output and input to the 
+radar. Based on that we will turn on the laser sight and or the flood 
+light in the following configuration.</p>
+<p><img data-attachment-id="7810" data-permalink="https://www.mathblog.dk/shenzhen-i-o-carbine-target-illuminator/shenzhen-io-carbin-target-illuminator-problem/" data-orig-file="https://i1.wp.com/www.mathblog.dk/files/2018/03/shenzhen-io-carbin-target-illuminator-problem.png?fit=570%2C408&amp;ssl=1" data-orig-size="570,408" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="shenzhen io – carbin target illuminator problem" data-image-description="" data-medium-file="https://i1.wp.com/www.mathblog.dk/files/2018/03/shenzhen-io-carbin-target-illuminator-problem.png?fit=300%2C215&amp;ssl=1" data-large-file="https://i1.wp.com/www.mathblog.dk/files/2018/03/shenzhen-io-carbin-target-illuminator-problem.png?fit=570%2C408&amp;ssl=1" class="aligncenter wp-image-7810 size-full" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/shenzhen-io-carbin-target-illuminator-problem.png" alt="Shenzhen I/O - Carbine target Illuminator - specification" srcset="https://i1.wp.com/www.mathblog.dk/files/2018/03/shenzhen-io-carbin-target-illuminator-problem.png?w=570&amp;ssl=1 570w, https://i1.wp.com/www.mathblog.dk/files/2018/03/shenzhen-io-carbin-target-illuminator-problem.png?resize=300%2C215&amp;ssl=1 300w" sizes="(max-width: 570px) 100vw, 570px" width="570" height="408"> <a href="https://www.mathblog.dk/shenzhen-i-o-carbine-target-illuminator/#more-7808" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">Shenzhen IO</span>, <i>2 comments</i></footer>		
+</article>
+<article id="post-7792" class="post-7792 post type-post status-publish format-standard has-post-thumbnail hentry category-hackerrank tag-hackerrank tag-magic-square tag-puzzle has-thumb">
+
+	
+			<div class="post-date-blog">
+				
+				<div class="post-day">
+					25
+				</div>
+				<div class="post-month">
+					Apr
+				</div>
+				<div class="post-year">
+					2018
+				</div>
+				
+			</div>
+					<div class="post-thumbnail">
+				<a class="post-thumbnail" href="https://www.mathblog.dk/hackerrank-forming-a-magic-square/">
+					<img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/Forming-a-magic-square.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Hackerrank: Forming a magic Square" srcset="https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?w=1200&amp;ssl=1 1200w, https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?resize=300%2C75&amp;ssl=1 300w, https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?resize=768%2C192&amp;ssl=1 768w, https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?resize=1024%2C256&amp;ssl=1 1024w" sizes="(max-width: 1200px) 100vw, 1200px" data-attachment-id="7803" data-permalink="https://www.mathblog.dk/hackerrank-forming-a-magic-square/forming-a-magic-square/" data-orig-file="https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?fit=1200%2C300&amp;ssl=1" data-orig-size="1200,300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Forming a magic square" data-image-description="" data-medium-file="https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?fit=300%2C75&amp;ssl=1" data-large-file="https://i0.wp.com/www.mathblog.dk/files/2018/03/Forming-a-magic-square.png?fit=1024%2C256&amp;ssl=1" width="1200" height="300">				</a>
+			</div>
+		
+			<header class="entry-header"><h2 class="entry-title"><a href="https://www.mathblog.dk/hackerrank-forming-a-magic-square/" rel="bookmark">Hackerrank: Forming a magic Square</a></h2></header><div class="entry-content clear"><p>I must admit that this <a href="https://www.hackerrank.com/challenges/magic-square-forming/problem">problem</a>
+ actually took me a good while to solve. Once you have the right insight
+ on forming a magic Square it is really straight forward. But until that
+ point I was just stuck. Anyway, before rambling on lets get to the 
+actual problem.</p>
+<p>We define a&nbsp;<a href="https://en.wikipedia.org/wiki/Magic_square">magic square</a>&nbsp;to be an <span id="tex_9235"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_005.png" alt="n \times n " title="n \times n " class="latex" width="40" height="8"></span>&nbsp;matrix of distinct positive integers from 1&nbsp;to n<sup>2&nbsp;</sup>where the sum of any row, column, or diagonal (of length&nbsp;n) is always equal to the same number (i.e., the&nbsp;<em>magic constant</em>).</p>
+<blockquote><p>Consider a&nbsp;<span id="tex_2879"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_002.png" alt="3 \times 3" title="3 \times 3" class="latex" width="36" height="12"></span>
+ matrix,&nbsp;s, of integers in the inclusive range&nbsp;[1, 9]. We can 
+convert any digit,&nbsp;a, to any other digit,&nbsp;b, in the 
+range&nbsp;[1, 9]&nbsp;at cost&nbsp;<span id="tex_893"><img src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/image_009.png" alt="\lvert a - b\rvert" title="\lvert a - b\rvert" class="latex" width="42" height="17"></span>.</p>
+<p>Given&nbsp;, convert it into a magic square at&nbsp;<em>minimal</em>&nbsp;cost by changing zero or more of its digits. Then print this cost on a new line.</p>
+<p><strong>Note:</strong>&nbsp;The resulting magic square must contain distinct integers in the inclusive range&nbsp;[1, 9].</p></blockquote>
+<p> <a href="https://www.mathblog.dk/hackerrank-forming-a-magic-square/#more-7792" class="more-link">Continue reading →</a></p>
+</div><footer class="entry-footer"><i>Posted by</i> <span class="uppercase">Kristian</span> <i>in</i> <span class="uppercase">HackerRank</span>, <i>0 comments</i></footer>		
+</article>
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://www.mathblog.dk/page/2/">2</a>
+<span class="page-numbers dots">…</span>
+<a class="page-numbers" href="https://www.mathblog.dk/page/25/">25</a>
+<a class="next page-numbers" href="https://www.mathblog.dk/page/2/">Next page →</a></div>
+	</nav>            
+        </main>
+        
+                
+    </div>
+            
+				<div class="sidebar widget-area">
+				<div id="text-2" class="widget widget-sidebar widget_text clear"><h3 class="widget-title">Sign up for the newsletter</h3>			<div class="textwidget"><p><strong>Sign up</strong> for the Mathblog newsletter, and get updates every two weeks. I promise I will include <strong>cool tidbits</strong> for you.</p>
+<script>(function() {
+	if (!window.mc4wp) {
+		window.mc4wp = {
+			listeners: [],
+			forms    : {
+				on: function (event, callback) {
+					window.mc4wp.listeners.push({
+						event   : event,
+						callback: callback
+					});
+				}
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.5.2 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-7401" method="post" data-id="7401" data-name="Newsletter"><div class="mc4wp-form-fields"><p>
+    <label>Name</label>
+    <input type="text" name="FNAME" placeholder="Your name">
+</p>
+
+<p>
+	<label>Email address: </label>
+	<input type="email" name="EMAIL" placeholder="Your email address" required="">
+</p>
+
+<p>
+	<input type="submit" value="Sign up">
+</p></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1564483148"><input type="hidden" name="_mc4wp_form_id" value="7401"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1"><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin -->
+</div>
+		</div><div id="search-2" class="widget widget-sidebar widget_search clear"><h3 class="widget-title">Search</h3>
+<form role="search" method="get" id="searchform" class="search-form" action="https://www.mathblog.dk/">
+    <div class="search-form-wrap">
+		<input type="text" name="s" id="s" class="search-form-input" placeholder="Search..">
+        <input type="submit" id="searchsubmit" class="button submit-button" value="">
+    </div>
+</form></div><div id="ai_widget-2" class="widget widget-sidebar ai_widget clear"><div class="code-block code-block-5" style="margin: 8px 0; clear: both;">
+<script async="" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/adsbygoogle.js"></script>
+<!-- Mathblog Sidebar -->
+<ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-3056060128524975" data-ad-slot="9704529082" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 261px; background-color: transparent;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 261px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:261px;height:600px;" width="261" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="categories-2" class="widget widget-sidebar widget_categories clear"><h3 class="widget-title">Categories</h3>		<ul>
+				<li class="cat-item cat-item-144"><a href="https://www.mathblog.dk/category/solutions/hackerrank/">HackerRank</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://www.mathblog.dk/category/math/" title="I use this tag for when the topic is about pure math. So whenever I dive into proofs, explanations of math topics or news on the research this is where you should look.">Math</a>
+</li>
+	<li class="cat-item cat-item-63"><a href="https://www.mathblog.dk/category/other/">Other</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://www.mathblog.dk/category/programming/" title="Programming is a huge part of solving Project Euler problems and once in a while a subject pops up that I want to treat individually. ">Programming</a>
+</li>
+	<li class="cat-item cat-item-69"><a href="https://www.mathblog.dk/category/solutions/project-euler/" title="My solutions for Project Euler, most of them are written in C#. I have two aims for the solution - speed and readability.
+
+Whenever possible, I exploit the math behind the problem to obtain a much faster solution than what can be done through bruteforcing the problem.">Project Euler</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="https://www.mathblog.dk/category/solutions/shenzhen-io/">Shenzhen IO</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://www.mathblog.dk/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-112"><a href="https://www.mathblog.dk/category/solutions/uva-online-judge/">UVa Online Judge</a>
+</li>
+		</ul>
+			</div><div id="tag_cloud-2" class="widget widget-sidebar widget_tag_cloud clear"><h3 class="widget-title">Tags</h3><div class="tagcloud"><a href="https://www.mathblog.dk/tag/algebra/" class="tag-cloud-link tag-link-70 tag-link-position-1" style="font-size: 14.666666666667pt;" aria-label="Algebra (24 items)">Algebra</a>
+<a href="https://www.mathblog.dk/tag/api/" class="tag-cloud-link tag-link-22 tag-link-position-2" style="font-size: 9.9047619047619pt;" aria-label="API (7 items)">API</a>
+<a href="https://www.mathblog.dk/tag/arithmetic/" class="tag-cloud-link tag-link-12 tag-link-position-3" style="font-size: 14.095238095238pt;" aria-label="Arithmetic (21 items)">Arithmetic</a>
+<a href="https://www.mathblog.dk/tag/assembly/" class="tag-cloud-link tag-link-138 tag-link-position-4" style="font-size: 12.761904761905pt;" aria-label="Assembly (15 items)">Assembly</a>
+<a href="https://www.mathblog.dk/tag/biginteger/" class="tag-cloud-link tag-link-19 tag-link-position-5" style="font-size: 11.619047619048pt;" aria-label="BigInteger (11 items)">BigInteger</a>
+<a href="https://www.mathblog.dk/tag/brute-force/" class="tag-cloud-link tag-link-14 tag-link-position-6" style="font-size: 20.857142857143pt;" aria-label="Brute Force (111 items)">Brute Force</a>
+<a href="https://www.mathblog.dk/tag/c/" class="tag-cloud-link tag-link-5 tag-link-position-7" style="font-size: 22pt;" aria-label="C# (146 items)">C#</a>
+<a href="https://www.mathblog.dk/tag/combinatorics/" class="tag-cloud-link tag-link-17 tag-link-position-8" style="font-size: 14.095238095238pt;" aria-label="Combinatorics (21 items)">Combinatorics</a>
+<a href="https://www.mathblog.dk/tag/competition/" class="tag-cloud-link tag-link-97 tag-link-position-9" style="font-size: 8pt;" aria-label="Competition (4 items)">Competition</a>
+<a href="https://www.mathblog.dk/tag/continued-fractions/" class="tag-cloud-link tag-link-92 tag-link-position-10" style="font-size: 8pt;" aria-label="Continued fractions (4 items)">Continued fractions</a>
+<a href="https://www.mathblog.dk/tag/coprimes/" class="tag-cloud-link tag-link-16 tag-link-position-11" style="font-size: 8pt;" aria-label="Coprimes (4 items)">Coprimes</a>
+<a href="https://www.mathblog.dk/tag/diophantine-equation/" class="tag-cloud-link tag-link-119 tag-link-position-12" style="font-size: 8pt;" aria-label="Diophantine Equation (4 items)">Diophantine Equation</a>
+<a href="https://www.mathblog.dk/tag/dynamic-programming/" class="tag-cloud-link tag-link-20 tag-link-position-13" style="font-size: 10.857142857143pt;" aria-label="Dynamic Programming (9 items)">Dynamic Programming</a>
+<a href="https://www.mathblog.dk/tag/eulers-totient-function/" class="tag-cloud-link tag-link-98 tag-link-position-14" style="font-size: 8pt;" aria-label="Euler's totient function (4 items)">Euler's totient function</a>
+<a href="https://www.mathblog.dk/tag/factorial/" class="tag-cloud-link tag-link-42 tag-link-position-15" style="font-size: 8pt;" aria-label="Factorial (4 items)">Factorial</a>
+<a href="https://www.mathblog.dk/tag/fibonacci/" class="tag-cloud-link tag-link-10 tag-link-position-16" style="font-size: 8.7619047619048pt;" aria-label="Fibonacci (5 items)">Fibonacci</a>
+<a href="https://www.mathblog.dk/tag/fractions/" class="tag-cloud-link tag-link-47 tag-link-position-17" style="font-size: 8pt;" aria-label="Fractions (4 items)">Fractions</a>
+<a href="https://www.mathblog.dk/tag/geometry/" class="tag-cloud-link tag-link-51 tag-link-position-18" style="font-size: 11.238095238095pt;" aria-label="Geometry (10 items)">Geometry</a>
+<a href="https://www.mathblog.dk/tag/greatest-common-divisor/" class="tag-cloud-link tag-link-35 tag-link-position-19" style="font-size: 9.9047619047619pt;" aria-label="Greatest Common Divisor (7 items)">Greatest Common Divisor</a>
+<a href="https://www.mathblog.dk/tag/hackerrank/" class="tag-cloud-link tag-link-146 tag-link-position-20" style="font-size: 11.619047619048pt;" aria-label="Hackerrank (11 items)">Hackerrank</a>
+<a href="https://www.mathblog.dk/tag/java/" class="tag-cloud-link tag-link-110 tag-link-position-21" style="font-size: 11.238095238095pt;" aria-label="Java (10 items)">Java</a>
+<a href="https://www.mathblog.dk/tag/linear-algebra/" class="tag-cloud-link tag-link-24 tag-link-position-22" style="font-size: 8pt;" aria-label="Linear Algebra (4 items)">Linear Algebra</a>
+<a href="https://www.mathblog.dk/tag/links/" class="tag-cloud-link tag-link-77 tag-link-position-23" style="font-size: 10.857142857143pt;" aria-label="Links (9 items)">Links</a>
+<a href="https://www.mathblog.dk/tag/modulo/" class="tag-cloud-link tag-link-58 tag-link-position-24" style="font-size: 12.285714285714pt;" aria-label="Modulo (13 items)">Modulo</a>
+<a href="https://www.mathblog.dk/tag/palindromes/" class="tag-cloud-link tag-link-15 tag-link-position-25" style="font-size: 8pt;" aria-label="Palindromes (4 items)">Palindromes</a>
+<a href="https://www.mathblog.dk/tag/pandigital/" class="tag-cloud-link tag-link-33 tag-link-position-26" style="font-size: 9.4285714285714pt;" aria-label="Pandigital (6 items)">Pandigital</a>
+<a href="https://www.mathblog.dk/tag/pells-equation/" class="tag-cloud-link tag-link-109 tag-link-position-27" style="font-size: 8pt;" aria-label="Pell's equation (4 items)">Pell's equation</a>
+<a href="https://www.mathblog.dk/tag/pen-paper/" class="tag-cloud-link tag-link-26 tag-link-position-28" style="font-size: 13.714285714286pt;" aria-label="Pen &amp; Paper (19 items)">Pen &amp; Paper</a>
+<a href="https://www.mathblog.dk/tag/pentagonal-numbers/" class="tag-cloud-link tag-link-53 tag-link-position-29" style="font-size: 8pt;" aria-label="Pentagonal numbers (4 items)">Pentagonal numbers</a>
+<a href="https://www.mathblog.dk/tag/permutations/" class="tag-cloud-link tag-link-41 tag-link-position-30" style="font-size: 10.380952380952pt;" aria-label="Permutations (8 items)">Permutations</a>
+<a href="https://www.mathblog.dk/tag/prime-factorisation/" class="tag-cloud-link tag-link-13 tag-link-position-31" style="font-size: 13.047619047619pt;" aria-label="Prime factorisation (16 items)">Prime factorisation</a>
+<a href="https://www.mathblog.dk/tag/prime-generation/" class="tag-cloud-link tag-link-36 tag-link-position-32" style="font-size: 9.4285714285714pt;" aria-label="Prime Generation (6 items)">Prime Generation</a>
+<a href="https://www.mathblog.dk/tag/prime-numbers/" class="tag-cloud-link tag-link-11 tag-link-position-33" style="font-size: 15.238095238095pt;" aria-label="Prime numbers (28 items)">Prime numbers</a>
+<a href="https://www.mathblog.dk/tag/programming/" class="tag-cloud-link tag-link-135 tag-link-position-34" style="font-size: 8pt;" aria-label="Programming (4 items)">Programming</a>
+<a href="https://www.mathblog.dk/tag/projecteuler/" class="tag-cloud-link tag-link-6 tag-link-position-35" style="font-size: 21.904761904762pt;" aria-label="Project Euler (145 items)">Project Euler</a>
+<a href="https://www.mathblog.dk/tag/proofs/" class="tag-cloud-link tag-link-57 tag-link-position-36" style="font-size: 12.761904761905pt;" aria-label="Proofs (15 items)">Proofs</a>
+<a href="https://www.mathblog.dk/tag/pythagoras/" class="tag-cloud-link tag-link-18 tag-link-position-37" style="font-size: 8.7619047619048pt;" aria-label="Pythagoras (5 items)">Pythagoras</a>
+<a href="https://www.mathblog.dk/tag/python/" class="tag-cloud-link tag-link-145 tag-link-position-38" style="font-size: 10.857142857143pt;" aria-label="Python (9 items)">Python</a>
+<a href="https://www.mathblog.dk/tag/recursion/" class="tag-cloud-link tag-link-129 tag-link-position-39" style="font-size: 8.7619047619048pt;" aria-label="Recursion (5 items)">Recursion</a>
+<a href="https://www.mathblog.dk/tag/sequences/" class="tag-cloud-link tag-link-59 tag-link-position-40" style="font-size: 9.4285714285714pt;" aria-label="Sequences (6 items)">Sequences</a>
+<a href="https://www.mathblog.dk/tag/shenzhen-io/" class="tag-cloud-link tag-link-137 tag-link-position-41" style="font-size: 12.761904761905pt;" aria-label="Shenzhen IO (15 items)">Shenzhen IO</a>
+<a href="https://www.mathblog.dk/tag/string-manipulation/" class="tag-cloud-link tag-link-40 tag-link-position-42" style="font-size: 8pt;" aria-label="String Manipulation (4 items)">String Manipulation</a>
+<a href="https://www.mathblog.dk/tag/teaching/" class="tag-cloud-link tag-link-52 tag-link-position-43" style="font-size: 10.857142857143pt;" aria-label="Teaching (9 items)">Teaching</a>
+<a href="https://www.mathblog.dk/tag/uvaonlinejudge/" class="tag-cloud-link tag-link-111 tag-link-position-44" style="font-size: 12.285714285714pt;" aria-label="UVa Online Judge (13 items)">UVa Online Judge</a>
+<a href="https://www.mathblog.dk/tag/video/" class="tag-cloud-link tag-link-28 tag-link-position-45" style="font-size: 8.7619047619048pt;" aria-label="Video (5 items)">Video</a></div>
+</div>			</div>
+			            
+</div>
+
+
+            </div><!-- .site-content -->
+			
+						<div class="after-content">
+			</div>
+            
+            <footer class="site-footer">
+				
+								                    
+				                <div class="bottom-footer clear">
+                	<div class="bnt-container">
+					
+												
+                        <div class="footer-copyright">© 2019 mathblog.dk. Bento theme by <a href="https://satoristudio.net/" target="blank" title="Satori Studio">Satori Studio</a></div>						
+                    </div>
+                </div>
+                
+            </footer><!-- .site-footer -->
+
+		</div><!-- .site-wrapper -->
+		
+				<div id="amzn-assoc-ad-f1ffd6d5-b9ac-482b-ad96-9372d0b34d62"></div><script async="" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/onejs.js"></script><div id="icc_message" style="background-color: #dddddd;">This site uses cookies. <span class="icc_dismiss_button">☒</span></div><script language="javascript">var $j  = jQuery.noConflict();
+		$j(window).load(function(){ 
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_5b125845feb5ed0beb8eb95f3f7be639.png&alt=n%5E%7Bth%7D&title=n%5E%7Bth%7D&width=21&height=14&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_9436');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_1bb3bd6372a858498e093b38007d2eb6.png&alt=T_n+%3D+n%5E2+-+%28n+-+1%29%5E2&title=T_n+%3D+n%5E2+-+%28n+-+1%29%5E2&width=132&height=18&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_9817');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_5bcd2dc7bb2e77d7876775ad3126e66e.png&alt=S_n+%3D+T_1+%2B+T_2+%2B+T_3+%2B+%5Ccdots+%2B+T_n&title=S_n+%3D+T_1+%2B+T_2+%2B+T_3+%2B+%5Ccdots+%2B+T_n&width=204&height=15&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_5683');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_43a5a3b1e22284235e6f0e88bf5b42d4.png&alt=S_n+mod+%2810%5E9+%2B+7%29&title=S_n+mod+%2810%5E9+%2B+7%29&width=110&height=18&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_5640');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_1c60efd26f79e70239f1dd5c5a69ed60.png&alt=N_%7Btotal%7D%3DN_1%5Ccdot+N_2%5Ccdot%5Cldots%5Ccdot+N_n&title=N_%7Btotal%7D%3DN_1%5Ccdot+N_2%5Ccdot%5Cldots%5Ccdot+N_n&width=174&height=15&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_2972');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_fbbcc95fee2a17554210ce9cf4d97eb0.png&alt=%28a%2Ab%29+%25+c+%3D+%28a%25c%29+%2A+%28b+%25+c%29+%25+c&title=%28a%2Ab%29+%25+c+%3D+%28a%25c%29+%2A+%28b+%25+c%29+%25+c&width=42&height=18&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_9852');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_d52019dc3cee17b6f7d2c37f6db77553.png&alt=%5Cdisplaystyle+A+%3D+%5Cfrac%7Bh%5Ccdot+b%7D%7B2%7D&title=%5Cdisplaystyle+A+%3D+%5Cfrac%7Bh%5Ccdot+b%7D%7B2%7D&width=65&height=34&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_287');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_e9964f7dc9fd84e8b961be1db571dc2b.png&alt=%5Cdisplaystyle+h+%3D+%5Cfrac%7B2A%7D%7Bb%7D&title=%5Cdisplaystyle+h+%3D+%5Cfrac%7B2A%7D%7Bb%7D&width=54&height=35&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_2415');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_f15d3c0e2551d36d753481758ca20d3f.png&alt=%5Cdisplaystyle+h+%3D+%5Cleft%5Clceil%5Cfrac%7B2A%7D%7Bb%7D%5Cright%5Crceil&title=%5Cdisplaystyle+h+%3D+%5Cleft%5Clceil%5Cfrac%7B2A%7D%7Bb%7D%5Cright%5Crceil&width=71&height=40&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_6351');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_27a6c774833a903b0e724d291cfc0442.png&alt=p+%3D+%28p_x%2C+p_y%29&title=p+%3D+%28p_x%2C+p_y%29&width=80&height=19&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_1933');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_e95a0026046843a5e773812b182d2ee0.png&alt=q+%3D+%28q_x%2C+q_y%29&title=q+%3D+%28q_x%2C+q_y%29&width=77&height=19&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_329');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_be16f534023972c0033c5597151d6b60.png&alt=r+%3D+%28r_x%2C+r_y%29&title=r+%3D+%28r_x%2C+r_y%29&width=77&height=19&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_2817');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_0761d2a3e57625354eab8312f194a5d2.png&alt=p&title=p&width=9&height=10&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_9340');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_148a374eec2010c0009feddfcce5bb90.png&alt=q&title=q&width=8&height=10&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_3748');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_f434d3df47b6032cbe8ad2d14acee985.png&alt=180%5E%7B%5Ccirc%7D&title=180%5E%7B%5Ccirc%7D&width=28&height=13&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_900');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_0761d2a3e57625354eab8312f194a5d2.png&alt=p&title=p&width=9&height=10&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_3184');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_148a374eec2010c0009feddfcce5bb90.png&alt=q&title=q&width=8&height=10&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_3090');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_8d375094e774370ea49e76bf7d0ea7d0.png&alt=n+%5Ctimes+n+&title=n+%5Ctimes+n+&width=40&height=8&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_9235');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_0122f06ef49cc90ddca6d496aab31a25.png&alt=3+%5Ctimes+3&title=3+%5Ctimes+3&width=36&height=12&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_2879');
+tex_ajax('https://www.mathblog.dk/wp-content/plugins/optimized-latex/ajax.php?class=latex&image=tex_e15a0ab9d47684564067851729a1d970.png&alt=%5Clvert+a+-+b%5Crvert&title=%5Clvert+a+-+b%5Crvert&width=42&height=17&path=https%3A%2F%2Fwww.mathblog.dk%2Fwp-content%2Fplugins%2Foptimized-latex','tex_893');
+ });</script>	<div style="display:none">
+	</div>
+<script>(function() {function addEventListener(element,event,handler) {
+	if(element.addEventListener) {
+		element.addEventListener(event,handler, false);
+	} else if(element.attachEvent){
+		element.attachEvent('on'+event,handler);
+	}
+}function maybePrefixUrlField() {
+	if(this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+if( urlFields && urlFields.length > 0 ) {
+	for( var j=0; j < urlFields.length; j++ ) {
+		addEventListener(urlFields[j],'blur',maybePrefixUrlField);
+	}
+}/* test if browser supports date fields */
+var testInput = document.createElement('input');
+testInput.setAttribute('type', 'date');
+if( testInput.type !== 'date') {
+
+	/* add placeholder & pattern to all date fields */
+	var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+	for(var i=0; i<dateFields.length; i++) {
+		if(!dateFields[i].placeholder) {
+			dateFields[i].placeholder = 'YYYY-MM-DD';
+		}
+		if(!dateFields[i].pattern) {
+			dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+		}
+	}
+}
+
+})();</script><script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/shCore.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/shBrushPython.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://www.mathblog.dk/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://www.mathblog.dk/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/photon.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.mathblog.dk\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/scripts.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/ajax.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/wpgroho.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jquery_003.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var bentoThemeVars = {"menu_config":"","fixed_menu":"","ajaxurl":"https:\/\/www.mathblog.dk\/wp-admin\/admin-ajax.php","query_vars":"[]","paged":"0","max_pages":"25","grid_mode":"nogrid"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/theme-scripts.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/wp-embed.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/spin.js"></script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jquery_004.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/www.mathblog.dk\/wp-admin\/admin-ajax.php","nonce":"21da6297ef","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/www.mathblog.dk\/wp-login.php?redirect_to=https%3A%2F%2Fwww.mathblog.dk%2Fshenzhen-i-o-carbine-target-illuminator%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/jetpack-carousel.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mc4wp_forms_config = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/forms-api.js"></script>
+<!--[if lte IE 9]>
+<script type='text/javascript' src='https://www.mathblog.dk/wp-content/plugins/mailchimp-for-wp/assets/js/third-party/placeholders.min.js?ver=4.5.2'></script>
+<![endif]-->
+
+	
+    
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_7625437356088" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="MathBlog%20-%20A%20journey%20through%20the%20world%20of%20mathematics_files/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-3056060128524975"></iframe></html>

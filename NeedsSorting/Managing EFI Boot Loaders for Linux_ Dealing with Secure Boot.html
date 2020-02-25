@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!-- saved from url=(0065)https://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Managing EFI Boot Loaders for Linux: Dealing with Secure Boot</title>
+<link href="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h1 align="CENTER"><center>Managing EFI Boot Loaders for Linux:<br>Dealing with Secure Boot</center></h1>
+
+<h2 align="CENTER"><center>by Rod Smith, <a href="mailto:rodsmith@rodsbooks.com">rodsmith@rodsbooks.com</a></center></h2>
+
+<p>Originally written: 11/4/2012; last update: 7/7/2018</p>
+
+<p>This Web page is provided free of charge and with no annoying
+outside ads; however, I did take time to prepare it, and Web hosting does
+cost money. If you find this Web page useful, please consider making a
+small donation to help keep this site up and running. Thanks!</p>
+
+<table border="1">
+<tbody><tr>
+<td>Donate $1.00</td>
+<td>Donate $2.50</td>
+<td>Donate $5.00</td>
+<td>Donate $10.00</td>
+<td>Donate another value</td>
+</tr>
+<tr>
+
+<td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="rodsmith@rodsbooks.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="amount" value="1.00">
+<input type="hidden" name="item_name" value="EFI Boot Loaders for Linux">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+<input type="image" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="Donate with PayPal" border="0" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/pixel.gif" width="1" height="1">
+</form>
+</td>
+
+<td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="rodsmith@rodsbooks.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="amount" value="2.50">
+<input type="hidden" name="item_name" value="EFI Boot Loaders for Linux">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+<input type="image" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="Donate with PayPal" border="0" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/pixel.gif" width="1" height="1">
+</form>
+</td>
+
+
+<td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="rodsmith@rodsbooks.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="amount" value="5.00">
+<input type="hidden" name="item_name" value="EFI Boot Loaders for Linux">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+<input type="image" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="Donate with PayPal" border="0" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/pixel.gif" width="1" height="1">
+</form>
+</td>
+
+<td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="rodsmith@rodsbooks.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="amount" value="10.00">
+<input type="hidden" name="item_name" value="EFI Boot Loaders for Linux">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+<input type="image" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="Donate with PayPal" border="0" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/pixel.gif" width="1" height="1">
+</form>
+</td>
+
+<td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="rodsmith@rodsbooks.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="item_name" value="EFI Boot Loaders for Linux">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+<input type="image" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="Donate with PayPal" border="0" src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/pixel.gif" width="1" height="1">
+</form>
+</td></tr>
+</tbody></table>
+
+
+<hr>
+
+<p>This page is part of my <a href="https://www.rodsbooks.com/efi-bootloaders/index.html">Managing EFI Boot Loaders
+for Linux</a> document. If a Web search has brought you to this page, you
+may want to start at the beginning.</p>
+
+<div style="float:right; width:55%">
+
+<p>In addition to implementing a new boot protocol, UEFI adds a new feature that can improve system security, but that also has the potential to cause a great deal of confusion and trouble: <i>Secure Boot.</i> As the name implies, Secure Boot is intended as a security feature. By its very nature, though, Secure Boot can also make it harder to boot Linux, particularly on commodity PCs that ship with Windows pre-installed. This page provides an overview of what Secure Boot is and how the Linux community is responding to it. Although Secure Boot is developing less rapidly than it was in late 2012, when I first wrote this page, it's still a dynamic area. In other words, things may have changed!</p>
+
+<a name="whatis">
+<h2 align="CENTER"><center>What Is Secure Boot?</center></h2>
+</a>
+
+<p>For decades, PCs have been plagued by viruses, worms, and other malware. Some of the earliest viruses for PCs spread as <i>boot sector viruses:</i> They resided as code in the boot sectors of floppy disks and spread from one computer to another when users booted their computers using infected DOS floppies. Although other modes of virus transmission gained prominence as floppies faded in importance and Internet connections became common, pre-boot malware has always had its advantages to malware authors. By executing before an OS kernel gains control of the computer, malware can "hide out" in ways that aren't possible once an OS has taken over, thus making it virtually impossible for virus scanners to detect the malware—at least, not without rebooting into an emergency system that's not infected.</p>
+
+</div>
+
+<div class="navbar">
+
+<h4 class="tight">Contents</h4>
+
+<ul class="tight">
+
+<li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#whatis">What Is Secure Boot?</a></li>
+
+<li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable">Disabling Secure Boot</a>
+
+   <ul>
+
+   <li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asrock_fm2a88m">Disabling Secure Boot on the ASRock FM2A88M Extreme4+ Motherboard</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asrock_fm2a88m">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asrock_fm2a88m"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asus_p8h77i">Disabling Secure Boot on the ASUS P8H77-I Motherboard</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asus_p8h77i">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asus_p8h77i"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#hp705">Disabling Secure Boot on the Hewlett-Packard EliteDesk 705 Mini-Desktop Computer</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#hp705">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#hp705"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#nuc_dc53427hye">Disabling Secure Boot on the Intel NUC DC53427HYE Mini-Desktop Computer</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#nuc_dc53427hye">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#nuc_dc53427hye"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#lenovo_u530">Disabling Secure Boot on the Lenovo IdeaPad U530 Touch Laptop</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#lenovo_u530">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#lenovo_u530"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#msi_a88xg43">Disabling Secure Boot on the MSI A88X-G43 Motherboard</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#msi_a88xg43">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#msi_a88xg43"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#samsung_7">Disabling Secure Boot on the Samsung Notebook 7 Spin (740U5M-X01) Laptop</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#samsung_7">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#samsung_7"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#final_disable">Final Thoughts on Disabling Secure Boot</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#final_disable">
+
+   </a></ul></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#final_disable">
+
+</a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#final_disable"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#using_signed">Using a Signed Boot Loader</a>
+
+   <ul>
+
+   <li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#shim">Using the Shim Program
+
+   </a><ul><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#shim">
+
+      </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#shim"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#initial_shim">Initial Shim Setup</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#initial_shim">
+
+      </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#initial_shim"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#signing">Signing Your Binaries</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#signing">
+
+      </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#signing"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#verifying">Verifying Your Boot Loaders</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#verifying">
+
+   </a></ul></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#verifying">
+
+   </a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#verifying"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#preloader">Using the Linux Foundation's PreLoader</a></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#preloader">
+
+   </a></ul></li><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#preloader">
+
+</a><li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#preloader"></a><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#add_keys">Replacing or Supplementing Your Firmware's Keys</a></li>
+
+<li class="tight"><a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#conclusion">Concluding Thoughts</a></li>
+
+</ul>
+
+</div>
+
+<p>BIOS provides few protections against infection by pre-boot malware; in the BIOS boot path, the OS implicitly trusts whatever executes as the boot loader. Until late 2012, this has been true of most production EFI implementations, too. Secure Boot, though, is designed to add a layer of protection to the pre-boot process. With Secure Boot active, the firmware checks for the presence of a cryptographic signature on any EFI program that it executes. If the cryptographic signature is absent, doesn't correspond to a key held in the computer's NVRAM, or is blacklisted in the NVRAM, the firmware refuses to execute the program. Of course, this is simply the start of the process; a trusted EFI boot loader must continue the boot process in a secure fashion, leading ultimately to an OS that is itself secure. A malware author would need to get the malware signed, which would be difficult if users control their own system keys (in a secure way!). Thus, pre-boot malware can be blocked. There are a lot of ways for things to go wrong higher up the chain, but Secure Boot at least provides a foundation from which to secure the computer as a whole—at least, in theory!</p>
+
+<p>The description of Secure Boot in the UEFI specification doesn't provide any mechanism to create a web of trust for its keys. Based on the UEFI specification alone, one might think that Secure Boot would be implemented in a site-by-site fashion; administrators at a site could sign the boot loaders that <i>they</i> use, thus locking out malware authors. Microsoft, however, included a requirement in its Windows 8 certification program for desktop and laptop computers that vendors ship computers with Secure Boot enabled. As a practical matter, this means that vendors must include Microsoft's keys on their computers, and unless vendors include other keys, only boot loaders signed by Microsoft will work.</p>
+
+<p>Fortunately, things aren't quite as bad as this might seem. Microsoft has partnered with <a href="http://www.verisign.com/">Verisign</a> to manage boot loader signing. Anybody can pay $99 to Verisign to obtain the means to sign an unlimited number of binaries with Microsoft's key—or more precisely, a key that Microsoft uses to sign third-party binaries. (Microsoft uses another key to sign its own binaries.) Furthermore, for Windows 8, Microsoft required that <i>x</i>86 and <i>x</i>86-64 computers provide the means to completely disable Secure Boot, giving users control over the process. (ARM users aren't so lucky; Microsoft requires that Secure Boot can <i>not</i> be disabled on ARM systems bearing a Windows 8 logo.) For Windows 10, Microsoft dropped this requirement to the status of a suggestion; but as far as I know, all manufacturers continue to enable users to disable Secure Boot on their <i>x</i>86-64 computers. For those who are interested, <a href="https://en.altlinux.org/UEFI_SecureBoot_mini-HOWTO">this ALT Linux page</a> describes the process of having Microsoft sign a binary in excruciating detail.</p>
+
+<p>The initial public discussion of these matters was sparked by <a href="http://mjg59.dreamwidth.org/5552.html">a blog post by Matthew J. Garrett,</a> then a Red Hat developer, in September of 2011. Much of the initial discussion on Web forums and other public meeting places was downright panicky, and even a year later I saw occasional overwrought posts. By early 2015, the hysteria had died down and had been replaced by a combination of frustration when users run into problems and real-world knowledge of workarounds and even ways to employ Secure Boot for your own benefit. As described on this page, there are at least three ways to deal with Secure Boot: <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable">disable it</a>, <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#using_signed">use a pre-signed boot loader,</a> or <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#add_keys">use your own keys.</a> (The last of these options is covered in much greater detail on the next page in this document, <a href="https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html">Controlling Secure Boot</a>.)</p>
+
+<a name="disable">
+<h2 align="CENTER"><center>Disabling Secure Boot</center></h2>
+</a>
+
+<p class="sidebar"><b>Note:</b> Several Linux boot loaders and boot managers provide a means to reboot into the firmware setup utility. This feature isn't supported by all EFIs, but if yours supports it, using a boot manager to access the firmware setup utility can be simpler than trying to figure out which function (or other) key to press to do so.</p>
+
+<p>If you aren't convinced that Secure Boot will improve your system's security, or if it's simply causing you too many problems, you might want to disable the feature entirely. Given the fact that most malware targets Windows, this approach is most reasonable on computers that don't run Windows. You'll have to be comfortable navigating your firmware's setup screens to do this. Unfortunately, there's no standardization in where Secure Boot options might be located or what they might be called; therefore, I can't provide a procedure that will work for every computer. Instead, I describe the options on several computers I own that support Secure Boot: the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asrock_fm2a88m">ASRock FM2A88M Extreme4+ motherboard,</a> the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#asus_p8h77i">ASUS P8H77-I motherboard,</a> the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#hp705">HP EliteDesk 705 mini-desktop computer,</a> the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#nuc_dc53427hye">Intel NUC DC53427 mini-desktop computer,</a> the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#lenovo_u530">Lenovo IdeaPad U530 Touch laptop computer,</a> the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#msi_a88xg43">MSI A88X-G43 motherboard,</a> and the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#samsung_7">Samsung Notebook 7 Spin laptop computer.</a> I present details of all of these systems here in the hopes that one of them will be similar enough to whatever you're facing to be helpful. Most of these tools work in a similar way, despite significant differences in their graphics—you locate a menu (usually called Boot or Security) on which an option exists to enable or disable Secure Boot, and disable it. Sometimes another option must be set before this can be done, though; and sometimes names vary enough to create confusion.</p>
+
+<a name="asrock_fm2a88m">
+<h3 align="CENTER"><center>Disabling Secure Boot on the ASRock FM2A88M Extreme4+ Motherboard</center></h3>
+</a>
+
+<p>The first step to disabling Secure Boot on any computer is discovering how to enter the firmware setup utility. This motherboard, unlike some, presents a boot-time prompt to hit F11 to do this, whereupon you're greeted by the colorful main setup screen. Using the keyboard or mouse, you should select the Security tab, which produces the screen shown here:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/asrock1.jpg" align="CENTER" width="800" height="596" alt="The ASRock Secure Boot menu is easy to find." border="2"> <br>
+
+<p>To disable Secure Boot, click the Enabled button near the middle of the screen. You'll then be able to select Enabled or Disabled; select the latter. Once this is done, select the Exit tab and choose the option to exit while saving your changes.</p>
+
+<a name="asus_p8h77i">
+<h3 align="CENTER"><center>Disabling Secure Boot on the ASUS P8H77-I Motherboard</center></h3>
+</a>
+
+<p>The ASUS P8H77-I motherboard enables you to enter the setup utility by pressing Del or F2 during startup. The motherboard defaults to booting in what it calls <i>EZ Mode,</i> but to disable Secure Boot, you must first press F7 to enter <i>Advanced Mode</i> (unless of course you've already changed this default). That done, you can click the <i>Boot</i> tab and then scroll down to around the middle of the option list (which is likely to scroll—note the scroll bar in the screen shot), where you'll see an item called <i>Secure Boot,</i> as shown below. (Early versions of this model's firmware called it <i>Security Boot Parameters</i>.)
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/asus1.jpg" align="CENTER" width="800" height="600" alt="The ASUS Secure Boot menu is logically labeled." border="2"> <br>
+
+</p><p>Selecting the <i>Secure Boot</i> option opens another menu, in which you select the <i>OS Type</i>—ASUS seems to think that Secure Boot is a Windows-only feature, so Secure Boot is enabled when the <i>OS Type</i> is set to <i>Windows UEFI mode</i> and disabled when it's set to <i>Other OS.</i> (Earlier versions of this firmware used <i>Other Legacy &amp; UEFI</i> to disable Secure Boot.)</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/asus2.jpg" align="CENTER" width="800" height="600" alt="ASUS considers Secure Boot active when the OS Type is set to
+    Windows UEFI mode." border="2"> <br>
+
+<p>When you've made your changes, press the F10 key to save them and reboot.</p>
+
+<a name="hp705">
+<h3 align="CENTER"><center>Disabling Secure Boot on the Hewlett-Packard EliteDesk 705 Mini-Desktop Computer</center></h3>
+</a>
+
+<p class="sidebar"><b>Note:</b> On two occasions, my HP's firmware has gotten into a state in which it's behaved strangely. In one case, the system stopped accepting new boot entries (as set via <tt>efibootmgr</tt>). In another case, Secure Boot stopped working—I could set the options in the firmware, but the computer continued to boot as if Secure Boot were inactive. In both cases, the solution was to select the <i>File</i> -&gt; <i>Apply Defaults and Exit</i> option in the setup utility and then re-apply my settings and boot entries. I've heard of similar problems with other computers (not just HPs); I mention it here simply because two such occurrences in the span of a few days seemed unusual. The advice to reset the firmware settings if something strange happens applies to all comptuers, though.</p>
+
+<p>The HP EliteDesk 705 has one of the more unusual Secure Boot configuration systems I've seen—although I've heard of some that are more quirky, at least in their user interfaces. To begin, you hit the Esc key when you power on or reboot to display the HP's <i>Startup Menu,</i> as shown here:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/hp1.jpg" align="CENTER" width="277" height="370" alt="You hit the Esc key to obtain a menu to a variety of firmware
+    sub-utilities on the HP 705." border="2"> <br>
+
+<p>From this menu, hitting F10 enters the computer setup utility, which has a text-only "GUI" that you manipulate via your cursor keys. From this menu, select <i>Security</i> -&gt; <i>Secure Boot Configuration,</i> which produces the following screen:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/hp2.jpg" align="CENTER" width="800" height="600" alt="You must verify your changes after you reboot by entering a
+    four-digit passcode." border="2"> <br>
+
+<p>As you might expect, you should locate the <i>Secure Boot</i> option in the <i>Secure Boot Configuration</i> box and set it to <i>Disabled.</i> At this point, <i>you must hit the F10 key to accept your changes!</i> If you hit the Esc key, your changes will be ignored. You must then select <i>File</i> -&gt; <i>Save Changes and Exit</i> to apply your new settings. Whenever you make a change to its Secure Boot configuration, the HP provides one more hurdle: When the system reboots, it asks for verification, as shown here:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/hp3.jpg" align="CENTER" width="593" height="485" alt="The HP requires confirmation on the next boot whenever you change
+    your Secure Boot settings." border="2"> <br>
+
+<p>In this example, you would type <tt class="userinput">8023</tt>, followed by the Enter key; the code is displayed to you on the screen.</p>
+
+<a name="nuc_dc53427hye">
+<h3 align="CENTER"><center>Disabling Secure Boot on the Intel NUC DC53427HYE Mini-Desktop Computer</center></h3>
+</a>
+
+<p>The Intel NUC DC53427HYE uses the F2 key as a signal to enter its setup utility. Like many modern computers, this setup utility is a colorful GUI affair (or at least, it can be; it also supports a more traditional "Classic Mode" option). The main GUI screen looks like this:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/nuc1.jpg" align="CENTER" width="800" height="597" alt="The main NUC firmware interface defaults to a heavily GUI
+    appearance." border="2"> <br>
+
+<p>From this main menu, you must select <i>Advanced Setup</i> -&gt; <i>Boot,</i> then click the <i>Secure Boot</i> tab. The resulting display looks like this:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/nuc2.jpg" align="CENTER" width="800" height="597" alt="The NUC provides a check box to enable or disable Secure Boot." border="2"> <br>
+
+<p>The NUC firmware's GUI uses a check box to enable or disable Secure Boot; you should uncheck the <i>Secure Boot</i> option to disable it. A red asterisk will then appear next to the check box, signifying an unsaved change to the configuration. When you click Exit, the firmware will ask if you want to save the changes; you must reply <i>Yes (Y)</i>.</p>
+
+<a name="lenovo_u530">
+<h3 align="CENTER"><center>Disabling Secure Boot on the Lenovo IdeaPad U530 Touch Laptop</center></h3>
+</a>
+
+<p>The Lenovo U530 has a firmware user interface that more closely resembles a traditional BIOS setup utility than do the interfaces of the other computers described here. To enter it, you can hit the Fn+F2 key as the computer boots. Once you've entered the setup utility, use the right arrow key to select the Security tab. The result looks like this:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/lenovo1.jpg" align="CENTER" width="800" height="433" alt="Lenovo&#39;s UEFI user interface is a simple text-mode affair." border="2"> <br>
+
+<p>The Secure Boot option is clearly labeled and easily changed from Enabled to Disabled by using the arrow and Enter keys. When you're done, press Fn+F10 to save the change and exit.</p>
+
+<a name="msi_a88xg43">
+<h3 align="CENTER"><center>Disabling Secure Boot on the MSI A88X-G43 Motherboard</center></h3>
+</a>
+
+<p>To enter the firmware setup utility in the MSI A88X-G43, you press the Delete key while the system starts up. The result is an unusually flashy tool. Use the keyboard or mouse to select the large <i>Settings</i> item on the left of the screen. This yields a series of menus in the center. From these menus, select <i>Advanced</i> -&gt; <i>Windows 8/8.1 Configuration</i> -&gt; <i>Secure Boot</i> -&gt; <i>Secure Boot Support.</i> The resulting screen looks like this:</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/msi1.jpg" align="CENTER" width="800" height="600" alt="MSI, like ASUS, seems to think that Secure Boot is a
+    Windows-specific feature." border="2"> <br>
+
+<p>When you select the <i>Secure Boot Support</i> option, you can set it to <i>Enabled</i> or <i>Disabled.</i> Once you've done this, use the Esc key to back out of the menus to the top <i>Settings</i> menu, from which you can select <i>Save &amp; Exit,</i> which in turn presents various exit options. You should pick the option to save your changes and reboot.</p>
+
+<a name="samsung_7">
+<h3 align="CENTER"><center>Disabling Secure Boot on the Samsung Notebook 7 Spin (740U5M-X01) Laptop</center></h3>
+</a>
+
+<p>The Samsung Notebook 7 Spin (aka the Samsung 740U5M-X01) laptop has a firmware setup system that's designed to resemble the touch user interface of Windows 8 and later. This user interface is best navigated via the computer's touch-sensitive screen or using the more conventional touchpad or a mouse you plug into the USB port. Keyboard operation is possible, but I found it confusing.</p>
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/samsung1.jpg" align="CENTER" width="800" height="455" alt="Samsung&#39;s UEFI user interface is modeled after that of Windows 8." border="2"> <br>
+
+<p>From a logical perspective, disabling Secure Boot on this model is much like doing the job on any other computer—select the Boot menu (on the left of the screen) to reveal the options, which include one called Secure Boot Control. Once you turn this option Off, a new option line appears, OS Mode Selection. You can set this to CSM OS, UEFI OS, or CSM and UEFI OS. As a general rule, I recommend using UEFI OS, since that option should disable the CSM, which is how the computer boots BIOS-mode OSes. (See <a href="https://www.rodsbooks.com/efi-bootloaders/csm-good-bad-ugly.html">my page on the CSM</a> for details on this matter.) Contrary to what you might think, setting CSM OS does <i>not</i> completely lock out EFI-mode boot loaders; I was still able to boot EFI-mode OSes with this option set. Presumably this option adjusts the preference given to BIOS-mode boot loaders compared to the CSM and UEFI OS option, but I haven't studied this matter in detail.</p>
+
+<p>Once you've disabled Secure Boot in this way, select Save from the strip of options on the right of the screen. The computer will ask for confirmation. Once you give it, the computer will reboot.</p>
+
+<a name="final_disable">
+<h3 align="CENTER"><center>Final Thoughts on Disabling Secure Boot</center></h3>
+</a>
+
+<p>Of course, unless you happen to have one of these specific computers, or one with a nearly-identical UEFI implementation, chances are you won't see menus exactly like those I've just described. Fortunately, most are fairly straightforward, like these. A few present scary warnings against a red background if you attempt to disable Secure Boot. I've seen reports from people who've been unable to find Secure Boot options, but I don't know if this was because their computers hid them particularly well or because they were actually missing. Note that options sometimes don't appear until you've set other options in a particular way. The ASUS board's need to enter <i>Advanced Mode</i> is one example of this. The bottom line is that you may need to experiment to locate your Secure Boot options.</p>
+
+<p>Most Linux distributions will install just fine with Secure Boot active. Scenarios in which it makes the most sense to disable Secure Boot include the following:</p>
+
+<ul>
+
+<li>You're using a smaller distribution that lacks the funds to have their own version of Shim signed or that is philosophically opposed to doing so. You can still use Secure Boot with such distributions, but you'll need to install Shim or PreLoader, or modify your motherboard's standard key set; and you may need to sign your boot loader and kernels.</li>
+
+<li>You want to multi-boot many distributions. In such a situation, you'll need to either use your firmware's built-in boot manager to switch which Shim and boot loader you run or install keys associated with at least one of your distributions—both awkward hassles.</li>
+
+<li>Your computer's Secure Boot implementation just plain doesn't get along with the Shim or other signed boot loader provided with your distribution. This causes a Secure Boot failure, which can manifest as a boot straight into Windows, a message about the failure, or even a system hang before the boot loader appears. You can often work around this problem by switching to another Shim program, but this is extra effort, and it may require registering a new key.</li>
+
+<li>You need to install tools that you will subsequently sign or register, as described in the following sections. In this case, your disablement of Secure Boot is temporary.</li>
+
+</ul>
+
+<a name="using_signed">
+<h2 align="CENTER"><center>Using a Signed Boot Loader</center></h2>
+</a>
+
+<p>Using a boot loader signed with Microsoft's key is the simplest and most direct approach to booting with Secure Boot active; however, it's also the most limiting approach. Depending on what signed boot loader you use, you'll have to deal with boot-time confirmation whenever you try to boot an unsigned boot loader or be limited in what OSes and kernels you can boot. As of mid-2018, I know of two signed boot loaders intended for use with Linux: <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#shim">Fedora's Shim program</a> (which is also being used by Ubuntu, SUSE, Sabayon, ALT, and others) and <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#preloader">the Linux Foundation's "PreLoader."</a> As I write, several signed versions of Shim are available, as is at least one signed version of PreLoader. I also describe how to <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#verifying">verify a signed boot loader's signature</a> to be sure it is what you think it is.</p>
+
+<p>PreLoader works by calculating a <i>hash</i> of the follow-on binary and seeing if that hash is stored in a database held in NVRAM. Shim, by contrast, originally worked by checking to see if a binary had been signed with a cryptographic key; but recent versions support both this method and the same types of hashes that PreLoader uses. Thus, Shim is the more flexible tool. It's also more readily available in up-to-date and signed forms. Use of hashes can be good if you want to launch binaries that haven't already been signed (such as those you compile yourself or those delivered by a distribution maintainer that doesn't sign their binaries). On the other hand, using hashes necessitates that you register the hash of every binary you want to launch—potentially including every kernel and kernel module. This can be a hassle, and is where binaries signed with keys become superior, since you will have to register each key just once, at most.</p>
+
+<a name="shim">
+<h3 align="CENTER"><center>Using the Shim Program</center></h3>
+</a>
+
+<p>Ideally, Shim is easy to use, in which case you need only read the <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#initial_shim">Initial Shim Setup</a> section—and you can even ignore parts of that section. If you have more advanced needs or run into problems, though, you may need to know how to <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#signing">sign your own binaries</a> and <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#verifying">verify your or others' binaries.</a></p>
+
+<a name="initial_shim">
+<h4 align="CENTER"><center>Initial Shim Setup</center></h4>
+</a>
+
+<p>To adhere to the goals of Secure Boot, a Linux boot loader should provide authentication of the Linux kernel, and a Linux distribution should provide further security measures in the kernels it provides. Unfortunately, these goals are at odds with the open source philosophy of freedom and user control of their computers. Thus, a Secure Boot solution for Linux must balance these two goals. Fedora designed its <a href="https://github.com/mjg59/shim">Shim program</a> to do just that. It does so by supporting three different types of keys (or hashes, in recent versions):</p>
+
+<p class="sidebar"><b>Note:</b> You might wonder why Shim's features couldn't be added to an existing boot loader, such as GRUB 2. There are several reasons for this. One is strictly contractual: As described in <a href="http://blog.hansenpartnership.com/adventures-in-microsoft-uefi-signing/">this blog post by James Bottomley,</a> Microsoft refuses to sign binaries distributed under certain open source licenses, including the GPLv3, which GRUB 2 and rEFInd both use. Another reason is practical: A boot loader like GRUB 2 is large and may require rapid replacement in case bugs are found. A signing process involving third parties, though, can slow down the release process, which distribution providers consider unacceptable.</p>
+
+<ul>
+
+<li><b>Secure Boot keys</b>—Shim recognizes the keys that are built into the firmware, or that users create themselves (as described in detail on my next page, <a href="https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html">Controlling Secure Boot</a>).</li>
+
+<li><b>Shim keys</b>—Shim may optionally be compiled with its own built-in key, which takes the same form as a Secure Boot key but isn't registered with the firmware. A distribution provider can sign its own boot loader and kernels with this key, enabling quick signing of these critical items so as to not delay releasing updates while waiting for Microsoft to sign them.</li>
+
+<li><b>MOKs</b>—A <i>Machine Owner Key (MOK)</i> is a type of key that a user generates and uses to sign an EFI binary. The point of a MOK is to give users the ability to run locally-compiled kernels, boot loaders not delivered by the distribution maintainer, and so on. The earliest version of Shim (0.1) didn't support MOKs, but they work as of version 0.2 of the program. MOKs are stored in NVRAM and can be so stored only under limited conditions, so they can't be easily installed by malware. Of course, the ability to use MOKs creates some risk—if you're tricked into enrolling a MOK that was provided to you by a malware author, your computer will become vulnerable to attacks launched by that malware author.</li>
+
+</ul>
+
+<p>The whole point of Secure Boot is to prevent malware from gaining control of the computer. Therefore, when booting with Secure Boot active, Fedora 18 and later, Ubuntu 16.04 and later, and probably other distributions restrict actions that some Linux users take for granted. For instance, Linux kernel modules must be signed, which complicates use of third-party kernel drivers, such as Nvidia's and AMD/ATI's proprietary video drivers. More recent kernels may, if Secure Boot is active, also check that they were launched from a boot loader that honors Secure Boot, and shut down if this was not the case. (This check can prevent the use of ELILO, SYSLINUX, or other boot loaders that don't honor Secure Boot, even if the boot loader itself is signed.) To launch a locally-compiled kernel, you must sign it with a MOK and register that MOK with the system. (In both cases, you can register a hash rather than sign the binary; but this approach results in an ever-growing database in NVRAM, which is undesirable.) The extent of such restrictions is entirely up to those who develop and sign the boot loader launched by Shim and the kernel launched by that boot loader, though. Some distributions ship kernels that are relatively unencumbered by added security restrictions.</p>
+
+<p>As a practical matter, if you want to use Shim, you have two choices: You can run a distribution that provides its own signed version of Shim, such as Fedora 18 or later or Ubuntu 12.10 or later; or you can run a signed version from such a distribution or from another source, add your own MOK, and sign whatever binaries you like. This first option is quite straightforward if you happen to want to use a distribution that ships with Shim, and it requires little extra elaboration. Ideally, it will Just Work. If it doesn't, that could indicate a bug in Shim or in your UEFI implementation. In such a case, disabling Secure Boot may be your best bet, at least in the short term as you investigate the cause of the problem.</p>
+
+<p>If you're dual-booting with multiple Linux distributions or if you want to use a distribution that doesn't provide a pre-signed Shim, you'll have to jump through some extra hoops:</p>
+
+<ol>
+
+<li>Boot the computer. This can be a challenge in and of itself. You may
+    need to use a Secure Boot–enabled Linux emergency disc,
+    temporarily disable Secure Boot, boot using the Linux Foundation's
+    PreLoader, or do the work from Windows. (An Ubuntu disc in its rescue
+    mode can work for the first of these options.)</li>
+
+<li>The Shim you install can launch boot loaders and validate kernels
+    included with the distribution from which you got it. Other boot
+    loaders and kernels fall into one of two categories, each of which
+    requires its own preliminaries:
+
+    <ul>
+
+    <li><b>Cross-distribution booting</b>—Suppose you want to launch
+	one distribution's kernel using another's Shim. (For instance,
+	install Ubuntu's Shim and use it to launch both Ubuntu and
+	OpenSUSE.) In this case, you must obtain the Secure Boot public key
+	associated with the target OS (OpenSUSE in this example). As a
+	convenience, I provide a collection of such keys with my <a href="http://www.rodsbooks.com/refind/">rEFInd boot manager.</a>
+	See the <a href="https://sourceforge.net/p/refind/code/ci/master/tree/keys/">git
+	repository</a> for access to individual keys. You'll need keys with
+	filenames that end in <tt>.cer</tt> or <tt>.der</tt>. Once you've
+	obtained the relevant key file, copy it to your ESP.</li>
+
+    <li><b>Self-signing</b>—If your distribution doesn't sign its
+	boot loader or kernel, or if you want to build your own boot loader
+	or binary, you must sign it yourself and add your public key to the
+	MOK list. To generate set of MOKs, type the following commands:
+
+<pre class="listing">$ <tt class="userinput">openssl req -new -x509 -newkey rsa:2048 -keyout MOK.key -out MOK.crt \
+  -nodes -days 3650 -subj "/CN=Your Name/"</tt>
+$ <tt class="userinput">openssl x509 -in MOK.crt -out MOK.cer -outform DER</tt>
+</pre>
+
+<p class="sidebar"><b>Warning:</b> The <tt>MOK.key</tt> file is extremely sensitive! An attacker who gains access to it could generate binaries that your computer would accept as authorized. You should change permissions to prevent unauthorized access, and ideally store it on an encrypted external storage medium.</p>
+
+	You can change <tt>Your Name</tt> to your name or other identifying
+	information and adjust the expiration date (set via the
+	<tt>-days</tt> option) as you see fit. The upcoming section, <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#signing">Signing Your Binaries,</a> describes how to sign
+	your binaries. Fortunately, users of popular distributions such as
+	Fedora, Ubuntu, and OpenSUSE need not do this, because these
+	distributions sign their own binaries and provide public keys. Once
+	you've created your keys, copy the public key to the ESP.</li>
+
+    </ul></li>
+
+<div class="sidebar">
+
+<a name="shim">
+<h4 align="CENTER"><center>Which Shim?</center></h4>
+</a>
+
+<p>Not all Shim binaries are created equal. You should avoid Shim 0.1, which shipped with Ubuntu 12.10, because it doesn't support MOKs. In theory, any Shim from version 0.2 to the latest as I write (1.3), and probably beyond, should work fine. In practice, I've discovered that some Secure Boot implementations are very finicky about their signed binaries, and will reject some binaries built with at least some versions of GNU-EFI. This problem seems to be more severe with some recent (0.4 and later) versions of Shim than with earlier ones. Thus, if you try Shim but run into Secure Boot violations when launching it, try another binary.</p>
+
+<p>Beyond this gotcha, I recommand using a Shim built for your primary distribution. Because some motherboards come with Canonical Secure Boot keys built-in, though, if you're dual-booting Ubuntu and some other distribution, using the other distribution's Shim may save you from having to enter Canonical's MOK, which is a small advantage. Recent versions come with upgraded MokManager user interfaces, as illustrated shortly, so they are preferable, all other things being equal. Although it's old and has a built-in key capable of launching nothing but the matched MokManager, <a href="http://www.codon.org.uk/~mjg59/shim-signed/">Matthew Garrett's signed Shim 0.2</a> has proven reliable for me, so you might try it if other options pose problems.</p>
+
+<p></p>
+
+</div>
+
+<li>If it's not already installed, install Shim. Treat <tt>shim.efi</tt> or
+    <tt>shimx64.efi</tt> like any other boot loader, as described in the <a href="https://www.rodsbooks.com/efi-bootloaders/installation.html">EFI Boot Loader Installation</a> page.</li>
+
+<li>Along with Shim, install MokManager. This program should come with Shim,
+    and should reside, under the name <tt>MokManager.efi</tt> or
+    <tt>mmx64.efi</tt>, in the same directory as the Shim binary. As the
+    name suggests, this program manages MOKs. I describe its use
+    shortly.</li>
+
+<li>If necessary, <a href="https://www.rodsbooks.com/efi-bootloaders/secureboot.html#signing">sign</a> the follow-on boot loader, as
+    well as any unsigned kernel you want to launch. This step is
+    necessary only if the follow-on boot loader and kernel are not already
+    signed—for instance, if you compiled them yourself.</li>
+
+<li>If Shim's follow-on boot loader is not already installed, copy it to the
+    filename <tt>grubx64.efi</tt> in the same directory that holds
+    <tt>shim.efi</tt>. Shim is designed to launch GRUB 2, but it can launch
+    other boot loaders, provided they're named <tt>grubx64.efi</tt>. Note,
+    however, that most older follow-on boot loaders, such as ELILO, won't
+    honor the Secure Boot settings. <a href="http://www.rodsbooks.com/refind/">rEFInd</a> and <a href="https://www.rodsbooks.com/efi-bootloaders/gummiboot.html">gummiboot/systemd-boot</a> are designed to honor
+    Secure Boot settings. Note that you need <i>not</i> register the
+    follow-on boot loader directly with the firmware by using
+    <tt>efibootmgr</tt>. Such a registration might cause warnings of Secure
+    Boot failures or even system hangs on some computers.</li>
+
+<li>Reboot. With any luck, you'll see a simple text-mode user interface
+    with a label of <tt>Shim UEFI key management</tt>. This is the
+    MokManager program, which Shim launched when your boot loader failed
+    verification because its key is not yet enrolled.</li>
+
+<li>Press your down arrow key and press Enter to select <tt>Enroll key from
+   disk</tt>. The screen will clear and prompt you to select a key, as
+   shown here:
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/MokManager1.png" align="CENTER" width="676" height="186" alt="MokManager&#39;s user interface is crude but effective." border="2"> <br>
+
+    Note that the preceding figure shows an early version of MokManager,
+    featuring a user interface that makes an Apple II look sophisticated.
+    Somewhere between version 0.4 and 0.7, the user interface was upgraded
+    to the MS-DOS era, and began to look like this:
+
+    <br><img src="./Managing EFI Boot Loaders for Linux_ Dealing with Secure Boot_files/MokManager2.png" align="CENTER" width="800" height="345" alt="More recent versions of MokManager have an improved
+    user interface." border="2"> <br> </li>
+
+<li>Each of the lines with a long awkward string represents a disk
+    partition. Select one and you'll see a list of files and directories.
+    Continue selecting subdirectories until you find the public key file
+    you obtained or created and copied to the ESP earlier.</li>
+
+<li>Select the public key file. MokManager will ask for verification that
+    you want to enroll the key. Provide it.</li>
+
+<li>Back out of any directories you entered and return to the MokManager
+    main menu.</li>
+
+<li>Select <tt>Continue boot</tt> at the main menu.</li>
+
+</ol>
+
+<p>At this point the computer may boot into its default OS, reboot, or
+perhaps even hang. When you reboot it, though, the boot program you
+installed under the name <tt>grubx64.efi</tt> should start up in Secure
+Boot mode. Depending on its capabilities, it might boot any kernel it can
+boot as if Secure Boot were disabled, launch only boot loaders signed with
+the platform's Secure Boot keys, or launch EFI programs or kernels signed
+with regular Secure Boot keys or your own MOK.</p>
+
+<p>Recent versions of Shim and MokManager support enrolling hashes as well as keys. This process works much like the one just described, but you must select the option to enroll a hash rather than the one to enroll a key. You must then select the binary you want the computer to trust, such as the <tt>grubx64.efi</tt> binary in the same directory as <tt>shimx64.efi</tt> and <tt>MokManager.efi</tt>. To enroll the hash of a kernel, the kernel must be on a partition that the EFI can read. Since Linux filesystems are not a standard part of the EFI's repertoire, you must either copy the kernel to the ESP or use an EFI filesystem driver, such as one that <a href="http://www.rodsbooks.com/refind/drivers.html">comes with refind,</a> to give the EFI access to the Linux partition. I recommend using the hash-signing feature sparingly, if at all, because NVRAM space to store hashes and keys is limited; you don't want to consume it all with hashes for every boot loader, kernel, and potentially even kernel module you'll use over your computer's lifetime. Instead, use it only for boot loaders or related programs that are unlikely to change often. The advantage of using hashes, of course, is that you don't need to sign your binaries, which can be a hassle, as described next.</p>
+
+<a name="signing">
+<h4 align="CENTER"><center>Signing Your Binaries</center></h4>
+</a>
+
+<p class="sidebar">For the following steps, I assume that the Secure Boot keys you prepared earlier (using <tt>openssl</tt>) are available in <tt>~/efitools</tt>. You must adjust this path as necessary on your system.</p>
+
+<p>If you want to boot a kernel you compile yourself or launch an OS that doesn't sign its boot loader, you'll need to either sign the relevant binaries or enroll their hashes. Signing the binaries is preferable if you do this type of thing even remotely often. To begin this process, you must first prepare a set of keys with <tt>openssl</tt>, as described earlier. You'll also need the <tt>sbsigntool</tt> package, which comes standard with some distributions. If yours isn't one of them, you can obtain binaries for several distributions <a href="https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools">from the OpenSUSE Build Service</a> or download the source code from <a href="https://git.kernel.org/cgit/linux/kernel/git/jejb/sbsigntools.git/">this page.</a></p>
+
+<p>Once you've installed the <tt>sbsigntool</tt> package and created keys, you can sign a binary with a command like the following:</p>
+
+<pre class="listing">$ <tt class="userinput">sbsign --key ~/efitools/MOK.key --cert ~/efitools/MOK.crt \
+         --output vmlinuz-signed.efi vmlinuz.efi</tt>
+warning: file-aligned section .text extends beyond end of file
+warning: checksum areas are greater than image size. Invalid section table?
+</pre>
+
+<p>This example signs the <tt>vmlinuz.efi</tt> binary, located in the current directory, writing the signed binary to <tt>vmlinuz-signed.efi</tt>. Of course, you must change the names of the binaries to suit your needs, as well as adjust the path to the keys (<tt>MOK.key</tt> and <tt>MOK.crt</tt>).</p>
+
+<p>This example shows two warnings. I don't claim to fully understand them, but they don't seem to do any harm—at least, the Linux kernel binaries I've signed that have produced these warnings have worked fine. (Such warnings seem to be less common in 2015 and later than they were a couple of years before then.) Another warning I've seen on binaries produced with GNU-EFI also seems harmless:</p>
+
+<pre class="listing">warning: data remaining[1231832 vs 1357089]: gaps between PE/COFF sections?
+</pre>
+
+<p>On the other hand, the <tt>ChangeLog</tt> file for GNU-EFI indicates that binaries created with GNU-EFI versions earlier than 3.0q may not boot in a Secure Boot environment when signed, and signing such binaries produces another warning:</p>
+
+<pre class="listing">warning: gap in section table:
+    .text   : 0x00000400 - 0x00019c00,
+    .reloc  : 0x00019c91 - 0x0001a091,
+warning: gap in section table:
+    .reloc  : 0x00019c91 - 0x0001a091,
+    .data   : 0x0001a000 - 0x00035000,
+gaps in the section table may result in different checksums
+</pre>
+
+<p>If you see a warning like this, you may need to recompile your binary using a more recent version of GNU-EFI.</p>
+
+<p>If you're using rEFInd or gummiboot/systemd-boot, you must sign not just the boot manager binary, but also the binaries that it launches, such as rEFInd's filesystem drivers, Linux kernels, or ELILO binaries. If you fail to do this, you'll be unable to launch the boot loaders that the boot manager is intended to launch. (Failure to sign EFI filesystem drivers means you won't be able to read your kernels from Linux filesystems.) rEFIt can't "talk" to Shim, and so can't launch follow-on boot loaders and kernels that are signed only with MOKs. Stock versions of ELILO, SYSLINUX, GRUB Legacy, and older builds of GRUB 2 don't check Secure Boot status or use EFI system calls to load kernels, so even signed versions of these programs will launch any kernel you feed them. This defeats the purpose of Secure Boot, at least when launching Linux. Most recent versions of GRUB 2 communicate with Shim for authenticating Linux kernels and so will refuse to launch a Linux kernel that's not been signed, at least when GRUB is launched via Shim.</p>
+
+<p>Once you've signed your binaries, you should install them to your ESP much as you would an unsigned EFI binary. Signed binaries should work fine even on systems on which you've disabled Secure Boot. Note, however, that anything launched directly from the firmware (that is, registered with <tt>efibootmgr</tt> or launched using the fallback filename) must be signed with a key in the firmware. Boot loaders signed by a MOK can be launched directly from Shim or from rEFInd (if rEFInd is launched from Shim).</p>
+
+<p>As a side note, the <tt>pesign</tt> utility, available from <tt>git://github.com/vathpela/pesign.git</tt>, is an alternative to <tt>sbtools</tt>; however, because <tt>efitools</tt> is coded to use <tt>sbtools</tt>, I've barely looked at <tt>pesign</tt>. You might want to check it out if you have problems with <tt>sbtools</tt>, though.</p>
+
+<a name="verifying">
+<h4 align="CENTER"><center>Verifying Your Boot Loaders</center></h4>
+</a>
+
+<p>You can use the Secure Boot signature on an EFI binary to verify the authenticity of the binary. This is useful both in diagnosing boot problems (since an improperly-signed binary won't boot) and to check that the binary comes from the claimed source.</p>
+
+<p>To verify a binary, you'll need two things: A public key file matched to
+the private key that was used to sign the binary and a program called
+<tt>sbverify</tt>. As noted earlier, I provide a collection of public key
+files with rEFInd; see the <a href="https://sourceforge.net/p/refind/code/ci/master/tree/keys/">rEFInd
+git repository</a> for access to individual keys. Note that for
+verification, you'll need a text-mode PEM file with a <tt>.crt</tt>
+extension, not the <tt>.cer</tt> or <tt>.der</tt> file needed when adding
+the key to the MOK list. Most public key files for Secure Boot are distributed in both forms, but if you have only a <tt>.cer</tt>/<tt>.der</tt> file, it's possible to convert it to <tt>.crt</tt> form, as described shortly.</p>
+
+<p>The <tt>sbverify</tt> program is available with some distributions, such
+as Ubuntu, as part of the <tt>sbsigntool</tt> package. OpenSUSE binaries
+are available from the <a href="https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools">OpenSUSE
+Build Service.</a> If necessary, you can obtain the source code from
+various sites. If you have <tt>git</tt> installed, typing <tt class="userinput">git://kernel.ubuntu.com/jk/sbsigntool</tt> should pull it
+down.</p>
+
+<p>Once you've installed <tt>sbsigntool</tt> you can use the <tt>sbverify</tt> command:</p>
+
+<pre class="listing">$ <tt class="userinput">sbverify --cert keys/refind.crt refind_x64.efi</tt>
+Signature verification OK</pre>
+
+<p>This example shows a successful verification of the <tt>refind_x64.efi</tt> binary against the <tt>keys/refind.crt</tt> public key. Failures are typically preceded by messages that describe what went wrong, often using technical language. Typically, binaries are either not signed or they're signed with a key other than the one whose public counterpart you tried to use.</p>
+
+<p>If you can't find a key in the form of a text-mode PEM file, or if you don't trust that what you've got is equivalent to the <tt>.cer</tt> or <tt>.der</tt> file, you can convert from one form to the other with <tt>openssl</tt>:</p>
+
+<pre class="listing">$ <tt class="userinput">openssl x509 -in fedora-ca.cer -inform der -out fedora-ca.crt</tt></pre>
+
+<p>This example converts the <tt>fedora-ca.cer</tt> file to <tt>fedora-ca.crt</tt>, which you can use to verify the authenticity of signed Fedora binaries.</p>
+
+<a name="preloader">
+<h3 align="CENTER"><center>Using the Linux Foundation's PreLoader</center></h3>
+</a>
+
+<!-- See PreLoader "slide show": http://blog.hansenpartnership.com/wp-uploads/2013/02/UEFI-Secure-Boot-2013.pdf -->
+
+<p>The <a href="http://www.linuxfoundation.org/">Linux Foundation's</a> solution to the Secure Boot problem, known as <a href="http://www.linuxfoundation.org/news-media/blogs/browse/2012/10/linux-foundation-uefi-secure-boot-system-open-source">PreLoader,</a> shares some significant similarities with Shim, but it's also different in two key respects:</p><p>
+
+</p><ul>
+
+<li>For technical reasons, Shim can launch an EFI program (such as a boot loader), but that program can launch follow-on Shim/MOK-signed programs only if the boot loader is designed to "talk" to Shim. This limitation means that you won't be able to launch MOK-signed programs from an EFI shell or rEFIt. PreLoader, by contrast, was designed to insert its new authentication features into the standard UEFI authentication pathway, thus granting follow-on programs such as gummiboot/systemd-boot the benefits of its improvements. Overall, this is an advantage; however, some computers may lack the features needed by PreLoader to insert itself in this way, so it might not work on some computers. <a href="http://superuser.com/questions/615142/uefi-failed-to-install-override-security-policy">This post to SuperUser</a> indicates that this limitation may be real for at least some computers.</li>
+
+<li>Recent versions of Shim can authenticate either binaries signed with a key whose public counterpart is in the MOK list or binaries whose hash is stored in the MOK list. Old versions of Shim can work only with signed binaries. PreLoader, by contrast, works only with hashes. Hashes can be useful if you must launch a program from read-only media or if you have a very limited need for authenticating binaries that aren't already signed and you don't want to deal with the hassles of signing the binaries.</li>
+
+</ul>
+
+<p>As a practical matter, PreLoader has an advantage if you want to launch an unsigned boot loader (as on an older Linux distribution) or if you want to distribute a bootable image but lack the funds to pay for your own signing key or the patience to <a href="http://en.altlinux.org/UEFI_SecureBoot_mini-HOWTO">deal with the Byzantine process of getting a binary signed.</a> PreLoader is particularly good in these cases if you're not technically inclined, since you don't need to deal with the signing keys described in reference to Shim. If your distribution signs its boot loaders and/or kernels, you're better off using Shim. If your boot loaders (perhaps including your kernels) seldom change, then either program will work equally well, provided you're willing to deal with signing keys.</p>
+
+<p>To use PreLoader, follow these steps:</p>
+
+<ol>
+
+<li>Boot the computer. As with installing Shim, this step can be a challenge. You may need to temporarily disable Secure Boot, use a Secure Boot-enabled emergency disc, or do the work from Windows.</li>
+
+<li>Obtain PreLoader. Pre-signed binaries are available from <a href="http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/">its download site.</a> Note, however, that these pre-signed binaries are quite old. The program has been updated since then, but I'm not aware of any more recent official signed binaries.</li>
+
+<li>Install the PreLoader as described on the <a href="https://www.rodsbooks.com/efi-bootloaders/installation.html">EFI Boot Loader Installation</a> page. You'll probably want to install it in your default boot loader's directory.</li>
+
+<li>Copy the <tt>HashTool.efi</tt> file from the PreLoader package to the same directory as the PreLoader binary.</li>
+
+<li>Rename your default boot loader as <tt>loader.efi</tt>, in the same directory as PreLoader.</li>
+
+<li>Reboot and, if necessary, select PreLoader as your boot option. PreLoader should launch, but it will probably complain that it couldn't launch <tt>loader.efi</tt>. It will then launch HashTool, which is the program that PreLoader uses to store information (<i>hashes</i>) on the programs you authorize.</li>
+
+<li>In HashTool, select the <tt>Enroll Hash</tt> option.</li>
+
+<li>Browse to and select the <tt>loader.efi</tt> program file. HashTool asks for confirmation; respond <tt>Yes</tt>.</li>
+
+<p class="sidebar"><b>Note:</b> Unfortunately, early versions of HashTool, including the signed version available from the official download site, have a very serious limitation: They can only enroll hashes of binaries that are stored on the disk from which it launched. Thus, you may need to either copy HashTool to the disk on which your binaries are stored or copy your binaries to the disk on which HashTool is stored. Once you've recorded a binary's hash, it will work when launched from any location.</p>
+
+<li>As a practical matter, you'll now want to repeat the previous two steps for every boot loader you might want to launch from the first one. For instance, if you're using gummiboot/systemd-boot or rEFInd to launch Linux kernels, you'll want to select each of those kernels for enrollment. This won't be necessary if you're using ELILO, GRUB Legacy, or some versions of GRUB 2 to launch Linux kernels, but you may need to enroll a hash for a chainloaded boot loader launched from GRUB.</li>
+
+<li>Select <tt>Exit</tt> or <tt>Reboot System</tt> from the HashTool main menu.</li>
+
+</ol>
+
+<p>At this point, your computer should reboot into your regular boot loader, and it should be able to launch kernels and follow-on boot loaders as if they were signed with your platform's Secure Boot key—provided you registered those binaries with HashTool! This last point is an important one. If you're using rEFInd or gummiboot/systemd-boot to launch Linux kernels, you'll need to register each new kernel as you (or your distribution's package system) installs it. This fact also means that you must provide a way to launch HashTool. ELILO can't do this, but you can configure rEFIt, rEFInd, gummiboot/systemd-boot, GRUB Legacy, and GRUB 2 to launch HashTool. In fact, rEFInd 0.6.7 and later recognize the <tt>HashTool.efi</tt> binary and provide a tag for it on the main screen.</p>
+
+<p>Behind the scenes, the PreLoader is actually using the same MOK list that Shim uses; PreLoader is simply using it to store program hashes rather than keys.</p>
+
+<a name="add_keys">
+<h2 align="CENTER"><center>Replacing or Supplementing Your Firmware's Keys</center></h2>
+</a>
+
+<p>It's possible to replace Microsoft's keys with your own, which enables you to gain the benefits of Secure Boot without using either Shim or PreLoader. This can be a useful approach if you want the benefits of Secure Boot but <i>don't</i> want to trust Microsoft or any of the others who distribute binaries signed with Microsoft's keys. It's also possible to add your own keys to those built into the firmware, without removing Microsoft's keys. This is useful if Shim or PreLoader malfunctions or if you want to use a boot program, such as rEFIt, that doesn't work well with Shim. Broadly speaking, there are three main steps to this process: generating your own keys, signing your binaries, and installing your keys in your firmware. The first two of these steps are also necessary if you want to sign your own binaries for use with Shim.</p>
+
+<p>Unfortunately, there are significant model-to-model differences in Secure Boot implementations and available tools, which means that describing this approach to managing Secure Boot is complex. Thus, I've written a <a href="https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html">separate page</a> covering the process in detail.</p>
+
+<p>Replacing your firmware's keys doesn't take much more effort than using Shim if you would need to sign your own binaries for some reason—say, if you're using a distribution such as Gentoo that doesn't provide pre-signed binaries. It also has some security advantages, particularly if you don't need Microsoft's keys. On the other hand, it's a lot more hassle than using Shim if you just want to get a Shim-using distribution up and running quickly. Overall, I recommend this approach only for those who are fairly technically inclined.</p>
+
+<a name="conclusion">
+<h2 align="CENTER"><center>Concluding Thoughts</center></h2>
+</a>
+
+<p>In mid 2018, Secure Boot is a modest-to-major hassle for Linux users. Although Secure Boot has the potential to improve security, Linux has historically not been plagued by viruses, so it's unclear that Secure Boot is a practical benefit for Linux-only computers, although it does offer theoretical benefits. If you dual-boot with Windows, though, you may want to keep Secure Boot enabled. Using the Shim program looks like the best way to do this for users of Fedora, OpenSUSE, Ubuntu, and other distributions that support Shim. If you're using another distribution or are having trouble booting multiple distributions, disabling Secure Boot is the easiest way to deal with it. Signing your own boot loaders to use the native Secure Boot mechanism and your own key set is another alternative, and one that provides you with the greatest security and flexibility. This approach is the hardest one to implement, particularly if your computer's firmware setup utility lacks the ability to add keys.</p>
+
+<hr>
+
+<p><a href="https://www.rodsbooks.com/efi-bootloaders/controlling-sb.html">Go on</a> to "Controlling Secure Boot"</p>
+
+<p><a href="https://www.rodsbooks.com/efi-bootloaders/index.html">Return</a> to "Managing EFI Boot Loaders for Linux" main page</p>
+
+<hr>
+
+<p>copyright © 2012–2018 by Roderick W. Smith</p>
+
+<p>If you have problems with or comments about this web page, please
+e-mail me at <a href="mailto:rodsmith@rodsbooks.com">
+rodsmith@rodsbooks.com.</a>  Thanks.</p>
+
+<p><a href="http://www.rodsbooks.com/">Return</a> to my main Web page.</p>
+
+
+
+</body></html>
